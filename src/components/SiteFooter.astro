@@ -1,0 +1,20 @@
+---
+import Container from './Container.astro';
+import { site } from '../lib/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200/60 py-10">
+  <Container class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <p class="text-sm text-slate-600">{year} {site.name}. All rights reserved.</p>
+    <div class="flex gap-4 text-sm">
+      <a class="text-slate-600 hover:text-slate-950" href={site.social.github} target="_blank"
+        >GitHub</a
+      >
+      <a class="text-slate-600 hover:text-slate-950" href={site.social.linkedin} target="_blank"
+        >LinkedIn</a
+      >
+    </div>
+  </Container>
+</footer>
