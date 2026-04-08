@@ -22,5 +22,48 @@ const { title = 'Jorge Torres', description = 'Portfolio personal' } = Astro.pro
   </head>
   <body class="min-h-screen antialiased">
     <slot />
+
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var ref = params.get('ref');
+        if (!ref) return;
+
+        var src = '/ref/' + ref + '.png';
+        var img = document.createElement('img');
+        img.src = src;
+        img.alt = '';
+        img.style.position = 'fixed';
+        img.style.inset = '0';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.pointerEvents = 'none';
+        img.style.zIndex = '9999';
+        img.style.opacity = '0.35';
+        img.style.mixBlendMode = 'normal';
+        document.body.appendChild(img);
+
+        var visible = true;
+        var opacity = 0.35;
+
+        window.addEventListener('keydown', function (e) {
+          if (e.key === 'v') {
+            visible = !visible;
+            img.style.display = visible ? 'block' : 'none';
+          }
+
+          if (e.key === 'o') {
+            opacity = Math.min(1, Math.round((opacity + 0.1) * 100) / 100);
+            img.style.opacity = String(opacity);
+          }
+
+          if (e.key === 'O') {
+            opacity = Math.max(0, Math.round((opacity - 0.1) * 100) / 100);
+            img.style.opacity = String(opacity);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

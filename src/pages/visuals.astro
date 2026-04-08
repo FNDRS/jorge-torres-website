@@ -6,20 +6,76 @@ import PillNav from '../components/PillNav.astro';
 import { site } from '../lib/site';
 
 const tiles = [
-  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-4' },
-  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-2' },
-  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-3' },
-  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
-  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
-  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-3' },
-  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-2' },
-  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
-  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-3' },
-  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-3' },
-  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
-  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
-  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-2' },
-  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-2' },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-1 row-span-2',
+    desktop: 'col-span-4 row-span-4',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-1 row-span-1',
+    desktop: 'col-span-4 row-span-2',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-1 row-span-1',
+    desktop: 'col-span-2 row-span-3',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-1 row-span-1',
+    desktop: 'col-span-2 row-span-2',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-1 row-span-1',
+    desktop: 'col-span-2 row-span-2',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-2 row-span-2',
+    desktop: 'col-span-4 row-span-3',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-2 row-span-1',
+    desktop: 'col-span-4 row-span-2',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-1 row-span-1',
+    desktop: 'col-span-2 row-span-2',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-2 row-span-2',
+    desktop: 'col-span-4 row-span-3',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-2 row-span-2',
+    desktop: 'col-span-4 row-span-3',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-1 row-span-1',
+    desktop: 'col-span-2 row-span-2',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-1 row-span-1',
+    desktop: 'col-span-2 row-span-2',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-2 row-span-1',
+    desktop: 'col-span-4 row-span-2',
+  },
+  {
+    src: '/media/placeholder.svg',
+    mobile: 'col-span-2 row-span-1',
+    desktop: 'col-span-4 row-span-2',
+  },
 ];
 ---
 
@@ -30,10 +86,17 @@ const tiles = [
     <Stage solid class="bg-black">
       <PillNav active="visuals" />
       <div class="relative z-20 px-6 pb-28 pt-28 md:px-10 md:pt-32">
-        <div class="grid auto-rows-[88px] grid-cols-12 gap-5">
+        <div
+          class="grid auto-rows-[140px] grid-cols-2 gap-4 md:auto-rows-[88px] md:grid-cols-12 md:gap-5"
+        >
           {
             tiles.map((tile) => (
-              <div class={`overflow-hidden rounded-[26px] ${tile.class}`.trim()}>
+              <div
+                class={`overflow-hidden rounded-[26px] ${tile.mobile} ${tile.desktop
+                  .split(' ')
+                  .map((c) => `md:${c}`)
+                  .join(' ')}`.trim()}
+              >
                 <img src={tile.src} alt="" loading="lazy" class="h-full w-full object-cover" />
               </div>
             ))
