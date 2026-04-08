@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#211b1f" />
+      <stop offset="0.55" stop-color="#5c2a1e" />
+      <stop offset="1" stop-color="#c24e07" />
+    </linearGradient>
+    <radialGradient id="flare" cx="70%" cy="60%" r="65%">
+      <stop offset="0" stop-color="#ff8a1a" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="42" />
+    </filter>
+  </defs>
+  <rect width="2400" height="1600" fill="url(#sky)" />
+  <rect width="2400" height="1600" fill="url(#flare)" />
+  <g filter="url(#blur)" opacity="0.55">
+    <path d="M-200 1120 C 400 1000 820 990 1220 1040 C 1700 1110 2060 1180 2600 1140" fill="none" stroke="#0a0a0a" stroke-width="180" stroke-linecap="round" />
+    <path d="M-200 1250 C 520 1220 980 1320 1500 1400 C 1940 1468 2180 1460 2600 1380" fill="none" stroke="#0b0b0b" stroke-width="220" stroke-linecap="round" />
+  </g>
+</svg>
