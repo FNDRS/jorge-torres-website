@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Chrome from '../components/Chrome.astro';
+import Stage from '../components/Stage.astro';
+import PillNav from '../components/PillNav.astro';
+import { site } from '../lib/site';
+---
+
+<Layout title={`${site.name} - My History`} description={`${site.name} story`}>
+  <div class="page relative">
+    <Chrome />
+
+    <Stage solid class="bg-black">
+      <PillNav active="history" />
+      <div class="relative z-20 px-8 pb-28 pt-28 md:px-16 md:pt-32">
+        <div class="grid items-start gap-10 md:grid-cols-[360px_1fr]">
+          <div class="flex justify-center md:justify-start">
+            <div class="h-[260px] w-[260px] overflow-hidden rounded-full bg-white/10">
+              <img
+                src="/media/placeholder.svg"
+                alt=""
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div class="max-w-[720px]">
+            <h1 class="font-display text-4xl font-semibold tracking-tight text-white md:text-5xl">
+              My History
+            </h1>
+            <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-white/85">
+              <p>
+                Honduran filmmaker and photographer. Four years building visual stories for brands
+                that want to stand out.
+              </p>
+              <p>
+                I work at the intersection of photography, video, and design - with a constant
+                obsession for aesthetics that actually mean something.
+              </p>
+              <p>
+                I believe every person carries a great story. My work is finding it - and making
+                sure it's told the way it deserves to be.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href={site.social.instagram}
+          target="_blank"
+          rel="noreferrer"
+          class="mt-20 block rounded-[26px] bg-[#2a2a2a] p-10 shadow-[0_30px_80px_rgba(0,0,0,0.55)]"
+        >
+          <div class="grid items-center gap-10 md:grid-cols-[1fr_360px_40px]">
+            <div class="max-w-[540px] text-[14px] leading-relaxed text-white/85">
+              <p>
+                In 2025, I founded Great Humans - a production company dedicated to high-end sports
+                content.
+              </p>
+              <p class="mt-5">
+                We believe every athlete is already a great human. Our work is proving it.
+              </p>
+            </div>
+
+            <div
+              class="font-display text-[72px] font-semibold leading-[0.9] tracking-[-0.02em] text-white md:text-[86px]"
+            >
+              Great
+              <br />
+              Humans
+            </div>
+
+            <div class="flex justify-start md:justify-end">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M16.5 3H7.5C5.01472 3 3 5.01472 3 7.5V16.5C3 18.9853 5.01472 21 7.5 21H16.5C18.9853 21 21 18.9853 21 16.5V7.5C21 5.01472 18.9853 3 16.5 3Z"
+                  stroke="white"
+                  stroke-width="1.6"></path>
+                <path
+                  d="M12 16.2C14.3196 16.2 16.2 14.3196 16.2 12C16.2 9.68041 14.3196 7.8 12 7.8C9.68041 7.8 7.8 9.68041 7.8 12C7.8 14.3196 9.68041 16.2 12 16.2Z"
+                  stroke="white"
+                  stroke-width="1.6"></path>
+                <path d="M17.25 6.75H17.26" stroke="white" stroke-width="2.2" stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+      </div>
+    </Stage>
+  </div>
+</Layout>

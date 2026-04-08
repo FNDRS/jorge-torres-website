@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Chrome from '../components/Chrome.astro';
+import Stage from '../components/Stage.astro';
+import PillNav from '../components/PillNav.astro';
+import { site } from '../lib/site';
+
+const tiles = [
+  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-4' },
+  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-2' },
+  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-3' },
+  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
+  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
+  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-3' },
+  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-2' },
+  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
+  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-3' },
+  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-3' },
+  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
+  { src: '/media/placeholder.svg', class: 'col-span-2 row-span-2' },
+  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-2' },
+  { src: '/media/placeholder.svg', class: 'col-span-4 row-span-2' },
+];
+---
+
+<Layout title={`${site.name} - Visuals`} description={`${site.name} visuals`}>
+  <div class="page relative">
+    <Chrome />
+
+    <Stage solid class="bg-black">
+      <PillNav active="visuals" />
+      <div class="relative z-20 px-6 pb-28 pt-28 md:px-10 md:pt-32">
+        <div class="grid auto-rows-[88px] grid-cols-12 gap-5">
+          {
+            tiles.map((tile) => (
+              <div class={`overflow-hidden rounded-[26px] ${tile.class}`.trim()}>
+                <img src={tile.src} alt="" loading="lazy" class="h-full w-full object-cover" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </Stage>
+  </div>
+</Layout>

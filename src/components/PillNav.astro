@@ -1,0 +1,17 @@
+---
+import { site } from '../lib/site';
+
+type Props = {
+  active?: 'visuals' | 'history' | 'contact';
+};
+
+const { active } = Astro.props;
+---
+
+<nav class="pill" aria-label="Primary">
+  <a href={site.routes.visuals} aria-current={active === 'visuals' ? 'page' : undefined}>Visuals</a>
+  <a href={site.routes.history} aria-current={active === 'history' ? 'page' : undefined}
+    >My History</a
+  >
+  <a href={site.routes.contact} aria-current={active === 'contact' ? 'page' : undefined}>Contact</a>
+</nav>

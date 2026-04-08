@@ -1,0 +1,15 @@
+---
+import { site } from '../lib/site';
+---
+
+<header class="header">
+  <div class="header__row">
+    <a class="brand font-display" href="/">{site.name}</a>
+
+    <nav class="topnav" aria-label="Top navigation">
+      <a href={site.routes.contact}>Contact</a>
+      <a href={site.social.instagram} target="_blank" rel="noreferrer">Instagram</a>
+      <a href={site.social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+    </nav>
+  </div>
+</header>

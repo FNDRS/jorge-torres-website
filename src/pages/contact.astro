@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Chrome from '../components/Chrome.astro';
+import Stage from '../components/Stage.astro';
+import PillNav from '../components/PillNav.astro';
+import { site } from '../lib/site';
+---
+
+<Layout title={`${site.name} - Contact`} description={`Contact ${site.name}`}>
+  <div class="page relative">
+    <Chrome />
+
+    <Stage backgroundImage="/media/contact.jpg" backgroundPosition="50% 35%">
+      <PillNav active="contact" />
+      <div class="relative z-20 px-10 pb-28 pt-36 md:px-16">
+        <div class="max-w-[520px]">
+          <h1 class="font-display text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            Let's Connect
+          </h1>
+          <p class="mt-8 text-[14px] leading-relaxed text-white/80">
+            If you're looking for a creative partner to explore new ideas, redefine your brand, or
+            craft content that truly sets you apart - contact me.
+          </p>
+          <a
+            class="mt-8 block text-[16px] font-medium tracking-wide text-white/85 hover:underline"
+            href={`mailto:${site.email}`}
+          >
+            {site.email}
+          </a>
+        </div>
+
+        <div class="absolute bottom-10 right-12 z-20 flex items-baseline gap-3 text-white/80">
+          <span class="text-[12px] tracking-wide">Develop by</span>
+          <span class="font-display text-[22px] font-semibold tracking-wide">FNDRS</span>
+        </div>
+      </div>
+    </Stage>
+  </div>
+</Layout>

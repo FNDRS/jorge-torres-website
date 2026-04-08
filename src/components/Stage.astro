@@ -1,0 +1,23 @@
+---
+type Props = {
+  class?: string;
+  solid?: boolean;
+  backgroundImage?: string;
+  backgroundPosition?: string;
+};
+
+const {
+  class: className = '',
+  solid = false,
+  backgroundImage,
+  backgroundPosition = 'center',
+} = Astro.props;
+
+const style = backgroundImage
+  ? `background-image: url('${backgroundImage}'); background-size: cover; background-position: ${backgroundPosition};`
+  : undefined;
+---
+
+<section class={`stage ${solid ? 'stage--solid' : ''} ${className}`.trim()} style={style}>
+  <slot />
+</section>
