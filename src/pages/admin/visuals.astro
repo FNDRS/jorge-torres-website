@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Chrome from '../../components/Chrome.astro';
 import Stage from '../../components/Stage.astro';
 import PillNav from '../../components/PillNav.astro';
+import AdminVisualsPanel from '../../components/AdminVisualsPanel';
 import { site } from '../../lib/site';
 ---
 
@@ -12,97 +13,9 @@ import { site } from '../../lib/site';
 
     <Stage solid class="bg-black" scrollable>
       <PillNav active="visuals" />
-      <div class="relative z-20 mx-auto max-w-lg px-6 pb-28 pt-28 md:px-10 md:pt-32">
-        <h1 class="font-display text-2xl font-semibold tracking-tight text-white">Visuals upload</h1>
-        <p class="mt-3 text-[14px] leading-relaxed text-white/70">
-          Files go to your Vercel Blob store under the <code class="text-white/90">visuals/</code> prefix. Set
-          <code class="text-white/90">VISUALS_UPLOAD_SECRET</code> in the project env, then paste the same value
-          below. Do not commit the secret.
-        </p>
-
-        <label class="mt-8 block text-[13px] font-medium text-white/80">
-          Upload secret
-          <input
-            id="upload-secret"
-            type="password"
-            autocomplete="off"
-            class="mt-2 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-[15px] text-white outline-none ring-white/30 focus:ring-2"
-            placeholder="VISUALS_UPLOAD_SECRET"
-          />
-        </label>
-
-        <label class="mt-6 block text-[13px] font-medium text-white/80">
-          Images or videos
-          <input
-            id="upload-files"
-            type="file"
-            accept="image/*,video/*"
-            multiple
-            class="mt-2 block w-full text-[14px] text-white/80 file:mr-4 file:rounded-lg file:border-0 file:bg-white/15 file:px-4 file:py-2 file:text-[13px] file:font-medium file:text-white"
-          />
-        </label>
-
-        <button
-          type="button"
-          id="upload-btn"
-          class="mt-8 w-full rounded-full bg-white/95 py-3 text-[14px] font-semibold text-black/85 transition hover:bg-white"
-        >
-          Upload
-        </button>
-
-        <pre
-          id="upload-log"
-          class="mt-6 max-h-[280px] overflow-auto rounded-xl border border-white/10 bg-black/40 p-4 text-[12px] leading-relaxed text-emerald-200/90"
-        ></pre>
+      <div class="relative z-20 px-6 pb-32 pt-28 md:px-10 md:pt-32">
+        <AdminVisualsPanel client:load />
       </div>
     </Stage>
   </div>
 </Layout>
-
-<script lang="ts">
-  const log = (msg: string) => {
-    const el = document.getElementById('upload-log');
-    if (el) el.textContent = `${el.textContent ?? ''}${msg}\n`;
-  };
-
-  document.getElementById('upload-btn')?.addEventListener('click', async () => {
-    const secret = (document.getElementById('upload-secret') as HTMLInputElement)?.value?.trim();
-    const input = document.getElementById('upload-files') as HTMLInputElement;
-    const files = input?.files;
-
-    const logEl = document.getElementById('upload-log');
-    if (logEl) logEl.textContent = '';
-
-    if (!secret) {
-      log('Add VISUALS_UPLOAD_SECRET first.');
-      return;
-    }
-    if (!files?.length) {
-      log('Choose one or more files.');
-      return;
-    }
-
-    for (const file of Array.from(files)) {
-      const fd = new FormData();
-      fd.append('file', file);
-      log(`Uploading ${file.name}…`);
-      try {
-        const res = await fetch('/api/visuals-upload', {
-          method: 'POST',
-          headers: { Authorization: `Bearer ${secret}` },
-          body: fd,
-        });
-        const data = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
-        if (!res.ok) {
-          log(`Error ${res.status}: ${data.error ?? res.statusText}`);
-          continue;
-        }
-        log(`OK → ${data.url ?? 'no url'}`);
-      } catch (e) {
-        log(e instanceof Error ? e.message : 'Request failed');
-      }
-    }
-
-    log('Done. Refresh /visuals to load from Blob.');
-  });
-</script>
