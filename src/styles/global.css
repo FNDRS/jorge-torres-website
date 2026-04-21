@@ -15,11 +15,10 @@ body {
   --bg: #000;
   --fg: #fff;
   --accent: #ff0000;
-  --stage-radius: 56px;
-  --stage-pad: 22px;
-  --notch-width: 560px;
-  --notch-height: 88px;
-  --notch-right: 160px;
+  --stage-radius: 40px;
+  --stage-pad: 0px;
+  --notch-width: 620px;
+  --notch-height: 70px;
 }
 
 body {
@@ -36,18 +35,20 @@ body {
 }
 
 .font-display {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
 }
 
 .page {
   min-height: 100svh;
-  padding: var(--stage-pad);
+  padding: 0;
 }
 
 .stage {
   position: relative;
   min-height: calc(100svh - (var(--stage-pad) * 2));
   border-radius: var(--stage-radius);
+  border-top-right-radius: 0;
   overflow: hidden;
   background: #0a0a0a;
 }
@@ -56,12 +57,11 @@ body {
   content: '';
   position: absolute;
   top: 0;
-  right: var(--notch-right);
+  right: 0;
   width: var(--notch-width);
   height: var(--notch-height);
   background: var(--bg);
-  border-bottom-left-radius: 60px;
-  border-bottom-right-radius: 60px;
+  border-bottom-left-radius: 40px;
   z-index: 30;
 }
 
@@ -84,12 +84,12 @@ body {
   left: 0;
   right: 0;
   z-index: 40;
-  padding: 24px 36px;
+  padding: 28px 36px;
 }
 
 .header__row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
 }
@@ -103,10 +103,17 @@ body {
 }
 
 .topnav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--notch-width);
+  height: var(--notch-height);
   display: flex;
   gap: 100px;
   align-items: center;
-  padding-right: 20px;
+  justify-content: center;
+  z-index: 50;
+  padding-right: 40px;
 }
 
 .topnav a {
@@ -162,27 +169,26 @@ body {
 
 @media (max-width: 900px) {
   :root {
-    --stage-radius: 34px;
-    --stage-pad: 14px;
-    --notch-width: 360px;
-    --notch-height: 64px;
-    --notch-right: 20px;
+    --stage-radius: 28px;
+    --stage-pad: 10px;
+    --notch-width: 280px;
+    --notch-height: 50px;
   }
 
   .header {
-    padding: 18px 18px;
+    padding: 16px 18px;
   }
 
   .brand {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .topnav {
-    gap: 18px;
-    padding-right: 0;
+    gap: 20px;
+    padding-right: 16px;
   }
 
   .topnav a {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
