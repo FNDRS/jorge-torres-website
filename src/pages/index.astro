@@ -7,15 +7,15 @@ import { site } from '../lib/site';
 ---
 
 <Layout title={site.name} description={`${site.name} - ${site.subtitle}`}>
-  <div class="page relative">
+  <div class="min-h-svh pl-[10px] pb-[10px]">
     <Chrome />
 
     <Stage backgroundImage="/media/landing-bg.svg" backgroundPosition="50% 40%">
       <PillNav />
-      <div class="relative z-20 flex min-h-[calc(100svh-44px)] items-center justify-center px-6">
+      <div class="relative z-20 flex min-h-svh items-center justify-center px-6">
         <div class="text-center">
           <h1
-            class="font-display text-[72px] font-normal leading-[1] tracking-[0.01em] text-white md:text-[96px]"
+            class="font-display text-[72px] font-medium leading-[1] tracking-[0.01em] text-white md:text-[96px]"
           >
             {site.name}
           </h1>
