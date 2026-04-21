@@ -7,39 +7,39 @@ import { site } from '../lib/site';
 ---
 
 <Layout title={`${site.name} - My History`} description={`${site.name} story`}>
-  <div class="page relative">
+  <div class="h-svh overflow-hidden p-[10px]">
     <Chrome />
 
-    <Stage solid class="bg-black">
+    <Stage solid class="bg-black h-[calc(100svh-20px)]">
       <PillNav active="history" />
-      <div class="relative z-20 px-8 pb-28 pt-28 md:px-16 md:pt-32">
-        <div class="grid items-start gap-10 md:grid-cols-[360px_1fr]">
-          <div class="flex justify-center md:justify-start">
-            <div class="h-[260px] w-[260px] overflow-hidden rounded-full bg-white/10">
+      <div class="relative z-20 flex h-full flex-col justify-center px-24 md:px-40 lg:px-48 xl:px-56">
+        <div class="grid items-center gap-12 md:grid-cols-[280px_1fr] md:gap-24 lg:gap-32">
+          <div class="flex justify-center md:justify-start animate-fade-in opacity-0">
+            <div class="h-[240px] w-[240px] overflow-hidden rounded-full bg-white/10 md:h-[280px] md:w-[280px] transition-transform duration-500 hover:scale-105">
               <img
-                src="/media/placeholder-mono.svg"
-                alt=""
+                src="/media/profile-jorge.png"
+                alt="Jorge Torres"
                 class="h-full w-full object-cover"
                 loading="lazy"
               />
             </div>
           </div>
 
-          <div class="max-w-[720px]">
-            <h1 class="font-display text-4xl font-semibold tracking-tight text-white md:text-5xl">
+          <div class="max-w-[680px] animate-fade-in opacity-0 delay-100">
+            <h1 class="font-display text-[36px] font-semibold tracking-tight text-white md:text-[42px]">
               My History
             </h1>
-            <div class="mt-6 space-y-5 text-[15px] leading-relaxed text-white/85">
-              <p>
+            <div class="mt-6 space-y-5 text-[15px] leading-[1.7] text-white/85 md:space-y-6">
+              <p class="animate-slide-in opacity-0 delay-200">
                 Honduran filmmaker and photographer. Four years building visual stories for brands
                 that want to stand out.
               </p>
-              <p>
-                I work at the intersection of photography, video, and design - with a constant
+              <p class="animate-slide-in opacity-0 delay-300">
+                I work at the intersection of photography, video, and design — with a constant
                 obsession for aesthetics that actually mean something.
               </p>
-              <p>
-                I believe every person carries a great story. My work is finding it - and making
+              <p class="animate-slide-in opacity-0 delay-400">
+                I believe every person carries a great story. My work is finding it — and making
                 sure it's told the way it deserves to be.
               </p>
             </div>
@@ -47,28 +47,29 @@ import { site } from '../lib/site';
         </div>
 
         <a
-          href={site.social.instagram}
+          href="https://www.instagram.com/greathumans.mov"
           target="_blank"
           rel="noreferrer"
-          class="mt-20 block rounded-[26px] bg-[#2a2a2a] p-10 shadow-[0_30px_80px_rgba(0,0,0,0.55)]"
+          class="mt-12 block rounded-[24px] bg-[#3d3d3d] px-10 py-10 shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_35px_90px_rgba(0,0,0,0.7)] md:px-14 md:py-12 animate-scale-in opacity-0 delay-400"
         >
-          <div class="grid items-center gap-10 md:grid-cols-[1fr_360px_40px]">
-            <div class="max-w-[540px] text-[14px] leading-relaxed text-white/85">
+          <div class="grid items-center gap-10 md:grid-cols-[1fr_auto_auto] md:gap-16 lg:gap-24">
+            <div class="max-w-[420px] space-y-4 text-[14px] leading-[1.7] text-white/85">
               <p>
-                In 2025, I founded Great Humans - a production company dedicated to high-end sports
+                In 2025, I founded Great Humans — a production company dedicated to high-end sports
                 content.
               </p>
-              <p class="mt-5">
+              <p>
                 We believe every athlete is already a great human. Our work is proving it.
               </p>
             </div>
 
-            <div
-              class="font-display text-[72px] font-semibold leading-[0.9] tracking-[-0.02em] text-white md:text-[86px]"
-            >
-              Great
-              <br />
-              Humans
+            <div class="flex items-center justify-center">
+              <img
+                src="/media/great-humans-logo.png"
+                alt="Great Humans"
+                class="h-auto w-[180px] md:w-[220px] lg:w-[260px]"
+                loading="lazy"
+              />
             </div>
 
             <div class="flex justify-start md:justify-end">

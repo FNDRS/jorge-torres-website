@@ -20,14 +20,14 @@ const style = backgroundImage
 
 <section
   class:list={[
-    'relative min-h-[calc(100svh-10px)] overflow-hidden bg-[#0a0a0a] rounded-bl-[40px]',
+    'relative min-h-[calc(100svh-20px)] overflow-hidden bg-[#0a0a0a] rounded-[40px] rounded-tr-none transition-all duration-500',
     className,
   ]}
   style={style}
 >
   <!-- Notch negro en la esquina superior derecha -->
   <div
-    class="absolute top-0 right-0 w-[620px] h-[70px] bg-black rounded-bl-[40px] z-30"
+    class="absolute top-0 right-0 w-[620px] h-[70px] bg-black rounded-bl-[40px] z-30 animate-fade-in opacity-0"
   >
   </div>
 
@@ -35,7 +35,7 @@ const style = backgroundImage
   {
     !solid && (
       <div
-        class="absolute inset-0 pointer-events-none z-10"
+        class="absolute inset-0 pointer-events-none z-10 animate-fade-in opacity-0"
         style="background: radial-gradient(1200px 700px at 50% 55%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.6));"
       />
     )
