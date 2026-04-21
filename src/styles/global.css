@@ -36,14 +36,7 @@ body {
 }
 
 .font-display {
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    Arial,
-    sans-serif;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 .page {
@@ -91,7 +84,7 @@ body {
   left: 0;
   right: 0;
   z-index: 40;
-  padding: 28px 40px;
+  padding: 24px 36px;
 }
 
 .header__row {
@@ -102,17 +95,18 @@ body {
 }
 
 .brand {
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
 }
 
 .topnav {
   display: flex;
-  gap: 140px;
+  gap: 100px;
   align-items: center;
-  padding-right: 40px;
+  padding-right: 20px;
 }
 
 .topnav a {
@@ -130,32 +124,40 @@ body {
 .pill {
   position: absolute;
   left: 50%;
-  bottom: 34px;
+  bottom: 40px;
   transform: translateX(-50%);
   z-index: 40;
   display: inline-flex;
-  gap: 6px;
-  padding: 8px;
+  gap: 4px;
+  padding: 6px;
   border-radius: 999px;
-  background: rgba(205, 205, 205, 0.75);
-  backdrop-filter: blur(10px);
+  background: rgba(200, 200, 200, 0.8);
+  backdrop-filter: blur(12px);
 }
 
 .pill a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 999px;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.65);
   text-decoration: none;
-  min-width: 98px;
+  min-width: 90px;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.pill a:hover {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .pill a[aria-current='page'] {
-  background: rgba(255, 255, 255, 0.9);
-  color: rgba(0, 0, 0, 0.86);
+  background: rgba(255, 255, 255, 0.95);
+  color: rgba(0, 0, 0, 0.85);
 }
 
 @media (max-width: 900px) {
@@ -172,7 +174,7 @@ body {
   }
 
   .brand {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .topnav {
