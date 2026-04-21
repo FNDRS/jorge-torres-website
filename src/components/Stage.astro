@@ -4,6 +4,8 @@ type Props = {
   solid?: boolean;
   backgroundImage?: string;
   backgroundPosition?: string;
+  /** When true, vertical content is not clipped (e.g. long galleries); still hides horizontal overflow for layout. */
+  scrollable?: boolean;
 };
 
 const {
@@ -11,6 +13,7 @@ const {
   solid = false,
   backgroundImage,
   backgroundPosition = 'center',
+  scrollable = false,
 } = Astro.props;
 
 const style = backgroundImage
@@ -20,7 +23,8 @@ const style = backgroundImage
 
 <section
   class:list={[
-    'relative min-h-[calc(100svh-20px)] overflow-hidden bg-[#0a0a0a] rounded-[40px] rounded-tr-none transition-all duration-500',
+    'relative min-h-[calc(100svh-20px)] bg-[#0a0a0a] rounded-[40px] rounded-tr-none transition-all duration-500',
+    scrollable ? 'overflow-x-hidden overflow-y-visible' : 'overflow-hidden',
     className,
   ]}
   style={style}

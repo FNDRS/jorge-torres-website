@@ -23,6 +23,10 @@ const SCROLL_CHUNK = 10;
 /** bottom-heavy margin so the next batch starts while still ~1–2 screens away */
 const RUNWAY_ROOT_MARGIN = '0px 0px 720px 0px';
 
+function isVideoUrl(url: string) {
+  return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(url);
+}
+
 export default function MasonryGallery({ images }: Props) {
   const total = images.length;
   const [visibleCount, setVisibleCount] = useState(() => Math.min(INITIAL_WINDOW, total));
@@ -71,15 +75,29 @@ export default function MasonryGallery({ images }: Props) {
         columnClassName="masonry-column"
       >
         {visible.map((src, i) => (
-          <div key={src} className="mb-3 animate-[fadeIn_0.55s_ease-out_both]">
-            <img
-              src={src}
-              alt=""
-              decoding="async"
-              loading={i < 6 ? 'eager' : 'lazy'}
-              fetchPriority={i < 4 ? 'high' : 'low'}
-              className="w-full rounded-lg object-cover"
-            />
+          <div key={src} className="mb-3 animate-fade-in">
+            {isVideoUrl(src) ? (
+              <video
+                src={src}
+                controls
+                playsInline
+                preload={i < 4 ? 'metadata' : 'none'}
+                className="w-full rounded-lg object-cover"
+              />
+            ) : (
+              <img
+                src={src}
+                alt=""
+                decoding="async"
+                loading={i < 6 ? 'eager' : 'lazy'}
+                ref={(el) => {
+                  if (!el) return;
+                  if (i < 3) el.setAttribute('fetchpriority', 'high');
+                  else el.removeAttribute('fetchpriority');
+                }}
+                className="w-full rounded-lg object-cover"
+              />
+            )}
           </div>
         ))}
       </Masonry>

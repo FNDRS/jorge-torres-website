@@ -1,7 +1,14 @@
 ---
 import '../styles/global.css';
 
-const { title = 'Jorge Torres', description = 'Portfolio personal' } = Astro.props;
+type Props = {
+  title?: string;
+  description?: string;
+  /** When true, ask crawlers not to index (e.g. admin tools). */
+  noindex?: boolean;
+};
+
+const { title = 'Jorge Torres', description = 'Portfolio personal', noindex = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -11,6 +18,7 @@ const { title = 'Jorge Torres', description = 'Portfolio personal' } = Astro.pro
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex, nofollow" /> : null}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
