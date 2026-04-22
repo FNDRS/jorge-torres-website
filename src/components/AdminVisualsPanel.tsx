@@ -15,7 +15,8 @@ type GalleryItem = {
   uploadedAt: string;
 };
 
-type YoutubeEntry = {
+type EmbedEntry = {
+  provider: 'youtube' | 'vimeo';
   videoId: string;
   addedAt: string;
 };
@@ -51,10 +52,10 @@ export default function AdminVisualsPanel() {
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
   const [galleryLoading, setGalleryLoading] = useState(false);
   const [deletingPathname, setDeletingPathname] = useState<string | null>(null);
-  const [youtubeEntries, setYoutubeEntries] = useState<YoutubeEntry[]>([]);
-  const [youtubeUrlInput, setYoutubeUrlInput] = useState('');
-  const [youtubeBusy, setYoutubeBusy] = useState(false);
-  const [removingYoutubeId, setRemovingYoutubeId] = useState<string | null>(null);
+  const [embedEntries, setEmbedEntries] = useState<EmbedEntry[]>([]);
+  const [embedUrlInput, setEmbedUrlInput] = useState('');
+  const [embedBusy, setEmbedBusy] = useState(false);
+  const [embedRemovingKey, setEmbedRemovingKey] = useState<string | null>(null);
 
   const unlocked = sessionSecret !== null && meta !== null;
 
@@ -83,28 +84,34 @@ export default function AdminVisualsPanel() {
     }
   }, []);
 
-  const fetchYoutubeList = useCallback(async (secret: string) => {
+  const fetchEmbedList = useCallback(async (secret: string) => {
     const res = await fetch('/api/visuals-youtube', {
       headers: { Authorization: `Bearer ${secret}` },
     });
-    const data = (await res.json().catch(() => null)) as { entries?: YoutubeEntry[] } | null;
+    const data = (await res.json().catch(() => null)) as { entries?: EmbedEntry[] } | null;
     if (res.ok && data?.entries && Array.isArray(data.entries)) {
-      setYoutubeEntries(data.entries);
+      setEmbedEntries(
+        data.entries.map((e) => ({
+          provider: e.provider === 'vimeo' ? 'vimeo' : 'youtube',
+          videoId: e.videoId,
+          addedAt: e.addedAt,
+        })),
+      );
     } else {
-      setYoutubeEntries([]);
+      setEmbedEntries([]);
     }
   }, []);
 
   useEffect(() => {
     if (!sessionSecret) {
       setGalleryItems([]);
-      setYoutubeEntries([]);
-      setYoutubeUrlInput('');
+      setEmbedEntries([]);
+      setEmbedUrlInput('');
       return;
     }
     void fetchGallery(sessionSecret);
-    void fetchYoutubeList(sessionSecret);
-  }, [sessionSecret, fetchGallery, fetchYoutubeList]);
+    void fetchEmbedList(sessionSecret);
+  }, [sessionSecret, fetchGallery, fetchEmbedList]);
 
   const onDrop = useCallback((accepted: File[]) => {
     setFiles((prev) => [...prev, ...accepted]);
@@ -310,14 +317,16 @@ export default function AdminVisualsPanel() {
     [runDeleteBlob],
   );
 
-  const addYoutubeLink = useCallback(async () => {
+  const addEmbedLink = useCallback(async () => {
     if (!sessionSecret) return;
-    const url = youtubeUrlInput.trim();
+    const url = embedUrlInput.trim();
     if (!url) {
-      toast.info('Pega un enlace de YouTube', { description: 'Por ejemplo watch, youtu.be o Shorts.' });
+      toast.info('Pega un enlace', {
+        description: 'YouTube (watch, youtu.be, Shorts…) o Vimeo (vimeo.com/…).',
+      });
       return;
     }
-    setYoutubeBusy(true);
+    setEmbedBusy(true);
     try {
       await toast.promise(
         (async () => {
@@ -329,26 +338,35 @@ export default function AdminVisualsPanel() {
             },
             body: JSON.stringify({ action: 'add', url }),
           });
-          const data = (await res.json().catch(() => null)) as { error?: string; entries?: YoutubeEntry[] } | null;
+          const data = (await res.json().catch(() => null)) as { error?: string; entries?: EmbedEntry[] } | null;
           if (!res.ok) throw new Error(data?.error ?? `Error ${res.status}`);
-          if (data?.entries) setYoutubeEntries(data.entries);
-          setYoutubeUrlInput('');
+          if (data?.entries) {
+            setEmbedEntries(
+              data.entries.map((e) => ({
+                provider: e.provider === 'vimeo' ? 'vimeo' : 'youtube',
+                videoId: e.videoId,
+                addedAt: e.addedAt,
+              })),
+            );
+          }
+          setEmbedUrlInput('');
         })(),
         {
           loading: 'Guardando enlace…',
-          success: 'Vídeo de YouTube añadido a la galería',
+          success: 'Enlace añadido a la galería',
           error: (err) => (err instanceof Error ? err.message : 'No se pudo añadir'),
         },
       );
     } finally {
-      setYoutubeBusy(false);
+      setEmbedBusy(false);
     }
-  }, [sessionSecret, youtubeUrlInput]);
+  }, [sessionSecret, embedUrlInput]);
 
-  const runRemoveYoutube = useCallback(
-    async (videoId: string) => {
+  const runRemoveEmbed = useCallback(
+    async (provider: EmbedEntry['provider'], videoId: string) => {
       if (!sessionSecret) return;
-      setRemovingYoutubeId(videoId);
+      const rk = `${provider}:${videoId}`;
+      setEmbedRemovingKey(rk);
       try {
         await toast.promise(
           (async () => {
@@ -358,35 +376,44 @@ export default function AdminVisualsPanel() {
                 Authorization: `Bearer ${sessionSecret}`,
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({ action: 'remove', videoId }),
+              body: JSON.stringify({ action: 'remove', provider, videoId }),
             });
-            const data = (await res.json().catch(() => null)) as { error?: string; entries?: YoutubeEntry[] } | null;
+            const data = (await res.json().catch(() => null)) as { error?: string; entries?: EmbedEntry[] } | null;
             if (!res.ok) throw new Error(data?.error ?? `Error ${res.status}`);
-            if (data?.entries) setYoutubeEntries(data.entries);
+            if (data?.entries) {
+              setEmbedEntries(
+                data.entries.map((e) => ({
+                  provider: e.provider === 'vimeo' ? 'vimeo' : 'youtube',
+                  videoId: e.videoId,
+                  addedAt: e.addedAt,
+                })),
+              );
+            }
           })(),
           {
             loading: 'Quitando vídeo…',
-            success: 'Enlace de YouTube eliminado',
+            success: 'Enlace eliminado',
             error: (err) => (err instanceof Error ? err.message : 'No se pudo quitar'),
           },
         );
       } finally {
-        setRemovingYoutubeId(null);
+        setEmbedRemovingKey(null);
       }
     },
     [sessionSecret],
   );
 
-  const requestRemoveYoutube = useCallback(
-    (videoId: string) => {
+  const requestRemoveEmbed = useCallback(
+    (provider: EmbedEntry['provider'], videoId: string) => {
+      const label = provider === 'vimeo' ? 'Vimeo' : 'YouTube';
       toast('¿Quitar este vídeo de la galería?', {
-        description: `YouTube · ${videoId}`,
+        description: `${label} · ${videoId}`,
         duration: 20000,
         action: {
           label: 'Sí, quitar',
           onClick: (e) => {
             e.preventDefault();
-            void runRemoveYoutube(videoId);
+            void runRemoveEmbed(provider, videoId);
           },
         },
         cancel: {
@@ -395,7 +422,7 @@ export default function AdminVisualsPanel() {
         },
       });
     },
-    [runRemoveYoutube],
+    [runRemoveEmbed],
   );
 
   const lockSession = () => {
@@ -404,8 +431,8 @@ export default function AdminVisualsPanel() {
     setFiles([]);
     setLastUploadReport(null);
     setGalleryItems([]);
-    setYoutubeEntries([]);
-    setYoutubeUrlInput('');
+    setEmbedEntries([]);
+    setEmbedUrlInput('');
     setVerifyError(null);
   };
 
@@ -432,7 +459,7 @@ export default function AdminVisualsPanel() {
         <h1 className="font-display text-3xl font-semibold tracking-tight text-white">Visuals upload</h1>
         <p className="mt-3 text-[14px] leading-relaxed text-white/65">
           Los archivos van a Vercel Blob bajo <span className="text-white/90">visuals/</span>. También puedes enlazar
-          vídeos de YouTube (se guardan en un manifiesto en Blob). Verifica la clave y gestiona todo aquí.
+          vídeos de YouTube o Vimeo (manifiesto en Blob). Verifica la clave y gestiona todo aquí.
         </p>
       </div>
 
@@ -710,55 +737,64 @@ export default function AdminVisualsPanel() {
         aria-hidden={!unlocked}
       >
         <h2 className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-white/50">
-          Paso 4 · YouTube (enlaces)
+          Paso 4 · YouTube / Vimeo (enlaces)
         </h2>
         <p className="mt-3 text-[13px] leading-relaxed text-white/55">
-          Pega la URL del vídeo (watch, <code className="text-white/70">youtu.be</code>, embed o Shorts). Aparecerá en{' '}
+          Pega la URL (YouTube: watch, <code className="text-white/70">youtu.be</code>, Shorts; Vimeo:{' '}
+          <code className="text-white/70">vimeo.com/…</code> o id numérico). Aparecerá en{' '}
           <span className="text-white/80">/visuals</span> mezclado con el resto por fecha de alta.
         </p>
 
         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-end">
           <label className="min-w-0 flex-1 text-[13px] font-medium text-white/75">
-            Enlace o id de YouTube
+            Enlace o id del vídeo
             <input
               type="url"
               inputMode="url"
               autoComplete="off"
-              value={youtubeUrlInput}
-              disabled={!unlocked || youtubeBusy}
-              onChange={(e) => setYoutubeUrlInput(e.target.value)}
-              placeholder="https://www.youtube.com/watch?v=…"
+              value={embedUrlInput}
+              disabled={!unlocked || embedBusy}
+              onChange={(e) => setEmbedUrlInput(e.target.value)}
+              placeholder="YouTube o https://vimeo.com/…"
               className="mt-2 w-full rounded-xl border border-white/12 bg-black/40 px-4 py-3 text-[14px] text-white outline-none ring-white/20 placeholder:text-white/25 focus:ring-2 disabled:opacity-45"
             />
           </label>
           <button
             type="button"
-            onClick={() => void addYoutubeLink()}
-            disabled={!unlocked || youtubeBusy || !youtubeUrlInput.trim()}
+            onClick={() => void addEmbedLink()}
+            disabled={!unlocked || embedBusy || !embedUrlInput.trim()}
             className="shrink-0 rounded-full border border-white/25 bg-white px-6 py-3 text-[14px] font-semibold text-neutral-900 transition hover:border-white/50 hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-45"
           >
-            {youtubeBusy ? 'Guardando…' : 'Añadir a la galería'}
+            {embedBusy ? 'Guardando…' : 'Añadir a la galería'}
           </button>
         </div>
 
-        {youtubeEntries.length > 0 ? (
+        {embedEntries.length > 0 ? (
           <ul className="mt-6 space-y-2">
-            {youtubeEntries.map((row) => {
-              const busy = removingYoutubeId === row.videoId;
+            {embedEntries.map((row) => {
+              const rk = `${row.provider}:${row.videoId}`;
+              const busy = embedRemovingKey === rk;
+              const openHref =
+                row.provider === 'vimeo'
+                  ? `https://vimeo.com/${encodeURIComponent(row.videoId)}`
+                  : `https://www.youtube.com/watch?v=${encodeURIComponent(row.videoId)}`;
               return (
                 <li
-                  key={row.videoId}
+                  key={rk}
                   className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/10 bg-black/35 px-3 py-2.5 text-[13px]"
                 >
                   <div className="min-w-0">
-                    <span className="font-mono text-[12px] text-white/85">{row.videoId}</span>
+                    <span className="inline-block rounded border border-white/15 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white/60">
+                      {row.provider}
+                    </span>
+                    <span className="ml-2 font-mono text-[12px] text-white/85">{row.videoId}</span>
                     <span className="mt-0.5 block text-[11px] text-white/40">
                       Añadido {new Date(row.addedAt).toLocaleString()}
                     </span>
                   </div>
                   <div className="flex shrink-0 gap-2">
                     <a
-                      href={`https://www.youtube.com/watch?v=${encodeURIComponent(row.videoId)}`}
+                      href={openHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="rounded-lg border border-white/15 px-2 py-1 text-[12px] font-medium text-white/75 hover:border-white/30 hover:text-white"
@@ -767,8 +803,8 @@ export default function AdminVisualsPanel() {
                     </a>
                     <button
                       type="button"
-                      onClick={() => requestRemoveYoutube(row.videoId)}
-                      disabled={busy || !!removingYoutubeId}
+                      onClick={() => requestRemoveEmbed(row.provider, row.videoId)}
+                      disabled={busy || !!embedRemovingKey}
                       className="rounded-lg border border-red-400/35 bg-red-950/30 px-2 py-1 text-[12px] font-semibold text-red-100 hover:bg-red-900/40 disabled:opacity-45"
                     >
                       {busy ? '…' : 'Quitar'}
@@ -779,7 +815,7 @@ export default function AdminVisualsPanel() {
             })}
           </ul>
         ) : unlocked ? (
-          <p className="mt-5 text-[13px] text-white/40">Aún no hay enlaces de YouTube.</p>
+          <p className="mt-5 text-[13px] text-white/40">Aún no hay enlaces de YouTube ni Vimeo.</p>
         ) : null}
       </section>
 

@@ -118,12 +118,13 @@ export async function listGalleryBlobItems(): Promise<GalleryBlobListItem[]> {
 
 export type PublicGalleryItem =
   | { kind: 'media'; url: string }
-  | { kind: 'youtube'; videoId: string };
+  | { kind: 'youtube'; videoId: string }
+  | { kind: 'vimeo'; videoId: string };
 
-/** Blob media + YouTube embeds from manifest, newest first (by upload / added time). */
+/** Blob media + YouTube / Vimeo embeds from manifest, newest first (by upload / added time). */
 export async function resolveGalleryItems(): Promise<PublicGalleryItem[]> {
   try {
-    const [blobItems, ytEntries] = await Promise.all([listGalleryBlobItems(), readYoutubeManifest()]);
+    const [blobItems, embedEntries] = await Promise.all([listGalleryBlobItems(), readYoutubeManifest()]);
 
     const merged: Array<PublicGalleryItem & { t: number }> = [
       ...blobItems.map((b) => ({
@@ -131,16 +132,20 @@ export async function resolveGalleryItems(): Promise<PublicGalleryItem[]> {
         url: b.url,
         t: new Date(b.uploadedAt).getTime(),
       })),
-      ...ytEntries.map((e) => ({
-        kind: 'youtube' as const,
-        videoId: e.videoId,
-        t: new Date(e.addedAt).getTime(),
-      })),
+      ...embedEntries.map((e) => {
+        const t = new Date(e.addedAt).getTime();
+        if (e.provider === 'vimeo') {
+          return { kind: 'vimeo' as const, videoId: e.videoId, t };
+        }
+        return { kind: 'youtube' as const, videoId: e.videoId, t };
+      }),
     ];
     merged.sort((a, b) => b.t - a.t);
-    return merged.map(({ kind, url, videoId }) =>
-      kind === 'media' ? { kind, url: url! } : { kind, videoId: videoId! },
-    );
+    return merged.map((row) => {
+      if (row.kind === 'media') return { kind: 'media', url: row.url };
+      if (row.kind === 'vimeo') return { kind: 'vimeo', videoId: row.videoId };
+      return { kind: 'youtube', videoId: row.videoId };
+    });
   } catch {
     return [];
   }

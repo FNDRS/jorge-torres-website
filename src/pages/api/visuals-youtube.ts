@@ -1,6 +1,12 @@
 import type { APIRoute } from 'astro';
 import { parseYoutubeVideoId } from '../../lib/youtube-url';
-import { readYoutubeManifest, writeYoutubeManifest, type YoutubeManifestEntry } from '../../lib/youtube-manifest';
+import { parseVimeoId } from '../../lib/vimeo-url';
+import {
+  readYoutubeManifest,
+  writeYoutubeManifest,
+  type EmbedProvider,
+  type GalleryEmbedEntry,
+} from '../../lib/youtube-manifest';
 import { readServerEnv } from '../../lib/server-env';
 
 export const prerender = false;
@@ -45,7 +51,15 @@ export const GET: APIRoute = async ({ request }) => {
   }
 };
 
-type PostBody = { action?: string; url?: string; videoId?: string };
+type PostBody = { action?: string; url?: string; videoId?: string; provider?: string };
+
+function parseEmbedFromUrl(url: string): { provider: EmbedProvider; id: string } | null {
+  const yt = parseYoutubeVideoId(url);
+  if (yt) return { provider: 'youtube', id: yt };
+  const vm = parseVimeoId(url);
+  if (vm) return { provider: 'vimeo', id: vm };
+  return null;
+}
 
 export const POST: APIRoute = async ({ request }) => {
   const expected = readServerEnv('VISUALS_UPLOAD_SECRET');
@@ -82,23 +96,27 @@ export const POST: APIRoute = async ({ request }) => {
 
     if (action === 'add') {
       const url = typeof body.url === 'string' ? body.url : '';
-      const id = parseYoutubeVideoId(url);
-      if (!id) {
-        return new Response(JSON.stringify({ error: 'Could not read a YouTube video id from that link.' }), {
-          status: 400,
-          headers: { 'Content-Type': 'application/json' },
-        });
+      const parsed = parseEmbedFromUrl(url);
+      if (!parsed) {
+        return new Response(
+          JSON.stringify({
+            error: 'No se reconoció el enlace. Usa una URL de YouTube o de Vimeo (o el id numérico de Vimeo).',
+          }),
+          { status: 400, headers: { 'Content-Type': 'application/json' } },
+        );
       }
-      if (current.some((e) => e.videoId === id)) {
-        return new Response(JSON.stringify({ error: 'That video is already in the gallery.' }), {
+      if (current.some((e) => e.provider === parsed.provider && e.videoId === parsed.id)) {
+        return new Response(JSON.stringify({ error: 'Ese vídeo ya está en la galería.' }), {
           status: 409,
           headers: { 'Content-Type': 'application/json' },
         });
       }
-      const next: YoutubeManifestEntry[] = [
-        { videoId: id, addedAt: new Date().toISOString() },
-        ...current,
-      ];
+      const entry: GalleryEmbedEntry = {
+        provider: parsed.provider,
+        videoId: parsed.id,
+        addedAt: new Date().toISOString(),
+      };
+      const next: GalleryEmbedEntry[] = [entry, ...current];
       await writeYoutubeManifest(next);
       return new Response(JSON.stringify({ ok: true, entries: next }), {
         status: 200,
@@ -107,16 +125,23 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     if (action === 'remove') {
+      const provider: EmbedProvider = body.provider === 'vimeo' ? 'vimeo' : 'youtube';
       const videoId = typeof body.videoId === 'string' ? body.videoId.trim() : '';
-      if (!/^[\w-]{11}$/.test(videoId)) {
-        return new Response(JSON.stringify({ error: 'Invalid videoId' }), {
+      if (provider === 'youtube' && !/^[\w-]{11}$/.test(videoId)) {
+        return new Response(JSON.stringify({ error: 'Invalid YouTube video id' }), {
           status: 400,
           headers: { 'Content-Type': 'application/json' },
         });
       }
-      const next = current.filter((e) => e.videoId !== videoId);
+      if (provider === 'vimeo' && !/^\d{6,12}$/.test(videoId)) {
+        return new Response(JSON.stringify({ error: 'Invalid Vimeo video id' }), {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+      const next = current.filter((e) => !(e.provider === provider && e.videoId === videoId));
       if (next.length === current.length) {
-        return new Response(JSON.stringify({ error: 'Video not found in manifest.' }), {
+        return new Response(JSON.stringify({ error: 'No está en el manifiesto.' }), {
           status: 404,
           headers: { 'Content-Type': 'application/json' },
         });

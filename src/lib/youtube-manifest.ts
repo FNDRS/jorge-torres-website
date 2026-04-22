@@ -4,36 +4,52 @@ import { readServerEnv } from './server-env';
 /** Reserved JSON manifest in Blob (must stay under `visuals/`). */
 export const YOUTUBE_MANIFEST_PATHNAME = 'visuals/_youtube.json';
 
-export type YoutubeManifestEntry = {
+export type EmbedProvider = 'youtube' | 'vimeo';
+
+export type GalleryEmbedEntry = {
+  provider: EmbedProvider;
   videoId: string;
   addedAt: string;
 };
 
 type ManifestFile = {
-  entries: YoutubeManifestEntry[];
+  entries: GalleryEmbedEntry[];
 };
 
-function normalizeManifest(data: unknown): YoutubeManifestEntry[] {
+function normalizeManifest(data: unknown): GalleryEmbedEntry[] {
   if (!data || typeof data !== 'object') return [];
-  const entries = (data as ManifestFile).entries;
+  const entries = (data as { entries?: unknown }).entries;
   if (!Array.isArray(entries)) return [];
-  const out: YoutubeManifestEntry[] = [];
+  const out: GalleryEmbedEntry[] = [];
   const seen = new Set<string>();
+
   for (const e of entries) {
     if (!e || typeof e !== 'object') continue;
-    const videoId = typeof (e as YoutubeManifestEntry).videoId === 'string' ? (e as YoutubeManifestEntry).videoId : '';
-    const addedAt =
-      typeof (e as YoutubeManifestEntry).addedAt === 'string'
-        ? (e as YoutubeManifestEntry).addedAt
-        : new Date().toISOString();
-    if (!/^[\w-]{11}$/.test(videoId) || seen.has(videoId)) continue;
-    seen.add(videoId);
-    out.push({ videoId, addedAt });
+    const o = e as Record<string, unknown>;
+    const provider: EmbedProvider = o.provider === 'vimeo' ? 'vimeo' : 'youtube';
+    const videoId =
+      typeof o.videoId === 'string'
+        ? o.videoId
+        : typeof o.id === 'string'
+          ? o.id
+          : '';
+    const addedAt = typeof o.addedAt === 'string' ? o.addedAt : new Date().toISOString();
+
+    if (provider === 'youtube') {
+      if (!/^[\w-]{11}$/.test(videoId)) continue;
+    } else {
+      if (!/^\d{6,12}$/.test(videoId)) continue;
+    }
+
+    const dedupe = `${provider}:${videoId}`;
+    if (seen.has(dedupe)) continue;
+    seen.add(dedupe);
+    out.push({ provider, videoId, addedAt });
   }
   return out;
 }
 
-export async function readYoutubeManifest(): Promise<YoutubeManifestEntry[]> {
+export async function readYoutubeManifest(): Promise<GalleryEmbedEntry[]> {
   const token = readServerEnv('BLOB_READ_WRITE_TOKEN');
   if (!token) return [];
 
@@ -48,7 +64,7 @@ export async function readYoutubeManifest(): Promise<YoutubeManifestEntry[]> {
   }
 }
 
-export async function writeYoutubeManifest(entries: YoutubeManifestEntry[]): Promise<void> {
+export async function writeYoutubeManifest(entries: GalleryEmbedEntry[]): Promise<void> {
   const token = readServerEnv('BLOB_READ_WRITE_TOKEN');
   if (!token) throw new Error('BLOB_READ_WRITE_TOKEN is not configured');
 
