@@ -10,23 +10,6 @@ type Props = {
   items: GalleryDisplayItem[];
 };
 
-const breakpointColumns = {
-  default: 4,
-  1280: 4,
-  1024: 3,
-  768: 2,
-  640: 2,
-};
-
-/** Masonry in the right column of the video+sidebar row (two packing columns). */
-const sidebarBreakpointColumns = {
-  default: 2,
-  1280: 2,
-  1024: 2,
-  768: 2,
-  640: 2,
-};
-
 /** Single column under the video so images fill the gap below it. */
 const sidebarLeftColumns = {
   default: 1,
@@ -35,6 +18,27 @@ const sidebarLeftColumns = {
   768: 1,
   640: 1,
 };
+
+/**
+ * react-masonry-css assigns round-robin to N columns (no “shortest column” packing).
+ * Never use more columns than items, or you get empty vertical strips (e.g. 1 tile in 2 cols = 50% void).
+ */
+function masonryColsForCount(n: number) {
+  const capped = Math.min(4, Math.max(1, n));
+  return {
+    default: capped,
+    1280: Math.min(capped, 4),
+    1024: Math.min(capped, 3),
+    768: Math.min(capped, 2),
+    640: Math.min(capped, 2),
+  };
+}
+
+/** Same radius as stills; `isolate` helps iframes respect `overflow-hidden` clipping. */
+const VIDEO_TILE =
+  'aspect-video w-full overflow-hidden rounded-xl bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)] isolate';
+
+const PHOTO_ROUNDED = 'rounded-xl';
 
 type ItemRun =
   | { type: 'images'; items: GalleryDisplayItem[]; key: string }
@@ -94,12 +98,12 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
 
   if (!active) {
     return (
-      <div className="aspect-video w-full overflow-hidden rounded-lg bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
+      <div className={VIDEO_TILE}>
         <button
           type="button"
           onClick={() => setActive(true)}
           aria-label="Reproducir vídeo"
-          className="group relative block h-full w-full text-left"
+          className={`group relative block h-full w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
         >
           <img
             key={posterSrc}
@@ -121,7 +125,7 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
                 setThumbStep(2);
               }
             }}
-            className="h-full w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100"
+            className={`h-full w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
           />
           <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
             <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
@@ -136,14 +140,14 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
   }
 
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-lg bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
+    <div className={VIDEO_TILE}>
       <iframe
         title={`Vídeo ${videoId}`}
         src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&${YT_EMBED_QUERY}`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
         loading="lazy"
-        className="h-full w-full border-0"
+        className={`h-full w-full border-0 ${PHOTO_ROUNDED}`}
       />
     </div>
   );
@@ -172,12 +176,12 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
 
   if (!active) {
     return (
-      <div className="aspect-video w-full overflow-hidden rounded-lg bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
+      <div className={VIDEO_TILE}>
         <button
           type="button"
           onClick={() => setActive(true)}
           aria-label="Reproducir vídeo de Vimeo"
-          className="group relative block h-full w-full text-left"
+          className={`group relative block h-full w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
         >
           {poster ? (
             <img
@@ -188,10 +192,10 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
               sizes="(min-width: 1024px) 50vw, 100vw"
               decoding="async"
               loading={priority ? 'eager' : 'lazy'}
-              className="h-full w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100"
+              className={`h-full w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
             />
           ) : (
-            <div className="h-full min-h-[12rem] w-full bg-zinc-900" />
+            <div className={`h-full min-h-[12rem] w-full bg-zinc-900 ${PHOTO_ROUNDED}`} />
           )}
           <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
             <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
@@ -206,14 +210,14 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
   }
 
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-lg bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
+    <div className={VIDEO_TILE}>
       <iframe
         title={`Vimeo ${videoId}`}
         src={`https://player.vimeo.com/video/${encodeURIComponent(videoId)}?${VIMEO_EMBED_QUERY}`}
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen
         loading="lazy"
-        className="h-full w-full border-0"
+        className={`h-full w-full border-0 ${PHOTO_ROUNDED}`}
       />
     </div>
   );
@@ -298,13 +302,13 @@ function mergeLoneVideoWithFollowingImages(runs: ItemRun[]): DisplaySegment[] {
 
 function VideoBlobTile({ url, priority }: { url: string; priority: boolean }) {
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-lg bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
+    <div className={VIDEO_TILE}>
       <video
         src={url}
         controls
         playsInline
         preload={priority ? 'metadata' : 'none'}
-        className="h-full w-full object-cover"
+        className={`h-full w-full object-cover ${PHOTO_ROUNDED}`}
       />
     </div>
   );
@@ -391,7 +395,7 @@ export default function MasonryGallery({ items }: Props) {
             return (
               <div key={seg.key} className="mb-1">
                 <Masonry
-                  breakpointCols={breakpointColumns}
+                  breakpointCols={masonryColsForCount(seg.items.length)}
                   className="masonry-grid"
                   columnClassName="masonry-column"
                 >
@@ -409,7 +413,7 @@ export default function MasonryGallery({ items }: Props) {
                             if (i < 3) el.setAttribute('fetchpriority', 'high');
                             else el.removeAttribute('fetchpriority');
                           }}
-                          className="h-auto w-full rounded-lg"
+                          className={`h-auto w-full ${PHOTO_ROUNDED}`}
                         />
                       </div>
                     );
@@ -424,6 +428,10 @@ export default function MasonryGallery({ items }: Props) {
             const leftImages = seg.images.filter((_, idx) => idx % 2 === 0);
             const rightImages = seg.images.filter((_, idx) => idx % 2 === 1);
             const hasRight = rightImages.length > 0;
+            const rightMasonryCols =
+              rightImages.length <= 1 ? sidebarLeftColumns : masonryColsForCount(rightImages.length);
+            const leftMasonryCols =
+              leftImages.length <= 1 ? sidebarLeftColumns : masonryColsForCount(leftImages.length);
 
             const renderSidebarImg = (item: GalleryDisplayItem, si: number, eagerCutoff: number) => (
               <div key={itemKey(item)} className="mb-3 animate-fade-in">
@@ -437,20 +445,20 @@ export default function MasonryGallery({ items }: Props) {
                     if (si < 3) el.setAttribute('fetchpriority', 'high');
                     else el.removeAttribute('fetchpriority');
                   }}
-                  className="h-auto w-full rounded-lg"
+                  className={`h-auto w-full ${PHOTO_ROUNDED}`}
                 />
               </div>
             );
 
             return (
-              <div key={seg.key} className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-4">
+              <div key={seg.key} className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-4 border-2 border-white">
                 <div
                   className={`flex min-w-0 flex-col gap-3 ${hasRight ? 'w-full shrink-0 lg:w-1/2 lg:max-w-[50%]' : 'w-full'}`}
                 >
                   <StreamVideoTile item={seg.video} priority={vi < 4} />
                   {leftImages.length > 0 ? (
                     <Masonry
-                      breakpointCols={sidebarLeftColumns}
+                      breakpointCols={leftMasonryCols}
                       className="masonry-grid"
                       columnClassName="masonry-column"
                     >
@@ -461,7 +469,7 @@ export default function MasonryGallery({ items }: Props) {
                 {hasRight ? (
                   <div className="min-w-0 w-full flex-1 lg:w-1/2">
                     <Masonry
-                      breakpointCols={sidebarBreakpointColumns}
+                      breakpointCols={rightMasonryCols}
                       className="masonry-grid"
                       columnClassName="masonry-column"
                     >
