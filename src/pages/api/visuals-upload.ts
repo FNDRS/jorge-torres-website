@@ -24,6 +24,29 @@ function sanitizeFilename(name: string): string {
   return trimmed.length > 0 ? trimmed : 'upload.bin';
 }
 
+function blobUploadErrorResponse(message: string) {
+  const isPrivateStore =
+    /Cannot use public access on a private store/i.test(message) ||
+    (/private store/i.test(message) && /public access/i.test(message));
+
+  if (isPrivateStore) {
+    return new Response(
+      JSON.stringify({
+        error:
+          'El Blob store está en modo solo privado; no se pueden crear archivos públicos (la galería los muestra en el navegador).',
+        hint:
+          'En Vercel: Project → Storage → Blob → elige tu store → Settings y habilita acceso público a blobs, o crea un store nuevo con soporte público, vincúlalo al proyecto y actualiza BLOB_READ_WRITE_TOKEN.',
+      }),
+      { status: 400, headers: { 'Content-Type': 'application/json' } },
+    );
+  }
+
+  return new Response(JSON.stringify({ error: message }), {
+    status: 500,
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
+
 export const POST: APIRoute = async ({ request }) => {
   const expected = readServerEnv('VISUALS_UPLOAD_SECRET');
   if (!expected?.length) {
@@ -104,9 +127,6 @@ export const POST: APIRoute = async ({ request }) => {
     });
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Upload failed';
-    return new Response(JSON.stringify({ error: message }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return blobUploadErrorResponse(message);
   }
 };

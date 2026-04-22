@@ -113,15 +113,16 @@ export default function AdminVisualsPanel() {
             body: fd,
           });
           const raw = await res.text();
-          let data: { url?: string; error?: string } = {};
+          let data: { url?: string; error?: string; hint?: string } = {};
           try {
-            data = JSON.parse(raw) as { url?: string; error?: string };
+            data = JSON.parse(raw) as { url?: string; error?: string; hint?: string };
           } catch {
             pushLog(`Error ${res.status}: respuesta no JSON`);
             continue;
           }
           if (!res.ok) {
             pushLog(`Error ${res.status}: ${data.error ?? res.statusText}`);
+            if (data.hint) pushLog(data.hint);
             continue;
           }
           pushLog(`Listo → ${data.url ?? 'sin URL'}`);
@@ -178,13 +179,13 @@ export default function AdminVisualsPanel() {
             value={secretInput}
             disabled={unlocked}
             onChange={(e) => setSecretInput(e.target.value)}
-            className="mt-2 w-full rounded-xl border border-white/12 bg-black/40 px-4 py-3 text-[15px] text-white outline-none ring-emerald-400/30 placeholder:text-white/25 focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
+            className="mt-2 w-full rounded-xl border border-white/12 bg-black/40 px-4 py-3 text-[15px] text-white outline-none ring-white/20 placeholder:text-white/25 focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
             placeholder="Tu secreto…"
           />
         </label>
 
         {verifyError ? (
-          <p className="mt-3 rounded-lg border border-red-500/25 bg-red-500/10 px-3 py-2 text-[13px] text-red-200/95">
+          <p className="mt-3 rounded-lg border border-white/25 bg-white/[0.06] px-3 py-2 text-[13px] text-white/85">
             {verifyError}
           </p>
         ) : null}
@@ -194,13 +195,13 @@ export default function AdminVisualsPanel() {
             type="button"
             onClick={() => void verify()}
             disabled={verifying}
-            className="mt-5 w-full rounded-full bg-emerald-400 py-3 text-[14px] font-semibold text-black transition hover:bg-emerald-300 disabled:opacity-60"
+            className="mt-5 w-full rounded-full border border-white/15 bg-white py-3 text-[14px] font-semibold text-black transition hover:bg-white/90 disabled:opacity-60"
           >
             {verifying ? 'Verificando…' : 'Verificar y continuar'}
           </button>
         ) : (
-          <p className="mt-4 flex items-center gap-2 text-[13px] font-medium text-emerald-200/90">
-            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+          <p className="mt-4 flex items-center gap-2 text-[13px] font-medium text-white/75">
+            <span className="inline-flex h-2 w-2 rounded-full bg-white" />
             Sesión verificada · puedes subir archivos
           </p>
         )}
@@ -238,7 +239,7 @@ export default function AdminVisualsPanel() {
               {pendingBytes > 0 ? (
                 <div
                   className={`absolute inset-y-0 rounded-full transition-[width] duration-500 ${
-                    overQuota ? 'bg-amber-500/90' : 'bg-emerald-500/45'
+                    overQuota ? 'bg-white/20' : 'bg-white/28'
                   }`}
                   style={{
                     left: `${usedPct}%`,
@@ -255,12 +256,10 @@ export default function AdminVisualsPanel() {
             </p>
 
             {pendingBytes > 0 ? (
-              <p
-                className={`text-[13px] font-medium ${overQuota ? 'text-amber-200/95' : 'text-white/80'}`}
-              >
+              <p className={`text-[13px] font-medium ${overQuota ? 'text-white/90' : 'text-white/80'}`}>
                 Esta selección: <span className="text-white">{fmtMb(pendingBytes)} MB</span>
                 {overQuota ? (
-                  <span className="block pt-1 text-amber-200/80">
+                  <span className="block pt-1 text-white/55">
                     Supera el tope mostrado; en Vercel puede fallar si excedes el plan real.
                   </span>
                 ) : null}
@@ -298,7 +297,7 @@ export default function AdminVisualsPanel() {
       </section>
 
       {logLines.length > 0 ? (
-        <pre className="max-h-64 overflow-auto rounded-2xl border border-white/10 bg-black/50 p-4 font-mono text-[12px] leading-relaxed text-emerald-100/90">
+        <pre className="max-h-64 overflow-auto rounded-2xl border border-white/10 bg-black/50 p-4 font-mono text-[12px] leading-relaxed text-white/80">
           {logLines.join('\n')}
         </pre>
       ) : null}
