@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState, type ChangeEvent } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
 
 type AdminMeta = {
   usedBytes: number;
@@ -23,6 +23,14 @@ export default function AdminVisualsPanel() {
   const [files, setFiles] = useState<File[]>([]);
   const [logLines, setLogLines] = useState<string[]>([]);
   const [uploading, setUploading] = useState(false);
+  const [toast, setToast] = useState<{ count: number; bytes: number } | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!toast) return;
+    const t = window.setTimeout(() => setToast(null), 5500);
+    return () => window.clearTimeout(t);
+  }, [toast]);
 
   const unlocked = sessionSecret !== null && meta !== null;
 
@@ -99,10 +107,14 @@ export default function AdminVisualsPanel() {
 
   const upload = useCallback(async () => {
     if (!sessionSecret || !files.length) return;
+    const batch = [...files];
+    let okCount = 0;
+    let okBytes = 0;
+
     setUploading(true);
     setLogLines([]);
     try {
-      for (const file of files) {
+      for (const file of batch) {
         const fd = new FormData();
         fd.append('file', file);
         pushLog(`Subiendo ${file.name} (${fmtMb(file.size, 1)} MB)…`);
@@ -125,6 +137,8 @@ export default function AdminVisualsPanel() {
             if (data.hint) pushLog(data.hint);
             continue;
           }
+          okCount += 1;
+          okBytes += file.size;
           pushLog(`Listo → ${data.url ?? 'sin URL'}`);
         } catch (err) {
           pushLog(err instanceof Error ? err.message : 'Fallo de red');
@@ -132,6 +146,13 @@ export default function AdminVisualsPanel() {
       }
       pushLog('Fin. Recarga /visuals para ver la galería desde Blob.');
       await refreshMeta(sessionSecret);
+
+      setFiles([]);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+
+      if (okCount > 0) {
+        setToast({ count: okCount, bytes: okBytes });
+      }
     } finally {
       setUploading(false);
     }
@@ -195,7 +216,7 @@ export default function AdminVisualsPanel() {
             type="button"
             onClick={() => void verify()}
             disabled={verifying}
-            className="mt-5 w-full rounded-full border border-white/15 bg-white py-3 text-[14px] font-semibold text-black transition hover:bg-white/90 disabled:opacity-60"
+            className="mt-5 w-full rounded-full border-2 border-white bg-white py-3 text-[14px] font-semibold text-black transition hover:bg-black hover:text-white disabled:opacity-50"
           >
             {verifying ? 'Verificando…' : 'Verificar y continuar'}
           </button>
@@ -273,6 +294,7 @@ export default function AdminVisualsPanel() {
         <label className={`mt-8 block text-[13px] font-medium text-white/75 ${!unlocked ? 'cursor-not-allowed' : ''}`}>
           Imágenes o videos
           <input
+            ref={fileInputRef}
             type="file"
             accept="image/*,video/*"
             multiple
@@ -300,6 +322,18 @@ export default function AdminVisualsPanel() {
         <pre className="max-h-64 overflow-auto rounded-2xl border border-white/10 bg-black/50 p-4 font-mono text-[12px] leading-relaxed text-white/80">
           {logLines.join('\n')}
         </pre>
+      ) : null}
+
+      {toast ? (
+        <div
+          role="status"
+          className="fixed bottom-24 left-1/2 z-[60] w-[min(92vw,22rem)] -translate-x-1/2 rounded-2xl border-2 border-white bg-black px-5 py-4 text-center shadow-[0_12px_40px_rgba(0,0,0,0.65)] animate-fade-in"
+        >
+          <p className="font-display text-[15px] font-semibold text-white">Subida completada</p>
+          <p className="mt-1.5 text-[13px] leading-snug text-white/80">
+            {toast.count} {toast.count === 1 ? 'archivo' : 'archivos'} · {fmtMb(toast.bytes, 2)} MB
+          </p>
+        </div>
       ) : null}
     </div>
   );
