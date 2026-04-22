@@ -67,6 +67,21 @@ export default function MasonryGallery({ images }: Props) {
   const visible = images.slice(0, visibleCount);
   const hasMore = visibleCount < total;
 
+  if (total === 0) {
+    return (
+      <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-16 text-center">
+        <p className="font-display text-lg font-medium text-white/90">Galería vacía</p>
+        <p className="mx-auto mt-3 max-w-md text-[14px] leading-relaxed text-white/55">
+          Las fotos y videos salen solo de Vercel Blob. Sube archivos en{' '}
+          <a href="/admin/visuals" className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white/60">
+            /admin/visuals
+          </a>{' '}
+          y revisa que <code className="text-white/80">BLOB_READ_WRITE_TOKEN</code> esté configurado.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <>
       <Masonry

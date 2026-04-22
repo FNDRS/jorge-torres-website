@@ -194,13 +194,13 @@ export default function AdminVisualsPanel() {
             type="button"
             onClick={() => void verify()}
             disabled={verifying}
-            className="mt-5 w-full rounded-full bg-gradient-to-r from-emerald-400/90 to-teal-500/90 py-3 text-[14px] font-semibold text-black transition hover:from-emerald-300 hover:to-teal-400 disabled:opacity-60"
+            className="mt-5 w-full rounded-full bg-emerald-400 py-3 text-[14px] font-semibold text-black transition hover:bg-emerald-300 disabled:opacity-60"
           >
             {verifying ? 'Verificando…' : 'Verificar y continuar'}
           </button>
         ) : (
           <p className="mt-4 flex items-center gap-2 text-[13px] font-medium text-emerald-200/90">
-            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
+            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             Sesión verificada · puedes subir archivos
           </p>
         )}
@@ -232,15 +232,13 @@ export default function AdminVisualsPanel() {
 
             <div className="relative h-3 overflow-hidden rounded-full bg-white/10">
               <div
-                className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-white/55 to-white/30 transition-[width] duration-500"
+                className="absolute inset-y-0 left-0 rounded-full bg-white/45 transition-[width] duration-500"
                 style={{ width: `${usedPct}%` }}
               />
               {pendingBytes > 0 ? (
                 <div
                   className={`absolute inset-y-0 rounded-full transition-[width] duration-500 ${
-                    overQuota
-                      ? 'bg-gradient-to-r from-amber-500/90 to-red-500/75'
-                      : 'bg-gradient-to-r from-emerald-400/50 to-teal-500/35'
+                    overQuota ? 'bg-amber-500/90' : 'bg-emerald-500/45'
                   }`}
                   style={{
                     left: `${usedPct}%`,
@@ -281,7 +279,7 @@ export default function AdminVisualsPanel() {
             multiple
             disabled={!unlocked}
             onChange={onFilesChange}
-            className="mt-2 block w-full text-[14px] text-white/75 file:mr-4 file:rounded-xl file:border-0 file:bg-white/12 file:px-4 file:py-2.5 file:text-[13px] file:font-semibold file:text-white disabled:opacity-40"
+            className="mt-2 block w-full cursor-pointer text-[14px] text-white/80 file:mr-4 file:cursor-pointer file:rounded-xl file:border-0 file:bg-white file:px-4 file:py-2.5 file:text-[13px] file:font-semibold file:text-black file:hover:bg-white/90 disabled:opacity-40"
           />
         </label>
 

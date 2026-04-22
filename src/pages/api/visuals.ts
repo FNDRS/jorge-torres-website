@@ -1,12 +1,11 @@
 import type { APIRoute } from 'astro';
 import { loadGalleryUrlsFromBlob } from '../../lib/blob-visuals';
-import { FALLBACK_VISUAL_URLS } from '../../lib/visuals-fallback';
 
 export const prerender = false;
 
 export const GET: APIRoute = async () => {
-  let urls = FALLBACK_VISUAL_URLS;
-  let source: 'blob' | 'fallback' = 'fallback';
+  let urls: string[] = [];
+  let source: 'blob' | 'empty' = 'empty';
 
   try {
     const blobUrls = await loadGalleryUrlsFromBlob();
@@ -15,7 +14,7 @@ export const GET: APIRoute = async () => {
       source = 'blob';
     }
   } catch {
-    source = 'fallback';
+    source = 'empty';
   }
 
   return new Response(JSON.stringify({ urls, source }), {

@@ -35,13 +35,10 @@ const style = backgroundImage
   >
   </div>
 
-  <!-- Overlay gradient -->
+  <!-- Overlay (flat tint over background image) -->
   {
     !solid && (
-      <div
-        class="absolute inset-0 pointer-events-none z-10 animate-fade-in opacity-0"
-        style="background: radial-gradient(1200px 700px at 50% 55%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.6));"
-      />
+      <div class="absolute inset-0 z-10 animate-fade-in bg-black/50 opacity-0 pointer-events-none" />
     )
   }
 

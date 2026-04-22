@@ -1,5 +1,4 @@
 import { list } from '@vercel/blob';
-import { FALLBACK_VISUAL_URLS } from './visuals-fallback';
 import { readServerEnv } from './server-env';
 
 /** All uploads from the admin/API must use this prefix inside the Blob store. */
@@ -74,13 +73,11 @@ export async function loadGalleryUrlsFromBlob(): Promise<string[]> {
   return collected.map((c) => c.url);
 }
 
-/** Prefer Blob store when it has media; otherwise ship the bundled public gallery. */
+/** Gallery URLs only from Vercel Blob (`visuals/`). Empty if not configured or no media. */
 export async function resolveGalleryUrls(): Promise<string[]> {
   try {
-    const fromBlob = await loadGalleryUrlsFromBlob();
-    if (fromBlob.length > 0) return fromBlob;
+    return await loadGalleryUrlsFromBlob();
   } catch {
-    // Blob not linked, bad token, or network — fall back quietly.
+    return [];
   }
-  return FALLBACK_VISUAL_URLS;
 }
