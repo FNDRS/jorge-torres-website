@@ -155,12 +155,33 @@ export default function AdminVisualsPanel() {
         data = JSON.parse(raw) as AdminMeta & { error?: string };
       } catch {
         setVerifyError(`Respuesta inválida (${res.status})`);
-        setVerifying(false);
         return;
       }
       if (!res.ok) {
-        setVerifyError(data.error ?? `Error ${res.status}`);
-        setVerifying(false);
+        const rawMsg = data.error ?? `Error ${res.status}`;
+        let friendly = rawMsg;
+        if (res.status === 401) {
+          friendly = 'Clave incorrecta.';
+        } else if (
+          res.status === 503 &&
+          typeof data.error === 'string' &&
+          data.error.includes('VISUALS_UPLOAD_SECRET')
+        ) {
+          friendly = 'El servidor no tiene VISUALS_UPLOAD_SECRET configurado.';
+        } else if (
+          res.status === 503 &&
+          typeof data.error === 'string' &&
+          data.error.includes('BLOB_READ_WRITE_TOKEN')
+        ) {
+          friendly = 'Falta BLOB_READ_WRITE_TOKEN en el servidor.';
+        } else if (
+          typeof rawMsg === 'string' &&
+          /vercel blob|access denied|blob:/i.test(rawMsg)
+        ) {
+          friendly =
+            'No se pudo leer Vercel Blob. Comprueba que BLOB_READ_WRITE_TOKEN sea válido y tenga permiso de lectura.';
+        }
+        setVerifyError(friendly);
         return;
       }
       setSessionSecret(s);
@@ -172,7 +193,9 @@ export default function AdminVisualsPanel() {
       setLastUploadReport(null);
       setFiles([]);
     } catch (e) {
-      setVerifyError(e instanceof Error ? e.message : 'No se pudo verificar');
+      const msg = e instanceof Error ? e.message : 'No se pudo verificar';
+      setVerifyError(msg);
+      toast.error('Error de red o del navegador', { description: msg });
     } finally {
       setVerifying(false);
     }
@@ -479,40 +502,49 @@ export default function AdminVisualsPanel() {
           ) : null}
         </div>
 
-        <label className="mt-4 block text-[13px] font-medium text-white/75">
-          Clave (misma que <code className="text-white/90">VISUALS_UPLOAD_SECRET</code>)
-          <input
-            type="password"
-            autoComplete="off"
-            value={secretInput}
-            disabled={unlocked}
-            onChange={(e) => setSecretInput(e.target.value)}
-            className="mt-2 w-full rounded-xl border border-white/12 bg-black/40 px-4 py-3 text-[15px] text-white outline-none ring-white/20 placeholder:text-white/25 focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
-            placeholder="Tu secreto…"
-          />
-        </label>
+        <form
+          className="mt-4 block"
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (unlocked) return;
+            void verify();
+          }}
+        >
+          <label className="block text-[13px] font-medium text-white/75">
+            Clave (misma que <code className="text-white/90">VISUALS_UPLOAD_SECRET</code>)
+            <input
+              type="password"
+              autoComplete={unlocked ? 'off' : 'current-password'}
+              name="visuals-upload-secret"
+              value={secretInput}
+              disabled={unlocked}
+              onChange={(e) => setSecretInput(e.target.value)}
+              className="mt-2 w-full rounded-xl border border-white/12 bg-black/40 px-4 py-3 text-[15px] text-white outline-none ring-white/20 placeholder:text-white/25 focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
+              placeholder="Tu secreto…"
+            />
+          </label>
 
-        {verifyError ? (
-          <p className="mt-3 rounded-lg border border-white/25 bg-white/[0.06] px-3 py-2 text-[13px] text-white/85">
-            {verifyError}
-          </p>
-        ) : null}
+          {verifyError ? (
+            <p className="mt-3 rounded-lg border border-white/25 bg-white/[0.06] px-3 py-2 text-[13px] text-white/85">
+              {verifyError}
+            </p>
+          ) : null}
 
-        {!unlocked ? (
-          <button
-            type="button"
-            onClick={() => void verify()}
-            disabled={verifying}
-            className="mt-5 w-full rounded-full border-2 border-white bg-white py-3 text-[14px] font-semibold text-neutral-900 transition-all duration-200 ease-out hover:border-white hover:bg-zinc-100 hover:text-neutral-950 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.35),0_14px_42px_rgba(0,0,0,0.35)] active:scale-[0.99] disabled:opacity-50 disabled:hover:bg-white disabled:hover:shadow-none"
-          >
-            {verifying ? 'Verificando…' : 'Verificar y continuar'}
-          </button>
-        ) : (
-          <p className="mt-4 flex items-center gap-2 text-[13px] font-medium text-white/75">
-            <span className="inline-flex h-2 w-2 rounded-full bg-white" />
-            Sesión verificada · puedes subir y borrar archivos
-          </p>
-        )}
+          {!unlocked ? (
+            <button
+              type="submit"
+              disabled={verifying}
+              className="mt-5 w-full rounded-full border-2 border-white bg-white py-3 text-[14px] font-semibold text-neutral-900 transition-all duration-200 ease-out hover:border-white hover:bg-zinc-100 hover:text-neutral-950 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.35),0_14px_42px_rgba(0,0,0,0.35)] active:scale-[0.99] disabled:opacity-50 disabled:hover:bg-white disabled:hover:shadow-none"
+            >
+              {verifying ? 'Verificando…' : 'Verificar y continuar'}
+            </button>
+          ) : (
+            <p className="mt-4 flex items-center gap-2 text-[13px] font-medium text-white/75">
+              <span className="inline-flex h-2 w-2 rounded-full bg-white" />
+              Sesión verificada · puedes subir y borrar archivos
+            </p>
+          )}
+        </form>
       </section>
 
       <section

@@ -451,7 +451,7 @@ export default function MasonryGallery({ items }: Props) {
             );
 
             return (
-              <div key={seg.key} className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-4 border-2 border-white">
+              <div key={seg.key} className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-4">
                 <div
                   className={`flex min-w-0 flex-col gap-3 ${hasRight ? 'w-full shrink-0 lg:w-1/2 lg:max-w-[50%]' : 'w-full'}`}
                 >

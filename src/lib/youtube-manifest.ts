@@ -72,6 +72,7 @@ export async function writeYoutubeManifest(entries: GalleryEmbedEntry[]): Promis
   await put(YOUTUBE_MANIFEST_PATHNAME, body, {
     access: 'public',
     addRandomSuffix: false,
+    allowOverwrite: true,
     contentType: 'application/json',
     token,
   });
