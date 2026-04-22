@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import Masonry from 'react-masonry-css';
 
 export type GalleryDisplayItem =
@@ -9,6 +9,8 @@ export type GalleryDisplayItem =
 type Props = {
   items: GalleryDisplayItem[];
 };
+
+type VisualsMode = 'photos' | 'videos';
 
 /** Single column under the video so images fill the gap below it. */
 const sidebarLeftColumns = {
@@ -314,11 +316,78 @@ function VideoBlobTile({ url, priority }: { url: string; priority: boolean }) {
   );
 }
 
+function VisualsModeSwitch({
+  mode,
+  onChange,
+  photoCount,
+  videoCount,
+}: {
+  mode: VisualsMode;
+  onChange: Dispatch<SetStateAction<VisualsMode>>;
+  photoCount: number;
+  videoCount: number;
+}) {
+  const pill =
+    'inline-flex min-w-[100px] items-center justify-center rounded-full px-5 py-2 text-sm font-medium transition-all duration-300';
+  const inactive = 'text-white/60 hover:bg-white/10 hover:text-white/85';
+  const active = 'bg-white/95 text-neutral-900 shadow-sm';
+
+  return (
+    <div
+      className="mb-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between"
+      role="tablist"
+      aria-label="Tipo de contenido"
+    >
+      <div className="inline-flex w-full max-w-md gap-1 self-start rounded-full border border-white/10 bg-white/[0.06] p-1 backdrop-blur-sm sm:w-auto">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mode === 'photos'}
+          id="visuals-tab-photos"
+          aria-controls="visuals-panel"
+          className={`${pill} ${mode === 'photos' ? active : inactive}`}
+          onClick={() => onChange('photos')}
+        >
+          Fotos
+          {photoCount > 0 ? (
+            <span className="ml-1.5 tabular-nums text-[11px] opacity-60">({photoCount})</span>
+          ) : null}
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mode === 'videos'}
+          id="visuals-tab-videos"
+          aria-controls="visuals-panel"
+          className={`${pill} ${mode === 'videos' ? active : inactive}`}
+          onClick={() => onChange('videos')}
+        >
+          Vídeos
+          {videoCount > 0 ? (
+            <span className="ml-1.5 tabular-nums text-[11px] opacity-60">({videoCount})</span>
+          ) : null}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function MasonryGallery({ items }: Props) {
-  const total = items.length;
+  const [mode, setMode] = useState<VisualsMode>('photos');
+  const photoItems = useMemo(() => items.filter((it) => !isGalleryVideo(it)), [items]);
+  const videoItems = useMemo(() => items.filter((it) => isGalleryVideo(it)), [items]);
+  const activeItems = mode === 'photos' ? photoItems : videoItems;
+  const total = activeItems.length;
+
   const [visibleCount, setVisibleCount] = useState(() => Math.min(INITIAL_WINDOW, total));
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const unlockRef = useRef(false);
+
+  useEffect(() => {
+    const len = mode === 'photos' ? photoItems.length : videoItems.length;
+    setVisibleCount(Math.min(INITIAL_WINDOW, len));
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- reset runway only on tab change; omit lengths to avoid jump on new uploads
+  }, [mode]);
 
   const commitNextChunk = useCallback(() => {
     setVisibleCount((prev) => {
@@ -355,7 +424,7 @@ export default function MasonryGallery({ items }: Props) {
     setVisibleCount((prev) => Math.min(Math.max(prev, Math.min(INITIAL_WINDOW, total)), total));
   }, [total]);
 
-  const visible = items.slice(0, visibleCount);
+  const visible = activeItems.slice(0, visibleCount);
   const hasMore = visibleCount < total;
 
   const runs = useMemo(() => buildRuns(visible), [visible]);
@@ -369,7 +438,7 @@ export default function MasonryGallery({ items }: Props) {
     return m;
   }, [visible]);
 
-  if (total === 0) {
+  if (items.length === 0) {
     return (
       <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-16 text-center">
         <p className="font-display text-lg font-medium text-white/90">Galería vacía</p>
@@ -387,9 +456,56 @@ export default function MasonryGallery({ items }: Props) {
     );
   }
 
+  if (total === 0) {
+    const otherHas = mode === 'photos' ? videoItems.length > 0 : photoItems.length > 0;
+    const hint =
+      mode === 'photos'
+        ? 'Aún no hay imágenes en la galería. Prueba la pestaña Vídeos o sube JPG/PNG/WebP desde el panel de administración.'
+        : 'Aún no hay vídeos (YouTube, Vimeo o archivos de vídeo). Prueba la pestaña Fotos o añade enlaces en el panel de administración.';
+    return (
+      <>
+        <VisualsModeSwitch
+          mode={mode}
+          onChange={setMode}
+          photoCount={photoItems.length}
+          videoCount={videoItems.length}
+        />
+        <div
+          id="visuals-panel"
+          role="tabpanel"
+          aria-labelledby={mode === 'photos' ? 'visuals-tab-photos' : 'visuals-tab-videos'}
+          className="rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-14 text-center"
+        >
+          <p className="font-display text-lg font-medium text-white/90">
+            {mode === 'photos' ? 'Sin fotos por ahora' : 'Sin vídeos por ahora'}
+          </p>
+          <p className="mx-auto mt-3 max-w-md text-[14px] leading-relaxed text-white/55">{hint}</p>
+          {otherHas ? (
+            <p className="mx-auto mt-4 max-w-md text-[13px] text-white/45">
+              Hay contenido en la otra pestaña: usa el interruptor de arriba para verlo.
+            </p>
+          ) : null}
+        </div>
+      </>
+    );
+  }
+
+  const videoGridClass = 'grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5';
+
   return (
     <>
-      <div className="space-y-6">
+      <VisualsModeSwitch
+        mode={mode}
+        onChange={setMode}
+        photoCount={photoItems.length}
+        videoCount={videoItems.length}
+      />
+      <div
+        id="visuals-panel"
+        role="tabpanel"
+        aria-labelledby={mode === 'photos' ? 'visuals-tab-photos' : 'visuals-tab-videos'}
+        className="space-y-6"
+      >
         {segments.map((seg) => {
           if (seg.type === 'images') {
             return (
@@ -482,14 +598,11 @@ export default function MasonryGallery({ items }: Props) {
           }
 
           const lone = seg.items.length === 1;
+          const isVideosTab = mode === 'videos';
           return (
             <div
               key={seg.key}
-              className={
-                lone
-                  ? 'grid grid-cols-1'
-                  : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4'
-              }
+              className={isVideosTab ? videoGridClass : lone ? 'grid grid-cols-1' : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4'}
             >
               {seg.items.map((item) => {
                 const i = indexByKey.get(itemKey(item)) ?? 0;
