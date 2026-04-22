@@ -1,23 +1,24 @@
 import type { APIRoute } from 'astro';
-import { loadGalleryUrlsFromBlob } from '../../lib/blob-visuals';
+import { resolveGalleryItems } from '../../lib/blob-visuals';
 
 export const prerender = false;
 
 export const GET: APIRoute = async () => {
-  let urls: string[] = [];
+  let items: Awaited<ReturnType<typeof resolveGalleryItems>> = [];
   let source: 'blob' | 'empty' = 'empty';
 
   try {
-    const blobUrls = await loadGalleryUrlsFromBlob();
-    if (blobUrls.length > 0) {
-      urls = blobUrls;
+    items = await resolveGalleryItems();
+    if (items.length > 0) {
       source = 'blob';
     }
   } catch {
     source = 'empty';
   }
 
-  return new Response(JSON.stringify({ urls, source }), {
+  const urls = items.filter((i) => i.kind === 'media').map((i) => i.url);
+
+  return new Response(JSON.stringify({ items, urls, source }), {
     status: 200,
     headers: {
       'Content-Type': 'application/json',

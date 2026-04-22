@@ -110,7 +110,15 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  const pathname = `${VISUAL_BLOB_PREFIX}${sanitizeFilename(file.name)}`;
+  const safeName = sanitizeFilename(file.name);
+  if (safeName.toLowerCase() === '_youtube.json') {
+    return new Response(
+      JSON.stringify({ error: 'Reserved filename: visuals/_youtube.json is used for YouTube links.' }),
+      { status: 400, headers: { 'Content-Type': 'application/json' } },
+    );
+  }
+
+  const pathname = `${VISUAL_BLOB_PREFIX}${safeName}`;
   const useMultipart = file.size > 4 * 1024 * 1024;
 
   try {

@@ -1,8 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Masonry from 'react-masonry-css';
 
+export type GalleryDisplayItem =
+  | { kind: 'media'; url: string }
+  | { kind: 'youtube'; videoId: string };
+
 type Props = {
-  images: string[];
+  items: GalleryDisplayItem[];
 };
 
 const breakpointColumns = {
@@ -27,8 +31,12 @@ function isVideoUrl(url: string) {
   return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(url);
 }
 
-export default function MasonryGallery({ images }: Props) {
-  const total = images.length;
+function itemKey(item: GalleryDisplayItem) {
+  return item.kind === 'media' ? item.url : `yt:${item.videoId}`;
+}
+
+export default function MasonryGallery({ items }: Props) {
+  const total = items.length;
   const [visibleCount, setVisibleCount] = useState(() => Math.min(INITIAL_WINDOW, total));
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const unlockRef = useRef(false);
@@ -64,7 +72,11 @@ export default function MasonryGallery({ images }: Props) {
     return () => io.disconnect();
   }, [visibleCount, total, commitNextChunk]);
 
-  const visible = images.slice(0, visibleCount);
+  useEffect(() => {
+    setVisibleCount((prev) => Math.min(Math.max(prev, Math.min(INITIAL_WINDOW, total)), total));
+  }, [total]);
+
+  const visible = items.slice(0, visibleCount);
   const hasMore = visibleCount < total;
 
   if (total === 0) {
@@ -72,11 +84,14 @@ export default function MasonryGallery({ images }: Props) {
       <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-16 text-center">
         <p className="font-display text-lg font-medium text-white/90">Galería vacía</p>
         <p className="mx-auto mt-3 max-w-md text-[14px] leading-relaxed text-white/55">
-          Las fotos y videos salen solo de Vercel Blob. Sube archivos en{' '}
-          <a href="/admin/visuals" className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white/60">
+          Sube fotos y vídeos a Vercel Blob o añade enlaces de YouTube en{' '}
+          <a
+            href="/admin/visuals"
+            className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white/60"
+          >
             /admin/visuals
-          </a>{' '}
-          y revisa que <code className="text-white/80">BLOB_READ_WRITE_TOKEN</code> esté configurado.
+          </a>
+          . Revisa que <code className="text-white/80">BLOB_READ_WRITE_TOKEN</code> esté configurado.
         </p>
       </div>
     );
@@ -89,19 +104,34 @@ export default function MasonryGallery({ images }: Props) {
         className="masonry-grid"
         columnClassName="masonry-column"
       >
-        {visible.map((src, i) => (
-          <div key={src} className="mb-3 animate-fade-in">
-            {isVideoUrl(src) ? (
+        {visible.map((item, i) =>
+          item.kind === 'youtube' ? (
+            <div key={itemKey(item)} className="mb-3 animate-fade-in">
+              <div className="relative w-full overflow-hidden rounded-lg bg-black pt-[56.25%] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
+                <iframe
+                  title={`YouTube ${item.videoId}`}
+                  src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(item.videoId)}?rel=0`}
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading={i < 4 ? 'eager' : 'lazy'}
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              </div>
+            </div>
+          ) : isVideoUrl(item.url) ? (
+            <div key={itemKey(item)} className="mb-3 animate-fade-in">
               <video
-                src={src}
+                src={item.url}
                 controls
                 playsInline
                 preload={i < 4 ? 'metadata' : 'none'}
                 className="w-full rounded-lg object-cover"
               />
-            ) : (
+            </div>
+          ) : (
+            <div key={itemKey(item)} className="mb-3 animate-fade-in">
               <img
-                src={src}
+                src={item.url}
                 alt=""
                 decoding="async"
                 loading={i < 6 ? 'eager' : 'lazy'}
@@ -112,9 +142,9 @@ export default function MasonryGallery({ images }: Props) {
                 }}
                 className="w-full rounded-lg object-cover"
               />
-            )}
-          </div>
-        ))}
+            </div>
+          ),
+        )}
       </Masonry>
 
       {hasMore ? (

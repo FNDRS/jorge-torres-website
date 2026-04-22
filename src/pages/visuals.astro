@@ -7,9 +7,9 @@ import Stage from '../components/Stage.astro';
 import PillNav from '../components/PillNav.astro';
 import MasonryGallery from '../components/MasonryGallery';
 import { site } from '../lib/site';
-import { resolveGalleryUrls } from '../lib/blob-visuals';
+import { resolveGalleryItems } from '../lib/blob-visuals';
 
-const images = await resolveGalleryUrls();
+const galleryItems = await resolveGalleryItems();
 ---
 
 <Layout title={`${site.name} - Visuals`} description={`${site.name} visuals`}>
@@ -19,7 +19,7 @@ const images = await resolveGalleryUrls();
     <Stage solid class="bg-black" scrollable>
       <PillNav active="visuals" />
       <div class="relative z-20 px-6 pb-28 pt-28 md:px-10 md:pt-32">
-        <MasonryGallery images={images} client:idle />
+        <MasonryGallery items={galleryItems} client:idle />
       </div>
     </Stage>
   </div>

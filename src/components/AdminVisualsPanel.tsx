@@ -15,6 +15,11 @@ type GalleryItem = {
   uploadedAt: string;
 };
 
+type YoutubeEntry = {
+  videoId: string;
+  addedAt: string;
+};
+
 const MAX_BYTES = 50 * 1024 * 1024;
 
 function mb(bytes: number) {
@@ -46,6 +51,10 @@ export default function AdminVisualsPanel() {
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
   const [galleryLoading, setGalleryLoading] = useState(false);
   const [deletingPathname, setDeletingPathname] = useState<string | null>(null);
+  const [youtubeEntries, setYoutubeEntries] = useState<YoutubeEntry[]>([]);
+  const [youtubeUrlInput, setYoutubeUrlInput] = useState('');
+  const [youtubeBusy, setYoutubeBusy] = useState(false);
+  const [removingYoutubeId, setRemovingYoutubeId] = useState<string | null>(null);
 
   const unlocked = sessionSecret !== null && meta !== null;
 
@@ -74,13 +83,28 @@ export default function AdminVisualsPanel() {
     }
   }, []);
 
+  const fetchYoutubeList = useCallback(async (secret: string) => {
+    const res = await fetch('/api/visuals-youtube', {
+      headers: { Authorization: `Bearer ${secret}` },
+    });
+    const data = (await res.json().catch(() => null)) as { entries?: YoutubeEntry[] } | null;
+    if (res.ok && data?.entries && Array.isArray(data.entries)) {
+      setYoutubeEntries(data.entries);
+    } else {
+      setYoutubeEntries([]);
+    }
+  }, []);
+
   useEffect(() => {
     if (!sessionSecret) {
       setGalleryItems([]);
+      setYoutubeEntries([]);
+      setYoutubeUrlInput('');
       return;
     }
     void fetchGallery(sessionSecret);
-  }, [sessionSecret, fetchGallery]);
+    void fetchYoutubeList(sessionSecret);
+  }, [sessionSecret, fetchGallery, fetchYoutubeList]);
 
   const onDrop = useCallback((accepted: File[]) => {
     setFiles((prev) => [...prev, ...accepted]);
@@ -286,12 +310,102 @@ export default function AdminVisualsPanel() {
     [runDeleteBlob],
   );
 
+  const addYoutubeLink = useCallback(async () => {
+    if (!sessionSecret) return;
+    const url = youtubeUrlInput.trim();
+    if (!url) {
+      toast.info('Pega un enlace de YouTube', { description: 'Por ejemplo watch, youtu.be o Shorts.' });
+      return;
+    }
+    setYoutubeBusy(true);
+    try {
+      await toast.promise(
+        (async () => {
+          const res = await fetch('/api/visuals-youtube', {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${sessionSecret}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ action: 'add', url }),
+          });
+          const data = (await res.json().catch(() => null)) as { error?: string; entries?: YoutubeEntry[] } | null;
+          if (!res.ok) throw new Error(data?.error ?? `Error ${res.status}`);
+          if (data?.entries) setYoutubeEntries(data.entries);
+          setYoutubeUrlInput('');
+        })(),
+        {
+          loading: 'Guardando enlace…',
+          success: 'Vídeo de YouTube añadido a la galería',
+          error: (err) => (err instanceof Error ? err.message : 'No se pudo añadir'),
+        },
+      );
+    } finally {
+      setYoutubeBusy(false);
+    }
+  }, [sessionSecret, youtubeUrlInput]);
+
+  const runRemoveYoutube = useCallback(
+    async (videoId: string) => {
+      if (!sessionSecret) return;
+      setRemovingYoutubeId(videoId);
+      try {
+        await toast.promise(
+          (async () => {
+            const res = await fetch('/api/visuals-youtube', {
+              method: 'POST',
+              headers: {
+                Authorization: `Bearer ${sessionSecret}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ action: 'remove', videoId }),
+            });
+            const data = (await res.json().catch(() => null)) as { error?: string; entries?: YoutubeEntry[] } | null;
+            if (!res.ok) throw new Error(data?.error ?? `Error ${res.status}`);
+            if (data?.entries) setYoutubeEntries(data.entries);
+          })(),
+          {
+            loading: 'Quitando vídeo…',
+            success: 'Enlace de YouTube eliminado',
+            error: (err) => (err instanceof Error ? err.message : 'No se pudo quitar'),
+          },
+        );
+      } finally {
+        setRemovingYoutubeId(null);
+      }
+    },
+    [sessionSecret],
+  );
+
+  const requestRemoveYoutube = useCallback(
+    (videoId: string) => {
+      toast('¿Quitar este vídeo de la galería?', {
+        description: `YouTube · ${videoId}`,
+        duration: 20000,
+        action: {
+          label: 'Sí, quitar',
+          onClick: (e) => {
+            e.preventDefault();
+            void runRemoveYoutube(videoId);
+          },
+        },
+        cancel: {
+          label: 'Cancelar',
+          onClick: () => {},
+        },
+      });
+    },
+    [runRemoveYoutube],
+  );
+
   const lockSession = () => {
     setSessionSecret(null);
     setMeta(null);
     setFiles([]);
     setLastUploadReport(null);
     setGalleryItems([]);
+    setYoutubeEntries([]);
+    setYoutubeUrlInput('');
     setVerifyError(null);
   };
 

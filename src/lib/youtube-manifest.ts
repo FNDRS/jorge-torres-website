@@ -1,9 +1,8 @@
 import { head, put } from '@vercel/blob';
-import { VISUAL_BLOB_PREFIX } from './blob-visuals';
 import { readServerEnv } from './server-env';
 
-/** Reserved JSON manifest in Blob (not gallery media). */
-export const YOUTUBE_MANIFEST_PATHNAME = `${VISUAL_BLOB_PREFIX}_youtube.json`;
+/** Reserved JSON manifest in Blob (must stay under `visuals/`). */
+export const YOUTUBE_MANIFEST_PATHNAME = 'visuals/_youtube.json';
 
 export type YoutubeManifestEntry = {
   videoId: string;
