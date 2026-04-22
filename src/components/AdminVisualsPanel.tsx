@@ -216,7 +216,7 @@ export default function AdminVisualsPanel() {
             type="button"
             onClick={() => void verify()}
             disabled={verifying}
-            className="mt-5 w-full rounded-full border-2 border-white bg-white py-3 text-[14px] font-semibold text-black transition hover:bg-black hover:text-white disabled:opacity-50"
+            className="mt-5 w-full rounded-full border-2 border-white bg-white py-3 text-[14px] font-semibold text-neutral-900 transition-all duration-200 ease-out hover:border-white hover:bg-zinc-100 hover:text-neutral-950 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.35),0_14px_42px_rgba(0,0,0,0.35)] active:scale-[0.99] disabled:opacity-50 disabled:hover:bg-white disabled:hover:shadow-none"
           >
             {verifying ? 'Verificando…' : 'Verificar y continuar'}
           </button>
@@ -312,7 +312,7 @@ export default function AdminVisualsPanel() {
           type="button"
           onClick={() => void upload()}
           disabled={!unlocked || !files.length || uploading}
-          className="mt-8 w-full rounded-full bg-white py-3.5 text-[14px] font-semibold text-black/90 transition hover:bg-white/95 disabled:cursor-not-allowed disabled:opacity-45"
+          className="mt-8 w-full rounded-full border border-white/25 bg-white py-3.5 text-[14px] font-semibold text-neutral-900 transition-all duration-200 ease-out hover:border-white/50 hover:bg-zinc-100 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_12px_36px_rgba(0,0,0,0.3)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-white disabled:hover:shadow-none"
         >
           {uploading ? 'Subiendo…' : 'Subir ahora'}
         </button>
