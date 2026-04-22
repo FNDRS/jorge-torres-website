@@ -1,4 +1,13 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from 'react';
 import Masonry from 'react-masonry-css';
 
 export type GalleryDisplayItem =
@@ -62,6 +71,8 @@ const INITIAL_WINDOW = 12;
 const SCROLL_CHUNK = 10;
 /** bottom-heavy margin so the next batch starts while still ~1–2 screens away */
 const RUNWAY_ROOT_MARGIN = '0px 0px 720px 0px';
+/** Image tiles: only set `img.src` after this zone intersects the viewport (no network until then). */
+const IMAGE_IO_ROOT_MARGIN = '200px 16px 560px 16px';
 
 function isVideoUrl(url: string) {
   return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(url);
@@ -76,6 +87,100 @@ function itemKey(item: GalleryDisplayItem) {
   if (item.kind === 'media') return item.url;
   if (item.kind === 'vimeo') return `vimeo:${item.videoId}`;
   return `yt:${item.videoId}`;
+}
+
+/**
+ * Masonry still: skeleton until IntersectionObserver allows load, then fade-in when decoded.
+ * No `img` / no network until the tile enters the expanded viewport band.
+ */
+function GalleryImageWithSkeleton({ item, eagerIndex }: { item: GalleryDisplayItem; eagerIndex: number }) {
+  const url = item.kind === 'media' ? item.url : '';
+  const [inView, setInView] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    setInView(false);
+    setLoaded(false);
+  }, [url]);
+
+  useEffect(() => {
+    if (!url) return;
+    const node = wrapRef.current;
+    if (!node) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      setInView(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { root: null, rootMargin: IMAGE_IO_ROOT_MARGIN, threshold: 0 },
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, [url]);
+
+  useLayoutEffect(() => {
+    if (!inView) return;
+    const el = imgRef.current;
+    if (el?.complete && el.naturalHeight > 0) setLoaded(true);
+  }, [inView, url]);
+
+  const setImgRef = (el: HTMLImageElement | null) => {
+    imgRef.current = el;
+    if (!el) return;
+    if (eagerIndex < 3) el.setAttribute('fetchpriority', 'high');
+    else el.removeAttribute('fetchpriority');
+    if (el.complete && el.naturalHeight > 0) setLoaded(true);
+  };
+
+  if (!url) {
+    return (
+      <div className="mb-3 min-w-0 animate-fade-in">
+        <div
+          className={`relative min-h-[11rem] overflow-hidden ${PHOTO_ROUNDED} bg-white/[0.04] sm:min-h-[13rem]`}
+          aria-hidden
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div ref={wrapRef} className="mb-3 min-w-0 animate-fade-in">
+      <div
+        className={`relative isolate overflow-hidden ${PHOTO_ROUNDED} bg-white/[0.04] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)] ${
+          loaded ? '' : 'min-h-[11rem] sm:min-h-[13rem]'
+        }`}
+      >
+        {!loaded ? (
+          <div className="gallery-img-skeleton-track z-0" aria-hidden>
+            <div className={`absolute inset-0 ${PHOTO_ROUNDED} bg-zinc-800/90`} />
+            <div className={`gallery-img-skeleton-shimmer ${PHOTO_ROUNDED}`} />
+          </div>
+        ) : null}
+        {inView ? (
+          <img
+            ref={setImgRef}
+            src={url}
+            alt=""
+            decoding="async"
+            loading={eagerIndex < 6 ? 'eager' : 'lazy'}
+            onLoad={() => setLoaded(true)}
+            onError={() => setLoaded(true)}
+            className={`relative z-10 block h-auto w-full max-w-full ${PHOTO_ROUNDED} transition-opacity duration-500 ease-out ${
+              loaded ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ) : null}
+      </div>
+    </div>
+  );
 }
 
 /**
@@ -525,22 +630,7 @@ export default function MasonryGallery({ items }: Props) {
                 >
                   {seg.items.map((item) => {
                     const i = indexByKey.get(itemKey(item)) ?? 0;
-                    return (
-                      <div key={itemKey(item)} className="mb-3 min-w-0 animate-fade-in">
-                        <img
-                          src={item.kind === 'media' ? item.url : ''}
-                          alt=""
-                          decoding="async"
-                          loading={i < 6 ? 'eager' : 'lazy'}
-                          ref={(el) => {
-                            if (!el) return;
-                            if (i < 3) el.setAttribute('fetchpriority', 'high');
-                            else el.removeAttribute('fetchpriority');
-                          }}
-                          className={`h-auto w-full max-w-full ${PHOTO_ROUNDED}`}
-                        />
-                      </div>
-                    );
+                    return <GalleryImageWithSkeleton key={itemKey(item)} item={item} eagerIndex={i} />;
                   })}
                 </Masonry>
               </div>
@@ -557,21 +647,9 @@ export default function MasonryGallery({ items }: Props) {
             const leftMasonryCols =
               leftImages.length <= 1 ? sidebarLeftColumns : masonryColsForCount(leftImages.length);
 
-            const renderSidebarImg = (item: GalleryDisplayItem, si: number, eagerCutoff: number) => (
-              <div key={itemKey(item)} className="mb-3 min-w-0 animate-fade-in">
-                <img
-                  src={item.kind === 'media' ? item.url : ''}
-                  alt=""
-                  decoding="async"
-                  loading={si < eagerCutoff ? 'eager' : 'lazy'}
-                  ref={(el) => {
-                    if (!el) return;
-                    if (si < 3) el.setAttribute('fetchpriority', 'high');
-                    else el.removeAttribute('fetchpriority');
-                  }}
-                  className={`h-auto w-full max-w-full ${PHOTO_ROUNDED}`}
-                />
-              </div>
+            const eagerCutoff = 6;
+            const renderSidebarImg = (item: GalleryDisplayItem, si: number) => (
+              <GalleryImageWithSkeleton key={itemKey(item)} item={item} eagerIndex={si < eagerCutoff ? si : 99} />
             );
 
             return (
@@ -589,7 +667,7 @@ export default function MasonryGallery({ items }: Props) {
                       className="masonry-grid"
                       columnClassName="masonry-column"
                     >
-                      {leftImages.map((item, si) => renderSidebarImg(item, si, 6))}
+                      {leftImages.map((item, si) => renderSidebarImg(item, si))}
                     </Masonry>
                   ) : null}
                 </div>
@@ -600,7 +678,7 @@ export default function MasonryGallery({ items }: Props) {
                       className="masonry-grid"
                       columnClassName="masonry-column"
                     >
-                      {rightImages.map((item, si) => renderSidebarImg(item, si, 6))}
+                      {rightImages.map((item, si) => renderSidebarImg(item, si))}
                     </Masonry>
                   </div>
                 ) : null}
