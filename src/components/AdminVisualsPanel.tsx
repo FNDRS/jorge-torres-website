@@ -431,8 +431,8 @@ export default function AdminVisualsPanel() {
       <div>
         <h1 className="font-display text-3xl font-semibold tracking-tight text-white">Visuals upload</h1>
         <p className="mt-3 text-[14px] leading-relaxed text-white/65">
-          Los archivos van a Vercel Blob bajo <span className="text-white/90">visuals/</span>. Verifica la clave,
-          sube con arrastrar y soltar, y gestiona la galería aquí mismo.
+          Los archivos van a Vercel Blob bajo <span className="text-white/90">visuals/</span>. También puedes enlazar
+          vídeos de YouTube (se guardan en un manifiesto en Blob). Verifica la clave y gestiona todo aquí.
         </p>
       </div>
 
@@ -700,6 +700,86 @@ export default function AdminVisualsPanel() {
               );
             })}
           </div>
+        ) : null}
+      </section>
+
+      <section
+        className={`rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm transition ${
+          unlocked ? 'opacity-100' : 'pointer-events-none opacity-35'
+        }`}
+        aria-hidden={!unlocked}
+      >
+        <h2 className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-white/50">
+          Paso 4 · YouTube (enlaces)
+        </h2>
+        <p className="mt-3 text-[13px] leading-relaxed text-white/55">
+          Pega la URL del vídeo (watch, <code className="text-white/70">youtu.be</code>, embed o Shorts). Aparecerá en{' '}
+          <span className="text-white/80">/visuals</span> mezclado con el resto por fecha de alta.
+        </p>
+
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-end">
+          <label className="min-w-0 flex-1 text-[13px] font-medium text-white/75">
+            Enlace o id de YouTube
+            <input
+              type="url"
+              inputMode="url"
+              autoComplete="off"
+              value={youtubeUrlInput}
+              disabled={!unlocked || youtubeBusy}
+              onChange={(e) => setYoutubeUrlInput(e.target.value)}
+              placeholder="https://www.youtube.com/watch?v=…"
+              className="mt-2 w-full rounded-xl border border-white/12 bg-black/40 px-4 py-3 text-[14px] text-white outline-none ring-white/20 placeholder:text-white/25 focus:ring-2 disabled:opacity-45"
+            />
+          </label>
+          <button
+            type="button"
+            onClick={() => void addYoutubeLink()}
+            disabled={!unlocked || youtubeBusy || !youtubeUrlInput.trim()}
+            className="shrink-0 rounded-full border border-white/25 bg-white px-6 py-3 text-[14px] font-semibold text-neutral-900 transition hover:border-white/50 hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-45"
+          >
+            {youtubeBusy ? 'Guardando…' : 'Añadir a la galería'}
+          </button>
+        </div>
+
+        {youtubeEntries.length > 0 ? (
+          <ul className="mt-6 space-y-2">
+            {youtubeEntries.map((row) => {
+              const busy = removingYoutubeId === row.videoId;
+              return (
+                <li
+                  key={row.videoId}
+                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/10 bg-black/35 px-3 py-2.5 text-[13px]"
+                >
+                  <div className="min-w-0">
+                    <span className="font-mono text-[12px] text-white/85">{row.videoId}</span>
+                    <span className="mt-0.5 block text-[11px] text-white/40">
+                      Añadido {new Date(row.addedAt).toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex shrink-0 gap-2">
+                    <a
+                      href={`https://www.youtube.com/watch?v=${encodeURIComponent(row.videoId)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-lg border border-white/15 px-2 py-1 text-[12px] font-medium text-white/75 hover:border-white/30 hover:text-white"
+                    >
+                      Abrir
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => requestRemoveYoutube(row.videoId)}
+                      disabled={busy || !!removingYoutubeId}
+                      className="rounded-lg border border-red-400/35 bg-red-950/30 px-2 py-1 text-[12px] font-semibold text-red-100 hover:bg-red-900/40 disabled:opacity-45"
+                    >
+                      {busy ? '…' : 'Quitar'}
+                    </button>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        ) : unlocked ? (
+          <p className="mt-5 text-[13px] text-white/40">Aún no hay enlaces de YouTube.</p>
         ) : null}
       </section>
 

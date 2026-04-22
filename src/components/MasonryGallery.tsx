@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Masonry from 'react-masonry-css';
 
 export type GalleryDisplayItem =
@@ -17,6 +17,10 @@ const breakpointColumns = {
   640: 2,
 };
 
+type ItemRun =
+  | { type: 'images'; items: GalleryDisplayItem[]; key: string }
+  | { type: 'videos'; items: GalleryDisplayItem[]; key: string };
+
 /**
  * “Runway” gallery loader: first paint stays cheap, then chunks unlock as the
  * sentinel crosses the viewport. rootMargin preloads the next chunk before the
@@ -31,8 +35,52 @@ function isVideoUrl(url: string) {
   return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(url);
 }
 
+function isGalleryVideo(item: GalleryDisplayItem): boolean {
+  if (item.kind === 'youtube') return true;
+  return isVideoUrl(item.url);
+}
+
 function itemKey(item: GalleryDisplayItem) {
   return item.kind === 'media' ? item.url : `yt:${item.videoId}`;
+}
+
+/** Consecutive items of the same “lane” (images vs fixed-aspect videos). */
+function buildRuns(slice: GalleryDisplayItem[]): ItemRun[] {
+  const runs: ItemRun[] = [];
+  let imageBuf: GalleryDisplayItem[] = [];
+  let videoBuf: GalleryDisplayItem[] = [];
+
+  const flushImages = () => {
+    if (!imageBuf.length) return;
+    runs.push({
+      type: 'images',
+      items: imageBuf,
+      key: `i-${itemKey(imageBuf[0])}-${imageBuf.length}`,
+    });
+    imageBuf = [];
+  };
+  const flushVideos = () => {
+    if (!videoBuf.length) return;
+    runs.push({
+      type: 'videos',
+      items: videoBuf,
+      key: `v-${itemKey(videoBuf[0])}-${videoBuf.length}`,
+    });
+    videoBuf = [];
+  };
+
+  for (const item of slice) {
+    if (isGalleryVideo(item)) {
+      flushImages();
+      videoBuf.push(item);
+    } else {
+      flushVideos();
+      imageBuf.push(item);
+    }
+  }
+  flushVideos();
+  flushImages();
+  return runs;
 }
 
 export default function MasonryGallery({ items }: Props) {
@@ -79,6 +127,16 @@ export default function MasonryGallery({ items }: Props) {
   const visible = items.slice(0, visibleCount);
   const hasMore = visibleCount < total;
 
+  const runs = useMemo(() => buildRuns(visible), [visible]);
+
+  const indexByKey = useMemo(() => {
+    const m = new Map<string, number>();
+    visible.forEach((it, idx) => {
+      m.set(itemKey(it), idx);
+    });
+    return m;
+  }, [visible]);
+
   if (total === 0) {
     return (
       <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-16 text-center">
@@ -99,53 +157,75 @@ export default function MasonryGallery({ items }: Props) {
 
   return (
     <>
-      <Masonry
-        breakpointCols={breakpointColumns}
-        className="masonry-grid"
-        columnClassName="masonry-column"
-      >
-        {visible.map((item, i) =>
-          item.kind === 'youtube' ? (
-            <div key={itemKey(item)} className="mb-3 animate-fade-in">
-              <div className="relative w-full overflow-hidden rounded-lg bg-black pt-[56.25%] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
-                <iframe
-                  title={`YouTube ${item.videoId}`}
-                  src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(item.videoId)}?rel=0`}
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading={i < 4 ? 'eager' : 'lazy'}
-                  className="absolute inset-0 h-full w-full border-0"
-                />
+      <div className="space-y-6">
+        {runs.map((run) => {
+          if (run.type === 'images') {
+            return (
+              <div key={run.key} className="mb-1">
+                <Masonry
+                  breakpointCols={breakpointColumns}
+                  className="masonry-grid"
+                  columnClassName="masonry-column"
+                >
+                  {run.items.map((item) => {
+                    const i = indexByKey.get(itemKey(item)) ?? 0;
+                    return (
+                      <div key={itemKey(item)} className="mb-3 animate-fade-in">
+                        <img
+                          src={item.kind === 'media' ? item.url : ''}
+                          alt=""
+                          decoding="async"
+                          loading={i < 6 ? 'eager' : 'lazy'}
+                          ref={(el) => {
+                            if (!el) return;
+                            if (i < 3) el.setAttribute('fetchpriority', 'high');
+                            else el.removeAttribute('fetchpriority');
+                          }}
+                          className="h-auto w-full rounded-lg"
+                        />
+                      </div>
+                    );
+                  })}
+                </Masonry>
               </div>
+            );
+          }
+
+          return (
+            <div key={run.key} className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+              {run.items.map((item) => {
+                const i = indexByKey.get(itemKey(item)) ?? 0;
+                return (
+                  <div key={itemKey(item)} className="animate-fade-in">
+                    {item.kind === 'youtube' ? (
+                      <div className="aspect-video w-full overflow-hidden rounded-lg bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
+                        <iframe
+                          title={`YouTube ${item.videoId}`}
+                          src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(item.videoId)}?rel=0`}
+                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          loading={i < 4 ? 'eager' : 'lazy'}
+                          className="h-full w-full border-0"
+                        />
+                      </div>
+                    ) : (
+                      <div className="aspect-video w-full overflow-hidden rounded-lg bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
+                        <video
+                          src={item.url}
+                          controls
+                          playsInline
+                          preload={i < 4 ? 'metadata' : 'none'}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
-          ) : isVideoUrl(item.url) ? (
-            <div key={itemKey(item)} className="mb-3 animate-fade-in">
-              <video
-                src={item.url}
-                controls
-                playsInline
-                preload={i < 4 ? 'metadata' : 'none'}
-                className="w-full rounded-lg object-cover"
-              />
-            </div>
-          ) : (
-            <div key={itemKey(item)} className="mb-3 animate-fade-in">
-              <img
-                src={item.url}
-                alt=""
-                decoding="async"
-                loading={i < 6 ? 'eager' : 'lazy'}
-                ref={(el) => {
-                  if (!el) return;
-                  if (i < 3) el.setAttribute('fetchpriority', 'high');
-                  else el.removeAttribute('fetchpriority');
-                }}
-                className="w-full rounded-lg object-cover"
-              />
-            </div>
-          ),
-        )}
-      </Masonry>
+          );
+        })}
+      </div>
 
       {hasMore ? (
         <div
