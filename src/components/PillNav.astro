@@ -8,12 +8,12 @@ type Props = {
 const { active } = Astro.props;
 
 const baseClass =
-  'inline-flex items-center justify-center px-5 py-2 rounded-full text-sm text-black/65 no-underline min-w-[90px] transition-all duration-300 hover:text-black/85 hover:bg-white/20';
+  'inline-flex min-h-[44px] min-w-[5.25rem] shrink-0 touch-manipulation items-center justify-center whitespace-nowrap rounded-full px-3 py-2 text-sm text-black/65 no-underline transition-all duration-300 hover:bg-white/20 hover:text-black/85 sm:min-w-[90px] sm:px-5';
 const activeClass = 'bg-white/95 text-black/85 hover:bg-white/95';
 ---
 
 <nav
-  class="fixed left-1/2 bottom-10 -translate-x-1/2 z-50 inline-flex gap-1 p-1 rounded-full bg-gray-300/80 backdrop-blur-xl"
+  class="fixed bottom-[max(1.25rem,calc(0.75rem+env(safe-area-inset-bottom,0px)))] left-1/2 z-50 inline-flex max-w-[calc(100vw-1.25rem-env(safe-area-inset-left,0px)-env(safe-area-inset-right,0px))] -translate-x-1/2 gap-1 overflow-x-auto rounded-full bg-gray-300/80 p-1 [-ms-overflow-style:none] [scrollbar-width:none] backdrop-blur-xl [&::-webkit-scrollbar]:hidden"
   aria-label="Primary"
 >
   <a

@@ -27,18 +27,20 @@ const sidebarLeftColumns = {
  */
 function masonryColsForCount(n: number) {
   const capped = Math.min(4, Math.max(1, n));
+  /* react-masonry-css: smallest numeric breakpoint where windowWidth <= key wins; `default` = widest. */
   return {
-    default: capped,
+    default: Math.min(capped, 4),
     1280: Math.min(capped, 4),
     1024: Math.min(capped, 3),
     768: Math.min(capped, 2),
     640: Math.min(capped, 2),
+    480: 1,
   };
 }
 
-/** Same radius as stills; `isolate` helps iframes respect `overflow-hidden` clipping. */
+/** Same radius as stills; `isolate` helps iframes respect `overflow-hidden` clipping. `min-w-0` avoids flex/grid overflow on narrow viewports. */
 const VIDEO_TILE =
-  'aspect-video w-full overflow-hidden rounded-xl bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)] isolate';
+  'aspect-video min-h-0 min-w-0 w-full max-w-full overflow-hidden rounded-xl bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)] isolate';
 
 const PHOTO_ROUNDED = 'rounded-xl';
 
@@ -105,7 +107,7 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
           type="button"
           onClick={() => setActive(true)}
           aria-label="Reproducir vídeo"
-          className={`group relative block h-full w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
+          className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
         >
           <img
             key={posterSrc}
@@ -127,7 +129,7 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
                 setThumbStep(2);
               }
             }}
-            className={`h-full w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
+            className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
           />
           <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
             <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
@@ -149,7 +151,7 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
         loading="lazy"
-        className={`h-full w-full border-0 ${PHOTO_ROUNDED}`}
+        className={`h-full min-h-0 w-full min-w-0 max-w-full border-0 ${PHOTO_ROUNDED}`}
       />
     </div>
   );
@@ -183,7 +185,7 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
           type="button"
           onClick={() => setActive(true)}
           aria-label="Reproducir vídeo de Vimeo"
-          className={`group relative block h-full w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
+          className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
         >
           {poster ? (
             <img
@@ -194,10 +196,10 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
               sizes="(min-width: 1024px) 50vw, 100vw"
               decoding="async"
               loading={priority ? 'eager' : 'lazy'}
-              className={`h-full w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
+              className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
             />
           ) : (
-            <div className={`h-full min-h-[12rem] w-full bg-zinc-900 ${PHOTO_ROUNDED}`} />
+            <div className={`h-full min-h-[12rem] w-full min-w-0 max-w-full bg-zinc-900 ${PHOTO_ROUNDED}`} />
           )}
           <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
             <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
@@ -219,7 +221,7 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen
         loading="lazy"
-        className={`h-full w-full border-0 ${PHOTO_ROUNDED}`}
+        className={`h-full min-h-0 w-full min-w-0 max-w-full border-0 ${PHOTO_ROUNDED}`}
       />
     </div>
   );
@@ -310,7 +312,7 @@ function VideoBlobTile({ url, priority }: { url: string; priority: boolean }) {
         controls
         playsInline
         preload={priority ? 'metadata' : 'none'}
-        className={`h-full w-full object-cover ${PHOTO_ROUNDED}`}
+        className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover ${PHOTO_ROUNDED}`}
       />
     </div>
   );
@@ -328,17 +330,19 @@ function VisualsModeSwitch({
   videoCount: number;
 }) {
   const pill =
-    'inline-flex min-w-[100px] items-center justify-center rounded-full px-5 py-2 text-sm font-medium transition-all duration-300';
-  const inactive = 'text-white/60 hover:bg-white/10 hover:text-white/85';
-  const active = 'bg-white/95 text-neutral-900 shadow-sm';
+    'inline-flex min-h-[44px] min-w-[5.5rem] shrink-0 touch-manipulation select-none items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-200 active:opacity-90 sm:min-w-[100px] sm:px-5';
+  const inactive =
+    'text-white/60 hover:bg-white/10 hover:text-white/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50';
+  const active =
+    'bg-white/95 text-neutral-900 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70';
 
   return (
     <div
-      className="mb-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between"
+      className="mb-8 flex w-full min-w-0 justify-center px-0 sm:mb-10"
       role="tablist"
       aria-label="Tipo de contenido"
     >
-      <div className="inline-flex w-full max-w-md gap-1 self-start rounded-full border border-white/10 bg-white/[0.06] p-1 backdrop-blur-sm sm:w-auto">
+      <div className="inline-flex max-w-full min-w-0 flex-nowrap gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/[0.06] p-1 [-ms-overflow-style:none] [scrollbar-width:none] backdrop-blur-sm [&::-webkit-scrollbar]:hidden">
         <button
           type="button"
           role="tab"
@@ -348,9 +352,11 @@ function VisualsModeSwitch({
           className={`${pill} ${mode === 'photos' ? active : inactive}`}
           onClick={() => onChange('photos')}
         >
-          Fotos
+          <span className="whitespace-nowrap">Fotos</span>
           {photoCount > 0 ? (
-            <span className="ml-1.5 tabular-nums text-[11px] opacity-60">({photoCount})</span>
+            <span className="ml-1 tabular-nums text-[11px] opacity-60 max-[360px]:hidden sm:ml-1.5">
+              ({photoCount})
+            </span>
           ) : null}
         </button>
         <button
@@ -362,9 +368,11 @@ function VisualsModeSwitch({
           className={`${pill} ${mode === 'videos' ? active : inactive}`}
           onClick={() => onChange('videos')}
         >
-          Vídeos
+          <span className="whitespace-nowrap">Vídeos</span>
           {videoCount > 0 ? (
-            <span className="ml-1.5 tabular-nums text-[11px] opacity-60">({videoCount})</span>
+            <span className="ml-1 tabular-nums text-[11px] opacity-60 max-[360px]:hidden sm:ml-1.5">
+              ({videoCount})
+            </span>
           ) : null}
         </button>
       </div>
@@ -440,7 +448,7 @@ export default function MasonryGallery({ items }: Props) {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-16 text-center">
+      <div className="w-full min-w-0 max-w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-14 text-center sm:px-8 sm:py-16">
         <p className="font-display text-lg font-medium text-white/90">Galería vacía</p>
         <p className="mx-auto mt-3 max-w-md text-[14px] leading-relaxed text-white/55">
           Sube fotos y vídeos a Vercel Blob o añade enlaces de YouTube / Vimeo en{' '}
@@ -463,7 +471,7 @@ export default function MasonryGallery({ items }: Props) {
         ? 'Aún no hay imágenes en la galería. Prueba la pestaña Vídeos o sube JPG/PNG/WebP desde el panel de administración.'
         : 'Aún no hay vídeos (YouTube, Vimeo o archivos de vídeo). Prueba la pestaña Fotos o añade enlaces en el panel de administración.';
     return (
-      <>
+      <div className="w-full min-w-0 max-w-full overflow-x-clip overscroll-y-contain">
         <VisualsModeSwitch
           mode={mode}
           onChange={setMode}
@@ -474,7 +482,7 @@ export default function MasonryGallery({ items }: Props) {
           id="visuals-panel"
           role="tabpanel"
           aria-labelledby={mode === 'photos' ? 'visuals-tab-photos' : 'visuals-tab-videos'}
-          className="rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-14 text-center"
+          className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-12 text-center sm:px-8 sm:py-14"
         >
           <p className="font-display text-lg font-medium text-white/90">
             {mode === 'photos' ? 'Sin fotos por ahora' : 'Sin vídeos por ahora'}
@@ -486,14 +494,14 @@ export default function MasonryGallery({ items }: Props) {
             </p>
           ) : null}
         </div>
-      </>
+      </div>
     );
   }
 
-  const videoGridClass = 'grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5';
+  const videoGridClass = 'grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5';
 
   return (
-    <>
+    <div className="w-full min-w-0 max-w-full overflow-x-clip overscroll-y-contain">
       <VisualsModeSwitch
         mode={mode}
         onChange={setMode}
@@ -504,12 +512,12 @@ export default function MasonryGallery({ items }: Props) {
         id="visuals-panel"
         role="tabpanel"
         aria-labelledby={mode === 'photos' ? 'visuals-tab-photos' : 'visuals-tab-videos'}
-        className="space-y-6"
+        className="space-y-5 sm:space-y-6"
       >
         {segments.map((seg) => {
           if (seg.type === 'images') {
             return (
-              <div key={seg.key} className="mb-1">
+              <div key={seg.key} className="mb-1 min-w-0">
                 <Masonry
                   breakpointCols={masonryColsForCount(seg.items.length)}
                   className="masonry-grid"
@@ -518,7 +526,7 @@ export default function MasonryGallery({ items }: Props) {
                   {seg.items.map((item) => {
                     const i = indexByKey.get(itemKey(item)) ?? 0;
                     return (
-                      <div key={itemKey(item)} className="mb-3 animate-fade-in">
+                      <div key={itemKey(item)} className="mb-3 min-w-0 animate-fade-in">
                         <img
                           src={item.kind === 'media' ? item.url : ''}
                           alt=""
@@ -529,7 +537,7 @@ export default function MasonryGallery({ items }: Props) {
                             if (i < 3) el.setAttribute('fetchpriority', 'high');
                             else el.removeAttribute('fetchpriority');
                           }}
-                          className={`h-auto w-full ${PHOTO_ROUNDED}`}
+                          className={`h-auto w-full max-w-full ${PHOTO_ROUNDED}`}
                         />
                       </div>
                     );
@@ -550,7 +558,7 @@ export default function MasonryGallery({ items }: Props) {
               leftImages.length <= 1 ? sidebarLeftColumns : masonryColsForCount(leftImages.length);
 
             const renderSidebarImg = (item: GalleryDisplayItem, si: number, eagerCutoff: number) => (
-              <div key={itemKey(item)} className="mb-3 animate-fade-in">
+              <div key={itemKey(item)} className="mb-3 min-w-0 animate-fade-in">
                 <img
                   src={item.kind === 'media' ? item.url : ''}
                   alt=""
@@ -561,13 +569,16 @@ export default function MasonryGallery({ items }: Props) {
                     if (si < 3) el.setAttribute('fetchpriority', 'high');
                     else el.removeAttribute('fetchpriority');
                   }}
-                  className={`h-auto w-full ${PHOTO_ROUNDED}`}
+                  className={`h-auto w-full max-w-full ${PHOTO_ROUNDED}`}
                 />
               </div>
             );
 
             return (
-              <div key={seg.key} className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-4">
+              <div
+                key={seg.key}
+                className="flex min-w-0 w-full flex-col gap-4 lg:flex-row lg:items-start lg:gap-4"
+              >
                 <div
                   className={`flex min-w-0 flex-col gap-3 ${hasRight ? 'w-full shrink-0 lg:w-1/2 lg:max-w-[50%]' : 'w-full'}`}
                 >
@@ -602,12 +613,18 @@ export default function MasonryGallery({ items }: Props) {
           return (
             <div
               key={seg.key}
-              className={isVideosTab ? videoGridClass : lone ? 'grid grid-cols-1' : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4'}
+              className={
+                isVideosTab
+                  ? videoGridClass
+                  : lone
+                    ? 'grid min-w-0 grid-cols-1'
+                    : 'grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4'
+              }
             >
               {seg.items.map((item) => {
                 const i = indexByKey.get(itemKey(item)) ?? 0;
                 return (
-                  <div key={itemKey(item)} className="animate-fade-in">
+                  <div key={itemKey(item)} className="min-w-0 animate-fade-in">
                     <StreamVideoTile item={item} priority={i < 4} />
                   </div>
                 );
@@ -624,6 +641,6 @@ export default function MasonryGallery({ items }: Props) {
           aria-hidden
         />
       ) : null}
-    </>
+    </div>
   );
 }

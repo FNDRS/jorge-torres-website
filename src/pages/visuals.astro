@@ -18,7 +18,9 @@ const galleryItems = await resolveGalleryItems();
 
     <Stage solid class="bg-black" scrollable>
       <PillNav active="visuals" />
-      <div class="relative z-20 px-6 pb-28 pt-28 md:px-10 md:pt-32">
+      <div
+        class="relative z-20 w-full min-w-0 max-w-full overflow-x-clip pl-[max(1.5rem,env(safe-area-inset-left,0px))] pr-[max(1.5rem,env(safe-area-inset-right,0px))] pb-[calc(7rem+env(safe-area-inset-bottom,0px))] pt-[max(7rem,calc(5.25rem+env(safe-area-inset-top,0px)))] md:pl-[max(2.5rem,env(safe-area-inset-left,0px))] md:pr-[max(2.5rem,env(safe-area-inset-right,0px))] md:pt-32"
+      >
         <MasonryGallery items={galleryItems} client:idle />
       </div>
     </Stage>
