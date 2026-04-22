@@ -1,5 +1,6 @@
 import { list } from '@vercel/blob';
 import { readServerEnv } from './server-env';
+import { readYoutubeManifest } from './youtube-manifest';
 
 /** All uploads from the admin/API must use this prefix inside the Blob store. */
 export const VISUAL_BLOB_PREFIX = 'visuals/';
@@ -115,10 +116,41 @@ export async function listGalleryBlobItems(): Promise<GalleryBlobListItem[]> {
   return collected;
 }
 
-/** Gallery URLs only from Vercel Blob (`visuals/`). Empty if not configured or no media. */
+export type PublicGalleryItem =
+  | { kind: 'media'; url: string }
+  | { kind: 'youtube'; videoId: string };
+
+/** Blob media + YouTube embeds from manifest, newest first (by upload / added time). */
+export async function resolveGalleryItems(): Promise<PublicGalleryItem[]> {
+  try {
+    const [blobItems, ytEntries] = await Promise.all([listGalleryBlobItems(), readYoutubeManifest()]);
+
+    const merged: Array<PublicGalleryItem & { t: number }> = [
+      ...blobItems.map((b) => ({
+        kind: 'media' as const,
+        url: b.url,
+        t: new Date(b.uploadedAt).getTime(),
+      })),
+      ...ytEntries.map((e) => ({
+        kind: 'youtube' as const,
+        videoId: e.videoId,
+        t: new Date(e.addedAt).getTime(),
+      })),
+    ];
+    merged.sort((a, b) => b.t - a.t);
+    return merged.map(({ kind, url, videoId }) =>
+      kind === 'media' ? { kind, url: url! } : { kind, videoId: videoId! },
+    );
+  } catch {
+    return [];
+  }
+}
+
+/** Media URLs only (Blob), same order as `resolveGalleryItems` but without YouTube slots. */
 export async function resolveGalleryUrls(): Promise<string[]> {
   try {
-    return await loadGalleryUrlsFromBlob();
+    const items = await resolveGalleryItems();
+    return items.filter((i): i is { kind: 'media'; url: string } => i.kind === 'media').map((i) => i.url);
   } catch {
     return [];
   }
