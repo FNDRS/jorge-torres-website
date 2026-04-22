@@ -1,10 +1,21 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useDropzone, type FileRejection } from 'react-dropzone';
+import { toast, Toaster } from 'sonner';
 
 type AdminMeta = {
   usedBytes: number;
   mediaFileCount: number;
   quotaMB: number;
 };
+
+type GalleryItem = {
+  url: string;
+  pathname: string;
+  size: number;
+  uploadedAt: string;
+};
+
+const MAX_BYTES = 50 * 1024 * 1024;
 
 function mb(bytes: number) {
   return bytes / (1024 * 1024);
@@ -14,6 +25,15 @@ function fmtMb(bytes: number, digits = 2) {
   return mb(bytes).toFixed(digits);
 }
 
+function basename(pathname: string) {
+  const i = pathname.lastIndexOf('/');
+  return i >= 0 ? pathname.slice(i + 1) : pathname;
+}
+
+function isVideoPath(pathname: string) {
+  return /\.(mp4|webm|mov|m4v)$/i.test(pathname);
+}
+
 export default function AdminVisualsPanel() {
   const [secretInput, setSecretInput] = useState('');
   const [sessionSecret, setSessionSecret] = useState<string | null>(null);
@@ -21,16 +41,11 @@ export default function AdminVisualsPanel() {
   const [verifyError, setVerifyError] = useState<string | null>(null);
   const [verifying, setVerifying] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
-  const [logLines, setLogLines] = useState<string[]>([]);
   const [uploading, setUploading] = useState(false);
-  const [toast, setToast] = useState<{ count: number; bytes: number } | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (!toast) return;
-    const t = window.setTimeout(() => setToast(null), 5500);
-    return () => window.clearTimeout(t);
-  }, [toast]);
+  const [lastUploadReport, setLastUploadReport] = useState<{ ok: number; errors: string[] } | null>(null);
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
+  const [galleryLoading, setGalleryLoading] = useState(false);
+  const [deletingPathname, setDeletingPathname] = useState<string | null>(null);
 
   const unlocked = sessionSecret !== null && meta !== null;
 
@@ -42,9 +57,54 @@ export default function AdminVisualsPanel() {
     meta && quotaBytes > 0 ? Math.min(100, ((meta.usedBytes + pendingBytes) / quotaBytes) * 100) : 0;
   const overQuota = meta ? meta.usedBytes + pendingBytes > quotaBytes : false;
 
-  const pushLog = useCallback((line: string) => {
-    setLogLines((prev) => [...prev, line]);
+  const fetchGallery = useCallback(async (secret: string) => {
+    setGalleryLoading(true);
+    try {
+      const res = await fetch('/api/visuals-adminlist', {
+        headers: { Authorization: `Bearer ${secret}` },
+      });
+      const data = (await res.json().catch(() => null)) as { items?: GalleryItem[]; error?: string } | null;
+      if (res.ok && data?.items && Array.isArray(data.items)) {
+        setGalleryItems(data.items);
+      } else {
+        setGalleryItems([]);
+      }
+    } finally {
+      setGalleryLoading(false);
+    }
   }, []);
+
+  useEffect(() => {
+    if (!sessionSecret) {
+      setGalleryItems([]);
+      return;
+    }
+    void fetchGallery(sessionSecret);
+  }, [sessionSecret, fetchGallery]);
+
+  const onDrop = useCallback((accepted: File[]) => {
+    setFiles((prev) => [...prev, ...accepted]);
+  }, []);
+
+  const onDropRejected = useCallback((rejections: FileRejection[]) => {
+    const first = rejections[0];
+    if (!first) return;
+    const code = first.errors[0]?.code;
+    const msg =
+      code === 'file-too-large'
+        ? 'Algún archivo supera el límite de 50 MB.'
+        : 'Algunos archivos no son imágenes o vídeos válidos.';
+    toast.warning('No se añadieron archivos', { description: msg });
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    onDropRejected,
+    accept: { 'image/*': [], 'video/*': [] },
+    maxSize: MAX_BYTES,
+    disabled: !unlocked,
+    multiple: true,
+  });
 
   const verify = useCallback(async () => {
     const s = secretInput.trim();
@@ -78,7 +138,8 @@ export default function AdminVisualsPanel() {
         mediaFileCount: data.mediaFileCount ?? 0,
         quotaMB: data.quotaMB ?? 500,
       });
-      setLogLines([]);
+      setLastUploadReport(null);
+      setFiles([]);
     } catch (e) {
       setVerifyError(e instanceof Error ? e.message : 'No se pudo verificar');
     } finally {
@@ -100,24 +161,19 @@ export default function AdminVisualsPanel() {
     }
   }, []);
 
-  const onFilesChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const list = e.target.files;
-    setFiles(list?.length ? Array.from(list) : []);
-  };
-
   const upload = useCallback(async () => {
     if (!sessionSecret || !files.length) return;
     const batch = [...files];
     let okCount = 0;
     let okBytes = 0;
+    const errors: string[] = [];
 
     setUploading(true);
-    setLogLines([]);
+    setLastUploadReport(null);
     try {
       for (const file of batch) {
         const fd = new FormData();
         fd.append('file', file);
-        pushLog(`Subiendo ${file.name} (${fmtMb(file.size, 1)} MB)…`);
         try {
           const res = await fetch('/api/visuals-upload', {
             method: 'POST',
@@ -129,50 +185,140 @@ export default function AdminVisualsPanel() {
           try {
             data = JSON.parse(raw) as { url?: string; error?: string; hint?: string };
           } catch {
-            pushLog(`Error ${res.status}: respuesta no JSON`);
+            errors.push(`${file.name}: respuesta no válida (${res.status})`);
             continue;
           }
           if (!res.ok) {
-            pushLog(`Error ${res.status}: ${data.error ?? res.statusText}`);
-            if (data.hint) pushLog(data.hint);
+            const detail = data.hint ? `${data.error ?? res.statusText} — ${data.hint}` : (data.error ?? res.statusText);
+            errors.push(`${file.name}: ${detail}`);
             continue;
           }
           okCount += 1;
           okBytes += file.size;
-          pushLog(`Listo → ${data.url ?? 'sin URL'}`);
         } catch (err) {
-          pushLog(err instanceof Error ? err.message : 'Fallo de red');
+          errors.push(`${file.name}: ${err instanceof Error ? err.message : 'fallo de red'}`);
         }
       }
-      pushLog('Fin. Recarga /visuals para ver la galería desde Blob.');
+
       await refreshMeta(sessionSecret);
+      await fetchGallery(sessionSecret);
 
       setFiles([]);
-      if (fileInputRef.current) fileInputRef.current.value = '';
+      setLastUploadReport({ ok: okCount, errors });
 
       if (okCount > 0) {
-        setToast({ count: okCount, bytes: okBytes });
+        toast.success('Subida completada', {
+          description: `${okCount} ${okCount === 1 ? 'archivo' : 'archivos'} · ${fmtMb(okBytes, 2)} MB`,
+        });
+      }
+      if (errors.length > 0) {
+        if (okCount === 0) {
+          toast.error('No se subió ningún archivo', {
+            description: errors.slice(0, 3).join(' · '),
+            duration: 10000,
+          });
+        } else {
+          toast.warning('Algunos archivos fallaron', {
+            description: `${errors.length} error(es). Revisa el resumen abajo.`,
+            duration: 8000,
+          });
+        }
       }
     } finally {
       setUploading(false);
     }
-  }, [files, pushLog, refreshMeta, sessionSecret]);
+  }, [files, fetchGallery, refreshMeta, sessionSecret]);
+
+  const runDeleteBlob = useCallback(
+    async (pathname: string) => {
+      if (!sessionSecret) return;
+      setDeletingPathname(pathname);
+      try {
+        await toast.promise(
+          (async () => {
+            const res = await fetch('/api/visuals-delete', {
+              method: 'POST',
+              headers: {
+                Authorization: `Bearer ${sessionSecret}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ pathname }),
+            });
+            const data = (await res.json().catch(() => null)) as { error?: string } | null;
+            if (!res.ok) {
+              throw new Error(data?.error ?? `Error ${res.status}`);
+            }
+            await refreshMeta(sessionSecret);
+            await fetchGallery(sessionSecret);
+          })(),
+          {
+            loading: 'Eliminando…',
+            success: 'Archivo eliminado del almacenamiento',
+            error: (err) => (err instanceof Error ? err.message : 'No se pudo eliminar'),
+          },
+        );
+      } finally {
+        setDeletingPathname(null);
+      }
+    },
+    [fetchGallery, refreshMeta, sessionSecret],
+  );
+
+  const requestDeleteBlob = useCallback(
+    (pathname: string) => {
+      const name = basename(pathname);
+      toast(`¿Eliminar “${name}”?`, {
+        description: 'Se borrará de Vercel Blob. Esta acción no se puede deshacer.',
+        duration: 20000,
+        action: {
+          label: 'Sí, eliminar',
+          onClick: (e) => {
+            e.preventDefault();
+            void runDeleteBlob(pathname);
+          },
+        },
+        cancel: {
+          label: 'Cancelar',
+          onClick: () => {},
+        },
+      });
+    },
+    [runDeleteBlob],
+  );
 
   const lockSession = () => {
     setSessionSecret(null);
     setMeta(null);
     setFiles([]);
-    setLogLines([]);
+    setLastUploadReport(null);
+    setGalleryItems([]);
     setVerifyError(null);
   };
 
   return (
-    <div className="mx-auto max-w-xl space-y-6">
+    <>
+      <Toaster
+        theme="dark"
+        richColors
+        closeButton
+        position="bottom-center"
+        offset="5.5rem"
+        toastOptions={{
+          duration: 5000,
+          classNames: {
+            toast: '!bg-zinc-900 !border-white/15 !text-white',
+            description: '!text-white/70',
+            cancelButton: '!bg-white/10 !text-white !border-white/20',
+            actionButton: '!bg-red-600 !text-white !border-red-500',
+          },
+        }}
+      />
+      <div className="mx-auto w-full max-w-xl space-y-6">
       <div>
         <h1 className="font-display text-3xl font-semibold tracking-tight text-white">Visuals upload</h1>
         <p className="mt-3 text-[14px] leading-relaxed text-white/65">
-          Los archivos van a Vercel Blob bajo <span className="text-white/90">visuals/</span>. Primero verifica la
-          clave; después podrás elegir archivos y ver cuánto espacio llevas.
+          Los archivos van a Vercel Blob bajo <span className="text-white/90">visuals/</span>. Verifica la clave,
+          sube con arrastrar y soltar, y gestiona la galería aquí mismo.
         </p>
       </div>
 
@@ -223,7 +369,7 @@ export default function AdminVisualsPanel() {
         ) : (
           <p className="mt-4 flex items-center gap-2 text-[13px] font-medium text-white/75">
             <span className="inline-flex h-2 w-2 rounded-full bg-white" />
-            Sesión verificada · puedes subir archivos
+            Sesión verificada · puedes subir y borrar archivos
           </p>
         )}
       </section>
@@ -235,7 +381,7 @@ export default function AdminVisualsPanel() {
         aria-hidden={!unlocked}
       >
         <h2 className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-white/50">
-          Paso 2 · Almacenamiento
+          Paso 2 · Almacenamiento y subida
         </h2>
 
         {meta ? (
@@ -271,14 +417,13 @@ export default function AdminVisualsPanel() {
             </div>
 
             <p className="text-[12px] leading-relaxed text-white/45">
-              El tope es <code className="text-white/60">VISUALS_QUOTA_MB</code> (por defecto 500 MB) solo para esta
-              barra; ajústalo a tu plan en Vercel. El uso real se calcula sumando tus blobs en{' '}
-              <code className="text-white/60">visuals/</code>.
+              Tope <code className="text-white/60">VISUALS_QUOTA_MB</code> (por defecto 500 MB) solo para la barra. Uso
+              real: blobs bajo <code className="text-white/60">visuals/</code>.
             </p>
 
             {pendingBytes > 0 ? (
               <p className={`text-[13px] font-medium ${overQuota ? 'text-white/90' : 'text-white/80'}`}>
-                Esta selección: <span className="text-white">{fmtMb(pendingBytes)} MB</span>
+                Cola actual: <span className="text-white">{fmtMb(pendingBytes)} MB</span>
                 {overQuota ? (
                   <span className="block pt-1 text-white/55">
                     Supera el tope mostrado; en Vercel puede fallar si excedes el plan real.
@@ -291,50 +436,160 @@ export default function AdminVisualsPanel() {
           <p className="mt-4 text-[13px] text-white/40">Verifica la clave para ver el uso.</p>
         )}
 
-        <label className={`mt-8 block text-[13px] font-medium text-white/75 ${!unlocked ? 'cursor-not-allowed' : ''}`}>
-          Imágenes o videos
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*,video/*"
-            multiple
-            disabled={!unlocked}
-            onChange={onFilesChange}
-            className="mt-2 block w-full cursor-pointer text-[14px] text-white/80 file:mr-4 file:cursor-pointer file:rounded-xl file:border-0 file:bg-white file:px-4 file:py-2.5 file:text-[13px] file:font-semibold file:text-black file:hover:bg-white/90 disabled:opacity-40"
-          />
-        </label>
+        <div className="mt-8">
+          <p className="text-[13px] font-medium text-white/75">Imágenes o vídeos</p>
+          <div
+            {...getRootProps()}
+            className={`mt-2 flex min-h-[140px] cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-4 py-8 text-center transition ${
+              !unlocked
+                ? 'cursor-not-allowed border-white/10 bg-black/20 opacity-50'
+                : isDragActive
+                  ? 'border-white/50 bg-white/[0.08]'
+                  : 'border-white/20 bg-black/25 hover:border-white/35 hover:bg-white/[0.05]'
+            }`}
+          >
+            <input {...getInputProps()} />
+            <span className="text-[14px] font-medium text-white/85">
+              {isDragActive ? 'Suelta para añadir…' : 'Arrastra archivos aquí o haz clic para elegir'}
+            </span>
+            <span className="max-w-sm text-[12px] text-white/45">
+              Imágenes y vídeos · varios a la vez · máximo 50 MB por archivo
+            </span>
+          </div>
+        </div>
 
         {files.length > 0 ? (
-          <p className="mt-2 text-[12px] text-white/45">{files.length} archivo(s) listos.</p>
+          <ul className="mt-4 space-y-2">
+            {files.map((file) => (
+              <li
+                key={`${file.name}-${file.size}-${file.lastModified}`}
+                className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/35 px-3 py-2.5 text-[13px]"
+              >
+                <span className="min-w-0 flex-1 truncate text-white/85">{file.name}</span>
+                <span className="shrink-0 text-white/45">{fmtMb(file.size, 1)} MB</span>
+                <button
+                  type="button"
+                  onClick={() => setFiles((f) => f.filter((x) => x !== file))}
+                  disabled={uploading}
+                  className="shrink-0 rounded-lg border border-white/15 px-2 py-1 text-[12px] font-medium text-white/70 transition hover:border-white/30 hover:text-white disabled:opacity-40"
+                >
+                  Quitar
+                </button>
+              </li>
+            ))}
+          </ul>
         ) : null}
 
         <button
           type="button"
           onClick={() => void upload()}
           disabled={!unlocked || !files.length || uploading}
-          className="mt-8 w-full rounded-full border border-white/25 bg-white py-3.5 text-[14px] font-semibold text-neutral-900 transition-all duration-200 ease-out hover:border-white/50 hover:bg-zinc-100 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_12px_36px_rgba(0,0,0,0.3)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-white disabled:hover:shadow-none"
+          className="mt-6 w-full rounded-full border border-white/25 bg-white py-3.5 text-[14px] font-semibold text-neutral-900 transition-all duration-200 ease-out hover:border-white/50 hover:bg-zinc-100 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_12px_36px_rgba(0,0,0,0.3)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-white disabled:hover:shadow-none"
         >
           {uploading ? 'Subiendo…' : 'Subir ahora'}
         </button>
+
+        {uploading ? (
+          <p className="mt-3 text-center text-[13px] text-white/55">No cierres la pestaña hasta que termine.</p>
+        ) : null}
+
+        {lastUploadReport ? (
+          <div className="mt-4 rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-[13px] text-white/75">
+            {lastUploadReport.ok > 0 ? (
+              <p className="font-medium text-white/90">
+                Correctos: {lastUploadReport.ok}{' '}
+                {lastUploadReport.ok === 1 ? 'archivo' : 'archivos'}
+              </p>
+            ) : (
+              <p className="font-medium text-white/90">Ningún archivo se subió correctamente.</p>
+            )}
+            {lastUploadReport.errors.length > 0 ? (
+              <ul className="mt-2 max-h-40 list-disc space-y-1 overflow-y-auto pl-4 text-[12px] text-red-200/90">
+                {lastUploadReport.errors.map((line, idx) => (
+                  <li key={`${idx}:${line}`}>{line}</li>
+                ))}
+              </ul>
+            ) : null}
+            <p className="mt-2 text-[12px] text-white/45">La galería pública se actualiza al recargar /visuals.</p>
+          </div>
+        ) : null}
       </section>
 
-      {logLines.length > 0 ? (
-        <pre className="max-h-64 overflow-auto rounded-2xl border border-white/10 bg-black/50 p-4 font-mono text-[12px] leading-relaxed text-white/80">
-          {logLines.join('\n')}
-        </pre>
-      ) : null}
-
-      {toast ? (
-        <div
-          role="status"
-          className="fixed bottom-24 left-1/2 z-[60] w-[min(92vw,22rem)] -translate-x-1/2 rounded-2xl border-2 border-white bg-black px-5 py-4 text-center shadow-[0_12px_40px_rgba(0,0,0,0.65)] animate-fade-in"
-        >
-          <p className="font-display text-[15px] font-semibold text-white">Subida completada</p>
-          <p className="mt-1.5 text-[13px] leading-snug text-white/80">
-            {toast.count} {toast.count === 1 ? 'archivo' : 'archivos'} · {fmtMb(toast.bytes, 2)} MB
-          </p>
+      <section
+        className={`rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm transition ${
+          unlocked ? 'opacity-100' : 'pointer-events-none opacity-35'
+        }`}
+        aria-hidden={!unlocked}
+      >
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-white/50">
+            Paso 3 · Archivos en Blob
+          </h2>
+          {unlocked && sessionSecret ? (
+            <button
+              type="button"
+              onClick={() => void fetchGallery(sessionSecret)}
+              disabled={galleryLoading}
+              className="rounded-full border border-white/20 px-3 py-1.5 text-[12px] font-medium text-white/75 transition hover:border-white/35 hover:text-white disabled:opacity-40"
+            >
+              {galleryLoading ? 'Actualizando…' : 'Actualizar lista'}
+            </button>
+          ) : null}
         </div>
-      ) : null}
-    </div>
+
+        {galleryLoading && galleryItems.length === 0 ? (
+          <p className="mt-6 text-[13px] text-white/50">Cargando miniaturas…</p>
+        ) : null}
+
+        {!galleryLoading && galleryItems.length === 0 && unlocked ? (
+          <p className="mt-6 text-[13px] text-white/45">Aún no hay archivos en la galería de Blob.</p>
+        ) : null}
+
+        {galleryItems.length > 0 ? (
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {galleryItems.map((item) => {
+              const vid = isVideoPath(item.pathname);
+              const busy = deletingPathname === item.pathname;
+              return (
+                <div
+                  key={item.pathname}
+                  className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/50 shadow-inner"
+                >
+                  <div className="aspect-square bg-black/40">
+                    {vid ? (
+                      <video
+                        src={item.url}
+                        className="h-full w-full object-cover"
+                        muted
+                        playsInline
+                        preload="metadata"
+                      />
+                    ) : (
+                      <img src={item.url} alt="" className="h-full w-full object-cover" loading="lazy" />
+                    )}
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent px-2 pb-2 pt-10">
+                    <p className="truncate text-[10px] font-medium text-white/70" title={item.pathname}>
+                      {basename(item.pathname)}
+                    </p>
+                    <p className="text-[10px] text-white/40">{fmtMb(item.size, 1)} MB</p>
+                    <button
+                      type="button"
+                      onClick={() => requestDeleteBlob(item.pathname)}
+                      disabled={busy || !!deletingPathname}
+                      className="mt-1.5 w-full rounded-lg border border-red-400/35 bg-red-950/40 py-1.5 text-[11px] font-semibold text-red-100 transition hover:border-red-300/50 hover:bg-red-900/50 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      {busy ? 'Eliminando…' : 'Eliminar'}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : null}
+      </section>
+
+      </div>
+    </>
   );
 }

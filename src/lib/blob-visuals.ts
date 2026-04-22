@@ -73,6 +73,48 @@ export async function loadGalleryUrlsFromBlob(): Promise<string[]> {
   return collected.map((c) => c.url);
 }
 
+export type GalleryBlobListItem = {
+  url: string;
+  pathname: string;
+  size: number;
+  uploadedAt: string;
+};
+
+/** Full metadata for admin (newest first). Empty if not configured. */
+export async function listGalleryBlobItems(): Promise<GalleryBlobListItem[]> {
+  const token = readServerEnv('BLOB_READ_WRITE_TOKEN');
+  if (!token) return [];
+
+  const collected: GalleryBlobListItem[] = [];
+  let cursor: string | undefined;
+
+  for (;;) {
+    const { blobs, hasMore, cursor: nextCursor } = await list({
+      prefix: VISUAL_BLOB_PREFIX,
+      limit: 1000,
+      token,
+      ...(cursor ? { cursor } : {}),
+    });
+
+    for (const b of blobs) {
+      if (!isGalleryMediaPathname(b.pathname)) continue;
+      collected.push({
+        url: b.url,
+        pathname: b.pathname,
+        size: b.size,
+        uploadedAt: b.uploadedAt.toISOString(),
+      });
+    }
+
+    if (!hasMore) break;
+    cursor = nextCursor;
+    if (!cursor) break;
+  }
+
+  collected.sort((a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime());
+  return collected;
+}
+
 /** Gallery URLs only from Vercel Blob (`visuals/`). Empty if not configured or no media. */
 export async function resolveGalleryUrls(): Promise<string[]> {
   try {
