@@ -7,12 +7,52 @@ import Stage from '../components/Stage.astro';
 import PillNav from '../components/PillNav.astro';
 import MasonryGallery from '../components/MasonryGallery';
 import { site } from '../lib/site';
+import type { PublicGalleryItem } from '../lib/blob-visuals';
 import { resolveGalleryItems } from '../lib/blob-visuals';
+import { VISUAL_GALLERY_IMAGE_SIZES_ATTR } from '../lib/visuals-photo-sizes';
 
 const galleryItems = await resolveGalleryItems();
+
+function isBlobVideoUrl(pathOrUrl: string) {
+  return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(pathOrUrl);
+}
+
+type LcpPreload =
+  | { kind: 'responsive'; href: string; imagesrcset: string }
+  | { kind: 'single'; href: string };
+
+let lcpPreload: LcpPreload | null = null;
+const firstStill = galleryItems.find(
+  (i): i is Extract<PublicGalleryItem, { kind: 'media' }> =>
+    i.kind === 'media' && !isBlobVideoUrl(i.url),
+);
+if (firstStill?.image?.variants?.length) {
+  const vs = firstStill.image.variants;
+  const href = (vs.find((v) => v.w >= 960) ?? vs[vs.length - 1]!).avif;
+  const imagesrcset = vs.map((v) => `${v.avif} ${v.w}w`).join(', ');
+  lcpPreload = { kind: 'responsive', href, imagesrcset };
+} else if (firstStill) {
+  lcpPreload = { kind: 'single', href: firstStill.url };
+}
 ---
 
 <Layout title={`${site.name} - Visuals`} description={`${site.name} visuals`}>
+  {
+    lcpPreload?.kind === 'responsive' ? (
+      <link
+        slot="head"
+        rel="preload"
+        as="image"
+        type="image/avif"
+        href={lcpPreload.href}
+        imagesrcset={lcpPreload.imagesrcset}
+        imagesizes={VISUAL_GALLERY_IMAGE_SIZES_ATTR}
+        fetchpriority="high"
+      />
+    ) : lcpPreload?.kind === 'single' ? (
+      <link slot="head" rel="preload" as="image" href={lcpPreload.href} fetchpriority="high" />
+    ) : null
+  }
   <div class="min-h-svh">
     <Chrome />
 

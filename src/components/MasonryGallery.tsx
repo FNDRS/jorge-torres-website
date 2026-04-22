@@ -9,11 +9,10 @@ import {
   type SetStateAction,
 } from 'react';
 import Masonry from 'react-masonry-css';
+import type { PublicGalleryItem } from '../lib/blob-visuals';
+import { VISUAL_GALLERY_IMAGE_SIZES_ATTR } from '../lib/visuals-photo-sizes';
 
-export type GalleryDisplayItem =
-  | { kind: 'media'; url: string }
-  | { kind: 'youtube'; videoId: string }
-  | { kind: 'vimeo'; videoId: string };
+export type GalleryDisplayItem = PublicGalleryItem;
 
 type Props = {
   items: GalleryDisplayItem[];
@@ -67,7 +66,7 @@ type DisplaySegment =
  * sentinel crosses the viewport. rootMargin preloads the next chunk before the
  * user hits the bottom so scroll feels continuous.
  */
-const INITIAL_WINDOW = 12;
+const INITIAL_WINDOW = 8;
 const SCROLL_CHUNK = 10;
 /** bottom-heavy margin so the next batch starts while still ~1–2 screens away */
 const RUNWAY_ROOT_MARGIN = '0px 0px 720px 0px';
@@ -84,7 +83,10 @@ function isGalleryVideo(item: GalleryDisplayItem): boolean {
 }
 
 function itemKey(item: GalleryDisplayItem) {
-  if (item.kind === 'media') return item.url;
+  if (item.kind === 'media') {
+    if (item.packId) return `pack:${item.packId}`;
+    return item.url;
+  }
   if (item.kind === 'vimeo') return `vimeo:${item.videoId}`;
   return `yt:${item.videoId}`;
 }
@@ -95,15 +97,29 @@ function itemKey(item: GalleryDisplayItem) {
  */
 function GalleryImageWithSkeleton({ item, eagerIndex }: { item: GalleryDisplayItem; eagerIndex: number }) {
   const url = item.kind === 'media' ? item.url : '';
+  const image = item.kind === 'media' ? item.image : undefined;
+  const stableKey = item.kind === 'media' ? (item.packId ?? item.url) : '';
   const [inView, setInView] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
+  const avifSrcSet = useMemo(
+    () => (image?.variants.map((v) => `${v.avif} ${v.w}w`).join(', ') ?? ''),
+    [image],
+  );
+  const webpSrcSet = useMemo(
+    () => (image?.variants.map((v) => `${v.webp} ${v.w}w`).join(', ') ?? ''),
+    [image],
+  );
+  const fallbackWebp = image?.variants[image.variants.length - 1]?.webp ?? url;
+  const intrinsicW = image?.width;
+  const intrinsicH = image?.height;
+
   useEffect(() => {
     setInView(false);
     setLoaded(false);
-  }, [url]);
+  }, [stableKey]);
 
   useEffect(() => {
     if (!url) return;
@@ -124,13 +140,13 @@ function GalleryImageWithSkeleton({ item, eagerIndex }: { item: GalleryDisplayIt
     );
     io.observe(node);
     return () => io.disconnect();
-  }, [url]);
+  }, [stableKey, url]);
 
   useLayoutEffect(() => {
     if (!inView) return;
     const el = imgRef.current;
     if (el?.complete && el.naturalHeight > 0) setLoaded(true);
-  }, [inView, url]);
+  }, [inView, stableKey]);
 
   const setImgRef = (el: HTMLImageElement | null) => {
     imgRef.current = el;
@@ -160,23 +176,53 @@ function GalleryImageWithSkeleton({ item, eagerIndex }: { item: GalleryDisplayIt
       >
         {!loaded ? (
           <div className="gallery-img-skeleton-track z-0" aria-hidden>
-            <div className={`absolute inset-0 ${PHOTO_ROUNDED} bg-zinc-800/90`} />
-            <div className={`gallery-img-skeleton-shimmer ${PHOTO_ROUNDED}`} />
+            {image?.lqip ? (
+              <img
+                src={image.lqip}
+                alt=""
+                className={`absolute inset-0 z-[1] h-full w-full scale-110 object-cover opacity-55 blur-2xl ${PHOTO_ROUNDED}`}
+              />
+            ) : null}
+            <div className={`absolute inset-0 z-[1] ${PHOTO_ROUNDED} bg-zinc-800/90`} />
+            <div className={`gallery-img-skeleton-shimmer z-[2] ${PHOTO_ROUNDED}`} />
           </div>
         ) : null}
         {inView ? (
-          <img
-            ref={setImgRef}
-            src={url}
-            alt=""
-            decoding="async"
-            loading={eagerIndex < 6 ? 'eager' : 'lazy'}
-            onLoad={() => setLoaded(true)}
-            onError={() => setLoaded(true)}
-            className={`relative z-10 block h-auto w-full max-w-full ${PHOTO_ROUNDED} transition-opacity duration-500 ease-out ${
-              loaded ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
+          image && avifSrcSet && webpSrcSet ? (
+            <picture>
+              <source type="image/avif" srcSet={avifSrcSet} sizes={VISUAL_GALLERY_IMAGE_SIZES_ATTR} />
+              <source type="image/webp" srcSet={webpSrcSet} sizes={VISUAL_GALLERY_IMAGE_SIZES_ATTR} />
+              <img
+                ref={setImgRef}
+                src={fallbackWebp}
+                srcSet={webpSrcSet}
+                sizes={VISUAL_GALLERY_IMAGE_SIZES_ATTR}
+                width={intrinsicW}
+                height={intrinsicH}
+                alt=""
+                decoding="async"
+                loading={eagerIndex < 6 ? 'eager' : 'lazy'}
+                onLoad={() => setLoaded(true)}
+                onError={() => setLoaded(true)}
+                className={`relative z-10 block h-auto w-full max-w-full ${PHOTO_ROUNDED} transition-opacity duration-500 ease-out ${
+                  loaded ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            </picture>
+          ) : (
+            <img
+              ref={setImgRef}
+              src={url}
+              alt=""
+              decoding="async"
+              loading={eagerIndex < 6 ? 'eager' : 'lazy'}
+              onLoad={() => setLoaded(true)}
+              onError={() => setLoaded(true)}
+              className={`relative z-10 block h-auto w-full max-w-full ${PHOTO_ROUNDED} transition-opacity duration-500 ease-out ${
+                loaded ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          )
         ) : null}
       </div>
     </div>

@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import { put } from '@vercel/blob';
 import { VISUAL_BLOB_PREFIX } from '../../lib/blob-visuals';
+import { appendGalleryImagePack, type GalleryImagePack } from '../../lib/gallery-image-manifest';
+import { processImageForGallery } from '../../lib/process-visual-image';
 import { readServerEnv } from '../../lib/server-env';
 
 export const prerender = false;
@@ -9,6 +11,8 @@ export const prerender = false;
 const MAX_BYTES = 50 * 1024 * 1024;
 
 const MEDIA_EXT = /\.(jpe?g|png|gif|webp|avif|mp4|webm|mov|m4v)$/i;
+
+const RESERVED_BASENAMES = new Set(['_youtube.json', '_gallery-images.json']);
 
 function isAllowedMedia(file: File): boolean {
   if (/^(image|video)\//.test(file.type)) return true;
@@ -22,6 +26,11 @@ function sanitizeFilename(name: string): string {
   const base = name.replace(/^.*[/\\]/, '').replace(/[^a-zA-Z0-9._-]/g, '_');
   const trimmed = base.slice(0, 120);
   return trimmed.length > 0 ? trimmed : 'upload.bin';
+}
+
+function isImageFile(file: File, safeName: string): boolean {
+  if (file.type.startsWith('image/')) return true;
+  return /\.(jpe?g|png|gif|webp|avif)$/i.test(safeName);
 }
 
 function blobUploadErrorResponse(message: string) {
@@ -111,17 +120,93 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const safeName = sanitizeFilename(file.name);
-  if (safeName.toLowerCase() === '_youtube.json') {
+  const baseLower = safeName.replace(/^.*\//, '').toLowerCase();
+  if (RESERVED_BASENAMES.has(baseLower)) {
     return new Response(
-      JSON.stringify({ error: 'Reserved filename: visuals/_youtube.json is used for YouTube links.' }),
+      JSON.stringify({
+        error: `Reserved filename: ${baseLower} is used for site manifests.`,
+      }),
       { status: 400, headers: { 'Content-Type': 'application/json' } },
     );
   }
 
-  const pathname = `${VISUAL_BLOB_PREFIX}${safeName}`;
   const useMultipart = file.size > 4 * 1024 * 1024;
 
   try {
+    if (isImageFile(file, safeName)) {
+      const input = new Uint8Array(await file.arrayBuffer());
+
+      let processed;
+      try {
+        processed = await processImageForGallery(input);
+      } catch {
+        const pathname = `${VISUAL_BLOB_PREFIX}${safeName}`;
+        const result = await put(pathname, file, {
+          access: 'public',
+          addRandomSuffix: true,
+          multipart: useMultipart,
+          token: blobToken,
+        });
+        return new Response(JSON.stringify({ url: result.url, pathname: result.pathname, optimized: false }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+
+      const packId = globalThis.crypto.randomUUID();
+      const basePath = `${VISUAL_BLOB_PREFIX}g/${packId}`;
+      const variants: GalleryImagePack['variants'] = [];
+      let totalBytes = 0;
+
+      for (const v of processed.variants) {
+        const avifPath = `${basePath}/${v.w}.avif`;
+        const webpPath = `${basePath}/${v.w}.webp`;
+        const [avifRes, webpRes] = await Promise.all([
+          put(avifPath, v.avif, {
+            access: 'public',
+            addRandomSuffix: false,
+            contentType: 'image/avif',
+            token: blobToken,
+          }),
+          put(webpPath, v.webp, {
+            access: 'public',
+            addRandomSuffix: false,
+            contentType: 'image/webp',
+            token: blobToken,
+          }),
+        ]);
+        totalBytes += v.avif.length + v.webp.length;
+        variants.push({ w: v.w, avifUrl: avifRes.url, webpUrl: webpRes.url });
+      }
+
+      const largest = variants[variants.length - 1]!;
+      const pack: GalleryImagePack = {
+        id: packId,
+        uploadedAt: new Date().toISOString(),
+        width: processed.width,
+        height: processed.height,
+        lqip: processed.lqip,
+        totalBytes,
+        variants,
+      };
+
+      await appendGalleryImagePack(pack);
+
+      return new Response(
+        JSON.stringify({
+          url: largest.webpUrl,
+          pathname: `${VISUAL_BLOB_PREFIX}g/${packId}`,
+          optimized: true,
+          packId,
+        }),
+        {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' },
+        },
+      );
+    }
+
+    const pathname = `${VISUAL_BLOB_PREFIX}${safeName}`;
     const result = await put(pathname, file, {
       access: 'public',
       addRandomSuffix: true,
@@ -129,7 +214,7 @@ export const POST: APIRoute = async ({ request }) => {
       token: blobToken,
     });
 
-    return new Response(JSON.stringify({ url: result.url, pathname: result.pathname }), {
+    return new Response(JSON.stringify({ url: result.url, pathname: result.pathname, optimized: false }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });

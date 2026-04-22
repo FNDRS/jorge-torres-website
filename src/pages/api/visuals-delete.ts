@@ -1,18 +1,48 @@
 import type { APIRoute } from 'astro';
-import { del } from '@vercel/blob';
-import { VISUAL_BLOB_PREFIX, isGalleryMediaPathname } from '../../lib/blob-visuals';
+import { del, list } from '@vercel/blob';
+import {
+  VISUAL_BLOB_PREFIX,
+  isGalleryMediaPathname,
+  isReservedVisualPathname,
+} from '../../lib/blob-visuals';
+import { removeGalleryPackById } from '../../lib/gallery-image-manifest';
 import { readServerEnv } from '../../lib/server-env';
 
 export const prerender = false;
 
 const MAX_BODY = 4096;
 
+function extractPackId(pathname: string): string | null {
+  const m = pathname.trim().match(/^visuals\/g\/([a-f0-9-]{36})(?:\/|$)/i);
+  return m?.[1] ? m[1].toLowerCase() : null;
+}
+
 function isSafeGalleryPathname(pathname: string): boolean {
   const p = pathname.trim();
   if (!p.startsWith(VISUAL_BLOB_PREFIX)) return false;
   if (p.includes('..') || p.includes('\\')) return false;
+  if (extractPackId(p)) return true;
   if (!isGalleryMediaPathname(p)) return false;
+  if (isReservedVisualPathname(p)) return false;
   return true;
+}
+
+async function deleteBlobsUnderPrefix(prefix: string, token: string): Promise<void> {
+  let cursor: string | undefined;
+  for (;;) {
+    const { blobs, hasMore, cursor: nextCursor } = await list({
+      prefix,
+      limit: 500,
+      token,
+      ...(cursor ? { cursor } : {}),
+    });
+    for (const b of blobs) {
+      await del(b.pathname, { token });
+    }
+    if (!hasMore) break;
+    cursor = nextCursor;
+    if (!cursor) break;
+  }
 }
 
 export const POST: APIRoute = async ({ request }) => {
@@ -67,7 +97,13 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   try {
-    await del(pathname, { token: blobToken });
+    const packId = extractPackId(pathname);
+    if (packId) {
+      await deleteBlobsUnderPrefix(`${VISUAL_BLOB_PREFIX}g/${packId}/`, blobToken);
+      await removeGalleryPackById(packId);
+    } else {
+      await del(pathname, { token: blobToken });
+    }
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
