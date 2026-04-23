@@ -72,7 +72,20 @@ async function listAllVisualBlobs(): Promise<RawBlobRow[]> {
   return collected;
 }
 
-/** Sum sizes under `visuals/` (pack variants, legacy media, manifests). */
+function packIdFromInternalPathname(pathname: string): string | null {
+  const prefix = `${VISUAL_BLOB_PREFIX}g/`;
+  if (!pathname.startsWith(prefix)) return null;
+  const rest = pathname.slice(prefix.length);
+  const seg = rest.split('/')[0];
+  if (!seg || !/^[a-f0-9-]{36}$/i.test(seg)) return null;
+  return seg.toLowerCase();
+}
+
+/**
+ * Gallery-attributed storage only: manifest packs (and their `visuals/g/{id}/` variants),
+ * legacy top-level media, and the gallery manifest JSON when there is at least one item.
+ * Does not sum orphan blobs under `visuals/` (so 0 items ⇒ 0 MB here).
+ */
 export async function getVisualsBlobStorageStats(): Promise<{
   usedBytes: number;
   mediaFileCount: number;
@@ -80,24 +93,37 @@ export async function getVisualsBlobStorageStats(): Promise<{
   const token = readServerEnv('BLOB_READ_WRITE_TOKEN');
   if (!token) return { usedBytes: 0, mediaFileCount: 0 };
 
-  const rows = await listAllVisualBlobs();
-  let usedBytes = 0;
-  for (const r of rows) {
-    usedBytes += r.size;
-  }
+  const [rows, packs] = await Promise.all([listAllVisualBlobs(), readGalleryImageManifest()]);
+  const packIds = new Set(packs.map((p) => p.id.toLowerCase()));
 
-  const packs = await readGalleryImageManifest();
-  const packIds = new Set(packs.map((p) => p.id));
   let legacyMedia = 0;
+  let galleryUsedBytes = 0;
+  let manifestBlobBytes = 0;
+
   for (const r of rows) {
-    if (isVisualPackInternalPathname(r.pathname)) continue;
-    if (isReservedVisualPathname(r.pathname)) continue;
-    if (isLegacyTopLevelGalleryPathname(r.pathname)) legacyMedia += 1;
+    const pathLower = r.pathname.trim().toLowerCase();
+
+    if (isVisualPackInternalPathname(r.pathname)) {
+      const pid = packIdFromInternalPathname(r.pathname);
+      if (pid && packIds.has(pid)) galleryUsedBytes += r.size;
+      continue;
+    }
+
+    if (isReservedVisualPathname(r.pathname)) {
+      if (pathLower === GALLERY_IMAGE_MANIFEST_PATHNAME.toLowerCase()) manifestBlobBytes = r.size;
+      continue;
+    }
+
+    if (isLegacyTopLevelGalleryPathname(r.pathname)) {
+      legacyMedia += 1;
+      galleryUsedBytes += r.size;
+    }
   }
 
   const mediaFileCount = packIds.size + legacyMedia;
+  if (mediaFileCount > 0) galleryUsedBytes += manifestBlobBytes;
 
-  return { usedBytes, mediaFileCount };
+  return { usedBytes: galleryUsedBytes, mediaFileCount };
 }
 
 export async function loadGalleryUrlsFromBlob(): Promise<string[]> {

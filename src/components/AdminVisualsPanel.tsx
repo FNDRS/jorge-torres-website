@@ -590,8 +590,9 @@ export default function AdminVisualsPanel() {
             </div>
 
             <p className="text-[12px] leading-relaxed text-white/45">
-              Tope <code className="text-white/60">VISUALS_QUOTA_MB</code> (por defecto 500 MB) solo para la barra. Uso
-              real: blobs bajo <code className="text-white/60">visuals/</code>.
+              Tope <code className="text-white/60">VISUALS_QUOTA_MB</code> (por defecto 500 MB) solo para la barra. Los
+              MB y la barra cuentan solo la galería actual (manifiesto + medios legacy); no incluyen blobs huérfanos
+              bajo <code className="text-white/60">visuals/</code>.
             </p>
 
             {pendingBytes > 0 ? (
