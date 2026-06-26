@@ -8,6 +8,7 @@ import {
   type Dispatch,
   type SetStateAction,
 } from 'react';
+import { createPortal, flushSync } from 'react-dom';
 import Masonry from 'react-masonry-css';
 import type { PublicGalleryItem } from '../lib/local-visuals';
 import { VISUAL_GALLERY_IMAGE_SIZES_ATTR } from '../lib/visuals-photo-sizes';
@@ -313,7 +314,11 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
       <div className={VIDEO_TILE}>
         <button
           type="button"
-          onClick={() => setActive(true)}
+          onClick={() => {
+            flushSync(() => setActive(true));
+            const el = iframeRef.current;
+            if (el) requestFullscreenSafe(el);
+          }}
           aria-label="Reproducir vídeo"
           className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
         >
@@ -394,7 +399,11 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
       <div className={VIDEO_TILE}>
         <button
           type="button"
-          onClick={() => setActive(true)}
+          onClick={() => {
+            flushSync(() => setActive(true));
+            const el = iframeRef.current;
+            if (el) requestFullscreenSafe(el);
+          }}
           aria-label="Reproducir vídeo de Vimeo"
           className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
         >
@@ -440,31 +449,42 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
   );
 }
 
-/** Title + truncated description under a YouTube tile, sourced from the YouTube Data API at build time. */
+/**
+ * Title + collapsed "Descripción" toggle under a YouTube tile, sourced from the YouTube Data API
+ * at build time. Collapsed by default so the grid stays a thumbnail wall; tapping the label
+ * reveals the full untruncated text below for people who want to scroll and read it.
+ */
 function VideoCaption({ title, description }: { title?: string; description?: string }) {
-  const [expanded, setExpanded] = useState(false);
+  const [open, setOpen] = useState(false);
   if (!title && !description) return null;
 
   return (
     <div className="mt-3 px-1">
       {title ? <p className="text-[14px] font-medium text-white/90">{title}</p> : null}
       {description ? (
-        <>
-          <p
-            className={`mt-1 whitespace-pre-line text-[13px] leading-relaxed text-white/60 ${
-              expanded ? '' : 'line-clamp-3'
-            }`}
-          >
-            {description}
-          </p>
+        <div className="mt-1.5">
           <button
             type="button"
-            onClick={() => setExpanded((v) => !v)}
-            className="mt-1 text-[12px] font-medium text-white/40 transition hover:text-white/70 hover:underline hover:underline-offset-2"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/40 transition hover:text-white/75"
           >
-            {expanded ? 'Ver menos' : 'Ver más'}
+            Descripción
+            <svg
+              viewBox="0 0 24 24"
+              className={`h-3 w-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              aria-hidden
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
           </button>
-        </>
+          {open ? (
+            <p className="mt-2 whitespace-pre-line text-[13px] leading-relaxed text-white/60">{description}</p>
+          ) : null}
+        </div>
       ) : null}
     </div>
   );
@@ -1032,14 +1052,17 @@ export default function MasonryGallery({ items }: Props) {
         />
       ) : null}
 
-      {lightboxIndex !== null ? (
-        <PhotoLightbox
-          items={photoItems}
-          index={lightboxIndex}
-          onClose={() => setLightboxIndex(null)}
-          onNavigate={setLightboxIndex}
-        />
-      ) : null}
+      {lightboxIndex !== null && typeof document !== 'undefined'
+        ? createPortal(
+            <PhotoLightbox
+              items={photoItems}
+              index={lightboxIndex}
+              onClose={() => setLightboxIndex(null)}
+              onNavigate={setLightboxIndex}
+            />,
+            document.body,
+          )
+        : null}
     </div>
   );
 }
