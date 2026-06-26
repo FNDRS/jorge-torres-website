@@ -581,13 +581,21 @@ function VideoBlobTile({ url, priority }: { url: string; priority: boolean }) {
   );
 }
 
+/**
+ * Locks page scroll and hides Chrome.astro's `<header>` while a lightbox is open. The header sits
+ * outside the masonry grid's stacking context (sibling, not ancestor) — on some mobile browsers it
+ * was rendering on top of the portaled lightbox despite a lower z-index, so we just remove it from
+ * the render instead of relying on z-index alone.
+ */
 function useBodyScrollLock(active: boolean) {
   useEffect(() => {
     if (!active) return;
-    const prev = document.body.style.overflow;
+    const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('lightbox-open');
     return () => {
-      document.body.style.overflow = prev;
+      document.body.style.overflow = prevOverflow;
+      document.body.classList.remove('lightbox-open');
     };
   }, [active]);
 }
