@@ -7,12 +7,14 @@ import { site } from '../lib/site';
 ---
 
 <Layout title={`${site.name} - My History`} description={`${site.name} story`}>
-  <div class="h-svh overflow-hidden p-[10px]">
+  <div class="min-h-svh p-[10px] md:h-svh md:overflow-hidden">
     <Chrome />
 
-    <Stage solid class="bg-black h-[calc(100svh-20px)]">
+    <Stage solid class="bg-black md:h-[calc(100svh-20px)]" scrollable>
       <PillNav active="history" />
-      <div class="relative z-20 flex h-full flex-col justify-center px-24 md:px-40 lg:px-48 xl:px-56">
+      <div
+        class="relative z-20 flex flex-col px-6 pb-32 pt-32 sm:px-10 md:h-full md:justify-center md:px-40 md:pb-0 md:pt-0 lg:px-48 xl:px-56"
+      >
         <div class="grid items-center gap-12 md:grid-cols-[280px_1fr] md:gap-24 lg:gap-32">
           <div class="flex justify-center md:justify-start animate-fade-in opacity-0">
             <div class="h-[240px] w-[240px] overflow-hidden rounded-full bg-white/10 md:h-[280px] md:w-[280px] transition-transform duration-500 hover:scale-105">

@@ -29,9 +29,14 @@ const style = backgroundImage
   ]}
   style={style}
 >
-  <!-- Notch negro en la esquina superior derecha: ancho ajustado para que no sobre espacio a la izquierda del nav -->
+  <!--
+    Notch negro en la esquina superior derecha: solo visible desde `md`, que es cuando el nav de
+    Chrome.astro pasa a estar absolutamente posicionado sobre esta esquina (`md:absolute`). Por
+    debajo de `md` el nav vive en flujo normal apilado bajo el logo, así que el notch no debe
+    mostrarse — de lo contrario queda flotando sobre/entre el logo y los enlaces.
+  -->
   <div
-    class="absolute top-0 right-0 h-[70px] w-[300px] bg-black rounded-bl-[40px] z-30 animate-fade-in opacity-0 sm:w-[330px] md:w-[360px] lg:w-[400px] xl:w-[440px]"
+    class="hidden absolute top-0 right-0 h-[70px] w-[360px] bg-black rounded-bl-[40px] z-30 animate-fade-in opacity-0 md:block lg:w-[400px] xl:w-[440px]"
   >
   </div>
 
