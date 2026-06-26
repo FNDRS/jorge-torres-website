@@ -13,7 +13,7 @@ import { site } from '../lib/site';
     <Stage backgroundImage="/media/contact-bg.png" backgroundPosition="50% 35%">
       <PillNav active="contact" />
       <div class="relative z-20 px-10 pb-28 pt-36 md:px-16">
-        <div class="max-w-[520px]">
+        <div class="max-w-[560px]">
           <h1 class="font-display text-4xl font-semibold tracking-tight text-white md:text-5xl">
             Let's Connect
           </h1>
@@ -21,12 +21,79 @@ import { site } from '../lib/site';
             If you're looking for a creative partner to explore new ideas, redefine your brand, or
             craft content that truly sets you apart - contact me.
           </p>
-          <a
-            class="mt-8 block text-[16px] font-medium tracking-wide text-white/85 hover:underline"
-            href={`mailto:${site.email}`}
-          >
-            {site.email}
-          </a>
+
+          <form id="contact-form" class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2" novalidate>
+            <label class="flex flex-col gap-1.5 text-[13px] text-white/70">
+              Nombre
+              <input
+                type="text"
+                name="name"
+                required
+                autocomplete="name"
+                class="min-h-[44px] rounded-lg border border-white/10 bg-white/[0.04] px-4 py-2.5 text-[14px] text-white placeholder:text-white/35 outline-none transition focus:border-white/30 focus:bg-white/[0.06]"
+                placeholder="Tu nombre"
+              />
+            </label>
+
+            <label class="flex flex-col gap-1.5 text-[13px] text-white/70">
+              Correo
+              <input
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                class="min-h-[44px] rounded-lg border border-white/10 bg-white/[0.04] px-4 py-2.5 text-[14px] text-white placeholder:text-white/35 outline-none transition focus:border-white/30 focus:bg-white/[0.06]"
+                placeholder="tu@correo.com"
+              />
+            </label>
+
+            <label class="flex flex-col gap-1.5 text-[13px] text-white/70">
+              Asunto
+              <input
+                type="text"
+                name="subject"
+                required
+                class="min-h-[44px] rounded-lg border border-white/10 bg-white/[0.04] px-4 py-2.5 text-[14px] text-white placeholder:text-white/35 outline-none transition focus:border-white/30 focus:bg-white/[0.06]"
+                placeholder="¿De qué se trata?"
+              />
+            </label>
+
+            <label class="flex flex-col gap-1.5 text-[13px] text-white/70">
+              Marca
+              <input
+                type="text"
+                name="brand"
+                class="min-h-[44px] rounded-lg border border-white/10 bg-white/[0.04] px-4 py-2.5 text-[14px] text-white placeholder:text-white/35 outline-none transition focus:border-white/30 focus:bg-white/[0.06]"
+                placeholder="Tu marca o empresa (opcional)"
+              />
+            </label>
+
+            <label class="flex flex-col gap-1.5 text-[13px] text-white/70 sm:col-span-2">
+              Mensaje
+              <textarea
+                name="message"
+                required
+                rows="5"
+                class="resize-none rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-[14px] text-white placeholder:text-white/35 outline-none transition focus:border-white/30 focus:bg-white/[0.06]"
+                placeholder="Cuéntame sobre tu proyecto..."
+              ></textarea>
+            </label>
+
+            <div class="mt-2 flex flex-col items-start gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
+              <button
+                type="submit"
+                class="inline-flex min-h-[44px] items-center justify-center rounded-full bg-white/95 px-7 text-[14px] font-medium text-neutral-900 shadow-sm transition hover:bg-white"
+              >
+                Enviar mensaje
+              </button>
+              <a
+                class="text-[13px] font-medium tracking-wide text-white/60 hover:text-white/85 hover:underline"
+                href={`mailto:${site.email}`}
+              >
+                o escríbeme directo a {site.email}
+              </a>
+            </div>
+          </form>
         </div>
 
         <div class="absolute bottom-10 right-12 z-20 flex items-baseline gap-3 text-white/80">
@@ -34,6 +101,31 @@ import { site } from '../lib/site';
           <span class="font-display text-[22px] font-semibold tracking-wide">FNDRS</span>
         </div>
       </div>
+
+      <script define:vars={{ contactEmail: site.email }}>
+        const form = document.getElementById('contact-form');
+        form?.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const data = new FormData(form);
+          const name = (data.get('name') || '').toString().trim();
+          const email = (data.get('email') || '').toString().trim();
+          const subject = (data.get('subject') || '').toString().trim();
+          const brand = (data.get('brand') || '').toString().trim();
+          const message = (data.get('message') || '').toString().trim();
+
+          const bodyLines = [
+            `Nombre: ${name}`,
+            `Correo: ${email}`,
+            brand ? `Marca: ${brand}` : null,
+            '',
+            message,
+          ].filter((line) => line !== null);
+
+          const mailSubject = encodeURIComponent(subject || 'Contacto desde el sitio');
+          const mailBody = encodeURIComponent(bodyLines.join('\n'));
+          window.location.href = `mailto:${contactEmail}?subject=${mailSubject}&body=${mailBody}`;
+        });
+      </script>
     </Stage>
   </div>
 </Layout>

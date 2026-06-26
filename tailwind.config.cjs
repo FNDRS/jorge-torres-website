@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Bricolage Grotesque', ...defaultTheme.fontFamily.sans],
-        display: ['Roc Grotesk Wide', ...defaultTheme.fontFamily.sans],
+        sans: ['Helvetica Neue', 'Helvetica', 'Arial', ...defaultTheme.fontFamily.sans],
+        display: ['Archivo Expanded', ...defaultTheme.fontFamily.sans],
       },
     },
   },
