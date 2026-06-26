@@ -583,6 +583,12 @@ function PhotoLightbox({
   const avifSrcSet = image?.variants.map((v) => `${v.avif} ${v.w}w`).join(', ') ?? '';
   const webpSrcSet = image?.variants.map((v) => `${v.webp} ${v.w}w`).join(', ') ?? '';
   const fallback = image?.variants[image.variants.length - 1]?.webp ?? item.url;
+  const exif = image?.exif;
+  const exifLine = exif
+    ? [exif.camera, exif.lens, exif.focalLength, exif.aperture, exif.shutterSpeed, exif.iso]
+        .filter((part): part is string => Boolean(part))
+        .join(' · ')
+    : '';
 
   return (
     <div
@@ -675,11 +681,14 @@ function PhotoLightbox({
         )}
       </div>
 
-      {total > 1 ? (
-        <div className="absolute bottom-4 left-0 right-0 z-10 text-center text-[13px] tabular-nums text-white/60 sm:bottom-6">
-          {index + 1} / {total}
-        </div>
-      ) : null}
+      <div className="absolute bottom-4 left-0 right-0 z-10 flex flex-col items-center gap-1 px-4 sm:bottom-6">
+        {exifLine ? (
+          <div className="max-w-full truncate text-center text-[12px] tracking-wide text-white/55">
+            {exifLine}
+          </div>
+        ) : null}
+        {total > 1 ? <div className="text-[13px] tabular-nums text-white/60">{index + 1} / {total}</div> : null}
+      </div>
     </div>
   );
 }

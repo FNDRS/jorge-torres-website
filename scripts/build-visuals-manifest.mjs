@@ -6,6 +6,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
+import exifr from 'exifr';
 
 const SOURCE_DIR = process.argv[2];
 if (!SOURCE_DIR) {
@@ -27,6 +28,36 @@ function computeTargets(origW) {
   }
   set.add(cap);
   return [...set].sort((a, b) => a - b);
+}
+
+/** Formats a fraction-of-a-second exposure time the way cameras display it (e.g. 1/500, or 2.5s for long exposures). */
+function formatShutterSpeed(exposureTime) {
+  if (!exposureTime || exposureTime <= 0) return null;
+  if (exposureTime >= 1) return `${Math.round(exposureTime * 10) / 10}s`;
+  const denominator = Math.round(1 / exposureTime);
+  return `1/${denominator}`;
+}
+
+async function readExifSummary(buffer) {
+  let exif;
+  try {
+    exif = await exifr.parse(buffer, {
+      pick: ['Make', 'Model', 'LensModel', 'FNumber', 'ExposureTime', 'ISO', 'FocalLength'],
+    });
+  } catch {
+    return null;
+  }
+  if (!exif) return null;
+
+  const camera = [exif.Make, exif.Model].filter(Boolean).join(' ').trim() || null;
+  const lens = exif.LensModel ?? null;
+  const aperture = typeof exif.FNumber === 'number' ? `f/${exif.FNumber}` : null;
+  const shutterSpeed = formatShutterSpeed(exif.ExposureTime);
+  const iso = typeof exif.ISO === 'number' ? `ISO ${exif.ISO}` : null;
+  const focalLength = typeof exif.FocalLength === 'number' ? `${Math.round(exif.FocalLength)}mm` : null;
+
+  if (!camera && !lens && !aperture && !shutterSpeed && !iso && !focalLength) return null;
+  return { camera, lens, aperture, shutterSpeed, iso, focalLength };
 }
 
 function slugify(name) {
@@ -71,8 +102,9 @@ async function processOne(filePath, id) {
     .avif({ quality: 22, effort: 2 })
     .toBuffer();
   const lqip = `data:image/avif;base64,${lqipBuf.toString('base64')}`;
+  const exif = await readExifSummary(buffer);
 
-  return { id, width: ow, height: oh, lqip, variants };
+  return { id, width: ow, height: oh, lqip, variants, exif };
 }
 
 async function main() {

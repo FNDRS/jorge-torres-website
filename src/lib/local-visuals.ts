@@ -2,6 +2,15 @@ import manifest from './visuals-manifest.json';
 
 export type GalleryImageVariant = { w: number; avifUrl: string; webpUrl: string };
 
+export type GalleryImageExif = {
+  camera: string | null;
+  lens: string | null;
+  aperture: string | null;
+  shutterSpeed: string | null;
+  iso: string | null;
+  focalLength: string | null;
+};
+
 export type GalleryImagePack = {
   id: string;
   uploadedAt: string;
@@ -9,6 +18,7 @@ export type GalleryImagePack = {
   height: number;
   lqip: string;
   variants: GalleryImageVariant[];
+  exif?: GalleryImageExif | null;
 };
 
 export type PublicGalleryImageMeta = {
@@ -16,6 +26,7 @@ export type PublicGalleryImageMeta = {
   height: number;
   lqip: string;
   variants: { w: number; avif: string; webp: string }[];
+  exif?: GalleryImageExif | null;
 };
 
 export type PublicGalleryItem =
@@ -44,6 +55,7 @@ function packToPublicItem(p: GalleryImagePack): PublicGalleryItem {
       height: p.height,
       lqip: p.lqip,
       variants: p.variants.map((v) => ({ w: v.w, avif: v.avifUrl, webp: v.webpUrl })),
+      exif: p.exif ?? null,
     },
   };
 }

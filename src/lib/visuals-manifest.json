@@ -27,6 +27,14 @@
           "webpUrl": "/media/visuals/p1357035/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 160",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-06-15T20:05:28.000Z"
     },
     {
@@ -56,6 +64,14 @@
           "webpUrl": "/media/visuals/p1334686/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 8000",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-06-15T16:08:28.000Z"
     },
     {
@@ -85,6 +101,14 @@
           "webpUrl": "/media/visuals/p1334534/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 8000",
+        "focalLength": "24mm"
+      },
       "uploadedAt": "2026-06-15T16:07:28.000Z"
     },
     {
@@ -114,6 +138,14 @@
           "webpUrl": "/media/visuals/p1334478/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.2",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 8000",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-06-15T16:07:18.000Z"
     },
     {
@@ -143,6 +175,14 @@
           "webpUrl": "/media/visuals/em303128/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-7M3",
+        "lens": "24-70mm F2.8 DG DN | Art 019",
+        "aperture": "f/3.2",
+        "shutterSpeed": "1/8000",
+        "iso": "ISO 250",
+        "focalLength": "25mm"
+      },
       "uploadedAt": "2026-06-15T16:05:38.000Z"
     },
     {
@@ -172,6 +212,14 @@
           "webpUrl": "/media/visuals/em303092/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-7M3",
+        "lens": "24-70mm F2.8 DG DN | Art 019",
+        "aperture": "f/3.2",
+        "shutterSpeed": "1/6400",
+        "iso": "ISO 250",
+        "focalLength": "70mm"
+      },
       "uploadedAt": "2026-06-15T16:05:02.000Z"
     },
     {
@@ -201,6 +249,14 @@
           "webpUrl": "/media/visuals/em302634/1755.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-7M3",
+        "lens": "24-70mm F2.8 DG DN | Art 019",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/500",
+        "iso": "ISO 320",
+        "focalLength": "70mm"
+      },
       "uploadedAt": "2026-06-15T15:59:30.000Z"
     },
     {
@@ -220,6 +276,7 @@
           "webpUrl": "/media/visuals/photo-001/854.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-06-10T06:08:58.000Z"
     },
     {
@@ -239,6 +296,7 @@
           "webpUrl": "/media/visuals/photo-002/853.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-06-10T06:08:38.000Z"
     },
     {
@@ -268,6 +326,14 @@
           "webpUrl": "/media/visuals/p1322611/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/400",
+        "iso": "ISO 100",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-05-30T20:57:36.000Z"
     },
     {
@@ -297,6 +363,7 @@
           "webpUrl": "/media/visuals/v4-2-31-1/1920.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-27T21:20:36.000Z"
     },
     {
@@ -326,6 +393,7 @@
           "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1920.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-27T21:00:44.000Z"
     },
     {
@@ -355,6 +423,7 @@
           "webpUrl": "/media/visuals/still-2026-05-17-203316-1-34-1/1920.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-18T02:33:18.000Z"
     },
     {
@@ -384,6 +453,14 @@
           "webpUrl": "/media/visuals/img-5447-jpg/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Apple iPhone 12 Pro Max",
+        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
+        "aperture": "f/1.6",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 100",
+        "focalLength": "5mm"
+      },
       "uploadedAt": "2026-05-12T04:55:22.000Z"
     },
     {
@@ -413,6 +490,14 @@
           "webpUrl": "/media/visuals/img-5506-jpg/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Apple iPhone 12 Pro Max",
+        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
+        "aperture": "f/1.6",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 320",
+        "focalLength": "5mm"
+      },
       "uploadedAt": "2026-05-12T04:55:18.000Z"
     },
     {
@@ -442,6 +527,14 @@
           "webpUrl": "/media/visuals/img-5460-jpg/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Apple iPhone 12 Pro Max",
+        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
+        "aperture": "f/1.6",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 100",
+        "focalLength": "5mm"
+      },
       "uploadedAt": "2026-05-12T04:55:16.000Z"
     },
     {
@@ -471,6 +564,14 @@
           "webpUrl": "/media/visuals/img-6435-jpg/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 2500",
+        "focalLength": "17mm"
+      },
       "uploadedAt": "2026-05-12T04:55:14.000Z"
     },
     {
@@ -500,6 +601,14 @@
           "webpUrl": "/media/visuals/img-2874-jpg/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Apple iPhone 12 Pro Max",
+        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
+        "aperture": "f/1.6",
+        "shutterSpeed": "1/120",
+        "iso": "ISO 125",
+        "focalLength": "5mm"
+      },
       "uploadedAt": "2026-05-12T04:55:08.000Z"
     },
     {
@@ -529,6 +638,14 @@
           "webpUrl": "/media/visuals/img-1813-jpg/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Apple iPhone 12 Pro Max",
+        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
+        "aperture": "f/1.6",
+        "shutterSpeed": "1/950",
+        "iso": "ISO 32",
+        "focalLength": "5mm"
+      },
       "uploadedAt": "2026-05-12T04:55:06.000Z"
     },
     {
@@ -558,6 +675,14 @@
           "webpUrl": "/media/visuals/img-1791-jpg/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Apple iPhone 12 Pro Max",
+        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
+        "aperture": "f/1.6",
+        "shutterSpeed": "1/2000",
+        "iso": "ISO 32",
+        "focalLength": "5mm"
+      },
       "uploadedAt": "2026-05-12T04:54:54.000Z"
     },
     {
@@ -582,6 +707,7 @@
           "webpUrl": "/media/visuals/imgi-75-654068340-18057189557449965-1409696777786053095-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:46:22.000Z"
     },
     {
@@ -606,6 +732,7 @@
           "webpUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:46:12.000Z"
     },
     {
@@ -630,6 +757,7 @@
           "webpUrl": "/media/visuals/imgi-73-656864789-18144368119484504-3819519583349578255-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:46:04.000Z"
     },
     {
@@ -654,6 +782,7 @@
           "webpUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:45:48.000Z"
     },
     {
@@ -678,6 +807,7 @@
           "webpUrl": "/media/visuals/imgi-71-656311735-18102747830500806-3649769469674397423-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:45:22.000Z"
     },
     {
@@ -702,6 +832,7 @@
           "webpUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:44:52.000Z"
     },
     {
@@ -726,6 +857,7 @@
           "webpUrl": "/media/visuals/imgi-82-605135608-18546308905029151-1068368419219356531-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:43:08.000Z"
     },
     {
@@ -750,6 +882,7 @@
           "webpUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:42:30.000Z"
     },
     {
@@ -774,6 +907,7 @@
           "webpUrl": "/media/visuals/imgi-81-605111194-18546308830029151-4412002739855246634-n/1440.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-05-12T04:42:26.000Z"
     },
     {
@@ -803,6 +937,14 @@
           "webpUrl": "/media/visuals/p1309636/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.6",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 4000",
+        "focalLength": "19mm"
+      },
       "uploadedAt": "2026-05-04T09:00:46.000Z"
     },
     {
@@ -832,6 +974,14 @@
           "webpUrl": "/media/visuals/p1299104/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 640",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-05-04T08:55:04.000Z"
     },
     {
@@ -861,6 +1011,14 @@
           "webpUrl": "/media/visuals/p1298852/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 1250",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-05-04T08:51:50.000Z"
     },
     {
@@ -890,6 +1048,14 @@
           "webpUrl": "/media/visuals/p1297103-edit-2/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 1250",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-04-22T01:50:04.000Z"
     },
     {
@@ -919,6 +1085,14 @@
           "webpUrl": "/media/visuals/p1297132-edit/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 1250",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-04-22T01:42:08.000Z"
     },
     {
@@ -948,6 +1122,14 @@
           "webpUrl": "/media/visuals/p1297088/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 1250",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-04-22T01:41:58.000Z"
     },
     {
@@ -977,6 +1159,14 @@
           "webpUrl": "/media/visuals/p1285801/2383.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/11",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 12800",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-04-21T06:30:40.000Z"
     },
     {
@@ -1006,6 +1196,14 @@
           "webpUrl": "/media/visuals/p1275699/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/40",
+        "iso": "ISO 1250",
+        "focalLength": "19mm"
+      },
       "uploadedAt": "2026-04-21T06:30:04.000Z"
     },
     {
@@ -1035,6 +1233,14 @@
           "webpUrl": "/media/visuals/p1253712/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 50/F1.8",
+        "aperture": "f/22",
+        "shutterSpeed": "1/20",
+        "iso": "ISO 125",
+        "focalLength": "50mm"
+      },
       "uploadedAt": "2026-04-21T06:16:20.000Z"
     },
     {
@@ -1064,6 +1270,14 @@
           "webpUrl": "/media/visuals/p1253199/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 125",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-04-21T06:09:18.000Z"
     },
     {
@@ -1093,6 +1307,14 @@
           "webpUrl": "/media/visuals/p1231361/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/22",
+        "shutterSpeed": "1/3",
+        "iso": "ISO 640",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-04-04T14:57:30.000Z"
     },
     {
@@ -1122,6 +1344,14 @@
           "webpUrl": "/media/visuals/p1231273/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 2000",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-04-04T14:57:26.000Z"
     },
     {
@@ -1151,6 +1381,14 @@
           "webpUrl": "/media/visuals/p1231546/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/250",
+        "iso": "ISO 1600",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-04-04T14:57:26.000Z"
     },
     {
@@ -1180,6 +1418,14 @@
           "webpUrl": "/media/visuals/p1231075/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/40",
+        "iso": "ISO 1600",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-04-04T14:57:12.000Z"
     },
     {
@@ -1209,6 +1455,14 @@
           "webpUrl": "/media/visuals/p1229984/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 2500",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-04-03T22:05:38.000Z"
     },
     {
@@ -1238,6 +1492,14 @@
           "webpUrl": "/media/visuals/p1229318/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 1250",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-03-29T20:11:46.000Z"
     },
     {
@@ -1267,6 +1529,14 @@
           "webpUrl": "/media/visuals/p1229218/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 640",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-03-29T20:11:10.000Z"
     },
     {
@@ -1296,6 +1566,14 @@
           "webpUrl": "/media/visuals/p1229192/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 5000",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-03-29T20:10:54.000Z"
     },
     {
@@ -1325,6 +1603,14 @@
           "webpUrl": "/media/visuals/p1229197/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 5000",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-03-29T20:10:46.000Z"
     },
     {
@@ -1354,6 +1640,14 @@
           "webpUrl": "/media/visuals/p1205238/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/10",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 8000",
+        "focalLength": "36mm"
+      },
       "uploadedAt": "2026-02-28T15:32:48.000Z"
     },
     {
@@ -1383,6 +1677,14 @@
           "webpUrl": "/media/visuals/p1205072/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 3200",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-02-28T15:31:54.000Z"
     },
     {
@@ -1412,6 +1714,14 @@
           "webpUrl": "/media/visuals/p1205024/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 125",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-02-28T15:31:36.000Z"
     },
     {
@@ -1441,6 +1751,14 @@
           "webpUrl": "/media/visuals/p1204855/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/250",
+        "iso": "ISO 125",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-02-28T15:30:56.000Z"
     },
     {
@@ -1470,6 +1788,14 @@
           "webpUrl": "/media/visuals/p1193349-2/2263.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 3200",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-02-27T05:00:52.000Z"
     },
     {
@@ -1499,6 +1825,14 @@
           "webpUrl": "/media/visuals/p1193954/2257.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/250",
+        "iso": "ISO 5000",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-02-27T04:50:26.000Z"
     },
     {
@@ -1523,6 +1857,14 @@
           "webpUrl": "/media/visuals/p1193889/1349.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5",
+        "shutterSpeed": "1/250",
+        "iso": "ISO 5000",
+        "focalLength": "24mm"
+      },
       "uploadedAt": "2026-02-27T04:38:30.000Z"
     },
     {
@@ -1552,6 +1894,14 @@
           "webpUrl": "/media/visuals/p1193522/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 6400",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2026-02-27T04:38:00.000Z"
     },
     {
@@ -1581,6 +1931,14 @@
           "webpUrl": "/media/visuals/p1193730/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5.4",
+        "shutterSpeed": "1/250",
+        "iso": "ISO 5000",
+        "focalLength": "28mm"
+      },
       "uploadedAt": "2026-02-27T03:35:40.000Z"
     },
     {
@@ -1610,6 +1968,7 @@
           "webpUrl": "/media/visuals/p1182321-edit/2400.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2026-02-26T06:09:06.000Z"
     },
     {
@@ -1634,6 +1993,14 @@
           "webpUrl": "/media/visuals/p1182772-2/1488.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 6400",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2026-02-26T04:10:28.000Z"
     },
     {
@@ -1663,6 +2030,14 @@
           "webpUrl": "/media/visuals/p1182460/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 4000",
+        "focalLength": "19mm"
+      },
       "uploadedAt": "2026-02-26T04:10:22.000Z"
     },
     {
@@ -1692,6 +2067,14 @@
           "webpUrl": "/media/visuals/p1102749-2/1857.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/8",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 640",
+        "focalLength": "24mm"
+      },
       "uploadedAt": "2025-12-07T17:47:18.000Z"
     },
     {
@@ -1716,6 +2099,14 @@
           "webpUrl": "/media/visuals/p1102281/1280.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5.8",
+        "shutterSpeed": "1/320",
+        "iso": "ISO 640",
+        "focalLength": "33mm"
+      },
       "uploadedAt": "2025-12-07T17:45:26.000Z"
     },
     {
@@ -1745,6 +2136,14 @@
           "webpUrl": "/media/visuals/p1092176/2016.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5.2",
+        "shutterSpeed": "1/320",
+        "iso": "ISO 640",
+        "focalLength": "26mm"
+      },
       "uploadedAt": "2025-12-07T17:45:22.000Z"
     },
     {
@@ -1774,6 +2173,14 @@
           "webpUrl": "/media/visuals/p1091870/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/400",
+        "iso": "ISO 640",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2025-12-07T17:45:14.000Z"
     },
     {
@@ -1803,6 +2210,14 @@
           "webpUrl": "/media/visuals/p1079751/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 800",
+        "focalLength": "28mm"
+      },
       "uploadedAt": "2025-11-29T04:34:32.000Z"
     },
     {
@@ -1832,6 +2247,14 @@
           "webpUrl": "/media/visuals/p1079767/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 800",
+        "focalLength": "28mm"
+      },
       "uploadedAt": "2025-11-29T04:33:24.000Z"
     },
     {
@@ -1861,6 +2284,14 @@
           "webpUrl": "/media/visuals/dsc03647/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 320",
+        "focalLength": "17mm"
+      },
       "uploadedAt": "2025-11-24T08:00:36.000Z"
     },
     {
@@ -1890,6 +2321,14 @@
           "webpUrl": "/media/visuals/dsc03195/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/25",
+        "iso": "ISO 160",
+        "focalLength": "17mm"
+      },
       "uploadedAt": "2025-11-24T07:58:30.000Z"
     },
     {
@@ -1919,6 +2358,14 @@
           "webpUrl": "/media/visuals/dsc03117/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 400",
+        "focalLength": "70mm"
+      },
       "uploadedAt": "2025-11-24T07:57:44.000Z"
     },
     {
@@ -1948,6 +2395,14 @@
           "webpUrl": "/media/visuals/dsc03084/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/10",
+        "iso": "ISO 100",
+        "focalLength": "27mm"
+      },
       "uploadedAt": "2025-11-24T07:57:28.000Z"
     },
     {
@@ -1977,6 +2432,14 @@
           "webpUrl": "/media/visuals/dsc03069/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/10",
+        "iso": "ISO 100",
+        "focalLength": "24mm"
+      },
       "uploadedAt": "2025-11-24T07:57:14.000Z"
     },
     {
@@ -2006,6 +2469,14 @@
           "webpUrl": "/media/visuals/dsc02717/1799.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 80",
+        "focalLength": "51mm"
+      },
       "uploadedAt": "2025-11-24T07:53:30.000Z"
     },
     {
@@ -2035,6 +2506,14 @@
           "webpUrl": "/media/visuals/dsc02596-edit/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/40",
+        "iso": "ISO 125",
+        "focalLength": "17mm"
+      },
       "uploadedAt": "2025-11-24T07:52:22.000Z"
     },
     {
@@ -2064,6 +2543,14 @@
           "webpUrl": "/media/visuals/dsc02049/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 3200",
+        "focalLength": "41mm"
+      },
       "uploadedAt": "2025-11-24T07:49:56.000Z"
     },
     {
@@ -2093,6 +2580,14 @@
           "webpUrl": "/media/visuals/dsc01626/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 640",
+        "focalLength": "17mm"
+      },
       "uploadedAt": "2025-11-24T07:48:12.000Z"
     },
     {
@@ -2122,6 +2617,14 @@
           "webpUrl": "/media/visuals/dsc01502/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/40",
+        "iso": "ISO 500",
+        "focalLength": "20mm"
+      },
       "uploadedAt": "2025-11-24T07:47:58.000Z"
     },
     {
@@ -2151,6 +2654,14 @@
           "webpUrl": "/media/visuals/dsc01183/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 8000",
+        "focalLength": "30mm"
+      },
       "uploadedAt": "2025-11-24T07:47:04.000Z"
     },
     {
@@ -2180,6 +2691,14 @@
           "webpUrl": "/media/visuals/p1067578/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/8",
+        "shutterSpeed": "1/320",
+        "iso": "ISO 51200",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2025-11-09T00:23:18.000Z"
     },
     {
@@ -2209,6 +2728,14 @@
           "webpUrl": "/media/visuals/p1057106/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/25",
+        "iso": "ISO 800",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2025-11-09T00:22:30.000Z"
     },
     {
@@ -2238,6 +2765,14 @@
           "webpUrl": "/media/visuals/p1056759/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 1250",
+        "focalLength": "24mm"
+      },
       "uploadedAt": "2025-11-09T00:21:42.000Z"
     },
     {
@@ -2267,6 +2802,14 @@
           "webpUrl": "/media/visuals/p1046125/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/50",
+        "iso": "ISO 2000",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2025-11-09T00:20:42.000Z"
     },
     {
@@ -2286,6 +2829,14 @@
           "webpUrl": "/media/visuals/p1045400/801.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/8",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 10000",
+        "focalLength": "40mm"
+      },
       "uploadedAt": "2025-11-05T07:15:48.000Z"
     },
     {
@@ -2315,6 +2866,14 @@
           "webpUrl": "/media/visuals/p1035015/1707.webp"
         }
       ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/8",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 10000",
+        "focalLength": "18mm"
+      },
       "uploadedAt": "2025-11-05T07:15:14.000Z"
     },
     {
@@ -2344,6 +2903,7 @@
           "webpUrl": "/media/visuals/p1011477-2/2381.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2025-10-19T19:17:40.000Z"
     },
     {
@@ -2373,6 +2933,7 @@
           "webpUrl": "/media/visuals/p1022574/2400.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2025-10-19T19:12:58.000Z"
     },
     {
@@ -2402,6 +2963,7 @@
           "webpUrl": "/media/visuals/p1000984/2400.webp"
         }
       ],
+      "exif": null,
       "uploadedAt": "2025-10-19T19:12:26.000Z"
     },
     {
@@ -2431,6 +2993,14 @@
           "webpUrl": "/media/visuals/capture307456-edit/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-7M3",
+        "lens": "FE 50mm F1.8",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 125",
+        "focalLength": "50mm"
+      },
       "uploadedAt": "2023-07-31T02:01:02.000Z"
     },
     {
@@ -2460,6 +3030,14 @@
           "webpUrl": "/media/visuals/capture307494-edit/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ILCE-7M3",
+        "lens": "FE 50mm F1.8",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 125",
+        "focalLength": "50mm"
+      },
       "uploadedAt": "2023-07-31T02:01:02.000Z"
     },
     {
@@ -2489,6 +3067,14 @@
           "webpUrl": "/media/visuals/gab02368-3/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ZV-E10",
+        "lens": "E 17-28mm F2.8-2.8",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/2500",
+        "iso": "ISO 100",
+        "focalLength": "28mm"
+      },
       "uploadedAt": "2023-05-31T05:37:48.000Z"
     },
     {
@@ -2518,6 +3104,14 @@
           "webpUrl": "/media/visuals/gab02350-3/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "SONY ZV-E10",
+        "lens": "E 17-28mm F2.8-2.8",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/2000",
+        "iso": "ISO 100",
+        "focalLength": "28mm"
+      },
       "uploadedAt": "2023-05-31T05:37:18.000Z"
     },
     {
@@ -2547,6 +3141,14 @@
           "webpUrl": "/media/visuals/5/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Canon Canon EOS DIGITAL REBEL XS",
+        "lens": "EF-S18-55mm f/3.5-5.6 IS",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 1600",
+        "focalLength": "30mm"
+      },
       "uploadedAt": "2022-12-14T00:50:06.000Z"
     },
     {
@@ -2576,6 +3178,14 @@
           "webpUrl": "/media/visuals/img-9471/2400.webp"
         }
       ],
+      "exif": {
+        "camera": "Canon Canon EOS DIGITAL REBEL XS",
+        "lens": "EF-S18-55mm f/3.5-5.6 IS",
+        "aperture": "f/5.6",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 1600",
+        "focalLength": "53mm"
+      },
       "uploadedAt": "2022-12-14T00:26:22.000Z"
     }
   ]

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { site } from '../lib/site';
 
 type Props = {
   title?: string;
@@ -34,7 +35,46 @@ const { title = 'Jorge Torres', description = 'Portfolio personal', noindex = fa
     <title>{title}</title>
   </head>
   <body class="min-h-screen antialiased">
+    <div
+      id="site-preloader"
+      class="fixed inset-0 z-[200] flex items-center justify-center bg-black transition-opacity duration-700"
+      aria-hidden="true"
+    >
+      <span class="font-display preloader-text text-2xl font-semibold tracking-wide text-white opacity-0 md:text-3xl">
+        {site.name}
+      </span>
+    </div>
+
     <slot />
+
+    <script>
+      (function () {
+        var el = document.getElementById('site-preloader');
+        if (!el) return;
+
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var MIN_VISIBLE_MS = prefersReducedMotion ? 0 : 550;
+        var start = Date.now();
+
+        function hide() {
+          var wait = Math.max(0, MIN_VISIBLE_MS - (Date.now() - start));
+          setTimeout(function () {
+            el.style.opacity = '0';
+            el.style.pointerEvents = 'none';
+            el.addEventListener(
+              'transitionend',
+              function () {
+                el.remove();
+              },
+              { once: true },
+            );
+          }, wait);
+        }
+
+        if (document.readyState === 'complete') hide();
+        else window.addEventListener('load', hide);
+      })();
+    </script>
 
     <script>
       (function () {
