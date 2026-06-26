@@ -48,7 +48,7 @@ function masonryColsForCount(n: number) {
 
 /** Same radius as stills; `isolate` helps iframes respect `overflow-hidden` clipping. `min-w-0` avoids flex/grid overflow on narrow viewports. */
 const VIDEO_TILE =
-  'aspect-video min-h-0 min-w-0 w-full max-w-full overflow-hidden rounded-xl bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)] isolate';
+  'relative group aspect-video min-h-0 min-w-0 w-full max-w-full overflow-hidden rounded-xl bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)] isolate';
 
 const PHOTO_ROUNDED = 'rounded-xl';
 
@@ -91,11 +91,53 @@ function itemKey(item: GalleryDisplayItem) {
   return `yt:${item.videoId}`;
 }
 
+/** Round full-screen-capable button shown over a playing video tile. */
+function requestFullscreenSafe(el: HTMLElement) {
+  type FullscreenFallback = HTMLElement & { webkitRequestFullscreen?: () => void };
+  const anyEl = el as FullscreenFallback;
+  if (el.requestFullscreen) {
+    el.requestFullscreen().catch(() => {});
+  } else if (anyEl.webkitRequestFullscreen) {
+    anyEl.webkitRequestFullscreen();
+  }
+}
+
+function FullscreenButton({ getTarget }: { getTarget: () => HTMLElement | null }) {
+  return (
+    <button
+      type="button"
+      onClick={(e) => {
+        e.stopPropagation();
+        const el = getTarget();
+        if (el) requestFullscreenSafe(el);
+      }}
+      aria-label="Pantalla completa"
+      className="absolute bottom-3 right-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white opacity-80 transition hover:bg-black/75 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/70"
+    >
+      <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9 4H5a1 1 0 0 0-1 1v4M15 4h4a1 1 0 0 1 1 1v4M9 20H5a1 1 0 0 1-1-1v-4M15 20h4a1 1 0 0 0 1-1v-4"
+        />
+      </svg>
+    </button>
+  );
+}
+
 /**
  * Masonry still: skeleton until IntersectionObserver allows load, then fade-in when decoded.
  * No `img` / no network until the tile enters the expanded viewport band.
  */
-function GalleryImageWithSkeleton({ item, eagerIndex }: { item: GalleryDisplayItem; eagerIndex: number }) {
+function GalleryImageWithSkeleton({
+  item,
+  eagerIndex,
+  onOpen,
+}: {
+  item: GalleryDisplayItem;
+  eagerIndex: number;
+  onOpen?: () => void;
+}) {
   const url = item.kind === 'media' ? item.url : '';
   const image = item.kind === 'media' ? item.image : undefined;
   const stableKey = item.kind === 'media' ? (item.packId ?? item.url) : '';
@@ -170,9 +212,23 @@ function GalleryImageWithSkeleton({ item, eagerIndex }: { item: GalleryDisplayIt
   return (
     <div ref={wrapRef} className="mb-3 min-w-0 animate-fade-in">
       <div
+        role={onOpen ? 'button' : undefined}
+        tabIndex={onOpen ? 0 : undefined}
+        aria-label={onOpen ? 'Ver foto en grande' : undefined}
+        onClick={onOpen}
+        onKeyDown={
+          onOpen
+            ? (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onOpen();
+                }
+              }
+            : undefined
+        }
         className={`relative isolate overflow-hidden ${PHOTO_ROUNDED} bg-white/[0.04] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)] ${
-          loaded ? '' : 'min-h-[11rem] sm:min-h-[13rem]'
-        }`}
+          onOpen ? 'cursor-pointer' : ''
+        } ${loaded ? '' : 'min-h-[11rem] sm:min-h-[13rem]'}`}
       >
         {!loaded ? (
           <div className="gallery-img-skeleton-track z-0" aria-hidden>
@@ -248,6 +304,7 @@ function youtubeThumbUrls(videoId: string) {
 function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolean }) {
   const [active, setActive] = useState(false);
   const [thumbStep, setThumbStep] = useState(0);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const thumbs = useMemo(() => [...youtubeThumbUrls(videoId)], [videoId]);
   const posterSrc = thumbs[Math.min(thumbStep, thumbs.length - 1)]!;
 
@@ -297,6 +354,7 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
   return (
     <div className={VIDEO_TILE}>
       <iframe
+        ref={iframeRef}
         title={`Vídeo ${videoId}`}
         src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&${YT_EMBED_QUERY}`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -304,6 +362,7 @@ function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolea
         loading="lazy"
         className={`h-full min-h-0 w-full min-w-0 max-w-full border-0 ${PHOTO_ROUNDED}`}
       />
+      <FullscreenButton getTarget={() => iframeRef.current} />
     </div>
   );
 }
@@ -313,6 +372,7 @@ const VIMEO_EMBED_QUERY = 'autoplay=1&dnt=1&title=0&byline=0&portrait=0&backgrou
 function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean }) {
   const [active, setActive] = useState(false);
   const [poster, setPoster] = useState<string | null>(null);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -367,6 +427,7 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
   return (
     <div className={VIDEO_TILE}>
       <iframe
+        ref={iframeRef}
         title={`Vimeo ${videoId}`}
         src={`https://player.vimeo.com/video/${encodeURIComponent(videoId)}?${VIMEO_EMBED_QUERY}`}
         allow="autoplay; fullscreen; picture-in-picture"
@@ -374,6 +435,7 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
         loading="lazy"
         className={`h-full min-h-0 w-full min-w-0 max-w-full border-0 ${PHOTO_ROUNDED}`}
       />
+      <FullscreenButton getTarget={() => iframeRef.current} />
     </div>
   );
 }
@@ -456,15 +518,168 @@ function mergeLoneVideoWithFollowingImages(runs: ItemRun[]): DisplaySegment[] {
 }
 
 function VideoBlobTile({ url, priority }: { url: string; priority: boolean }) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   return (
     <div className={VIDEO_TILE}>
       <video
+        ref={videoRef}
         src={url}
         controls
         playsInline
         preload={priority ? 'metadata' : 'none'}
         className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover ${PHOTO_ROUNDED}`}
       />
+      <FullscreenButton getTarget={() => videoRef.current} />
+    </div>
+  );
+}
+
+function useBodyScrollLock(active: boolean) {
+  useEffect(() => {
+    if (!active) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [active]);
+}
+
+const SWIPE_THRESHOLD_PX = 50;
+
+/** Full-screen photo viewer with prev/next navigation (keyboard, buttons, swipe). */
+function PhotoLightbox({
+  items,
+  index,
+  onClose,
+  onNavigate,
+}: {
+  items: GalleryDisplayItem[];
+  index: number;
+  onClose: () => void;
+  onNavigate: Dispatch<SetStateAction<number>>;
+}) {
+  useBodyScrollLock(true);
+  const total = items.length;
+  const item = items[index];
+  const touchStartX = useRef<number | null>(null);
+
+  const goPrev = useCallback(() => onNavigate((index - 1 + total) % total), [index, total, onNavigate]);
+  const goNext = useCallback(() => onNavigate((index + 1) % total), [index, total, onNavigate]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      else if (e.key === 'ArrowLeft') goPrev();
+      else if (e.key === 'ArrowRight') goNext();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose, goPrev, goNext]);
+
+  if (!item || item.kind !== 'media') return null;
+
+  const image = item.image;
+  const avifSrcSet = image?.variants.map((v) => `${v.avif} ${v.w}w`).join(', ') ?? '';
+  const webpSrcSet = image?.variants.map((v) => `${v.webp} ${v.w}w`).join(', ') ?? '';
+  const fallback = image?.variants[image.variants.length - 1]?.webp ?? item.url;
+
+  return (
+    <div
+      className="animate-fade-in fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Visor de fotos"
+      onClick={onClose}
+      onTouchStart={(e) => {
+        touchStartX.current = e.touches[0]?.clientX ?? null;
+      }}
+      onTouchEnd={(e) => {
+        const startX = touchStartX.current;
+        touchStartX.current = null;
+        if (startX == null) return;
+        const endX = e.changedTouches[0]?.clientX ?? startX;
+        const delta = endX - startX;
+        if (Math.abs(delta) < SWIPE_THRESHOLD_PX) return;
+        if (delta > 0) goPrev();
+        else goNext();
+      }}
+    >
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
+        aria-label="Cerrar"
+        className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:right-6 sm:top-6"
+      >
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+
+      {total > 1 ? (
+        <>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
+            aria-label="Foto anterior"
+            className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:left-4"
+          >
+            <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 6l-6 6 6 6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+            aria-label="Siguiente foto"
+            className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:right-4"
+          >
+            <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+        </>
+      ) : null}
+
+      <div
+        className="relative flex max-h-full max-w-full items-center justify-center"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {image && avifSrcSet && webpSrcSet ? (
+          <picture>
+            <source type="image/avif" srcSet={avifSrcSet} />
+            <source type="image/webp" srcSet={webpSrcSet} />
+            <img
+              key={itemKey(item)}
+              src={fallback}
+              alt=""
+              className="max-h-[90vh] max-w-[92vw] rounded-lg object-contain shadow-2xl"
+            />
+          </picture>
+        ) : (
+          <img
+            key={itemKey(item)}
+            src={item.url}
+            alt=""
+            className="max-h-[90vh] max-w-[92vw] rounded-lg object-contain shadow-2xl"
+          />
+        )}
+      </div>
+
+      {total > 1 ? (
+        <div className="absolute bottom-4 left-0 right-0 z-10 text-center text-[13px] tabular-nums text-white/60 sm:bottom-6">
+          {index + 1} / {total}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -537,6 +752,13 @@ export default function MasonryGallery({ items }: Props) {
   const videoItems = useMemo(() => items.filter((it) => isGalleryVideo(it)), [items]);
   const activeItems = mode === 'photos' ? photoItems : videoItems;
   const total = activeItems.length;
+
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const photoIndexByKey = useMemo(() => {
+    const m = new Map<string, number>();
+    photoItems.forEach((it, idx) => m.set(itemKey(it), idx));
+    return m;
+  }, [photoItems]);
 
   const [visibleCount, setVisibleCount] = useState(() => Math.min(INITIAL_WINDOW, total));
   const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -670,7 +892,15 @@ export default function MasonryGallery({ items }: Props) {
                 >
                   {seg.items.map((item) => {
                     const i = indexByKey.get(itemKey(item)) ?? 0;
-                    return <GalleryImageWithSkeleton key={itemKey(item)} item={item} eagerIndex={i} />;
+                    const fullIndex = photoIndexByKey.get(itemKey(item));
+                    return (
+                      <GalleryImageWithSkeleton
+                        key={itemKey(item)}
+                        item={item}
+                        eagerIndex={i}
+                        onOpen={fullIndex !== undefined ? () => setLightboxIndex(fullIndex) : undefined}
+                      />
+                    );
                   })}
                 </Masonry>
               </div>
@@ -757,6 +987,15 @@ export default function MasonryGallery({ items }: Props) {
           ref={sentinelRef}
           className="pointer-events-none mx-auto mt-6 h-8 w-full max-w-[120px] opacity-0"
           aria-hidden
+        />
+      ) : null}
+
+      {lightboxIndex !== null ? (
+        <PhotoLightbox
+          items={photoItems}
+          index={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onNavigate={setLightboxIndex}
         />
       ) : null}
     </div>
