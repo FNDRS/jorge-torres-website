@@ -440,6 +440,36 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
   );
 }
 
+/** Title + truncated description under a YouTube tile, sourced from the YouTube Data API at build time. */
+function VideoCaption({ title, description }: { title?: string; description?: string }) {
+  const [expanded, setExpanded] = useState(false);
+  if (!title && !description) return null;
+
+  return (
+    <div className="mt-3 px-1">
+      {title ? <p className="text-[14px] font-medium text-white/90">{title}</p> : null}
+      {description ? (
+        <>
+          <p
+            className={`mt-1 whitespace-pre-line text-[13px] leading-relaxed text-white/60 ${
+              expanded ? '' : 'line-clamp-3'
+            }`}
+          >
+            {description}
+          </p>
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="mt-1 text-[12px] font-medium text-white/40 transition hover:text-white/70 hover:underline hover:underline-offset-2"
+          >
+            {expanded ? 'Ver menos' : 'Ver más'}
+          </button>
+        </>
+      ) : null}
+    </div>
+  );
+}
+
 function StreamVideoTile({ item, priority }: { item: GalleryDisplayItem; priority: boolean }) {
   if (item.kind === 'youtube') return <YoutubeEmbed videoId={item.videoId} priority={priority} />;
   if (item.kind === 'vimeo') return <VimeoEmbed videoId={item.videoId} priority={priority} />;
@@ -983,6 +1013,9 @@ export default function MasonryGallery({ items }: Props) {
                 return (
                   <div key={itemKey(item)} className="min-w-0 animate-fade-in">
                     <StreamVideoTile item={item} priority={i < 4} />
+                    {item.kind === 'youtube' ? (
+                      <VideoCaption title={item.title} description={item.description} />
+                    ) : null}
                   </div>
                 );
               })}

@@ -11,7 +11,7 @@ import type { PublicGalleryItem } from '../lib/local-visuals';
 import { resolveGalleryItems } from '../lib/local-visuals';
 import { VISUAL_GALLERY_IMAGE_SIZES_ATTR } from '../lib/visuals-photo-sizes';
 
-const galleryItems = resolveGalleryItems();
+const galleryItems = await resolveGalleryItems();
 
 function isBlobVideoUrl(pathOrUrl: string) {
   return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(pathOrUrl);
