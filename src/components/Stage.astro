@@ -23,23 +23,12 @@ const style = backgroundImage
 
 <section
   class:list={[
-    'relative min-h-[calc(100svh-20px)] bg-[#0a0a0a] rounded-[40px] rounded-tr-none transition-all duration-500',
+    'relative min-h-[calc(100svh-20px)] bg-[#0a0a0a] rounded-[40px] transition-all duration-500',
     scrollable ? 'overflow-x-hidden overflow-y-visible' : 'overflow-hidden',
     className,
   ]}
   style={style}
 >
-  <!--
-    Notch negro en la esquina superior derecha: solo visible desde `md`, que es cuando el nav de
-    Chrome.astro pasa a estar absolutamente posicionado sobre esta esquina (`md:absolute`). Por
-    debajo de `md` el nav vive en flujo normal apilado bajo el logo, así que el notch no debe
-    mostrarse — de lo contrario queda flotando sobre/entre el logo y los enlaces.
-  -->
-  <div
-    class="hidden absolute top-0 right-0 h-[70px] w-[360px] bg-black rounded-bl-[40px] z-30 animate-fade-in opacity-0 md:block lg:w-[400px] xl:w-[440px]"
-  >
-  </div>
-
   <!-- Overlay (flat tint over background image) -->
   {
     !solid && (

@@ -8,18 +8,15 @@ const iconLinkClass =
 <header
   class="absolute left-0 right-0 top-0 z-40 animate-fade-in opacity-0 pt-[max(0.75rem,env(safe-area-inset-top,0px))] pl-[max(1rem,env(safe-area-inset-left,0px))] pr-[max(1rem,env(safe-area-inset-right,0px))] pb-3 md:py-7 md:pl-9 md:pr-9"
 >
-  <div class="relative flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-8">
+  <div class="relative flex items-center justify-between gap-3">
     <a
-      class="font-display max-w-full shrink-0 text-[clamp(1.375rem,5.5vw,2rem)] leading-tight tracking-[0.02em] text-white/95 transition-all duration-300 hover:text-white md:text-[32px] md:leading-none"
+      class="font-display min-w-0 truncate text-[clamp(1.25rem,5.5vw,2rem)] leading-tight tracking-[0.02em] text-white/95 transition-all duration-300 hover:text-white md:text-[32px] md:leading-none"
       href="/"
     >
       {site.name}
     </a>
 
-    <nav
-      class="-mr-2 flex max-w-full items-center gap-1 self-start md:absolute md:right-7 md:top-3 md:max-w-none md:gap-2"
-      aria-label="Top navigation"
-    >
+    <nav class="-mr-2 flex shrink-0 items-center gap-1 md:gap-2" aria-label="Top navigation">
       <a class={iconLinkClass} href={site.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
         <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
           <path
