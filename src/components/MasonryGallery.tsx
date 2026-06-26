@@ -8,7 +8,7 @@ import {
   type Dispatch,
   type SetStateAction,
 } from 'react';
-import { createPortal, flushSync } from 'react-dom';
+import { createPortal } from 'react-dom';
 import Masonry from 'react-masonry-css';
 import type { PublicGalleryItem } from '../lib/local-visuals';
 import { VISUAL_GALLERY_IMAGE_SIZES_ATTR } from '../lib/visuals-photo-sizes';
@@ -286,13 +286,6 @@ function GalleryImageWithSkeleton({
   );
 }
 
-/**
- * YouTube embed: modest branding, white progress bar, no annotations.
- * controls=0 keeps the bar minimal (tap / click on the video still pauses in most browsers).
- */
-const YT_EMBED_QUERY =
-  'rel=0&modestbranding=1&controls=0&color=white&iv_load_policy=3&playsinline=1&cc_load_policy=0';
-
 function youtubeThumbUrls(videoId: string) {
   const id = encodeURIComponent(videoId);
   return [
@@ -302,82 +295,57 @@ function youtubeThumbUrls(videoId: string) {
   ] as const;
 }
 
-function YoutubeEmbed({ videoId, priority }: { videoId: string; priority: boolean }) {
-  const [active, setActive] = useState(false);
+/** Thumbnail-only tile: clicking opens VideoLightbox instead of playing inline. */
+function YoutubeEmbed({ videoId, priority, onOpen }: { videoId: string; priority: boolean; onOpen: () => void }) {
   const [thumbStep, setThumbStep] = useState(0);
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const thumbs = useMemo(() => [...youtubeThumbUrls(videoId)], [videoId]);
   const posterSrc = thumbs[Math.min(thumbStep, thumbs.length - 1)]!;
 
-  if (!active) {
-    return (
-      <div className={VIDEO_TILE}>
-        <button
-          type="button"
-          onClick={() => {
-            flushSync(() => setActive(true));
-            const el = iframeRef.current;
-            if (el) requestFullscreenSafe(el);
-          }}
-          aria-label="Reproducir vídeo"
-          className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
-        >
-          <img
-            key={posterSrc}
-            src={posterSrc}
-            alt=""
-            width={1280}
-            height={720}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            decoding="async"
-            loading={priority ? 'eager' : 'lazy'}
-            onError={() =>
-              setThumbStep((s) => {
-                if (s >= thumbs.length - 1) return s;
-                return s + 1;
-              })
-            }
-            onLoad={(e) => {
-              if (thumbStep === 0 && e.currentTarget.naturalWidth > 0 && e.currentTarget.naturalWidth < 400) {
-                setThumbStep(2);
-              }
-            }}
-            className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
-          />
-          <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
-            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
-              <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="currentColor" aria-hidden>
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </span>
-          </span>
-        </button>
-      </div>
-    );
-  }
-
   return (
     <div className={VIDEO_TILE}>
-      <iframe
-        ref={iframeRef}
-        title={`Vídeo ${videoId}`}
-        src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&${YT_EMBED_QUERY}`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-        loading="lazy"
-        className={`h-full min-h-0 w-full min-w-0 max-w-full border-0 ${PHOTO_ROUNDED}`}
-      />
-      <FullscreenButton getTarget={() => iframeRef.current} />
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-label="Reproducir vídeo"
+        className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
+      >
+        <img
+          key={posterSrc}
+          src={posterSrc}
+          alt=""
+          width={1280}
+          height={720}
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          decoding="async"
+          loading={priority ? 'eager' : 'lazy'}
+          onError={() =>
+            setThumbStep((s) => {
+              if (s >= thumbs.length - 1) return s;
+              return s + 1;
+            })
+          }
+          onLoad={(e) => {
+            if (thumbStep === 0 && e.currentTarget.naturalWidth > 0 && e.currentTarget.naturalWidth < 400) {
+              setThumbStep(2);
+            }
+          }}
+          className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
+        />
+        <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
+            <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="currentColor" aria-hidden>
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </span>
+      </button>
     </div>
   );
 }
 
-const VIMEO_EMBED_QUERY = 'autoplay=1&dnt=1&title=0&byline=0&portrait=0&background=0';
-
-function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean }) {
-  const [active, setActive] = useState(false);
+/** Thumbnail-only tile: clicking opens VideoLightbox instead of playing inline. */
+function VimeoEmbed({ videoId, priority, onOpen }: { videoId: string; priority: boolean; onOpen: () => void }) {
   const [poster, setPoster] = useState<string | null>(null);
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -394,106 +362,135 @@ function VimeoEmbed({ videoId, priority }: { videoId: string; priority: boolean 
     };
   }, [videoId]);
 
-  if (!active) {
-    return (
-      <div className={VIDEO_TILE}>
-        <button
-          type="button"
-          onClick={() => {
-            flushSync(() => setActive(true));
-            const el = iframeRef.current;
-            if (el) requestFullscreenSafe(el);
-          }}
-          aria-label="Reproducir vídeo de Vimeo"
-          className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
-        >
-          {poster ? (
-            <img
-              src={poster}
-              alt=""
-              width={1920}
-              height={1080}
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              decoding="async"
-              loading={priority ? 'eager' : 'lazy'}
-              className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
-            />
-          ) : (
-            <div className={`h-full min-h-[12rem] w-full min-w-0 max-w-full bg-zinc-900 ${PHOTO_ROUNDED}`} />
-          )}
-          <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
-            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
-              <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="currentColor" aria-hidden>
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </span>
-          </span>
-        </button>
-      </div>
-    );
-  }
-
   return (
     <div className={VIDEO_TILE}>
-      <iframe
-        ref={iframeRef}
-        title={`Vimeo ${videoId}`}
-        src={`https://player.vimeo.com/video/${encodeURIComponent(videoId)}?${VIMEO_EMBED_QUERY}`}
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowFullScreen
-        loading="lazy"
-        className={`h-full min-h-0 w-full min-w-0 max-w-full border-0 ${PHOTO_ROUNDED}`}
-      />
-      <FullscreenButton getTarget={() => iframeRef.current} />
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-label="Reproducir vídeo de Vimeo"
+        className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
+      >
+        {poster ? (
+          <img
+            src={poster}
+            alt=""
+            width={1920}
+            height={1080}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            decoding="async"
+            loading={priority ? 'eager' : 'lazy'}
+            className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
+          />
+        ) : (
+          <div className={`h-full min-h-[12rem] w-full min-w-0 max-w-full bg-zinc-900 ${PHOTO_ROUNDED}`} />
+        )}
+        <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
+            <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="currentColor" aria-hidden>
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </span>
+      </button>
     </div>
   );
+}
+
+/** Just the title under a video thumbnail — full info lives in VideoLightbox once opened. */
+function VideoTitle({ title }: { title?: string }) {
+  if (!title) return null;
+  return <p className="mt-3 px-1 text-[14px] font-medium text-white/90">{title}</p>;
+}
+
+function StreamVideoTile({
+  item,
+  priority,
+  onOpenVideo,
+}: {
+  item: GalleryDisplayItem;
+  priority: boolean;
+  onOpenVideo: Dispatch<SetStateAction<GalleryDisplayItem | null>>;
+}) {
+  if (item.kind === 'youtube') {
+    return <YoutubeEmbed videoId={item.videoId} priority={priority} onOpen={() => onOpenVideo(item)} />;
+  }
+  if (item.kind === 'vimeo') {
+    return <VimeoEmbed videoId={item.videoId} priority={priority} onOpen={() => onOpenVideo(item)} />;
+  }
+  return <VideoBlobTile url={item.url} priority={priority} />;
 }
 
 /**
- * Title + collapsed "Descripción" toggle under a YouTube tile, sourced from the YouTube Data API
- * at build time. Collapsed by default so the grid stays a thumbnail wall; tapping the label
- * reveals the full untruncated text below for people who want to scroll and read it.
+ * Full-screen video viewer: video on top, title + complete description below within the same
+ * scrollable overlay — mirrors a YouTube watch page instead of relying on the browser's native
+ * Fullscreen API, which can't show anything outside the embedded iframe itself.
  */
-function VideoCaption({ title, description }: { title?: string; description?: string }) {
-  const [open, setOpen] = useState(false);
-  if (!title && !description) return null;
+function VideoLightbox({ item, onClose }: { item: GalleryDisplayItem; onClose: () => void }) {
+  useBodyScrollLock(true);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
+  if (item.kind !== 'youtube' && item.kind !== 'vimeo') return null;
+  const title = item.kind === 'youtube' ? item.title : undefined;
+  const description = item.kind === 'youtube' ? item.description : undefined;
+
+  const embedSrc =
+    item.kind === 'youtube'
+      ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(item.videoId)}?autoplay=1&rel=0&modestbranding=1&playsinline=1`
+      : `https://player.vimeo.com/video/${encodeURIComponent(item.videoId)}?autoplay=1&dnt=1`;
 
   return (
-    <div className="mt-3 px-1">
-      {title ? <p className="text-[14px] font-medium text-white/90">{title}</p> : null}
-      {description ? (
-        <div className="mt-1.5">
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/40 transition hover:text-white/75"
-          >
-            Descripción
-            <svg
-              viewBox="0 0 24 24"
-              className={`h-3 w-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2.5}
-              aria-hidden
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-          {open ? (
-            <p className="mt-2 whitespace-pre-line text-[13px] leading-relaxed text-white/60">{description}</p>
+    <div
+      className="animate-fade-in fixed inset-0 z-[100] overflow-y-auto bg-black/95 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Visor de video"
+      onClick={onClose}
+    >
+      <div className="mx-auto flex min-h-full w-full max-w-[960px] flex-col px-4 py-6 sm:px-6 sm:py-10">
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          aria-label="Cerrar"
+          className="mb-3 flex h-11 w-11 items-center justify-center self-end rounded-full bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60"
+        >
+          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <div
+          className="aspect-video w-full shrink-0 overflow-hidden rounded-xl bg-black shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <iframe
+            key={embedSrc}
+            title={title || 'Vídeo'}
+            src={embedSrc}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            allowFullScreen
+            className="h-full w-full border-0"
+          />
+        </div>
+
+        <div className="mt-6 pb-10" onClick={(e) => e.stopPropagation()}>
+          {title ? <h2 className="font-display text-xl font-semibold text-white sm:text-2xl">{title}</h2> : null}
+          {description ? (
+            <p className="mt-4 whitespace-pre-line text-[14px] leading-relaxed text-white/70">{description}</p>
           ) : null}
         </div>
-      ) : null}
+      </div>
     </div>
   );
-}
-
-function StreamVideoTile({ item, priority }: { item: GalleryDisplayItem; priority: boolean }) {
-  if (item.kind === 'youtube') return <YoutubeEmbed videoId={item.videoId} priority={priority} />;
-  if (item.kind === 'vimeo') return <VimeoEmbed videoId={item.videoId} priority={priority} />;
-  return <VideoBlobTile url={item.url} priority={priority} />;
 }
 
 /** Consecutive items of the same “lane” (images vs fixed-aspect videos). */
@@ -813,6 +810,7 @@ export default function MasonryGallery({ items }: Props) {
   const total = activeItems.length;
 
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [videoLightboxItem, setVideoLightboxItem] = useState<GalleryDisplayItem | null>(null);
   const photoIndexByKey = useMemo(() => {
     const m = new Map<string, number>();
     photoItems.forEach((it, idx) => m.set(itemKey(it), idx));
@@ -989,7 +987,7 @@ export default function MasonryGallery({ items }: Props) {
                 <div
                   className={`flex min-w-0 flex-col gap-3 ${hasRight ? 'w-full shrink-0 lg:w-1/2 lg:max-w-[50%]' : 'w-full'}`}
                 >
-                  <StreamVideoTile item={seg.video} priority={vi < 4} />
+                  <StreamVideoTile item={seg.video} priority={vi < 4} onOpenVideo={setVideoLightboxItem} />
                   {leftImages.length > 0 ? (
                     <Masonry
                       breakpointCols={leftMasonryCols}
@@ -1032,10 +1030,8 @@ export default function MasonryGallery({ items }: Props) {
                 const i = indexByKey.get(itemKey(item)) ?? 0;
                 return (
                   <div key={itemKey(item)} className="min-w-0 animate-fade-in">
-                    <StreamVideoTile item={item} priority={i < 4} />
-                    {item.kind === 'youtube' ? (
-                      <VideoCaption title={item.title} description={item.description} />
-                    ) : null}
+                    <StreamVideoTile item={item} priority={i < 4} onOpenVideo={setVideoLightboxItem} />
+                    {item.kind === 'youtube' ? <VideoTitle title={item.title} /> : null}
                   </div>
                 );
               })}
@@ -1060,6 +1056,13 @@ export default function MasonryGallery({ items }: Props) {
               onClose={() => setLightboxIndex(null)}
               onNavigate={setLightboxIndex}
             />,
+            document.body,
+          )
+        : null}
+
+      {videoLightboxItem && typeof document !== 'undefined'
+        ? createPortal(
+            <VideoLightbox item={videoLightboxItem} onClose={() => setVideoLightboxItem(null)} />,
             document.body,
           )
         : null}
