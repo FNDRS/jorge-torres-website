@@ -1,5 +1,5 @@
 ---
-export const prerender = false;
+export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
 import Chrome from '../components/Chrome.astro';
@@ -7,11 +7,11 @@ import Stage from '../components/Stage.astro';
 import PillNav from '../components/PillNav.astro';
 import MasonryGallery from '../components/MasonryGallery';
 import { site } from '../lib/site';
-import type { PublicGalleryItem } from '../lib/blob-visuals';
-import { resolveGalleryItems } from '../lib/blob-visuals';
+import type { PublicGalleryItem } from '../lib/local-visuals';
+import { resolveGalleryItems } from '../lib/local-visuals';
 import { VISUAL_GALLERY_IMAGE_SIZES_ATTR } from '../lib/visuals-photo-sizes';
 
-const galleryItems = await resolveGalleryItems();
+const galleryItems = resolveGalleryItems();
 
 function isBlobVideoUrl(pathOrUrl: string) {
   return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(pathOrUrl);

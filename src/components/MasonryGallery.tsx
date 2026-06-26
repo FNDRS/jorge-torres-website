@@ -9,7 +9,7 @@ import {
   type SetStateAction,
 } from 'react';
 import Masonry from 'react-masonry-css';
-import type { PublicGalleryItem } from '../lib/blob-visuals';
+import type { PublicGalleryItem } from '../lib/local-visuals';
 import { VISUAL_GALLERY_IMAGE_SIZES_ATTR } from '../lib/visuals-photo-sizes';
 
 export type GalleryDisplayItem = PublicGalleryItem;
@@ -602,14 +602,8 @@ export default function MasonryGallery({ items }: Props) {
       <div className="w-full min-w-0 max-w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-14 text-center sm:px-8 sm:py-16">
         <p className="font-display text-lg font-medium text-white/90">Galería vacía</p>
         <p className="mx-auto mt-3 max-w-md text-[14px] leading-relaxed text-white/55">
-          Sube fotos y vídeos a Vercel Blob o añade enlaces de YouTube / Vimeo en{' '}
-          <a
-            href="/admin/visuals"
-            className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white/60"
-          >
-            /admin/visuals
-          </a>
-          . Revisa que <code className="text-white/80">BLOB_READ_WRITE_TOKEN</code> esté configurado.
+          Añade fotos a <code className="text-white/80">public/media/visuals</code> ejecutando{' '}
+          <code className="text-white/80">scripts/build-visuals-manifest.mjs</code>.
         </p>
       </div>
     );
@@ -619,8 +613,8 @@ export default function MasonryGallery({ items }: Props) {
     const otherHas = mode === 'photos' ? videoItems.length > 0 : photoItems.length > 0;
     const hint =
       mode === 'photos'
-        ? 'Aún no hay imágenes en la galería. Prueba la pestaña Vídeos o sube JPG/PNG/WebP desde el panel de administración.'
-        : 'Aún no hay vídeos (YouTube, Vimeo o archivos de vídeo). Prueba la pestaña Fotos o añade enlaces en el panel de administración.';
+        ? 'Aún no hay imágenes en la galería. Prueba la pestaña Vídeos o añade fotos a public/media/visuals.'
+        : 'Aún no hay vídeos. Prueba la pestaña Fotos.';
     return (
       <div className="w-full min-w-0 max-w-full overflow-x-clip overscroll-y-contain">
         <VisualsModeSwitch
