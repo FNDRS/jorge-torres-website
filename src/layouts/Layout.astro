@@ -7,19 +7,21 @@ type Props = {
   description?: string;
   /** When true, ask crawlers not to index (e.g. admin tools). */
   noindex?: boolean;
+  /** Wraps the Person schema in a ProfilePage — Google's recommended pattern for personal portfolio homepages. */
+  isProfilePage?: boolean;
 };
 
 const {
   title = 'Jorge Torres',
   description = `${site.name} — ${site.subtitle}. ${site.location}.`,
   noindex = false,
+  isProfilePage = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL('/media/profile-jorge.png', Astro.site);
 
-const personJsonLd = {
-  '@context': 'https://schema.org',
+const personSchema = {
   '@type': 'Person',
   name: site.name,
   jobTitle: site.subtitle,
@@ -27,11 +29,22 @@ const personJsonLd = {
   image: ogImageURL.toString(),
   address: {
     '@type': 'PostalAddress',
-    addressLocality: site.location,
+    addressLocality: site.locality,
+    addressCountry: site.countryCode,
   },
   email: site.email,
+  knowsAbout: site.knowsAbout,
+  worksFor: {
+    '@type': 'Organization',
+    name: site.organization.name,
+    url: site.organization.url,
+  },
   sameAs: [site.social.youtube, site.social.instagram, site.social.linkedin],
 };
+
+const structuredData = isProfilePage
+  ? { '@context': 'https://schema.org', '@type': 'ProfilePage', mainEntity: personSchema }
+  : { '@context': 'https://schema.org', ...personSchema };
 ---
 
 <!doctype html>
@@ -55,7 +68,7 @@ const personJsonLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
-    <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
