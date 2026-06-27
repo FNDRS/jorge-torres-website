@@ -47,6 +47,54 @@ function masonryColsForCount(n: number) {
   };
 }
 
+/** Same breakpoints as masonryColsForCount, picked client-side so we can pack by real column height. */
+function columnCountForWidth(width: number, itemCount: number) {
+  const capped = Math.min(4, Math.max(1, itemCount));
+  if (width >= 1024) return Math.min(capped, 4);
+  if (width >= 768) return Math.min(capped, 3);
+  if (width >= 480) return Math.min(capped, 2);
+  return 1;
+}
+
+function useResponsiveColumnCount(itemCount: number) {
+  const [width, setWidth] = useState(() => (typeof window === 'undefined' ? 1280 : window.innerWidth));
+
+  useEffect(() => {
+    const onResize = () => setWidth(window.innerWidth);
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  return columnCountForWidth(width, itemCount);
+}
+
+/**
+ * Packs items into `columnCount` columns by assigning each to the column with the smallest
+ * estimated height so far (height/width ratio from known image dimensions) — unlike
+ * react-masonry-css's plain round-robin, this keeps columns visually balanced even when item
+ * counts/aspect ratios are uneven, which was leaving the last items stranded alone in one column.
+ */
+function packIntoColumns(items: GalleryDisplayItem[], columnCount: number): GalleryDisplayItem[][] {
+  const columns: GalleryDisplayItem[][] = Array.from({ length: columnCount }, () => []);
+  const heights = new Array(columnCount).fill(0);
+
+  for (const item of items) {
+    const w = item.kind === 'media' ? item.image?.width : undefined;
+    const h = item.kind === 'media' ? item.image?.height : undefined;
+    const ratio = w && h && w > 0 ? h / w : 1;
+
+    let shortest = 0;
+    for (let i = 1; i < columnCount; i++) {
+      if (heights[i] < heights[shortest]) shortest = i;
+    }
+    columns[shortest].push(item);
+    heights[shortest] += ratio;
+  }
+
+  return columns;
+}
+
 /** Same radius as stills; `isolate` helps iframes respect `overflow-hidden` clipping. `min-w-0` avoids flex/grid overflow on narrow viewports. */
 const VIDEO_TILE =
   'relative group aspect-video min-h-0 min-w-0 w-full max-w-full overflow-hidden rounded-xl bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)] isolate';
@@ -810,6 +858,43 @@ function VisualsModeSwitch({
   );
 }
 
+/** Height-balanced photo grid (see packIntoColumns) — replaces react-masonry-css's round-robin for stills. */
+function MasonryImageGrid({
+  items,
+  indexByKey,
+  photoIndexByKey,
+  onOpen,
+}: {
+  items: GalleryDisplayItem[];
+  indexByKey: Map<string, number>;
+  photoIndexByKey: Map<string, number>;
+  onOpen: Dispatch<SetStateAction<number | null>>;
+}) {
+  const columnCount = useResponsiveColumnCount(items.length);
+  const columns = useMemo(() => packIntoColumns(items, columnCount), [items, columnCount]);
+
+  return (
+    <div className="flex min-w-0 gap-3">
+      {columns.map((col, ci) => (
+        <div key={ci} className="flex min-w-0 flex-1 flex-col">
+          {col.map((item) => {
+            const i = indexByKey.get(itemKey(item)) ?? 0;
+            const fullIndex = photoIndexByKey.get(itemKey(item));
+            return (
+              <GalleryImageWithSkeleton
+                key={itemKey(item)}
+                item={item}
+                eagerIndex={i}
+                onOpen={fullIndex !== undefined ? () => onOpen(fullIndex) : undefined}
+              />
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function MasonryGallery({ items }: Props) {
   const [mode, setMode] = useState<VisualsMode>('photos');
   const photoItems = useMemo(() => items.filter((it) => !isGalleryVideo(it)), [items]);
@@ -950,24 +1035,12 @@ export default function MasonryGallery({ items }: Props) {
           if (seg.type === 'images') {
             return (
               <div key={seg.key} className="mb-1 min-w-0">
-                <Masonry
-                  breakpointCols={masonryColsForCount(seg.items.length)}
-                  className="masonry-grid"
-                  columnClassName="masonry-column"
-                >
-                  {seg.items.map((item) => {
-                    const i = indexByKey.get(itemKey(item)) ?? 0;
-                    const fullIndex = photoIndexByKey.get(itemKey(item));
-                    return (
-                      <GalleryImageWithSkeleton
-                        key={itemKey(item)}
-                        item={item}
-                        eagerIndex={i}
-                        onOpen={fullIndex !== undefined ? () => setLightboxIndex(fullIndex) : undefined}
-                      />
-                    );
-                  })}
-                </Masonry>
+                <MasonryImageGrid
+                  items={seg.items}
+                  indexByKey={indexByKey}
+                  photoIndexByKey={photoIndexByKey}
+                  onOpen={setLightboxIndex}
+                />
               </div>
             );
           }
