@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jorge-torres-website.vercel.app/sitemap.xml
+Sitemap: https://jorgeetorres.com/sitemap.xml
