@@ -14,27 +14,27 @@ const activeClass = 'bg-white/95 text-black/85 hover:bg-white/95';
 
 <nav
   class="fixed bottom-[max(1.25rem,calc(0.75rem+env(safe-area-inset-bottom,0px)))] left-1/2 z-50 inline-flex max-w-[calc(100vw-1.25rem-env(safe-area-inset-left,0px)-env(safe-area-inset-right,0px))] -translate-x-1/2 gap-1 overflow-x-auto rounded-full bg-gray-300/80 p-1 [-ms-overflow-style:none] [scrollbar-width:none] backdrop-blur-xl [&::-webkit-scrollbar]:hidden"
-  aria-label="Primary"
+  aria-label="Navegación principal"
 >
   <a
     href={site.routes.visuals}
     class:list={[baseClass, active === 'visuals' && activeClass]}
     aria-current={active === 'visuals' ? 'page' : undefined}
   >
-    Visuals
+    Galería
   </a>
   <a
     href={site.routes.history}
     class:list={[baseClass, active === 'history' && activeClass]}
     aria-current={active === 'history' ? 'page' : undefined}
   >
-    My History
+    Mi Historia
   </a>
   <a
     href={site.routes.contact}
     class:list={[baseClass, active === 'contact' && activeClass]}
     aria-current={active === 'contact' ? 'page' : undefined}
   >
-    Contact
+    Contacto
   </a>
 </nav>

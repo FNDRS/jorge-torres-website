@@ -6,6 +6,8 @@ import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
+  // TODO: update once the custom domain is live.
+  site: 'https://jorge-torres-website.vercel.app',
   output: 'hybrid',
   adapter: vercel(),
   integrations: [react(), tailwind()],

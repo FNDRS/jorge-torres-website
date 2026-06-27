@@ -1,6 +1,6 @@
 export const site = {
   name: 'Jorge Torres',
-  subtitle: 'Photographer | Content Creator',
+  subtitle: 'Fotógrafo | Creador de Contenido',
   location: 'Tegucigalpa, Honduras',
   email: 'jorgee.torres@gmail.com',
   social: {
