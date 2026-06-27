@@ -31,14 +31,18 @@ export type PublicGalleryImageMeta = {
 
 export type PublicGalleryItem =
   | { kind: 'media'; url: string; packId?: string; image?: PublicGalleryImageMeta }
-  | { kind: 'youtube'; videoId: string; title?: string; description?: string }
+  | { kind: 'youtube'; videoId: string; title?: string; description?: string; embeddable?: boolean }
   | { kind: 'vimeo'; videoId: string };
 
-/** Static YouTube/Vimeo embeds for the gallery (recovered from the old Blob-backed admin panel). */
-const EMBEDS: { provider: 'youtube' | 'vimeo'; videoId: string; addedAt: string }[] = [
+/**
+ * Static YouTube/Vimeo embeds for the gallery (recovered from the old Blob-backed admin panel).
+ * `embeddable: false` is for videos whose publisher (e.g. a music rights holder via Content ID)
+ * blocks third-party embedding — those open directly on youtube.com instead of trying to play inline.
+ */
+const EMBEDS: { provider: 'youtube' | 'vimeo'; videoId: string; addedAt: string; embeddable?: boolean }[] = [
   { provider: 'youtube', videoId: 'xhtXOz1Sst0', addedAt: '2026-06-25T06:51:24.403Z' },
   { provider: 'youtube', videoId: 'q3UMWIFAyQE', addedAt: '2026-06-25T06:48:36.597Z' },
-  { provider: 'youtube', videoId: 'sZImzEHTLes', addedAt: '2026-06-25T06:48:00.450Z' },
+  { provider: 'youtube', videoId: 'sZImzEHTLes', addedAt: '2026-06-25T06:48:00.450Z', embeddable: false },
   { provider: 'youtube', videoId: 's4uXQo1exKs', addedAt: '2026-06-25T06:46:02.705Z' },
 ];
 
@@ -101,6 +105,7 @@ export async function resolveGalleryItems(): Promise<PublicGalleryItem[]> {
         videoId: e.videoId,
         ...(snippet?.title ? { title: snippet.title } : {}),
         ...(snippet?.description ? { description: snippet.description } : {}),
+        ...(e.embeddable === false ? { embeddable: false } : {}),
       };
     }),
   );

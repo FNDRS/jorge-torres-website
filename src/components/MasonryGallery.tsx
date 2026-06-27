@@ -450,6 +450,54 @@ function VideoTitle({ title }: { title?: string }) {
   return <p className="mt-3 px-1 text-[14px] font-medium text-white/90">{title}</p>;
 }
 
+/**
+ * For videos whose rights holder blocks third-party embedding (e.g. a Content ID claim on the
+ * background music) — links straight to the YouTube watch page instead of trying to play inline.
+ */
+function YoutubeWatchLinkTile({ videoId, priority }: { videoId: string; priority: boolean }) {
+  const [thumbStep, setThumbStep] = useState(0);
+  const thumbs = useMemo(() => [...youtubeThumbUrls(videoId)], [videoId]);
+  const posterSrc = thumbs[Math.min(thumbStep, thumbs.length - 1)]!;
+
+  return (
+    <div className={VIDEO_TILE}>
+      <a
+        href={`https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Ver vídeo en YouTube"
+        className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
+      >
+        <img
+          key={posterSrc}
+          src={posterSrc}
+          alt=""
+          width={1280}
+          height={720}
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          decoding="async"
+          loading={priority ? 'eager' : 'lazy'}
+          onError={() =>
+            setThumbStep((s) => {
+              if (s >= thumbs.length - 1) return s;
+              return s + 1;
+            })
+          }
+          className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover opacity-90 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
+        />
+        <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 transition group-hover:bg-black/45">
+          <span className="flex items-center gap-2 rounded-full bg-white/95 px-5 py-2.5 text-[13px] font-medium text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Ver en YouTube
+          </span>
+        </span>
+      </a>
+    </div>
+  );
+}
+
 function StreamVideoTile({
   item,
   priority,
@@ -460,6 +508,9 @@ function StreamVideoTile({
   onOpenVideo: Dispatch<SetStateAction<GalleryDisplayItem | null>>;
 }) {
   if (item.kind === 'youtube') {
+    if (item.embeddable === false) {
+      return <YoutubeWatchLinkTile videoId={item.videoId} priority={priority} />;
+    }
     return <YoutubeEmbed videoId={item.videoId} priority={priority} onOpen={() => onOpenVideo(item)} />;
   }
   if (item.kind === 'vimeo') {
