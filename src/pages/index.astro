@@ -7,10 +7,10 @@ import { site } from '../lib/site';
 ---
 
 <Layout title={site.name} description={`${site.name} - ${site.subtitle}`}>
-  <div class="h-svh overflow-hidden p-[10px]">
+  <div class="h-svh overflow-hidden">
     <Chrome />
 
-    <Stage backgroundImage="/media/landing-bg.png" backgroundPosition="50% 40%" class="h-[calc(100svh-20px)]">
+    <Stage backgroundImage="/media/landing-bg.png" backgroundPosition="50% 40%" class="h-svh">
       <PillNav />
       <div class="relative z-20 flex h-full items-center justify-center px-6">
         <div class="text-center">

@@ -7,10 +7,10 @@ import { site } from '../lib/site';
 ---
 
 <Layout title={`${site.name} - My History`} description={`${site.name} story`}>
-  <div class="min-h-svh p-[10px] md:h-svh md:overflow-hidden">
+  <div class="min-h-svh md:h-svh md:overflow-hidden">
     <Chrome />
 
-    <Stage solid class="bg-black md:h-[calc(100svh-20px)]" scrollable>
+    <Stage solid class="bg-black md:h-svh" scrollable>
       <PillNav active="history" />
       <div
         class="relative z-20 flex flex-col px-6 pb-32 pt-32 sm:px-10 md:h-full md:justify-center md:px-40 md:pb-0 md:pt-0 lg:px-48 xl:px-56"
