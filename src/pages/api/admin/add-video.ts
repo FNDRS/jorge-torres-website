@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { isAuthenticated } from '../../../lib/admin-auth';
-import { getFile, putFile } from '../../../lib/github-api';
+import { getFile, putFile, triggerDeploy } from '../../../lib/github-api';
 
 export const prerender = false;
 
@@ -39,5 +39,6 @@ export const POST: APIRoute = async ({ request }) => {
   if (updated === file.content) return new Response('No se encontró el array EMBEDS', { status: 500 });
 
   await putFile(filePath, updated, `admin: add YouTube video ${videoId}`, file.sha);
+  await triggerDeploy();
   return new Response(JSON.stringify({ ok: true, videoId }), { status: 200 });
 };

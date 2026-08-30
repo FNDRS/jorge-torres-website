@@ -365,6 +365,154 @@ const authed = isAuthenticated(Astro.request);
 
     /* ── Spacer ── */
     .grow { flex: 1; }
+
+    /* ── Content section ── */
+    .content-section {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 { font-size: 15px; font-weight: 600; }
+
+    .sub-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--text3);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cnt-badge {
+      background: rgba(255,255,255,.07);
+      padding: 1px 7px;
+      border-radius: 20px;
+      font-size: 10px;
+      color: var(--text2);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .photo-item {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-del {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .18s;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .photo-item:hover .photo-del { opacity: 1; }
+
+    .video-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .video-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 10px 12px 10px 10px;
+    }
+
+    .video-item img {
+      width: 80px;
+      height: 45px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+      background: #222;
+    }
+
+    .vi-info { flex: 1; min-width: 0; }
+
+    .vi-id {
+      font-size: 12px;
+      color: var(--text2);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .vi-badge {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 20px;
+      margin-top: 4px;
+    }
+
+    .vi-badge.embed { background: rgba(249,115,22,.15); color: var(--orange); }
+    .vi-badge.link { background: rgba(255,255,255,.07); color: var(--text3); }
+
+    .del-btn {
+      width: 30px;
+      height: 30px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      color: var(--text3);
+      transition: background .18s, color .18s, border-color .18s;
+    }
+
+    .del-btn:hover { background: rgba(239,68,68,.15); color: #f87171; border-color: rgba(239,68,68,.3); }
+
+    .c-loading { font-size: 13px; color: var(--text3); padding: 20px 0; display: flex; align-items: center; gap: 10px; }
+
+    .spin {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,.1);
+      border-top-color: var(--orange);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .c-empty { font-size: 13px; color: var(--text3); padding: 12px 0; }
   </style>
 </head>
 <body>
@@ -451,6 +599,30 @@ const authed = isAuthenticated(Astro.request);
         </div>
       </div>
 
+    </div>
+
+    <!-- ── Current content ── -->
+    <div class="content-section">
+      <div class="section-head">
+        <h2>Contenido actual</h2>
+        <button class="btn btn-ghost btn-sm" id="refreshBtn">↻ Actualizar</button>
+      </div>
+
+      <div class="c-loading" id="cLoading"><div class="spin"></div> Cargando…</div>
+
+      <div id="cLoaded" style="display:none">
+        <div class="sub-label">Fotos <span class="cnt-badge" id="photoCnt"></span></div>
+        <div class="photo-grid" id="photoGrid">
+          <div class="c-empty" id="photoEmpty" style="display:none">Sin fotos</div>
+        </div>
+
+        <div class="sub-label" style="margin-top:8px">Videos <span class="cnt-badge" id="videoCnt"></span></div>
+        <div class="video-list" id="videoList">
+          <div class="c-empty" id="videoEmpty" style="display:none">Sin videos</div>
+        </div>
+      </div>
+
+      <div class="c-empty" id="cError" style="display:none">Error al cargar contenido.</div>
     </div>
   </div>
 ) : (
@@ -663,9 +835,110 @@ const authed = isAuthenticated(Astro.request);
 
     loginBtn.addEventListener('click', doLogin);
     loginPwd.addEventListener('keydown', (e) => { if (e.key === 'Enter') doLogin(); });
-    // Focus password field on load
     loginPwd.focus();
   }
+
+  // ── Content loader ──
+  const TRASH = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14H6L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4h6v2"></path></svg>`;
+
+  async function loadContent() {
+    const loading = document.getElementById('cLoading');
+    const loaded = document.getElementById('cLoaded');
+    const errEl = document.getElementById('cError');
+    if (!loading || !loaded || !errEl) return;
+
+    loading.style.display = 'flex';
+    loaded.style.display = 'none';
+    errEl.style.display = 'none';
+
+    try {
+      const res = await fetch('/api/admin/content');
+      if (!res.ok) throw new Error(res.statusText);
+      const data = await res.json() as {
+        photos: { id: string; url: string; lqip: string; uploadedAt: string }[];
+        videos: { videoId: string; embeddable: boolean }[];
+      };
+
+      // Photos
+      const grid = document.getElementById('photoGrid')!;
+      const photoEmpty = document.getElementById('photoEmpty')!;
+      const photoCnt = document.getElementById('photoCnt')!;
+      grid.innerHTML = '';
+      photoCnt.textContent = String(data.photos.length);
+      if (data.photos.length === 0) {
+        grid.appendChild(photoEmpty);
+        photoEmpty.style.display = '';
+      } else {
+        data.photos.forEach(({ id, url, lqip }) => {
+          const item = document.createElement('div');
+          item.className = 'photo-item';
+          item.innerHTML = `
+            <img src="${url}" loading="lazy" decoding="async" style="background:url('${lqip}') center/cover" />
+            <button class="photo-del" title="Eliminar foto">${TRASH}</button>`;
+          item.querySelector('button')!.addEventListener('click', async () => {
+            if (!confirm('¿Eliminar esta foto? No se puede deshacer.')) return;
+            item.style.opacity = '0.4';
+            const r = await fetch('/api/admin/delete-photo', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id }),
+            });
+            if (r.ok) item.remove();
+            else { item.style.opacity = '1'; alert('Error al eliminar.'); }
+          });
+          grid.appendChild(item);
+        });
+      }
+
+      // Videos
+      const list = document.getElementById('videoList')!;
+      const videoEmpty = document.getElementById('videoEmpty')!;
+      const videoCnt = document.getElementById('videoCnt')!;
+      list.innerHTML = '';
+      videoCnt.textContent = String(data.videos.length);
+      if (data.videos.length === 0) {
+        list.appendChild(videoEmpty);
+        videoEmpty.style.display = '';
+      } else {
+        data.videos.forEach(({ videoId, embeddable }) => {
+          const item = document.createElement('div');
+          item.className = 'video-item';
+          const badgeClass = embeddable ? 'embed' : 'link';
+          const badgeLabel = embeddable ? 'embed' : 'link only';
+          item.innerHTML = `
+            <img src="https://img.youtube.com/vi/${videoId}/mqdefault.jpg" loading="lazy" alt="" />
+            <div class="vi-info">
+              <div class="vi-id">${videoId}</div>
+              <span class="vi-badge ${badgeClass}">${badgeLabel}</span>
+            </div>
+            <button class="del-btn" title="Eliminar video">${TRASH}</button>`;
+          item.querySelector('button')!.addEventListener('click', async () => {
+            if (!confirm(`¿Eliminar el video ${videoId}?`)) return;
+            item.style.opacity = '0.4';
+            const r = await fetch('/api/admin/delete-video', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ videoId }),
+            });
+            if (r.ok) item.remove();
+            else { item.style.opacity = '1'; alert('Error al eliminar.'); }
+          });
+          list.appendChild(item);
+        });
+      }
+
+      loading.style.display = 'none';
+      loaded.style.display = '';
+    } catch {
+      loading.style.display = 'none';
+      errEl.style.display = '';
+    }
+  }
+
+  document.getElementById('refreshBtn')?.addEventListener('click', loadContent);
+
+  // Auto-load on dashboard
+  if (document.getElementById('cLoading')) loadContent();
 </script>
 
 </body>

@@ -22,6 +22,12 @@ export async function getFile(path: string): Promise<{ content: string; sha: str
   return { content: Buffer.from(data.content, 'base64').toString('utf-8'), sha: data.sha };
 }
 
+export async function triggerDeploy(): Promise<void> {
+  const hookUrl = process.env.DEPLOY_HOOK_URL;
+  if (!hookUrl) return;
+  await fetch(hookUrl, { method: 'POST' }).catch(() => {});
+}
+
 export async function putFile(path: string, content: string | Buffer, message: string, sha?: string): Promise<void> {
   const b64 = Buffer.isBuffer(content) ? content.toString('base64') : Buffer.from(content).toString('base64');
   const body: Record<string, string> = { message, content: b64, branch: BRANCH };

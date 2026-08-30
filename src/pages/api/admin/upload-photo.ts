@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import sharp from 'sharp';
 import { isAuthenticated } from '../../../lib/admin-auth';
-import { getFile, putFile } from '../../../lib/github-api';
+import { getFile, putFile, triggerDeploy } from '../../../lib/github-api';
 
 export const prerender = false;
 
@@ -70,5 +70,6 @@ export const POST: APIRoute = async ({ request }) => {
     manifestFile.sha,
   );
 
+  await triggerDeploy();
   return new Response(JSON.stringify({ ok: true, id }), { status: 200 });
 };
