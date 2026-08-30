@@ -20,6 +20,8 @@ export const GET: APIRoute = async ({ request }) => {
     id: p.id,
     url: p.variants?.[p.variants.length - 1]?.webpUrl ?? '',
     lqip: p.lqip,
+    width: p.width,
+    height: p.height,
     uploadedAt: p.uploadedAt,
   }));
 
