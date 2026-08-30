@@ -403,22 +403,31 @@ const authed = isAuthenticated(Astro.request);
     }
 
     .photo-grid {
-      columns: 4;
-      column-gap: 6px;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
       margin-bottom: 28px;
     }
 
-    @media (max-width: 768px) { .photo-grid { columns: 3; } }
-    @media (max-width: 480px) { .photo-grid { columns: 2; } }
+    .photo-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-height: 40px;
+      border-radius: 6px;
+      transition: outline .15s;
+    }
+
+    .photo-col.col-over { outline: 1.5px dashed var(--orange); }
 
     .photo-item {
-      break-inside: avoid;
-      margin-bottom: 6px;
       border-radius: 6px;
       overflow: hidden;
       background: #1a1a1a;
       position: relative;
       display: block;
+      width: 100%;
     }
 
     .photo-item img {
@@ -856,7 +865,11 @@ const authed = isAuthenticated(Astro.request);
   let dragSrcEl: HTMLElement | null = null;
 
   function getOrder(): string[] {
-    return [...document.querySelectorAll<HTMLElement>('.photo-item[data-id]')].map(el => el.dataset.id!);
+    const ids: string[] = [];
+    document.querySelectorAll('.photo-col').forEach(col => {
+      col.querySelectorAll<HTMLElement>('.photo-item[data-id]').forEach(el => ids.push(el.dataset.id!));
+    });
+    return ids;
   }
 
   function checkOrderChanged() {
@@ -937,37 +950,78 @@ const authed = isAuthenticated(Astro.request);
         videos: { videoId: string; embeddable: boolean }[];
       };
 
-      // Photos
+      // Photos — same "shortest column" packing as the website
+      type Photo = typeof data.photos[number];
+
+      function packIntoColumns(photos: Photo[], n: number): Photo[][] {
+        const cols: Photo[][] = Array.from({ length: n }, () => []);
+        const heights = new Array<number>(n).fill(0);
+        for (const p of photos) {
+          const ratio = p.width && p.height ? p.height / p.width : 1;
+          let shortest = 0;
+          for (let i = 1; i < n; i++) if (heights[i] < heights[shortest]) shortest = i;
+          cols[shortest].push(p);
+          heights[shortest] += ratio;
+        }
+        return cols;
+      }
+
+      function buildPhotoItem({ id, url, lqip, width, height }: Photo) {
+        const item = document.createElement('div');
+        item.className = 'photo-item';
+        item.dataset.id = id;
+        item.innerHTML = `
+          <img src="${url}" loading="lazy" decoding="async"
+            style="aspect-ratio:${width}/${height};background:url('${lqip}') center/cover no-repeat;background-size:cover" />
+          <button class="photo-del" title="Eliminar foto">${TRASH}</button>`;
+        makeDraggable(item);
+        item.querySelector('button')!.addEventListener('click', async () => {
+          if (!confirm('¿Eliminar esta foto? No se puede deshacer.')) return;
+          item.style.opacity = '0.4';
+          const r = await fetch('/api/admin/delete-photo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id }),
+          });
+          if (r.ok) item.remove();
+          else { item.style.opacity = '1'; alert('Error al eliminar.'); }
+        });
+        return item;
+      }
+
       const grid = document.getElementById('photoGrid')!;
       const photoEmpty = document.getElementById('photoEmpty')!;
       const photoCnt = document.getElementById('photoCnt')!;
       grid.innerHTML = '';
       photoCnt.textContent = String(data.photos.length);
+
       if (data.photos.length === 0) {
         grid.appendChild(photoEmpty);
         photoEmpty.style.display = '';
       } else {
-        data.photos.forEach(({ id, url, lqip, width, height }) => {
-          const item = document.createElement('div');
-          item.className = 'photo-item';
-          item.dataset.id = id;
-          item.innerHTML = `
-            <img src="${url}" loading="lazy" decoding="async"
-              style="aspect-ratio:${width}/${height};background:url('${lqip}') center/cover no-repeat;background-size:cover" />
-            <button class="photo-del" title="Eliminar foto">${TRASH}</button>`;
-          makeDraggable(item);
-          item.querySelector('button')!.addEventListener('click', async () => {
-            if (!confirm('¿Eliminar esta foto? No se puede deshacer.')) return;
-            item.style.opacity = '0.4';
-            const r = await fetch('/api/admin/delete-photo', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ id }),
-            });
-            if (r.ok) item.remove();
-            else { item.style.opacity = '1'; alert('Error al eliminar.'); }
+        const colCount = Math.min(4, data.photos.length);
+        const packed = packIntoColumns(data.photos, colCount);
+        packed.forEach(colPhotos => {
+          const colEl = document.createElement('div');
+          colEl.className = 'photo-col';
+          // Allow dropping onto empty column area
+          colEl.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            if ((e.target as HTMLElement) === colEl) colEl.classList.add('col-over');
           });
-          grid.appendChild(item);
+          colEl.addEventListener('dragleave', (e) => {
+            if ((e.relatedTarget as HTMLElement)?.closest('.photo-col') !== colEl)
+              colEl.classList.remove('col-over');
+          });
+          colEl.addEventListener('drop', (e) => {
+            e.preventDefault();
+            colEl.classList.remove('col-over');
+            if (!dragSrcEl || (e.target as HTMLElement).closest('.photo-item')) return;
+            colEl.appendChild(dragSrcEl);
+            checkOrderChanged();
+          });
+          colPhotos.forEach(p => colEl.appendChild(buildPhotoItem(p)));
+          grid.appendChild(colEl);
         });
       }
 
