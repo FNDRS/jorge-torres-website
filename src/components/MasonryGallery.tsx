@@ -516,6 +516,28 @@ function StreamVideoTile({
   if (item.kind === 'vimeo') {
     return <VimeoEmbed videoId={item.videoId} priority={priority} onOpen={() => onOpenVideo(item)} />;
   }
+  // Local video file with a title — open in VideoLightbox
+  if (item.title && /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(item.url)) {
+    return (
+      <div className={VIDEO_TILE}>
+        <button
+          type="button"
+          onClick={() => onOpenVideo(item)}
+          aria-label={`Reproducir ${item.title}`}
+          className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
+        >
+          <div className={`h-full min-h-[12rem] w-full bg-zinc-900 ${PHOTO_ROUNDED}`} />
+          <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 transition group-hover:bg-black/45">
+            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
+              <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="currentColor" aria-hidden>
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    );
+  }
   return <VideoBlobTile url={item.url} priority={priority} />;
 }
 
@@ -535,14 +557,18 @@ function VideoLightbox({ item, onClose }: { item: GalleryDisplayItem; onClose: (
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
 
-  if (item.kind !== 'youtube' && item.kind !== 'vimeo') return null;
-  const title = item.kind === 'youtube' ? item.title : undefined;
-  const description = item.kind === 'youtube' ? item.description : undefined;
+  const isLocalVideo = item.kind === 'media' && /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(item.url);
+  if (item.kind !== 'youtube' && item.kind !== 'vimeo' && !isLocalVideo) return null;
+
+  const title = item.kind === 'youtube' ? item.title : item.kind === 'media' ? item.title : undefined;
+  const description = item.kind === 'youtube' ? item.description : item.kind === 'media' ? item.description : undefined;
 
   const embedSrc =
     item.kind === 'youtube'
       ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(item.videoId)}?autoplay=1&rel=0&modestbranding=1&playsinline=1`
-      : `https://player.vimeo.com/video/${encodeURIComponent(item.videoId)}?autoplay=1&dnt=1`;
+      : item.kind === 'vimeo'
+        ? `https://player.vimeo.com/video/${encodeURIComponent(item.videoId)}?autoplay=1&dnt=1`
+        : null;
 
   return (
     <div
@@ -571,14 +597,24 @@ function VideoLightbox({ item, onClose }: { item: GalleryDisplayItem; onClose: (
           className="aspect-video w-full shrink-0 overflow-hidden rounded-xl bg-black shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
-          <iframe
-            key={embedSrc}
-            title={title || 'Vídeo'}
-            src={embedSrc}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            allowFullScreen
-            className="h-full w-full border-0"
-          />
+          {embedSrc ? (
+            <iframe
+              key={embedSrc}
+              title={title || 'Vídeo'}
+              src={embedSrc}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+              allowFullScreen
+              className="h-full w-full border-0"
+            />
+          ) : (
+            <video
+              src={item.kind === 'media' ? item.url : undefined}
+              controls
+              autoPlay
+              playsInline
+              className="h-full w-full"
+            />
+          )}
         </div>
 
         <div className="mt-6 pb-10" onClick={(e) => e.stopPropagation()}>
