@@ -45,6 +45,8 @@ const EMBEDS: { provider: 'youtube' | 'vimeo'; videoId: string; addedAt: string;
   { provider: 'youtube', videoId: 'sZImzEHTLes', addedAt: '2026-06-25T06:48:00.450Z', embeddable: false },
   { provider: 'youtube', videoId: 's4uXQo1exKs', addedAt: '2026-06-25T06:46:02.705Z' },
   { provider: 'youtube', videoId: 'QIR2dEbVgRA', addedAt: '2026-06-30T17:58:11.000Z' },
+  { provider: 'youtube', videoId: 'g4V-z9J0WJU', addedAt: '2026-08-29T12:00:00.000Z' },
+  { provider: 'youtube', videoId: 'UI9TK2J4HP8', addedAt: '2026-08-29T12:01:00.000Z' },
 ];
 
 function readYoutubeApiKey(): string | undefined {

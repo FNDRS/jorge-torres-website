@@ -1,6 +1,413 @@
 {
   "packs": [
     {
+      "id": "p1423287",
+      "width": 2397,
+      "height": 3596,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFhtZGF0EgAKCDgRJ9YQENBpMkIcQCaaaYUAz1eiK9z/dt4twz/+fGa8w/KQcrSs9PsFMW9MFuUFqLDcALt+RDQT4SuFBTOCfLs6LKgK18xKGmBsMfo=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1423287/480.avif",
+          "webpUrl": "/media/visuals/p1423287/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1423287/960.avif",
+          "webpUrl": "/media/visuals/p1423287/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1423287/1600.avif",
+          "webpUrl": "/media/visuals/p1423287/1600.webp"
+        },
+        {
+          "w": 2397,
+          "avifUrl": "/media/visuals/p1423287/2397.avif",
+          "webpUrl": "/media/visuals/p1423287/2397.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 200",
+        "focalLength": "39mm"
+      },
+      "uploadedAt": "2026-08-30T02:15:55.443Z"
+    },
+    {
+      "id": "p1413013",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGptZGF0EgAKCDgRJ9YQENBpMlQcQCaaaYUAu/uZ7SHcjbaA9gFZ/uknKtIulxFlJosyLIAcGjkhNgBEYILdXCDgwNKGVeMaOdA/WEAlztowwu1mMSBBWvlKEip5pqMYbZOZFljSrHA=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1413013/480.avif",
+          "webpUrl": "/media/visuals/p1413013/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1413013/960.avif",
+          "webpUrl": "/media/visuals/p1413013/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1413013/1600.avif",
+          "webpUrl": "/media/visuals/p1413013/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1413013/2400.avif",
+          "webpUrl": "/media/visuals/p1413013/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 1250",
+        "focalLength": "21mm"
+      },
+      "uploadedAt": "2026-08-30T02:15:49.062Z"
+    },
+    {
+      "id": "p1448099",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAALwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADdtZGF0EgAKCDgRJ9YQENBpMiEcQCaaaYQAuJp9oZrrNAQNpyDuV1ruqg4/LvZ0DG83GYA=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1448099/480.avif",
+          "webpUrl": "/media/visuals/p1448099/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1448099/960.avif",
+          "webpUrl": "/media/visuals/p1448099/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1448099/1600.avif",
+          "webpUrl": "/media/visuals/p1448099/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1448099/2400.avif",
+          "webpUrl": "/media/visuals/p1448099/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.7",
+        "shutterSpeed": "1/20",
+        "iso": "ISO 2500",
+        "focalLength": "20mm"
+      },
+      "uploadedAt": "2026-08-22T04:53:36.000Z"
+    },
+    {
+      "id": "p1448080",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAZwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAG9tZGF0EgAKCDgRJ9YQENBpMlkcQCaaaYUAzwtcZ9vK74tl3twWLBQF0ko0+L8QqASiFv7Sm85uXdDvordUIPmLjEpypBgGR6WLcC7D0XijKvQgKkvWDHGZxJkmAQ4ycxKQX3rGfjpVgqso2A==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1448080/480.avif",
+          "webpUrl": "/media/visuals/p1448080/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1448080/960.avif",
+          "webpUrl": "/media/visuals/p1448080/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1448080/1600.avif",
+          "webpUrl": "/media/visuals/p1448080/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1448080/2400.avif",
+          "webpUrl": "/media/visuals/p1448080/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5.9",
+        "shutterSpeed": "1/20",
+        "iso": "ISO 2500",
+        "focalLength": "34mm"
+      },
+      "uploadedAt": "2026-08-22T04:53:14.000Z"
+    },
+    {
+      "id": "p1448010",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFdtZGF0EgAKCDgRJ9YQENBpMkEcQCaaaYUAz1ftk9S669KkYw8T7g2YF2dt6Dn1otNOJC0Ww0De6RjbgJ3WaExJ8bPSUSWCyzbq+GLCER6H6iWewA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1448010/480.avif",
+          "webpUrl": "/media/visuals/p1448010/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1448010/960.avif",
+          "webpUrl": "/media/visuals/p1448010/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1448010/1600.avif",
+          "webpUrl": "/media/visuals/p1448010/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1448010/2400.avif",
+          "webpUrl": "/media/visuals/p1448010/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5.9",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 10000",
+        "focalLength": "34mm"
+      },
+      "uploadedAt": "2026-08-22T04:52:44.000Z"
+    },
+    {
+      "id": "p1447953-edit",
+      "width": 3367,
+      "height": 5051,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFltZGF0EgAKCDgRJ9YQENBpMkMcQCaaaYUAzwqX2wi9TzD2y7p2pIDRAwzoVeRjyOK6wnAAJKf4EjwNOjXHtPFDzqETA6fslwu0XoInbjpHCQ+W4QCA",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1447953-edit/480.avif",
+          "webpUrl": "/media/visuals/p1447953-edit/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1447953-edit/960.avif",
+          "webpUrl": "/media/visuals/p1447953-edit/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1447953-edit/1600.avif",
+          "webpUrl": "/media/visuals/p1447953-edit/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1447953-edit/2400.avif",
+          "webpUrl": "/media/visuals/p1447953-edit/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/20",
+        "iso": "ISO 320",
+        "focalLength": "40mm"
+      },
+      "uploadedAt": "2026-08-22T04:52:06.000Z"
+    },
+    {
+      "id": "p1447787-edit",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAZAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGxtZGF0EgAKCDgRJ9YQENBpMlYcQCaaaYUAz5sVQ2/t8p9lo36L+XkH6AuF2tHHtzca0mbx2OlWAMcpzgDDt+2NAIHOJ4E2WZAVDltPDJlftupLSED3BxfU8DOnpUHKSUu4Z6p+93zWgA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1447787-edit/480.avif",
+          "webpUrl": "/media/visuals/p1447787-edit/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1447787-edit/960.avif",
+          "webpUrl": "/media/visuals/p1447787-edit/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1447787-edit/1600.avif",
+          "webpUrl": "/media/visuals/p1447787-edit/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1447787-edit/2400.avif",
+          "webpUrl": "/media/visuals/p1447787-edit/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/9",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 3200",
+        "focalLength": "39mm"
+      },
+      "uploadedAt": "2026-08-22T04:51:26.000Z"
+    },
+    {
+      "id": "p1447717",
+      "width": 3263,
+      "height": 4895,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAagAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHJtZGF0EgAKCDgRJ9YQENBpMlwcQCaaaYUAzwrBWH24SeXtFK7Ta8wzDfnRgc6PQHp/BV2LL+NtBuRXDq53FosKaMjDGesumVC8Ryk4EoFtP5fWYAD5sKsu7GlkQirnYt45p/AsmwPza/JrbXwuwA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1447717/480.avif",
+          "webpUrl": "/media/visuals/p1447717/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1447717/960.avif",
+          "webpUrl": "/media/visuals/p1447717/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1447717/1600.avif",
+          "webpUrl": "/media/visuals/p1447717/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1447717/2400.avif",
+          "webpUrl": "/media/visuals/p1447717/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 3200",
+        "focalLength": "40mm"
+      },
+      "uploadedAt": "2026-08-22T04:50:38.000Z"
+    },
+    {
+      "id": "p1424427",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFptZGF0EgAKCDgRJ9YQENBpMkQcQCaaaYUAzwo7ZM8RGx6uhk8bQgpWBc6sFplaxgW6kLzCuA8w+Qt1+axU4WN2PEN1qDlHusAD2k3a6d/uC4HGZN+MYA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1424427/480.avif",
+          "webpUrl": "/media/visuals/p1424427/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1424427/960.avif",
+          "webpUrl": "/media/visuals/p1424427/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1424427/1600.avif",
+          "webpUrl": "/media/visuals/p1424427/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1424427/2400.avif",
+          "webpUrl": "/media/visuals/p1424427/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 6400",
+        "focalLength": "20mm"
+      },
+      "uploadedAt": "2026-08-03T01:12:48.405Z"
+    },
+    {
+      "id": "p1424425",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF5tZGF0EgAKCDgRJ9YQENBpMkgcQCaaaYUAz5b9SyrUVOY/SsSLuBMXyQKHMrVTNKI62DUvgVrogbdEWLTrUKcPJDRljjUAcMIPH2g/IUvyBCCXCpXOyqPky+A=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1424425/480.avif",
+          "webpUrl": "/media/visuals/p1424425/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1424425/960.avif",
+          "webpUrl": "/media/visuals/p1424425/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1424425/1600.avif",
+          "webpUrl": "/media/visuals/p1424425/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1424425/2400.avif",
+          "webpUrl": "/media/visuals/p1424425/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 6400",
+        "focalLength": "20mm"
+      },
+      "uploadedAt": "2026-08-03T01:12:44.997Z"
+    },
+    {
+      "id": "p1424164",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAASgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFJtZGF0EgAKCDgRJ9YQENBpMjwcQCaaaYUAzwpIM+radiCebcs1Ofj+DUXXyziSiN09huLJN+iaoL4MD966kofChB23kMaw2hHCYHVYkIA=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1424164/480.avif",
+          "webpUrl": "/media/visuals/p1424164/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1424164/960.avif",
+          "webpUrl": "/media/visuals/p1424164/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1424164/1600.avif",
+          "webpUrl": "/media/visuals/p1424164/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1424164/2400.avif",
+          "webpUrl": "/media/visuals/p1424164/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 2500",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-08-03T01:05:19.496Z"
+    },
+    {
       "id": "p1334162-edit",
       "width": 2980,
       "height": 1898,
