@@ -115,41 +115,41 @@
       "col": 2
     },
     {
-      "id": "p1448010",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFdtZGF0EgAKCDgRJ9YQENBpMkEcQCaaaYUAz1ftk9S669KkYw8T7g2YF2dt6Dn1otNOJC0Ww0De6RjbgJ3WaExJ8bPSUSWCyzbq+GLCER6H6iWewA==",
+      "id": "p1447953-edit",
+      "width": 3367,
+      "height": 5051,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFltZGF0EgAKCDgRJ9YQENBpMkMcQCaaaYUAzwqX2wi9TzD2y7p2pIDRAwzoVeRjyOK6wnAAJKf4EjwNOjXHtPFDzqETA6fslwu0XoInbjpHCQ+W4QCA",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1448010/480.avif",
-          "webpUrl": "/media/visuals/p1448010/480.webp"
+          "avifUrl": "/media/visuals/p1447953-edit/480.avif",
+          "webpUrl": "/media/visuals/p1447953-edit/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1448010/960.avif",
-          "webpUrl": "/media/visuals/p1448010/960.webp"
+          "avifUrl": "/media/visuals/p1447953-edit/960.avif",
+          "webpUrl": "/media/visuals/p1447953-edit/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1448010/1600.avif",
-          "webpUrl": "/media/visuals/p1448010/1600.webp"
+          "avifUrl": "/media/visuals/p1447953-edit/1600.avif",
+          "webpUrl": "/media/visuals/p1447953-edit/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1448010/2400.avif",
-          "webpUrl": "/media/visuals/p1448010/2400.webp"
+          "avifUrl": "/media/visuals/p1447953-edit/2400.avif",
+          "webpUrl": "/media/visuals/p1447953-edit/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/5.9",
-        "shutterSpeed": "1/125",
-        "iso": "ISO 10000",
-        "focalLength": "34mm"
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/20",
+        "iso": "ISO 320",
+        "focalLength": "40mm"
       },
-      "uploadedAt": "2026-08-22T04:52:44.000Z",
+      "uploadedAt": "2026-08-22T04:52:06.000Z",
       "col": 3
     },
     {
@@ -229,41 +229,41 @@
       "col": 1
     },
     {
-      "id": "p1447953-edit",
-      "width": 3367,
-      "height": 5051,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFltZGF0EgAKCDgRJ9YQENBpMkMcQCaaaYUAzwqX2wi9TzD2y7p2pIDRAwzoVeRjyOK6wnAAJKf4EjwNOjXHtPFDzqETA6fslwu0XoInbjpHCQ+W4QCA",
+      "id": "p1448010",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFdtZGF0EgAKCDgRJ9YQENBpMkEcQCaaaYUAz1ftk9S669KkYw8T7g2YF2dt6Dn1otNOJC0Ww0De6RjbgJ3WaExJ8bPSUSWCyzbq+GLCER6H6iWewA==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1447953-edit/480.avif",
-          "webpUrl": "/media/visuals/p1447953-edit/480.webp"
+          "avifUrl": "/media/visuals/p1448010/480.avif",
+          "webpUrl": "/media/visuals/p1448010/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1447953-edit/960.avif",
-          "webpUrl": "/media/visuals/p1447953-edit/960.webp"
+          "avifUrl": "/media/visuals/p1448010/960.avif",
+          "webpUrl": "/media/visuals/p1448010/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1447953-edit/1600.avif",
-          "webpUrl": "/media/visuals/p1447953-edit/1600.webp"
+          "avifUrl": "/media/visuals/p1448010/1600.avif",
+          "webpUrl": "/media/visuals/p1448010/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1447953-edit/2400.avif",
-          "webpUrl": "/media/visuals/p1447953-edit/2400.webp"
+          "avifUrl": "/media/visuals/p1448010/2400.avif",
+          "webpUrl": "/media/visuals/p1448010/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/20",
-        "iso": "ISO 320",
-        "focalLength": "40mm"
+        "aperture": "f/5.9",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 10000",
+        "focalLength": "34mm"
       },
-      "uploadedAt": "2026-08-22T04:52:06.000Z",
+      "uploadedAt": "2026-08-22T04:52:44.000Z",
       "col": 2
     },
     {
@@ -343,6 +343,44 @@
       "col": 0
     },
     {
+      "id": "p1323636",
+      "width": 2573,
+      "height": 3860,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAaQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHFtZGF0EgAKCDgRJ9YQENBpMlscQCaaaYUAzwn2BjhjWPcpzh//xZO5YZcmUu4jfq+W23A5FJ7xP5jNFGDwZ+xfo8pLUqO0dzZMd+MsydfuYbLxGe32F6KoswaY0DOynH7INqGxtJkpPs19c20B",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1323636/480.avif",
+          "webpUrl": "/media/visuals/p1323636/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1323636/960.avif",
+          "webpUrl": "/media/visuals/p1323636/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1323636/1600.avif",
+          "webpUrl": "/media/visuals/p1323636/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1323636/2400.avif",
+          "webpUrl": "/media/visuals/p1323636/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5.6",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 100",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-07-28T00:25:02.741Z",
+      "col": 1
+    },
+    {
       "id": "p1447787-edit",
       "width": 4000,
       "height": 6000,
@@ -378,6 +416,120 @@
         "focalLength": "39mm"
       },
       "uploadedAt": "2026-08-22T04:51:26.000Z",
+      "col": 2
+    },
+    {
+      "id": "p1334015",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFttZGF0EgAKCDgRJ9YQENBpMkUcQCaaaYUAzwn2BjhsxI50Vf0ZsbAro9KDx7V6mI+wFwZTVG/yaJVIbmqfzc3Rmj4FT8ACxtpbGlrXG6Sh2oW1FSAyX6A=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1334015/480.avif",
+          "webpUrl": "/media/visuals/p1334015/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1334015/960.avif",
+          "webpUrl": "/media/visuals/p1334015/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1334015/1600.avif",
+          "webpUrl": "/media/visuals/p1334015/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1334015/2400.avif",
+          "webpUrl": "/media/visuals/p1334015/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/11",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 100",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-07-28T00:25:22.511Z",
+      "col": 3
+    },
+    {
+      "id": "p1333965",
+      "width": 6000,
+      "height": 4000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAARwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAE9tZGF0EgAKCDgQ54wgIaDSMjkcQCaaaYQA72N6lEBQLJwQAAfTGcTR5POI5BnY6J9dm5W7JewO5s00pvs/d8bm39uwNntvEU74vEQ=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1333965/480.avif",
+          "webpUrl": "/media/visuals/p1333965/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1333965/960.avif",
+          "webpUrl": "/media/visuals/p1333965/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1333965/1600.avif",
+          "webpUrl": "/media/visuals/p1333965/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1333965/2400.avif",
+          "webpUrl": "/media/visuals/p1333965/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 160",
+        "focalLength": "40mm"
+      },
+      "uploadedAt": "2026-07-28T00:25:24.941Z",
+      "col": 0
+    },
+    {
+      "id": "img-2808",
+      "width": 2237,
+      "height": 3355,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAfgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAIZtZGF0EgAKCDgRJ9YQENBpMnAcQCaaaYUAz1ghQSM7sYdi2NBBJjYZdPu9dO83TPyuLS/kSBrkZVECkiBgJ1o8flbTGhWTbRUeEmb9wHDtsKPtl5HlRhpQEmgLBePXL5iSxyY9COUwOzQ4JCwBCcfYcgT6yN1h+0AOBO/bprOZUpaA",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-2808/480.avif",
+          "webpUrl": "/media/visuals/img-2808/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-2808/960.avif",
+          "webpUrl": "/media/visuals/img-2808/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-2808/1600.avif",
+          "webpUrl": "/media/visuals/img-2808/1600.webp"
+        },
+        {
+          "w": 2237,
+          "avifUrl": "/media/visuals/img-2808/2237.avif",
+          "webpUrl": "/media/visuals/img-2808/2237.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.6",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 500",
+        "focalLength": "20mm"
+      },
+      "uploadedAt": "2026-07-21T19:46:05.994Z",
       "col": 1
     },
     {
@@ -457,151 +609,6 @@
       "col": 3
     },
     {
-      "id": "p1333965",
-      "width": 6000,
-      "height": 4000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAARwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAE9tZGF0EgAKCDgQ54wgIaDSMjkcQCaaaYQA72N6lEBQLJwQAAfTGcTR5POI5BnY6J9dm5W7JewO5s00pvs/d8bm39uwNntvEU74vEQ=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1333965/480.avif",
-          "webpUrl": "/media/visuals/p1333965/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1333965/960.avif",
-          "webpUrl": "/media/visuals/p1333965/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1333965/1600.avif",
-          "webpUrl": "/media/visuals/p1333965/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1333965/2400.avif",
-          "webpUrl": "/media/visuals/p1333965/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/100",
-        "iso": "ISO 160",
-        "focalLength": "40mm"
-      },
-      "uploadedAt": "2026-07-28T00:25:24.941Z",
-      "col": 0
-    },
-    {
-      "id": "p1323636",
-      "width": 2573,
-      "height": 3860,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAaQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHFtZGF0EgAKCDgRJ9YQENBpMlscQCaaaYUAzwn2BjhjWPcpzh//xZO5YZcmUu4jfq+W23A5FJ7xP5jNFGDwZ+xfo8pLUqO0dzZMd+MsydfuYbLxGe32F6KoswaY0DOynH7INqGxtJkpPs19c20B",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1323636/480.avif",
-          "webpUrl": "/media/visuals/p1323636/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1323636/960.avif",
-          "webpUrl": "/media/visuals/p1323636/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1323636/1600.avif",
-          "webpUrl": "/media/visuals/p1323636/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1323636/2400.avif",
-          "webpUrl": "/media/visuals/p1323636/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/5.6",
-        "shutterSpeed": "1/160",
-        "iso": "ISO 100",
-        "focalLength": "18mm"
-      },
-      "uploadedAt": "2026-07-28T00:25:02.741Z",
-      "col": 1
-    },
-    {
-      "id": "p1334015",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFttZGF0EgAKCDgRJ9YQENBpMkUcQCaaaYUAzwn2BjhsxI50Vf0ZsbAro9KDx7V6mI+wFwZTVG/yaJVIbmqfzc3Rmj4FT8ACxtpbGlrXG6Sh2oW1FSAyX6A=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1334015/480.avif",
-          "webpUrl": "/media/visuals/p1334015/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1334015/960.avif",
-          "webpUrl": "/media/visuals/p1334015/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1334015/1600.avif",
-          "webpUrl": "/media/visuals/p1334015/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1334015/2400.avif",
-          "webpUrl": "/media/visuals/p1334015/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/11",
-        "shutterSpeed": "1/80",
-        "iso": "ISO 100",
-        "focalLength": "18mm"
-      },
-      "uploadedAt": "2026-07-28T00:25:22.511Z",
-      "col": 2
-    },
-    {
-      "id": "img-2778",
-      "width": 3240,
-      "height": 2160,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAOQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEFtZGF0EgAKCDgQ54wgIaDSMiscQCaaaYQA7UqF86WJryQ9kP8JMlu/01wW18ZBNYuzC+1w6nghaAe6c1xg",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2778/480.avif",
-          "webpUrl": "/media/visuals/img-2778/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2778/960.avif",
-          "webpUrl": "/media/visuals/img-2778/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2778/1600.avif",
-          "webpUrl": "/media/visuals/img-2778/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2778/2400.avif",
-          "webpUrl": "/media/visuals/img-2778/2400.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-07-21T19:46:06.178Z",
-      "col": 3
-    },
-    {
       "id": "p1333850",
       "width": 5404,
       "height": 3603,
@@ -637,158 +644,6 @@
         "focalLength": "18mm"
       },
       "uploadedAt": "2026-07-28T00:25:13.900Z",
-      "col": 0
-    },
-    {
-      "id": "img-2808",
-      "width": 2237,
-      "height": 3355,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAfgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAIZtZGF0EgAKCDgRJ9YQENBpMnAcQCaaaYUAz1ghQSM7sYdi2NBBJjYZdPu9dO83TPyuLS/kSBrkZVECkiBgJ1o8flbTGhWTbRUeEmb9wHDtsKPtl5HlRhpQEmgLBePXL5iSxyY9COUwOzQ4JCwBCcfYcgT6yN1h+0AOBO/bprOZUpaA",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2808/480.avif",
-          "webpUrl": "/media/visuals/img-2808/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2808/960.avif",
-          "webpUrl": "/media/visuals/img-2808/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2808/1600.avif",
-          "webpUrl": "/media/visuals/img-2808/1600.webp"
-        },
-        {
-          "w": 2237,
-          "avifUrl": "/media/visuals/img-2808/2237.avif",
-          "webpUrl": "/media/visuals/img-2808/2237.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/4.6",
-        "shutterSpeed": "1/100",
-        "iso": "ISO 500",
-        "focalLength": "20mm"
-      },
-      "uploadedAt": "2026-07-21T19:46:05.994Z",
-      "col": 1
-    },
-    {
-      "id": "img-2826",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGltZGF0EgAKCDgRJ9YQENBpMlMcQCaaaYUAzxFOcf64e/QCzSNS56EuDTPe9iltjO1/kd8w8EVTE1HnvDZ5ELfyZfqhOHmuN82yJiCA4in4ME+1kTcOxZeN5qMZC+LUcOzV+HAhlw==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2826/480.avif",
-          "webpUrl": "/media/visuals/img-2826/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2826/960.avif",
-          "webpUrl": "/media/visuals/img-2826/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2826/1600.avif",
-          "webpUrl": "/media/visuals/img-2826/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2826/2400.avif",
-          "webpUrl": "/media/visuals/img-2826/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/5.6",
-        "shutterSpeed": "1/125",
-        "iso": "ISO 200",
-        "focalLength": "18mm"
-      },
-      "uploadedAt": "2026-07-21T19:46:06.236Z",
-      "col": 2
-    },
-    {
-      "id": "img-2658",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAawAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHNtZGF0EgAKCDgRJ9YQENBpMl0cQCaaaYUAzwqWN8c+ICNgOhnegh9yLX4lZP+1zlPM88vrbMw3IhmvqdunzB7BA/gj1Jki5/hYQUtcpsQfigUHuP8QFvojN+roUArXQBss9oN6H+ktfUP7U+q7foA=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2658/480.avif",
-          "webpUrl": "/media/visuals/img-2658/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2658/960.avif",
-          "webpUrl": "/media/visuals/img-2658/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2658/1600.avif",
-          "webpUrl": "/media/visuals/img-2658/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2658/2400.avif",
-          "webpUrl": "/media/visuals/img-2658/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/16",
-        "shutterSpeed": "1/40",
-        "iso": "ISO 100",
-        "focalLength": "40mm"
-      },
-      "uploadedAt": "2026-07-21T19:46:05.578Z",
-      "col": 3
-    },
-    {
-      "id": "p1323698",
-      "width": 6000,
-      "height": 4000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAD9tZGF0EgAKCDgQ54wgIaDSMikcQCaaaYUA7TYBTsIy6t2wEWynabXVYaG2pNEy0A+Decd7moN+tbc0aA==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1323698/480.avif",
-          "webpUrl": "/media/visuals/p1323698/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1323698/960.avif",
-          "webpUrl": "/media/visuals/p1323698/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1323698/1600.avif",
-          "webpUrl": "/media/visuals/p1323698/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1323698/2400.avif",
-          "webpUrl": "/media/visuals/p1323698/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/10",
-        "shutterSpeed": "1/160",
-        "iso": "ISO 200",
-        "focalLength": "31mm"
-      },
-      "uploadedAt": "2026-07-28T00:25:07.447Z",
       "col": 0
     },
     {
@@ -830,6 +685,144 @@
       "col": 1
     },
     {
+      "id": "img-2826",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGltZGF0EgAKCDgRJ9YQENBpMlMcQCaaaYUAzxFOcf64e/QCzSNS56EuDTPe9iltjO1/kd8w8EVTE1HnvDZ5ELfyZfqhOHmuN82yJiCA4in4ME+1kTcOxZeN5qMZC+LUcOzV+HAhlw==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-2826/480.avif",
+          "webpUrl": "/media/visuals/img-2826/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-2826/960.avif",
+          "webpUrl": "/media/visuals/img-2826/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-2826/1600.avif",
+          "webpUrl": "/media/visuals/img-2826/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-2826/2400.avif",
+          "webpUrl": "/media/visuals/img-2826/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5.6",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 200",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-07-21T19:46:06.236Z",
+      "col": 2
+    },
+    {
+      "id": "img-2778",
+      "width": 3240,
+      "height": 2160,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAOQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEFtZGF0EgAKCDgQ54wgIaDSMiscQCaaaYQA7UqF86WJryQ9kP8JMlu/01wW18ZBNYuzC+1w6nghaAe6c1xg",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-2778/480.avif",
+          "webpUrl": "/media/visuals/img-2778/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-2778/960.avif",
+          "webpUrl": "/media/visuals/img-2778/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-2778/1600.avif",
+          "webpUrl": "/media/visuals/img-2778/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-2778/2400.avif",
+          "webpUrl": "/media/visuals/img-2778/2400.webp"
+        }
+      ],
+      "exif": null,
+      "uploadedAt": "2026-07-21T19:46:06.178Z",
+      "col": 3
+    },
+    {
+      "id": "p1323698",
+      "width": 6000,
+      "height": 4000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAD9tZGF0EgAKCDgQ54wgIaDSMikcQCaaaYUA7TYBTsIy6t2wEWynabXVYaG2pNEy0A+Decd7moN+tbc0aA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1323698/480.avif",
+          "webpUrl": "/media/visuals/p1323698/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1323698/960.avif",
+          "webpUrl": "/media/visuals/p1323698/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1323698/1600.avif",
+          "webpUrl": "/media/visuals/p1323698/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1323698/2400.avif",
+          "webpUrl": "/media/visuals/p1323698/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/10",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 200",
+        "focalLength": "31mm"
+      },
+      "uploadedAt": "2026-07-28T00:25:07.447Z",
+      "col": 0
+    },
+    {
+      "id": "img-2783",
+      "width": 3240,
+      "height": 2160,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEptZGF0EgAKCDgQ54wgIaDSMjQcQCaaaYUA7TSn0q8trhdhn2Fp7tzgXhaiSeMsjIvAj9yp7LgEjGYexRF4HIeoVt8NXJGr",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-2783/480.avif",
+          "webpUrl": "/media/visuals/img-2783/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-2783/960.avif",
+          "webpUrl": "/media/visuals/img-2783/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-2783/1600.avif",
+          "webpUrl": "/media/visuals/img-2783/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-2783/2400.avif",
+          "webpUrl": "/media/visuals/img-2783/2400.webp"
+        }
+      ],
+      "exif": null,
+      "uploadedAt": "2026-07-21T19:46:05.296Z",
+      "col": 1
+    },
+    {
       "id": "p1412534",
       "width": 4000,
       "height": 6000,
@@ -868,6 +861,151 @@
       "col": 2
     },
     {
+      "id": "img-2658",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAawAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHNtZGF0EgAKCDgRJ9YQENBpMl0cQCaaaYUAzwqWN8c+ICNgOhnegh9yLX4lZP+1zlPM88vrbMw3IhmvqdunzB7BA/gj1Jki5/hYQUtcpsQfigUHuP8QFvojN+roUArXQBss9oN6H+ktfUP7U+q7foA=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-2658/480.avif",
+          "webpUrl": "/media/visuals/img-2658/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-2658/960.avif",
+          "webpUrl": "/media/visuals/img-2658/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-2658/1600.avif",
+          "webpUrl": "/media/visuals/img-2658/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-2658/2400.avif",
+          "webpUrl": "/media/visuals/img-2658/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/16",
+        "shutterSpeed": "1/40",
+        "iso": "ISO 100",
+        "focalLength": "40mm"
+      },
+      "uploadedAt": "2026-07-21T19:46:05.578Z",
+      "col": 3
+    },
+    {
+      "id": "p1322611",
+      "width": 2608,
+      "height": 3912,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGptZGF0EgAKCDgRJ9YQENBpMlQcQCaaaYQAz592S059R5u+i0YdN/qaJvbb1A2Y0zhAJn6smylox7QEgUPXb+0yaoj7/5RnxwPzLFHDeqX1N5C1GifkeWjMbCe9B7TOF2ZxmrN04SA=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1322611/480.avif",
+          "webpUrl": "/media/visuals/p1322611/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1322611/960.avif",
+          "webpUrl": "/media/visuals/p1322611/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1322611/1600.avif",
+          "webpUrl": "/media/visuals/p1322611/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1322611/2400.avif",
+          "webpUrl": "/media/visuals/p1322611/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/400",
+        "iso": "ISO 100",
+        "focalLength": "40mm"
+      },
+      "uploadedAt": "2026-05-30T20:57:36.000Z",
+      "col": 0
+    },
+    {
+      "id": "img-2686",
+      "width": 3240,
+      "height": 2160,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAOgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEJtZGF0EgAKCDgQ54wgIaDSMiwcQCaaaYUA7UVCBQpqwg554qqDoO0UiDfRMuUZjumdT2oQiqVufT/Y5qDPGA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-2686/480.avif",
+          "webpUrl": "/media/visuals/img-2686/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-2686/960.avif",
+          "webpUrl": "/media/visuals/img-2686/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-2686/1600.avif",
+          "webpUrl": "/media/visuals/img-2686/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-2686/2400.avif",
+          "webpUrl": "/media/visuals/img-2686/2400.webp"
+        }
+      ],
+      "exif": null,
+      "uploadedAt": "2026-07-21T19:46:04.902Z",
+      "col": 1
+    },
+    {
+      "id": "img-2652",
+      "width": 3702,
+      "height": 5553,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAASgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFJtZGF0EgAKCDgRJ9YQENBpMjwcQCaaaYUAzwrpkcpL6uuc6zY2UfrSmu7l9BzcQoGY7GaNAaVKq/IovkU7bkt2gxt6vlR4Vowezc4TV6g=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-2652/480.avif",
+          "webpUrl": "/media/visuals/img-2652/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-2652/960.avif",
+          "webpUrl": "/media/visuals/img-2652/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-2652/1600.avif",
+          "webpUrl": "/media/visuals/img-2652/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-2652/2400.avif",
+          "webpUrl": "/media/visuals/img-2652/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/9",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 100",
+        "focalLength": "40mm"
+      },
+      "uploadedAt": "2026-07-21T19:46:04.693Z",
+      "col": 2
+    },
+    {
       "id": "img-2685",
       "width": 3789,
       "height": 5683,
@@ -897,6 +1035,37 @@
       "exif": null,
       "uploadedAt": "2026-07-21T19:46:05.117Z",
       "col": 3
+    },
+    {
+      "id": "img-2684",
+      "width": 3456,
+      "height": 5184,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF9tZGF0EgAKCDgRJ9YQENBpMkkcQCaaaYUAzwpV47hJIyi1DI/78levHQ8aoKP8bkwELL91RqQTBSk8cv92zwLcu/1SGNxuDm16pBdeGlBBqKoW5mzgah9ufBxK",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-2684/480.avif",
+          "webpUrl": "/media/visuals/img-2684/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-2684/960.avif",
+          "webpUrl": "/media/visuals/img-2684/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-2684/1600.avif",
+          "webpUrl": "/media/visuals/img-2684/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-2684/2400.avif",
+          "webpUrl": "/media/visuals/img-2684/2400.webp"
+        }
+      ],
+      "exif": null,
+      "uploadedAt": "2026-07-21T19:46:05.968Z",
+      "col": 0
     },
     {
       "id": "img-2654",
@@ -934,37 +1103,6 @@
         "focalLength": "38mm"
       },
       "uploadedAt": "2026-07-21T19:46:06.305Z",
-      "col": 0
-    },
-    {
-      "id": "img-2783",
-      "width": 3240,
-      "height": 2160,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEptZGF0EgAKCDgQ54wgIaDSMjQcQCaaaYUA7TSn0q8trhdhn2Fp7tzgXhaiSeMsjIvAj9yp7LgEjGYexRF4HIeoVt8NXJGr",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2783/480.avif",
-          "webpUrl": "/media/visuals/img-2783/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2783/960.avif",
-          "webpUrl": "/media/visuals/img-2783/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2783/1600.avif",
-          "webpUrl": "/media/visuals/img-2783/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2783/2400.avif",
-          "webpUrl": "/media/visuals/img-2783/2400.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-07-21T19:46:05.296Z",
       "col": 1
     },
     {
@@ -1037,137 +1175,6 @@
       "col": 3
     },
     {
-      "id": "img-2684",
-      "width": 3456,
-      "height": 5184,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF9tZGF0EgAKCDgRJ9YQENBpMkkcQCaaaYUAzwpV47hJIyi1DI/78levHQ8aoKP8bkwELL91RqQTBSk8cv92zwLcu/1SGNxuDm16pBdeGlBBqKoW5mzgah9ufBxK",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2684/480.avif",
-          "webpUrl": "/media/visuals/img-2684/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2684/960.avif",
-          "webpUrl": "/media/visuals/img-2684/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2684/1600.avif",
-          "webpUrl": "/media/visuals/img-2684/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2684/2400.avif",
-          "webpUrl": "/media/visuals/img-2684/2400.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-07-21T19:46:05.968Z",
-      "col": 0
-    },
-    {
-      "id": "img-2686",
-      "width": 3240,
-      "height": 2160,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAOgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEJtZGF0EgAKCDgQ54wgIaDSMiwcQCaaaYUA7UVCBQpqwg554qqDoO0UiDfRMuUZjumdT2oQiqVufT/Y5qDPGA==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2686/480.avif",
-          "webpUrl": "/media/visuals/img-2686/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2686/960.avif",
-          "webpUrl": "/media/visuals/img-2686/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2686/1600.avif",
-          "webpUrl": "/media/visuals/img-2686/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2686/2400.avif",
-          "webpUrl": "/media/visuals/img-2686/2400.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-07-21T19:46:04.902Z",
-      "col": 1
-    },
-    {
-      "id": "p1412560",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEttZGF0EgAKCDgRJ9YQENBpMjUcQCaaaYQAz1fxRsfoWjmL9s72vpyzcVF7pDcHcEDHkbkWB4YRjocIz+Ks1FkaogtmeM0jQA==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1412560/480.avif",
-          "webpUrl": "/media/visuals/p1412560/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1412560/960.avif",
-          "webpUrl": "/media/visuals/p1412560/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1412560/1600.avif",
-          "webpUrl": "/media/visuals/p1412560/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1412560/2400.avif",
-          "webpUrl": "/media/visuals/p1412560/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/250",
-        "iso": "ISO 400",
-        "focalLength": "40mm"
-      },
-      "uploadedAt": "2026-07-21T19:46:04.462Z",
-      "col": 2
-    },
-    {
-      "id": "img-2784",
-      "width": 3240,
-      "height": 2160,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAOgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEJtZGF0EgAKCDgQ54wgIaDSMiwcQCaaaYUA7TdFevCd5glgOlaa1oX4qB5UCKItM05Sc4kocA7CL5XygTuWiA==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2784/480.avif",
-          "webpUrl": "/media/visuals/img-2784/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2784/960.avif",
-          "webpUrl": "/media/visuals/img-2784/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2784/1600.avif",
-          "webpUrl": "/media/visuals/img-2784/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2784/2400.avif",
-          "webpUrl": "/media/visuals/img-2784/2400.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-07-21T19:46:04.169Z",
-      "col": 3
-    },
-    {
       "id": "89ae7ee7-bbf4-4329-a24e-dea8a68a1d26",
       "width": 3082,
       "height": 4096,
@@ -1237,231 +1244,72 @@
       "col": 1
     },
     {
-      "id": "p1334534",
+      "id": "p1412560",
       "width": 4000,
       "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFRtZGF0EgAKCDgRJ9YQENBpMj4cQCaaaYUAzxCVyymOQRXVtlhGJ08j6BxURTxBBbxWe7NId2f0JuC2g9z59pM0RdFnYDvnrvNE0iHmOvzJKA==",
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEttZGF0EgAKCDgRJ9YQENBpMjUcQCaaaYQAz1fxRsfoWjmL9s72vpyzcVF7pDcHcEDHkbkWB4YRjocIz+Ks1FkaogtmeM0jQA==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1334534/480.avif",
-          "webpUrl": "/media/visuals/p1334534/480.webp"
+          "avifUrl": "/media/visuals/p1412560/480.avif",
+          "webpUrl": "/media/visuals/p1412560/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1334534/960.avif",
-          "webpUrl": "/media/visuals/p1334534/960.webp"
+          "avifUrl": "/media/visuals/p1412560/960.avif",
+          "webpUrl": "/media/visuals/p1412560/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1334534/1600.avif",
-          "webpUrl": "/media/visuals/p1334534/1600.webp"
+          "avifUrl": "/media/visuals/p1412560/1600.avif",
+          "webpUrl": "/media/visuals/p1412560/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1334534/2400.avif",
-          "webpUrl": "/media/visuals/p1334534/2400.webp"
+          "avifUrl": "/media/visuals/p1412560/2400.avif",
+          "webpUrl": "/media/visuals/p1412560/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
         "aperture": "f/6.3",
-        "shutterSpeed": "1/100",
-        "iso": "ISO 8000",
-        "focalLength": "24mm"
-      },
-      "uploadedAt": "2026-06-15T16:07:28.000Z",
-      "col": 2
-    },
-    {
-      "id": "p1357035",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAdwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAH9tZGF0EgAKCDgRJ9YQENBpMmkcQCaaaYUAzwn2BkL87EPYsgPJaGlQ4ItNOh2SkTd7vojBItIjcgktV6TW0qxATKmKT6qcxeVDQ/k2sE2cow4A3erFH65fjisBOh8dRzXecIIY5QgJw6/oDrmxWYJaFU4i4LsXHKSKw9I=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1357035/480.avif",
-          "webpUrl": "/media/visuals/p1357035/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1357035/960.avif",
-          "webpUrl": "/media/visuals/p1357035/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1357035/1600.avif",
-          "webpUrl": "/media/visuals/p1357035/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1357035/2400.avif",
-          "webpUrl": "/media/visuals/p1357035/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/4.5",
-        "shutterSpeed": "1/80",
-        "iso": "ISO 160",
-        "focalLength": "18mm"
-      },
-      "uploadedAt": "2026-06-15T20:05:28.000Z",
-      "col": 3
-    },
-    {
-      "id": "img-2652",
-      "width": 3702,
-      "height": 5553,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAASgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFJtZGF0EgAKCDgRJ9YQENBpMjwcQCaaaYUAzwrpkcpL6uuc6zY2UfrSmu7l9BzcQoGY7GaNAaVKq/IovkU7bkt2gxt6vlR4Vowezc4TV6g=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2652/480.avif",
-          "webpUrl": "/media/visuals/img-2652/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2652/960.avif",
-          "webpUrl": "/media/visuals/img-2652/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2652/1600.avif",
-          "webpUrl": "/media/visuals/img-2652/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2652/2400.avif",
-          "webpUrl": "/media/visuals/img-2652/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/9",
-        "shutterSpeed": "1/125",
-        "iso": "ISO 100",
+        "shutterSpeed": "1/250",
+        "iso": "ISO 400",
         "focalLength": "40mm"
       },
-      "uploadedAt": "2026-07-21T19:46:04.693Z",
-      "col": 0
-    },
-    {
-      "id": "p1334686",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAcgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHptZGF0EgAKCDgRJ9YQENBpMmQcQCaaaYUAzwpV5FD3G0AnUpaLiJuKPagDXrF5+8oPC7+lTMhfxF+FosyPVUmVBv24R0VojpCPQqwGHiIr7FJ6pajUG1OvZ9g7B5hUETcum4GAvatrNSA9m0HP4VArP/xbThcw",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1334686/480.avif",
-          "webpUrl": "/media/visuals/p1334686/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1334686/960.avif",
-          "webpUrl": "/media/visuals/p1334686/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1334686/1600.avif",
-          "webpUrl": "/media/visuals/p1334686/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1334686/2400.avif",
-          "webpUrl": "/media/visuals/p1334686/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/200",
-        "iso": "ISO 8000",
-        "focalLength": "18mm"
-      },
-      "uploadedAt": "2026-06-15T16:08:28.000Z",
-      "col": 1
-    },
-    {
-      "id": "em302634",
-      "width": 1755,
-      "height": 2632,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADttZGF0EgAKCDgRJ9YQENBpMiUcQCaaaYUAzwoOA0SoBn8q3DCxYWl2Sj4SH1QS6lJ379/8z4JI",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/em302634/480.avif",
-          "webpUrl": "/media/visuals/em302634/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/em302634/960.avif",
-          "webpUrl": "/media/visuals/em302634/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/em302634/1600.avif",
-          "webpUrl": "/media/visuals/em302634/1600.webp"
-        },
-        {
-          "w": 1755,
-          "avifUrl": "/media/visuals/em302634/1755.avif",
-          "webpUrl": "/media/visuals/em302634/1755.webp"
-        }
-      ],
-      "exif": {
-        "camera": "SONY ILCE-7M3",
-        "lens": "24-70mm F2.8 DG DN | Art 019",
-        "aperture": "f/4.5",
-        "shutterSpeed": "1/500",
-        "iso": "ISO 320",
-        "focalLength": "70mm"
-      },
-      "uploadedAt": "2026-06-15T15:59:30.000Z",
+      "uploadedAt": "2026-07-21T19:46:04.462Z",
       "col": 2
     },
     {
-      "id": "em303128",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAhgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAI5tZGF0EgAKCDgRJ9YQENBpMngcQCaaaYUAzxCVzEkic4Krzu+Z99JHka45FVL+QmdJccCpJK4mHGd+ZKtYbVdWy9JN1FP8JmzpCgiq3STmOTi5+QpDGxyFfLT71fAiKVOmdoiHqMv+LKeOdPg8j4knrhbeUno65czjlmbL83TMM/DS/QqOB2YpRxA=",
+      "id": "img-2784",
+      "width": 3240,
+      "height": 2160,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAOgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEJtZGF0EgAKCDgQ54wgIaDSMiwcQCaaaYUA7TdFevCd5glgOlaa1oX4qB5UCKItM05Sc4kocA7CL5XygTuWiA==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/em303128/480.avif",
-          "webpUrl": "/media/visuals/em303128/480.webp"
+          "avifUrl": "/media/visuals/img-2784/480.avif",
+          "webpUrl": "/media/visuals/img-2784/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/em303128/960.avif",
-          "webpUrl": "/media/visuals/em303128/960.webp"
+          "avifUrl": "/media/visuals/img-2784/960.avif",
+          "webpUrl": "/media/visuals/img-2784/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/em303128/1600.avif",
-          "webpUrl": "/media/visuals/em303128/1600.webp"
+          "avifUrl": "/media/visuals/img-2784/1600.avif",
+          "webpUrl": "/media/visuals/img-2784/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/em303128/2400.avif",
-          "webpUrl": "/media/visuals/em303128/2400.webp"
+          "avifUrl": "/media/visuals/img-2784/2400.avif",
+          "webpUrl": "/media/visuals/img-2784/2400.webp"
         }
       ],
-      "exif": {
-        "camera": "SONY ILCE-7M3",
-        "lens": "24-70mm F2.8 DG DN | Art 019",
-        "aperture": "f/3.2",
-        "shutterSpeed": "1/8000",
-        "iso": "ISO 250",
-        "focalLength": "25mm"
-      },
-      "uploadedAt": "2026-06-15T16:05:38.000Z",
+      "exif": null,
+      "uploadedAt": "2026-07-21T19:46:04.169Z",
       "col": 3
     },
     {
@@ -1541,6 +1389,310 @@
       "col": 1
     },
     {
+      "id": "p1334534",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFRtZGF0EgAKCDgRJ9YQENBpMj4cQCaaaYUAzxCVyymOQRXVtlhGJ08j6BxURTxBBbxWe7NId2f0JuC2g9z59pM0RdFnYDvnrvNE0iHmOvzJKA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1334534/480.avif",
+          "webpUrl": "/media/visuals/p1334534/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1334534/960.avif",
+          "webpUrl": "/media/visuals/p1334534/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1334534/1600.avif",
+          "webpUrl": "/media/visuals/p1334534/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1334534/2400.avif",
+          "webpUrl": "/media/visuals/p1334534/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 8000",
+        "focalLength": "24mm"
+      },
+      "uploadedAt": "2026-06-15T16:07:28.000Z",
+      "col": 2
+    },
+    {
+      "id": "p1357035",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAdwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAH9tZGF0EgAKCDgRJ9YQENBpMmkcQCaaaYUAzwn2BkL87EPYsgPJaGlQ4ItNOh2SkTd7vojBItIjcgktV6TW0qxATKmKT6qcxeVDQ/k2sE2cow4A3erFH65fjisBOh8dRzXecIIY5QgJw6/oDrmxWYJaFU4i4LsXHKSKw9I=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1357035/480.avif",
+          "webpUrl": "/media/visuals/p1357035/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1357035/960.avif",
+          "webpUrl": "/media/visuals/p1357035/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1357035/1600.avif",
+          "webpUrl": "/media/visuals/p1357035/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1357035/2400.avif",
+          "webpUrl": "/media/visuals/p1357035/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 160",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-06-15T20:05:28.000Z",
+      "col": 3
+    },
+    {
+      "id": "p1334686",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAcgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHptZGF0EgAKCDgRJ9YQENBpMmQcQCaaaYUAzwpV5FD3G0AnUpaLiJuKPagDXrF5+8oPC7+lTMhfxF+FosyPVUmVBv24R0VojpCPQqwGHiIr7FJ6pajUG1OvZ9g7B5hUETcum4GAvatrNSA9m0HP4VArP/xbThcw",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1334686/480.avif",
+          "webpUrl": "/media/visuals/p1334686/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1334686/960.avif",
+          "webpUrl": "/media/visuals/p1334686/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1334686/1600.avif",
+          "webpUrl": "/media/visuals/p1334686/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1334686/2400.avif",
+          "webpUrl": "/media/visuals/p1334686/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 8000",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-06-15T16:08:28.000Z",
+      "col": 0
+    },
+    {
+      "id": "img-1791-jpg",
+      "width": 3024,
+      "height": 4032,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGptZGF0EgAKCDgRJ6YQENBpMlQcQCaaaYUAzxCVxTUr/dQ0yr1/ssipi8Qd8jPPDsB9KWA2Th6/xhS6wP427vZdNOoNacz7JG5rXXem58c4SxiHU6as2ocH5Vp3yuQj5rZVn4yoT+A=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-1791-jpg/480.avif",
+          "webpUrl": "/media/visuals/img-1791-jpg/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-1791-jpg/960.avif",
+          "webpUrl": "/media/visuals/img-1791-jpg/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-1791-jpg/1600.avif",
+          "webpUrl": "/media/visuals/img-1791-jpg/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-1791-jpg/2400.avif",
+          "webpUrl": "/media/visuals/img-1791-jpg/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Apple iPhone 12 Pro Max",
+        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
+        "aperture": "f/1.6",
+        "shutterSpeed": "1/2000",
+        "iso": "ISO 32",
+        "focalLength": "5mm"
+      },
+      "uploadedAt": "2026-05-12T04:54:54.000Z",
+      "col": 1
+    },
+    {
+      "id": "em302634",
+      "width": 1755,
+      "height": 2632,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADttZGF0EgAKCDgRJ9YQENBpMiUcQCaaaYUAzwoOA0SoBn8q3DCxYWl2Sj4SH1QS6lJ379/8z4JI",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/em302634/480.avif",
+          "webpUrl": "/media/visuals/em302634/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/em302634/960.avif",
+          "webpUrl": "/media/visuals/em302634/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/em302634/1600.avif",
+          "webpUrl": "/media/visuals/em302634/1600.webp"
+        },
+        {
+          "w": 1755,
+          "avifUrl": "/media/visuals/em302634/1755.avif",
+          "webpUrl": "/media/visuals/em302634/1755.webp"
+        }
+      ],
+      "exif": {
+        "camera": "SONY ILCE-7M3",
+        "lens": "24-70mm F2.8 DG DN | Art 019",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/500",
+        "iso": "ISO 320",
+        "focalLength": "70mm"
+      },
+      "uploadedAt": "2026-06-15T15:59:30.000Z",
+      "col": 2
+    },
+    {
+      "id": "em303128",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAhgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAI5tZGF0EgAKCDgRJ9YQENBpMngcQCaaaYUAzxCVzEkic4Krzu+Z99JHka45FVL+QmdJccCpJK4mHGd+ZKtYbVdWy9JN1FP8JmzpCgiq3STmOTi5+QpDGxyFfLT71fAiKVOmdoiHqMv+LKeOdPg8j4knrhbeUno65czjlmbL83TMM/DS/QqOB2YpRxA=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/em303128/480.avif",
+          "webpUrl": "/media/visuals/em303128/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/em303128/960.avif",
+          "webpUrl": "/media/visuals/em303128/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/em303128/1600.avif",
+          "webpUrl": "/media/visuals/em303128/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/em303128/2400.avif",
+          "webpUrl": "/media/visuals/em303128/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "SONY ILCE-7M3",
+        "lens": "24-70mm F2.8 DG DN | Art 019",
+        "aperture": "f/3.2",
+        "shutterSpeed": "1/8000",
+        "iso": "ISO 250",
+        "focalLength": "25mm"
+      },
+      "uploadedAt": "2026-06-15T16:05:38.000Z",
+      "col": 3
+    },
+    {
+      "id": "p1334478",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAjQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAJVtZGF0EgAKCDgRJ9YQENBpMn8cQCaaaYUAz5c5bKqx+LN71lY8c2yqo8wUVd3P2E51BvtUHjpx/A4Je8n4DjNY2tervgQmSN9HcoffVjsyqIzz2GdD9JXxSlxnyLUYhdVq5pMff8fLHiZkEHgDR4mNs0T2YyUaOzkD46yvufeWikrGf4ngrd6eU0yPKLu38l6A",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1334478/480.avif",
+          "webpUrl": "/media/visuals/p1334478/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1334478/960.avif",
+          "webpUrl": "/media/visuals/p1334478/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1334478/1600.avif",
+          "webpUrl": "/media/visuals/p1334478/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1334478/2400.avif",
+          "webpUrl": "/media/visuals/p1334478/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.2",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 8000",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-06-15T16:07:18.000Z",
+      "col": 0
+    },
+    {
+      "id": "img-5460-jpg",
+      "width": 3024,
+      "height": 4032,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAKwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADNtZGF0EgAKCDgRJ6YQENBpMh0cQCaaaYQAzwvTb8DJ6JjgEdjyjnGbtqLIHcydyw==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/img-5460-jpg/480.avif",
+          "webpUrl": "/media/visuals/img-5460-jpg/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/img-5460-jpg/960.avif",
+          "webpUrl": "/media/visuals/img-5460-jpg/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/img-5460-jpg/1600.avif",
+          "webpUrl": "/media/visuals/img-5460-jpg/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/img-5460-jpg/2400.avif",
+          "webpUrl": "/media/visuals/img-5460-jpg/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Apple iPhone 12 Pro Max",
+        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
+        "aperture": "f/1.6",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 100",
+        "focalLength": "5mm"
+      },
+      "uploadedAt": "2026-05-12T04:55:16.000Z",
+      "col": 1
+    },
+    {
       "id": "v4-2-31-1",
       "width": 1920,
       "height": 1080,
@@ -1593,79 +1745,50 @@
       "col": 3
     },
     {
-      "id": "p1334478",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAjQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAJVtZGF0EgAKCDgRJ9YQENBpMn8cQCaaaYUAz5c5bKqx+LN71lY8c2yqo8wUVd3P2E51BvtUHjpx/A4Je8n4DjNY2tervgQmSN9HcoffVjsyqIzz2GdD9JXxSlxnyLUYhdVq5pMff8fLHiZkEHgDR4mNs0T2YyUaOzkD46yvufeWikrGf4ngrd6eU0yPKLu38l6A",
+      "id": "photo-001",
+      "width": 854,
+      "height": 1280,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAWwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGNtZGF0EgAKCDgRJ9YQENBpMk0cQCaaaYUAz6ipSycjISdAzMQcZrErUHbFhdwjMaxNVWvB+Fi7tuI5UaYPtyavGJrBN7+3gUX3i/lLpViSoTMrXU0dwcVj3DYLrCn/8A==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1334478/480.avif",
-          "webpUrl": "/media/visuals/p1334478/480.webp"
+          "avifUrl": "/media/visuals/photo-001/480.avif",
+          "webpUrl": "/media/visuals/photo-001/480.webp"
         },
         {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1334478/960.avif",
-          "webpUrl": "/media/visuals/p1334478/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1334478/1600.avif",
-          "webpUrl": "/media/visuals/p1334478/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1334478/2400.avif",
-          "webpUrl": "/media/visuals/p1334478/2400.webp"
+          "w": 854,
+          "avifUrl": "/media/visuals/photo-001/854.avif",
+          "webpUrl": "/media/visuals/photo-001/854.webp"
         }
       ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.2",
-        "shutterSpeed": "1/80",
-        "iso": "ISO 8000",
-        "focalLength": "18mm"
-      },
-      "uploadedAt": "2026-06-15T16:07:18.000Z",
+      "exif": null,
+      "uploadedAt": "2026-06-10T06:08:58.000Z",
       "col": 0
     },
     {
-      "id": "p1322611",
-      "width": 2608,
-      "height": 3912,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGptZGF0EgAKCDgRJ9YQENBpMlQcQCaaaYQAz592S059R5u+i0YdN/qaJvbb1A2Y0zhAJn6smylox7QEgUPXb+0yaoj7/5RnxwPzLFHDeqX1N5C1GifkeWjMbCe9B7TOF2ZxmrN04SA=",
+      "id": "imgi-74-654679768-18060381461475406-195493804954890312-n",
+      "width": 1440,
+      "height": 1800,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAALwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADdtZGF0EgAKCDgRJ4YQENBpMiEcQCaaaYQAzwsA/9xI9uQELGFaaGFKhKJTnrTajmWNVoA=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1322611/480.avif",
-          "webpUrl": "/media/visuals/p1322611/480.webp"
+          "avifUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/480.avif",
+          "webpUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1322611/960.avif",
-          "webpUrl": "/media/visuals/p1322611/960.webp"
+          "avifUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/960.avif",
+          "webpUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/960.webp"
         },
         {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1322611/1600.avif",
-          "webpUrl": "/media/visuals/p1322611/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1322611/2400.avif",
-          "webpUrl": "/media/visuals/p1322611/2400.webp"
+          "w": 1440,
+          "avifUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/1440.avif",
+          "webpUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/1440.webp"
         }
       ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/400",
-        "iso": "ISO 100",
-        "focalLength": "40mm"
-      },
-      "uploadedAt": "2026-05-30T20:57:36.000Z",
+      "exif": null,
+      "uploadedAt": "2026-05-12T04:45:48.000Z",
       "col": 1
     },
     {
@@ -1738,62 +1861,60 @@
       "col": 3
     },
     {
-      "id": "photo-001",
-      "width": 854,
-      "height": 1280,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAWwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGNtZGF0EgAKCDgRJ9YQENBpMk0cQCaaaYUAz6ipSycjISdAzMQcZrErUHbFhdwjMaxNVWvB+Fi7tuI5UaYPtyavGJrBN7+3gUX3i/lLpViSoTMrXU0dwcVj3DYLrCn/8A==",
+      "id": "still-2026-05-27-150042-2-21-1",
+      "width": 1920,
+      "height": 1080,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAACwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADptZGF0EgAKCDgQ50wgIaDSMiQcQCaaaYUA7eFjG4nQA0UK9qgWQsUlpgT3gAFOpRhO39y1juA=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/photo-001/480.avif",
-          "webpUrl": "/media/visuals/photo-001/480.webp"
-        },
-        {
-          "w": 854,
-          "avifUrl": "/media/visuals/photo-001/854.avif",
-          "webpUrl": "/media/visuals/photo-001/854.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-06-10T06:08:58.000Z",
-      "col": 0
-    },
-    {
-      "id": "img-5460-jpg",
-      "width": 3024,
-      "height": 4032,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAKwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADNtZGF0EgAKCDgRJ6YQENBpMh0cQCaaaYQAzwvTb8DJ6JjgEdjyjnGbtqLIHcydyw==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-5460-jpg/480.avif",
-          "webpUrl": "/media/visuals/img-5460-jpg/480.webp"
+          "avifUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/480.avif",
+          "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/img-5460-jpg/960.avif",
-          "webpUrl": "/media/visuals/img-5460-jpg/960.webp"
+          "avifUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/960.avif",
+          "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/img-5460-jpg/1600.avif",
-          "webpUrl": "/media/visuals/img-5460-jpg/1600.webp"
+          "avifUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1600.avif",
+          "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1600.webp"
         },
         {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-5460-jpg/2400.avif",
-          "webpUrl": "/media/visuals/img-5460-jpg/2400.webp"
+          "w": 1920,
+          "avifUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1920.avif",
+          "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1920.webp"
         }
       ],
-      "exif": {
-        "camera": "Apple iPhone 12 Pro Max",
-        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
-        "aperture": "f/1.6",
-        "shutterSpeed": "1/60",
-        "iso": "ISO 100",
-        "focalLength": "5mm"
-      },
-      "uploadedAt": "2026-05-12T04:55:16.000Z",
+      "exif": null,
+      "uploadedAt": "2026-05-27T21:00:44.000Z",
+      "col": 0
+    },
+    {
+      "id": "imgi-48-605186268-18546308746029151-8786753820739928842-n",
+      "width": 1440,
+      "height": 960,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAARQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAE1tZGF0EgAKCDgQ54wgIaDSMjccQCaaaYUA7dvsHiHRqjkFdw3Vwqqf98qdkOYpGt2IlHSCgC8fIsWYMtzOr6M2AqmMyubFwjtk",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/480.avif",
+          "webpUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/960.avif",
+          "webpUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/960.webp"
+        },
+        {
+          "w": 1440,
+          "avifUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/1440.avif",
+          "webpUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/1440.webp"
+        }
+      ],
+      "exif": null,
+      "uploadedAt": "2026-05-12T04:42:30.000Z",
       "col": 1
     },
     {
@@ -1861,72 +1982,79 @@
       "col": 3
     },
     {
-      "id": "still-2026-05-27-150042-2-21-1",
-      "width": 1920,
-      "height": 1080,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAACwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADptZGF0EgAKCDgQ50wgIaDSMiQcQCaaaYUA7eFjG4nQA0UK9qgWQsUlpgT3gAFOpRhO39y1juA=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/480.avif",
-          "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/960.avif",
-          "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1600.avif",
-          "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1600.webp"
-        },
-        {
-          "w": 1920,
-          "avifUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1920.avif",
-          "webpUrl": "/media/visuals/still-2026-05-27-150042-2-21-1/1920.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-05-27T21:00:44.000Z",
-      "col": 0
-    },
-    {
-      "id": "img-1791-jpg",
+      "id": "img-5447-jpg",
       "width": 3024,
       "height": 4032,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGptZGF0EgAKCDgRJ6YQENBpMlQcQCaaaYUAzxCVxTUr/dQ0yr1/ssipi8Qd8jPPDsB9KWA2Th6/xhS6wP427vZdNOoNacz7JG5rXXem58c4SxiHU6as2ocH5Vp3yuQj5rZVn4yoT+A=",
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAJAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAACxtZGF0EgAKCDgRJ6YQENBpMhYcQCaaaYQAu+hyMX7t8nOBEzFmzB9+",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/img-1791-jpg/480.avif",
-          "webpUrl": "/media/visuals/img-1791-jpg/480.webp"
+          "avifUrl": "/media/visuals/img-5447-jpg/480.avif",
+          "webpUrl": "/media/visuals/img-5447-jpg/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/img-1791-jpg/960.avif",
-          "webpUrl": "/media/visuals/img-1791-jpg/960.webp"
+          "avifUrl": "/media/visuals/img-5447-jpg/960.avif",
+          "webpUrl": "/media/visuals/img-5447-jpg/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/img-1791-jpg/1600.avif",
-          "webpUrl": "/media/visuals/img-1791-jpg/1600.webp"
+          "avifUrl": "/media/visuals/img-5447-jpg/1600.avif",
+          "webpUrl": "/media/visuals/img-5447-jpg/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/img-1791-jpg/2400.avif",
-          "webpUrl": "/media/visuals/img-1791-jpg/2400.webp"
+          "avifUrl": "/media/visuals/img-5447-jpg/2400.avif",
+          "webpUrl": "/media/visuals/img-5447-jpg/2400.webp"
         }
       ],
       "exif": {
         "camera": "Apple iPhone 12 Pro Max",
         "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
         "aperture": "f/1.6",
-        "shutterSpeed": "1/2000",
-        "iso": "ISO 32",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 100",
         "focalLength": "5mm"
       },
-      "uploadedAt": "2026-05-12T04:54:54.000Z",
+      "uploadedAt": "2026-05-12T04:55:22.000Z",
+      "col": 0
+    },
+    {
+      "id": "p1299104",
+      "width": 2544,
+      "height": 3816,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEhtZGF0EgAKCDgRJ9YQENBpMjIcQCaaaYUAz4wKhESrEr1EwBqNZJERRbNBV+Vt3KO0nCdEcKLsFUkAdu8AAv4kC1hpsA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1299104/480.avif",
+          "webpUrl": "/media/visuals/p1299104/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1299104/960.avif",
+          "webpUrl": "/media/visuals/p1299104/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1299104/1600.avif",
+          "webpUrl": "/media/visuals/p1299104/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1299104/2400.avif",
+          "webpUrl": "/media/visuals/p1299104/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 640",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-05-04T08:55:04.000Z",
       "col": 1
     },
     {
@@ -1994,67 +2122,79 @@
       "col": 3
     },
     {
-      "id": "img-5447-jpg",
+      "id": "img-2874-jpg",
       "width": 3024,
       "height": 4032,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAJAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAACxtZGF0EgAKCDgRJ6YQENBpMhYcQCaaaYQAu+hyMX7t8nOBEzFmzB9+",
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF9tZGF0EgAKCDgRJ6YQENBpMkkcQCaaaYUAz6zX7+H5f1RU9tHnTcdpKxm5gY8g5nv2O62mHSUAD2yhr6Q6CPZbmRNcoxaPYr8qwYM3Cb1wxA+ttyzfFSbu6O0Y",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/img-5447-jpg/480.avif",
-          "webpUrl": "/media/visuals/img-5447-jpg/480.webp"
+          "avifUrl": "/media/visuals/img-2874-jpg/480.avif",
+          "webpUrl": "/media/visuals/img-2874-jpg/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/img-5447-jpg/960.avif",
-          "webpUrl": "/media/visuals/img-5447-jpg/960.webp"
+          "avifUrl": "/media/visuals/img-2874-jpg/960.avif",
+          "webpUrl": "/media/visuals/img-2874-jpg/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/img-5447-jpg/1600.avif",
-          "webpUrl": "/media/visuals/img-5447-jpg/1600.webp"
+          "avifUrl": "/media/visuals/img-2874-jpg/1600.avif",
+          "webpUrl": "/media/visuals/img-2874-jpg/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/img-5447-jpg/2400.avif",
-          "webpUrl": "/media/visuals/img-5447-jpg/2400.webp"
+          "avifUrl": "/media/visuals/img-2874-jpg/2400.avif",
+          "webpUrl": "/media/visuals/img-2874-jpg/2400.webp"
         }
       ],
       "exif": {
         "camera": "Apple iPhone 12 Pro Max",
         "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
         "aperture": "f/1.6",
-        "shutterSpeed": "1/60",
-        "iso": "ISO 100",
+        "shutterSpeed": "1/120",
+        "iso": "ISO 125",
         "focalLength": "5mm"
       },
-      "uploadedAt": "2026-05-12T04:55:22.000Z",
+      "uploadedAt": "2026-05-12T04:55:08.000Z",
       "col": 0
     },
     {
-      "id": "imgi-74-654679768-18060381461475406-195493804954890312-n",
-      "width": 1440,
-      "height": 1800,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAALwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADdtZGF0EgAKCDgRJ4YQENBpMiEcQCaaaYQAzwsA/9xI9uQELGFaaGFKhKJTnrTajmWNVoA=",
+      "id": "p1285801",
+      "width": 2383,
+      "height": 3574,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAgAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAIhtZGF0EgAKCDgRJ9YQENBpMnIcQCaaaYUAzxF7O9RfF9PDcH8gT61vb83toUEDtZpnK41sFJ3k7PeWmDwerVleHGdLse9d9FnLXQIJLJbMOXjC1EQ+6/WLdE0pDg9t+1jUhktMoAOAXejLjODpJluRpmED/mg7cTi52UIrhOWLVdS1EMs=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/480.avif",
-          "webpUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/480.webp"
+          "avifUrl": "/media/visuals/p1285801/480.avif",
+          "webpUrl": "/media/visuals/p1285801/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/960.avif",
-          "webpUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/960.webp"
+          "avifUrl": "/media/visuals/p1285801/960.avif",
+          "webpUrl": "/media/visuals/p1285801/960.webp"
         },
         {
-          "w": 1440,
-          "avifUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/1440.avif",
-          "webpUrl": "/media/visuals/imgi-74-654679768-18060381461475406-195493804954890312-n/1440.webp"
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1285801/1600.avif",
+          "webpUrl": "/media/visuals/p1285801/1600.webp"
+        },
+        {
+          "w": 2383,
+          "avifUrl": "/media/visuals/p1285801/2383.avif",
+          "webpUrl": "/media/visuals/p1285801/2383.webp"
         }
       ],
-      "exif": null,
-      "uploadedAt": "2026-05-12T04:45:48.000Z",
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/11",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 12800",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-04-21T06:30:40.000Z",
       "col": 1
     },
     {
@@ -2110,67 +2250,67 @@
       "col": 3
     },
     {
-      "id": "img-2874-jpg",
-      "width": 3024,
-      "height": 4032,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGwAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF9tZGF0EgAKCDgRJ6YQENBpMkkcQCaaaYUAz6zX7+H5f1RU9tHnTcdpKxm5gY8g5nv2O62mHSUAD2yhr6Q6CPZbmRNcoxaPYr8qwYM3Cb1wxA+ttyzfFSbu6O0Y",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/img-2874-jpg/480.avif",
-          "webpUrl": "/media/visuals/img-2874-jpg/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/img-2874-jpg/960.avif",
-          "webpUrl": "/media/visuals/img-2874-jpg/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/img-2874-jpg/1600.avif",
-          "webpUrl": "/media/visuals/img-2874-jpg/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/img-2874-jpg/2400.avif",
-          "webpUrl": "/media/visuals/img-2874-jpg/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Apple iPhone 12 Pro Max",
-        "lens": "iPhone 12 Pro Max back triple camera 5.1mm f/1.6",
-        "aperture": "f/1.6",
-        "shutterSpeed": "1/120",
-        "iso": "ISO 125",
-        "focalLength": "5mm"
-      },
-      "uploadedAt": "2026-05-12T04:55:08.000Z",
-      "col": 0
-    },
-    {
-      "id": "imgi-48-605186268-18546308746029151-8786753820739928842-n",
+      "id": "imgi-74-655380961-18115184104647570-5190124937375033980-n",
       "width": 1440,
-      "height": 960,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAARQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAE1tZGF0EgAKCDgQ54wgIaDSMjccQCaaaYUA7dvsHiHRqjkFdw3Vwqqf98qdkOYpGt2IlHSCgC8fIsWYMtzOr6M2AqmMyubFwjtk",
+      "height": 1800,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAD1tZGF0EgAKCDgRJ4YQENBpMiccQCaaaYQAzwqPJSbS7w8vbaY1DzftkHT7GE7bkgmhD6yzaZAOcbA=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/480.avif",
-          "webpUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/480.webp"
+          "avifUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/480.avif",
+          "webpUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/960.avif",
-          "webpUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/960.webp"
+          "avifUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/960.avif",
+          "webpUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/960.webp"
         },
         {
           "w": 1440,
-          "avifUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/1440.avif",
-          "webpUrl": "/media/visuals/imgi-48-605186268-18546308746029151-8786753820739928842-n/1440.webp"
+          "avifUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/1440.avif",
+          "webpUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/1440.webp"
         }
       ],
       "exif": null,
-      "uploadedAt": "2026-05-12T04:42:30.000Z",
+      "uploadedAt": "2026-05-12T04:46:12.000Z",
+      "col": 0
+    },
+    {
+      "id": "p1231273",
+      "width": 4000,
+      "height": 5000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAnAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAKRtZGF0EgAKCDgRJ4YQENBpMo0BHEAmmmmFANAmoG0EOdJxQLHeJwjo+qQ99uQ9gvH8I0t5ni2fX0RVX123RAEIwlYXFQf5VowQrr9esPc0zWV2X+HYqDkcod4cCq2wSLeqUzPfuKyxxROE8nlPwA4ZJxgnnSpbMFdHWbbvP8RDH7xetLl/touYQkjdeGKSt6+oSpBhOsxbXwfGKNFwKTpg",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1231273/480.avif",
+          "webpUrl": "/media/visuals/p1231273/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1231273/960.avif",
+          "webpUrl": "/media/visuals/p1231273/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1231273/1600.avif",
+          "webpUrl": "/media/visuals/p1231273/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1231273/2400.avif",
+          "webpUrl": "/media/visuals/p1231273/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 2000",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2026-04-04T14:57:26.000Z",
       "col": 1
     },
     {
@@ -2238,67 +2378,67 @@
       "col": 3
     },
     {
-      "id": "imgi-74-655380961-18115184104647570-5190124937375033980-n",
+      "id": "imgi-42-658988060-18115327312671334-8920562182752202841-n",
       "width": 1440,
       "height": 1800,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAD1tZGF0EgAKCDgRJ4YQENBpMiccQCaaaYQAzwqPJSbS7w8vbaY1DzftkHT7GE7bkgmhD6yzaZAOcbA=",
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAASQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFFtZGF0EgAKCDgRJ4YQENBpMjscQCaaaYUAzwo7JWsAQHWBpH9Ocbqd/CzomFffccaKMZmxt9UCMoSJ8EoflshKs6OW49oS8nqLSp280A==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/480.avif",
-          "webpUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/480.webp"
+          "avifUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/480.avif",
+          "webpUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/960.avif",
-          "webpUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/960.webp"
+          "avifUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/960.avif",
+          "webpUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/960.webp"
         },
         {
           "w": 1440,
-          "avifUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/1440.avif",
-          "webpUrl": "/media/visuals/imgi-74-655380961-18115184104647570-5190124937375033980-n/1440.webp"
+          "avifUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/1440.avif",
+          "webpUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/1440.webp"
         }
       ],
       "exif": null,
-      "uploadedAt": "2026-05-12T04:46:12.000Z",
+      "uploadedAt": "2026-05-12T04:44:52.000Z",
       "col": 0
     },
     {
-      "id": "p1299104",
-      "width": 2544,
-      "height": 3816,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEhtZGF0EgAKCDgRJ9YQENBpMjIcQCaaaYUAz4wKhESrEr1EwBqNZJERRbNBV+Vt3KO0nCdEcKLsFUkAdu8AAv4kC1hpsA==",
+      "id": "p1229218",
+      "width": 6000,
+      "height": 4000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADltZGF0EgAKCDgQ54wgIaDSMiMcQCaaaYQA7TVk3TXcd4DPPWP7YXLwppNhDGJTYXmK5Nd1YA==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1299104/480.avif",
-          "webpUrl": "/media/visuals/p1299104/480.webp"
+          "avifUrl": "/media/visuals/p1229218/480.avif",
+          "webpUrl": "/media/visuals/p1229218/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1299104/960.avif",
-          "webpUrl": "/media/visuals/p1299104/960.webp"
+          "avifUrl": "/media/visuals/p1229218/960.avif",
+          "webpUrl": "/media/visuals/p1229218/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1299104/1600.avif",
-          "webpUrl": "/media/visuals/p1299104/1600.webp"
+          "avifUrl": "/media/visuals/p1229218/1600.avif",
+          "webpUrl": "/media/visuals/p1229218/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1299104/2400.avif",
-          "webpUrl": "/media/visuals/p1299104/2400.webp"
+          "avifUrl": "/media/visuals/p1229218/2400.avif",
+          "webpUrl": "/media/visuals/p1229218/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
         "aperture": "f/4.5",
-        "shutterSpeed": "1/160",
+        "shutterSpeed": "1/100",
         "iso": "ISO 640",
         "focalLength": "18mm"
       },
-      "uploadedAt": "2026-05-04T08:55:04.000Z",
+      "uploadedAt": "2026-03-29T20:11:10.000Z",
       "col": 1
     },
     {
@@ -2378,67 +2518,79 @@
       "col": 3
     },
     {
-      "id": "imgi-42-658988060-18115327312671334-8920562182752202841-n",
-      "width": 1440,
-      "height": 1800,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAASQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFFtZGF0EgAKCDgRJ4YQENBpMjscQCaaaYUAzwo7JWsAQHWBpH9Ocbqd/CzomFffccaKMZmxt9UCMoSJ8EoflshKs6OW49oS8nqLSp280A==",
+      "id": "p1297103-edit-2",
+      "width": 5474,
+      "height": 3649,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADxtZGF0EgAKCDgQ54wgIaDSMiYcQCaaaYUA7UJx5lKSCZEcdL7+d9sfsy/OReCQZLFlr2sh1ahAbA==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/480.avif",
-          "webpUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/480.webp"
+          "avifUrl": "/media/visuals/p1297103-edit-2/480.avif",
+          "webpUrl": "/media/visuals/p1297103-edit-2/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/960.avif",
-          "webpUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/960.webp"
-        },
-        {
-          "w": 1440,
-          "avifUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/1440.avif",
-          "webpUrl": "/media/visuals/imgi-42-658988060-18115327312671334-8920562182752202841-n/1440.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-05-12T04:44:52.000Z",
-      "col": 0
-    },
-    {
-      "id": "p1285801",
-      "width": 2383,
-      "height": 3574,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAgAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAIhtZGF0EgAKCDgRJ9YQENBpMnIcQCaaaYUAzxF7O9RfF9PDcH8gT61vb83toUEDtZpnK41sFJ3k7PeWmDwerVleHGdLse9d9FnLXQIJLJbMOXjC1EQ+6/WLdE0pDg9t+1jUhktMoAOAXejLjODpJluRpmED/mg7cTi52UIrhOWLVdS1EMs=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1285801/480.avif",
-          "webpUrl": "/media/visuals/p1285801/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1285801/960.avif",
-          "webpUrl": "/media/visuals/p1285801/960.webp"
+          "avifUrl": "/media/visuals/p1297103-edit-2/960.avif",
+          "webpUrl": "/media/visuals/p1297103-edit-2/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1285801/1600.avif",
-          "webpUrl": "/media/visuals/p1285801/1600.webp"
+          "avifUrl": "/media/visuals/p1297103-edit-2/1600.avif",
+          "webpUrl": "/media/visuals/p1297103-edit-2/1600.webp"
         },
         {
-          "w": 2383,
-          "avifUrl": "/media/visuals/p1285801/2383.avif",
-          "webpUrl": "/media/visuals/p1285801/2383.webp"
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1297103-edit-2/2400.avif",
+          "webpUrl": "/media/visuals/p1297103-edit-2/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/11",
-        "shutterSpeed": "1/60",
-        "iso": "ISO 12800",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/80",
+        "iso": "ISO 1250",
+        "focalLength": "40mm"
+      },
+      "uploadedAt": "2026-04-22T01:50:04.000Z",
+      "col": 0
+    },
+    {
+      "id": "p1229197",
+      "width": 6000,
+      "height": 4000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAPQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEVtZGF0EgAKCDgQ54wgIaDSMi8cQCaaaYUA7UJx8DJiOwMpjnAecT/zFWntP0LZGcCiIQ+uc4RtHc8/L82m6ISgHQ==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1229197/480.avif",
+          "webpUrl": "/media/visuals/p1229197/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1229197/960.avif",
+          "webpUrl": "/media/visuals/p1229197/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1229197/1600.avif",
+          "webpUrl": "/media/visuals/p1229197/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1229197/2400.avif",
+          "webpUrl": "/media/visuals/p1229197/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 5000",
         "focalLength": "18mm"
       },
-      "uploadedAt": "2026-04-21T06:30:40.000Z",
+      "uploadedAt": "2026-03-29T20:10:46.000Z",
       "col": 1
     },
     {
@@ -2518,30 +2670,30 @@
       "col": 3
     },
     {
-      "id": "p1297103-edit-2",
-      "width": 5474,
-      "height": 3649,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADxtZGF0EgAKCDgQ54wgIaDSMiYcQCaaaYUA7UJx5lKSCZEcdL7+d9sfsy/OReCQZLFlr2sh1ahAbA==",
+      "id": "p1297132-edit",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADptZGF0EgAKCDgRJ9YQENBpMiQcQCaaaYUAzwn2ByP1dYzFdKqcnA2G2AXr+cczD4r+FUPCvF8=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1297103-edit-2/480.avif",
-          "webpUrl": "/media/visuals/p1297103-edit-2/480.webp"
+          "avifUrl": "/media/visuals/p1297132-edit/480.avif",
+          "webpUrl": "/media/visuals/p1297132-edit/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1297103-edit-2/960.avif",
-          "webpUrl": "/media/visuals/p1297103-edit-2/960.webp"
+          "avifUrl": "/media/visuals/p1297132-edit/960.avif",
+          "webpUrl": "/media/visuals/p1297132-edit/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1297103-edit-2/1600.avif",
-          "webpUrl": "/media/visuals/p1297103-edit-2/1600.webp"
+          "avifUrl": "/media/visuals/p1297132-edit/1600.avif",
+          "webpUrl": "/media/visuals/p1297132-edit/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1297103-edit-2/2400.avif",
-          "webpUrl": "/media/visuals/p1297103-edit-2/2400.webp"
+          "avifUrl": "/media/visuals/p1297132-edit/2400.avif",
+          "webpUrl": "/media/visuals/p1297132-edit/2400.webp"
         }
       ],
       "exif": {
@@ -2550,47 +2702,47 @@
         "aperture": "f/6.3",
         "shutterSpeed": "1/80",
         "iso": "ISO 1250",
-        "focalLength": "40mm"
+        "focalLength": "18mm"
       },
-      "uploadedAt": "2026-04-22T01:50:04.000Z",
+      "uploadedAt": "2026-04-22T01:42:08.000Z",
       "col": 0
     },
     {
-      "id": "p1231273",
+      "id": "p1205024",
       "width": 4000,
       "height": 5000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAnAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAKRtZGF0EgAKCDgRJ4YQENBpMo0BHEAmmmmFANAmoG0EOdJxQLHeJwjo+qQ99uQ9gvH8I0t5ni2fX0RVX123RAEIwlYXFQf5VowQrr9esPc0zWV2X+HYqDkcod4cCq2wSLeqUzPfuKyxxROE8nlPwA4ZJxgnnSpbMFdHWbbvP8RDH7xetLl/touYQkjdeGKSt6+oSpBhOsxbXwfGKNFwKTpg",
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAaQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHFtZGF0EgAKCDgRJ4YQENBpMlscQCaaaYUAzwtiUzGQQUxyz0yClNUNbJ6HPFToZVfDxUpD/NzgUwcjmAGtwTIK5Vt/zqurvJndhD7G3u+BaretLrtj6U5pUUST84bqeOAxgpkA2YlnaZQDKzu0",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1231273/480.avif",
-          "webpUrl": "/media/visuals/p1231273/480.webp"
+          "avifUrl": "/media/visuals/p1205024/480.avif",
+          "webpUrl": "/media/visuals/p1205024/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1231273/960.avif",
-          "webpUrl": "/media/visuals/p1231273/960.webp"
+          "avifUrl": "/media/visuals/p1205024/960.avif",
+          "webpUrl": "/media/visuals/p1205024/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1231273/1600.avif",
-          "webpUrl": "/media/visuals/p1231273/1600.webp"
+          "avifUrl": "/media/visuals/p1205024/1600.avif",
+          "webpUrl": "/media/visuals/p1205024/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1231273/2400.avif",
-          "webpUrl": "/media/visuals/p1231273/2400.webp"
+          "avifUrl": "/media/visuals/p1205024/2400.avif",
+          "webpUrl": "/media/visuals/p1205024/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/4.5",
-        "shutterSpeed": "1/80",
-        "iso": "ISO 2000",
-        "focalLength": "18mm"
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 125",
+        "focalLength": "40mm"
       },
-      "uploadedAt": "2026-04-04T14:57:26.000Z",
+      "uploadedAt": "2026-02-28T15:31:36.000Z",
       "col": 1
     },
     {
@@ -2670,79 +2822,74 @@
       "col": 3
     },
     {
-      "id": "p1297132-edit",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADptZGF0EgAKCDgRJ9YQENBpMiQcQCaaaYUAzwn2ByP1dYzFdKqcnA2G2AXr+cczD4r+FUPCvF8=",
+      "id": "p1253712",
+      "width": 6000,
+      "height": 4000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAASgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFJtZGF0EgAKCDgQ54wgIaDSMjwcQCaaaYQA700ZUHxRpkz5/TdCwWGceJVwUz3iqBoiVYt+QdpBVIS6X/+X/+4/ash1OZqpKqXhYapRCmo=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1297132-edit/480.avif",
-          "webpUrl": "/media/visuals/p1297132-edit/480.webp"
+          "avifUrl": "/media/visuals/p1253712/480.avif",
+          "webpUrl": "/media/visuals/p1253712/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1297132-edit/960.avif",
-          "webpUrl": "/media/visuals/p1297132-edit/960.webp"
+          "avifUrl": "/media/visuals/p1253712/960.avif",
+          "webpUrl": "/media/visuals/p1253712/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1297132-edit/1600.avif",
-          "webpUrl": "/media/visuals/p1297132-edit/1600.webp"
+          "avifUrl": "/media/visuals/p1253712/1600.avif",
+          "webpUrl": "/media/visuals/p1253712/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1297132-edit/2400.avif",
-          "webpUrl": "/media/visuals/p1297132-edit/2400.webp"
+          "avifUrl": "/media/visuals/p1253712/2400.avif",
+          "webpUrl": "/media/visuals/p1253712/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/80",
-        "iso": "ISO 1250",
-        "focalLength": "18mm"
+        "lens": "LUMIX S 50/F1.8",
+        "aperture": "f/22",
+        "shutterSpeed": "1/20",
+        "iso": "ISO 125",
+        "focalLength": "50mm"
       },
-      "uploadedAt": "2026-04-22T01:42:08.000Z",
+      "uploadedAt": "2026-04-21T06:16:20.000Z",
       "col": 0
     },
     {
-      "id": "p1229218",
-      "width": 6000,
-      "height": 4000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADltZGF0EgAKCDgQ54wgIaDSMiMcQCaaaYQA7TVk3TXcd4DPPWP7YXLwppNhDGJTYXmK5Nd1YA==",
+      "id": "p1193889",
+      "width": 1349,
+      "height": 1686,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAXAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGRtZGF0EgAKCDgRJ4YQENBpMk4cQCaaaYUAz5+BrPSzuE+a49PeWZYZZn9WFSyYrjKWgJozfCqhseTW7lVW71nucO2vatSoOnhliUXEonOmc8L5n2tPiYxXEajTQ0hwFfA=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1229218/480.avif",
-          "webpUrl": "/media/visuals/p1229218/480.webp"
+          "avifUrl": "/media/visuals/p1193889/480.avif",
+          "webpUrl": "/media/visuals/p1193889/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1229218/960.avif",
-          "webpUrl": "/media/visuals/p1229218/960.webp"
+          "avifUrl": "/media/visuals/p1193889/960.avif",
+          "webpUrl": "/media/visuals/p1193889/960.webp"
         },
         {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1229218/1600.avif",
-          "webpUrl": "/media/visuals/p1229218/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1229218/2400.avif",
-          "webpUrl": "/media/visuals/p1229218/2400.webp"
+          "w": 1349,
+          "avifUrl": "/media/visuals/p1193889/1349.avif",
+          "webpUrl": "/media/visuals/p1193889/1349.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/4.5",
-        "shutterSpeed": "1/100",
-        "iso": "ISO 640",
-        "focalLength": "18mm"
+        "aperture": "f/5",
+        "shutterSpeed": "1/250",
+        "iso": "ISO 5000",
+        "focalLength": "24mm"
       },
-      "uploadedAt": "2026-03-29T20:11:10.000Z",
+      "uploadedAt": "2026-02-27T04:38:30.000Z",
       "col": 1
     },
     {
@@ -2822,79 +2969,74 @@
       "col": 3
     },
     {
-      "id": "p1253712",
-      "width": 6000,
-      "height": 4000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAASgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFJtZGF0EgAKCDgQ54wgIaDSMjwcQCaaaYQA700ZUHxRpkz5/TdCwWGceJVwUz3iqBoiVYt+QdpBVIS6X/+X/+4/ash1OZqpKqXhYapRCmo=",
+      "id": "p1231361",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAXwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGdtZGF0EgAKCDgRJ9YQENBpMlEcQCaaaYUAzwn2Bzw27qEE8lZd6GlIoTMZMceJFZSkn32JBHM1opDVZcE5tSywvrLhs+Q5FArE1epxSnSrPwJo37jv84IcVYc7YdbOGqKdrUA=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1253712/480.avif",
-          "webpUrl": "/media/visuals/p1253712/480.webp"
+          "avifUrl": "/media/visuals/p1231361/480.avif",
+          "webpUrl": "/media/visuals/p1231361/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1253712/960.avif",
-          "webpUrl": "/media/visuals/p1253712/960.webp"
+          "avifUrl": "/media/visuals/p1231361/960.avif",
+          "webpUrl": "/media/visuals/p1231361/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1253712/1600.avif",
-          "webpUrl": "/media/visuals/p1253712/1600.webp"
+          "avifUrl": "/media/visuals/p1231361/1600.avif",
+          "webpUrl": "/media/visuals/p1231361/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1253712/2400.avif",
-          "webpUrl": "/media/visuals/p1253712/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 50/F1.8",
-        "aperture": "f/22",
-        "shutterSpeed": "1/20",
-        "iso": "ISO 125",
-        "focalLength": "50mm"
-      },
-      "uploadedAt": "2026-04-21T06:16:20.000Z",
-      "col": 0
-    },
-    {
-      "id": "p1229197",
-      "width": 6000,
-      "height": 4000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAPQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEVtZGF0EgAKCDgQ54wgIaDSMi8cQCaaaYUA7UJx8DJiOwMpjnAecT/zFWntP0LZGcCiIQ+uc4RtHc8/L82m6ISgHQ==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1229197/480.avif",
-          "webpUrl": "/media/visuals/p1229197/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1229197/960.avif",
-          "webpUrl": "/media/visuals/p1229197/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1229197/1600.avif",
-          "webpUrl": "/media/visuals/p1229197/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1229197/2400.avif",
-          "webpUrl": "/media/visuals/p1229197/2400.webp"
+          "avifUrl": "/media/visuals/p1231361/2400.avif",
+          "webpUrl": "/media/visuals/p1231361/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/4.5",
-        "shutterSpeed": "1/100",
-        "iso": "ISO 5000",
+        "aperture": "f/22",
+        "shutterSpeed": "1/3",
+        "iso": "ISO 640",
         "focalLength": "18mm"
       },
-      "uploadedAt": "2026-03-29T20:10:46.000Z",
+      "uploadedAt": "2026-04-04T14:57:30.000Z",
+      "col": 0
+    },
+    {
+      "id": "p1182772-2",
+      "width": 1488,
+      "height": 1860,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAbgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHZtZGF0EgAKCDgRJ4YQENBpMmAcQCaaaYUAzxFMH8uMPjKAegM8RtdZuqhDRK3MMbAgYCwljCemt6SFQPwzJ93bCN6yTYZQM4XjASJN+OJkJiCzwhd7vzTuLw+Snxhm6o53yAuzoGlGoRgqoqCY2cg+4XA=",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1182772-2/480.avif",
+          "webpUrl": "/media/visuals/p1182772-2/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1182772-2/960.avif",
+          "webpUrl": "/media/visuals/p1182772-2/960.webp"
+        },
+        {
+          "w": 1488,
+          "avifUrl": "/media/visuals/p1182772-2/1488.avif",
+          "webpUrl": "/media/visuals/p1182772-2/1488.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/200",
+        "iso": "ISO 6400",
+        "focalLength": "40mm"
+      },
+      "uploadedAt": "2026-02-26T04:10:28.000Z",
       "col": 1
     },
     {
@@ -2974,79 +3116,79 @@
       "col": 3
     },
     {
-      "id": "p1231361",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAXwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGdtZGF0EgAKCDgRJ9YQENBpMlEcQCaaaYUAzwn2Bzw27qEE8lZd6GlIoTMZMceJFZSkn32JBHM1opDVZcE5tSywvrLhs+Q5FArE1epxSnSrPwJo37jv84IcVYc7YdbOGqKdrUA=",
+      "id": "p1229192",
+      "width": 5569,
+      "height": 3713,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADxtZGF0EgAKCDgQ54wgIaDSMiYcQCaaaYUA7TalnlTZUS1kY8fv2iKnCaImiWkaXQMnNUPJj97HaQ==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1231361/480.avif",
-          "webpUrl": "/media/visuals/p1231361/480.webp"
+          "avifUrl": "/media/visuals/p1229192/480.avif",
+          "webpUrl": "/media/visuals/p1229192/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1231361/960.avif",
-          "webpUrl": "/media/visuals/p1231361/960.webp"
+          "avifUrl": "/media/visuals/p1229192/960.avif",
+          "webpUrl": "/media/visuals/p1229192/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1231361/1600.avif",
-          "webpUrl": "/media/visuals/p1231361/1600.webp"
+          "avifUrl": "/media/visuals/p1229192/1600.avif",
+          "webpUrl": "/media/visuals/p1229192/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1231361/2400.avif",
-          "webpUrl": "/media/visuals/p1231361/2400.webp"
+          "avifUrl": "/media/visuals/p1229192/2400.avif",
+          "webpUrl": "/media/visuals/p1229192/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/22",
-        "shutterSpeed": "1/3",
-        "iso": "ISO 640",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/100",
+        "iso": "ISO 5000",
         "focalLength": "18mm"
       },
-      "uploadedAt": "2026-04-04T14:57:30.000Z",
+      "uploadedAt": "2026-03-29T20:10:54.000Z",
       "col": 0
     },
     {
-      "id": "p1205024",
-      "width": 4000,
-      "height": 5000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAaQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHFtZGF0EgAKCDgRJ4YQENBpMlscQCaaaYUAzwtiUzGQQUxyz0yClNUNbJ6HPFToZVfDxUpD/NzgUwcjmAGtwTIK5Vt/zqurvJndhD7G3u+BaretLrtj6U5pUUST84bqeOAxgpkA2YlnaZQDKzu0",
+      "id": "p1092176",
+      "width": 2016,
+      "height": 3024,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGltZGF0EgAKCDgRJ9YQENBpMlMcQCaaaYUAzwsdR/dnbuHqX7eXnIc42Mvkb6dqcDj+p7w3ttQP7GNA6bySVmWV2rhU/X0UZZNybpbK0yRfwgp0WQ8FBlJrgFBXXh6HHpe0Dl83Zg==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1205024/480.avif",
-          "webpUrl": "/media/visuals/p1205024/480.webp"
+          "avifUrl": "/media/visuals/p1092176/480.avif",
+          "webpUrl": "/media/visuals/p1092176/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1205024/960.avif",
-          "webpUrl": "/media/visuals/p1205024/960.webp"
+          "avifUrl": "/media/visuals/p1092176/960.avif",
+          "webpUrl": "/media/visuals/p1092176/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1205024/1600.avif",
-          "webpUrl": "/media/visuals/p1205024/1600.webp"
+          "avifUrl": "/media/visuals/p1092176/1600.avif",
+          "webpUrl": "/media/visuals/p1092176/1600.webp"
         },
         {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1205024/2400.avif",
-          "webpUrl": "/media/visuals/p1205024/2400.webp"
+          "w": 2016,
+          "avifUrl": "/media/visuals/p1092176/2016.avif",
+          "webpUrl": "/media/visuals/p1092176/2016.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/160",
-        "iso": "ISO 125",
-        "focalLength": "40mm"
+        "aperture": "f/5.2",
+        "shutterSpeed": "1/320",
+        "iso": "ISO 640",
+        "focalLength": "26mm"
       },
-      "uploadedAt": "2026-02-28T15:31:36.000Z",
+      "uploadedAt": "2025-12-07T17:45:22.000Z",
       "col": 1
     },
     {
@@ -3126,74 +3268,79 @@
       "col": 3
     },
     {
-      "id": "p1229192",
-      "width": 5569,
-      "height": 3713,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADxtZGF0EgAKCDgQ54wgIaDSMiYcQCaaaYUA7TalnlTZUS1kY8fv2iKnCaImiWkaXQMnNUPJj97HaQ==",
+      "id": "p1205238",
+      "width": 3803,
+      "height": 4754,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFRtZGF0EgAKCDgRJ4YQENBpMj4cQCaaaYQAz5/6uQuX2H68yx0k+MK3LTc62Amn33Cn2RlLLkV4wqUgbwK7Kkae/amnSaGK0WHMV98xH6s5bw==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1229192/480.avif",
-          "webpUrl": "/media/visuals/p1229192/480.webp"
+          "avifUrl": "/media/visuals/p1205238/480.avif",
+          "webpUrl": "/media/visuals/p1205238/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1229192/960.avif",
-          "webpUrl": "/media/visuals/p1229192/960.webp"
+          "avifUrl": "/media/visuals/p1205238/960.avif",
+          "webpUrl": "/media/visuals/p1205238/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1229192/1600.avif",
-          "webpUrl": "/media/visuals/p1229192/1600.webp"
+          "avifUrl": "/media/visuals/p1205238/1600.avif",
+          "webpUrl": "/media/visuals/p1205238/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1229192/2400.avif",
-          "webpUrl": "/media/visuals/p1229192/2400.webp"
+          "avifUrl": "/media/visuals/p1205238/2400.avif",
+          "webpUrl": "/media/visuals/p1205238/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/4.5",
+        "aperture": "f/10",
         "shutterSpeed": "1/100",
-        "iso": "ISO 5000",
-        "focalLength": "18mm"
+        "iso": "ISO 8000",
+        "focalLength": "36mm"
       },
-      "uploadedAt": "2026-03-29T20:10:54.000Z",
+      "uploadedAt": "2026-02-28T15:32:48.000Z",
       "col": 0
     },
     {
-      "id": "p1193889",
-      "width": 1349,
-      "height": 1686,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAXAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGRtZGF0EgAKCDgRJ4YQENBpMk4cQCaaaYUAz5+BrPSzuE+a49PeWZYZZn9WFSyYrjKWgJozfCqhseTW7lVW71nucO2vatSoOnhliUXEonOmc8L5n2tPiYxXEajTQ0hwFfA=",
+      "id": "dsc03195",
+      "width": 4128,
+      "height": 6192,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF1tZGF0EgAKCDgRJ9YQENBpMkccQCaaaYUAzwn2BlKYaV95CikGKAk5NEhqYP4KDe8FobYocgKTVt/mLxCXhdKOpCULWQlpDkM2K7iVMoGjFEz80772TwAoQA==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1193889/480.avif",
-          "webpUrl": "/media/visuals/p1193889/480.webp"
+          "avifUrl": "/media/visuals/dsc03195/480.avif",
+          "webpUrl": "/media/visuals/dsc03195/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1193889/960.avif",
-          "webpUrl": "/media/visuals/p1193889/960.webp"
+          "avifUrl": "/media/visuals/dsc03195/960.avif",
+          "webpUrl": "/media/visuals/dsc03195/960.webp"
         },
         {
-          "w": 1349,
-          "avifUrl": "/media/visuals/p1193889/1349.avif",
-          "webpUrl": "/media/visuals/p1193889/1349.webp"
+          "w": 1600,
+          "avifUrl": "/media/visuals/dsc03195/1600.avif",
+          "webpUrl": "/media/visuals/dsc03195/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/dsc03195/2400.avif",
+          "webpUrl": "/media/visuals/dsc03195/2400.webp"
         }
       ],
       "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/5",
-        "shutterSpeed": "1/250",
-        "iso": "ISO 5000",
-        "focalLength": "24mm"
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/25",
+        "iso": "ISO 160",
+        "focalLength": "17mm"
       },
-      "uploadedAt": "2026-02-27T04:38:30.000Z",
+      "uploadedAt": "2025-11-24T07:58:30.000Z",
       "col": 1
     },
     {
@@ -3273,74 +3420,79 @@
       "col": 3
     },
     {
-      "id": "p1205238",
-      "width": 3803,
-      "height": 4754,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFRtZGF0EgAKCDgRJ4YQENBpMj4cQCaaaYQAz5/6uQuX2H68yx0k+MK3LTc62Amn33Cn2RlLLkV4wqUgbwK7Kkae/amnSaGK0WHMV98xH6s5bw==",
+      "id": "p1193349-2",
+      "width": 2263,
+      "height": 2829,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGptZGF0EgAKCDgRJ4YQENBpMlQcQCaaaYUAzxELAhCFD25tw+0hc0t+P/E18hX3mAkZzpMlVGby9KXFXPRJZlkA1DVhenP99W3hyNXRD54L3AXc7HCf3wnV/5I4SrxOxg24DkLb70I=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1205238/480.avif",
-          "webpUrl": "/media/visuals/p1205238/480.webp"
+          "avifUrl": "/media/visuals/p1193349-2/480.avif",
+          "webpUrl": "/media/visuals/p1193349-2/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1205238/960.avif",
-          "webpUrl": "/media/visuals/p1205238/960.webp"
+          "avifUrl": "/media/visuals/p1193349-2/960.avif",
+          "webpUrl": "/media/visuals/p1193349-2/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1205238/1600.avif",
-          "webpUrl": "/media/visuals/p1205238/1600.webp"
+          "avifUrl": "/media/visuals/p1193349-2/1600.avif",
+          "webpUrl": "/media/visuals/p1193349-2/1600.webp"
         },
         {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1205238/2400.avif",
-          "webpUrl": "/media/visuals/p1205238/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/10",
-        "shutterSpeed": "1/100",
-        "iso": "ISO 8000",
-        "focalLength": "36mm"
-      },
-      "uploadedAt": "2026-02-28T15:32:48.000Z",
-      "col": 0
-    },
-    {
-      "id": "p1182772-2",
-      "width": 1488,
-      "height": 1860,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAbgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHZtZGF0EgAKCDgRJ4YQENBpMmAcQCaaaYUAzxFMH8uMPjKAegM8RtdZuqhDRK3MMbAgYCwljCemt6SFQPwzJ93bCN6yTYZQM4XjASJN+OJkJiCzwhd7vzTuLw+Snxhm6o53yAuzoGlGoRgqoqCY2cg+4XA=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1182772-2/480.avif",
-          "webpUrl": "/media/visuals/p1182772-2/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1182772-2/960.avif",
-          "webpUrl": "/media/visuals/p1182772-2/960.webp"
-        },
-        {
-          "w": 1488,
-          "avifUrl": "/media/visuals/p1182772-2/1488.avif",
-          "webpUrl": "/media/visuals/p1182772-2/1488.webp"
+          "w": 2263,
+          "avifUrl": "/media/visuals/p1193349-2/2263.avif",
+          "webpUrl": "/media/visuals/p1193349-2/2263.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
         "aperture": "f/6.3",
-        "shutterSpeed": "1/200",
-        "iso": "ISO 6400",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 3200",
         "focalLength": "40mm"
       },
-      "uploadedAt": "2026-02-26T04:10:28.000Z",
+      "uploadedAt": "2026-02-27T05:00:52.000Z",
+      "col": 0
+    },
+    {
+      "id": "dsc02717",
+      "width": 1799,
+      "height": 2698,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAbQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHVtZGF0EgAKCDgRJ9YQENBpMl8cQCaaaYUAzwn2BXrbYc4INOGJUpdcK/C7Ax6C7M5CeYP0M7EKLf2tQq7Y1ofQAG02fcA0Q6SBOOrZuRpP0z3W+YiUDoALe/hVjSJNzlFUbzJozUF5VeRSwg7/i/ys0A==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/dsc02717/480.avif",
+          "webpUrl": "/media/visuals/dsc02717/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/dsc02717/960.avif",
+          "webpUrl": "/media/visuals/dsc02717/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/dsc02717/1600.avif",
+          "webpUrl": "/media/visuals/dsc02717/1600.webp"
+        },
+        {
+          "w": 1799,
+          "avifUrl": "/media/visuals/dsc02717/1799.avif",
+          "webpUrl": "/media/visuals/dsc02717/1799.webp"
+        }
+      ],
+      "exif": {
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/60",
+        "iso": "ISO 80",
+        "focalLength": "51mm"
+      },
+      "uploadedAt": "2025-11-24T07:53:30.000Z",
       "col": 1
     },
     {
@@ -3420,79 +3572,72 @@
       "col": 3
     },
     {
-      "id": "p1193349-2",
-      "width": 2263,
-      "height": 2829,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGptZGF0EgAKCDgRJ4YQENBpMlQcQCaaaYUAzxELAhCFD25tw+0hc0t+P/E18hX3mAkZzpMlVGby9KXFXPRJZlkA1DVhenP99W3hyNXRD54L3AXc7HCf3wnV/5I4SrxOxg24DkLb70I=",
+      "id": "p1182321-edit",
+      "width": 4187,
+      "height": 5233,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAYRtZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAANGlsb2MAAAAAREAAAgACAAAAAAGoAAEAAAAAAAAAGgABAAAAAAHCAAEAAAAAAAAAUwAAADhpaW5mAAAAAAACAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAFWluZmUCAAAAAAIAAGF2MDEAAAAAw2lwcnAAAACdaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EAHAAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAAA5waXhpAAAAAAEIAAAAOGF1eEMAAAAAdXJuOm1wZWc6bXBlZ0I6Y2ljcDpzeXN0ZW1zOmF1eGlsaWFyeTphbHBoYQAAAAAMYXYxQ4EgAgAAAAAQcGl4aQAAAAADCAgIAAAAHmlwbWEAAAAAAAAAAgABBAGGAwcAAgSCAwSFAAAAGmlyZWYAAAAAAAAADmF1eGwAAgABAAEAAAB1bWRhdBIACgUYESeGFTIPHECaYQC1EVKnQ6B+FCuoEgAKCDgRJ4YQENBpMkUcQCaaaYUAzwn2Bx+1d5dhuJyjRaItCFAaRiFxbPdO6uKGj0rFDFjvLc7ymb061IHeLf1/li+1rOlVZbJY73GngaXi+Ug=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1193349-2/480.avif",
-          "webpUrl": "/media/visuals/p1193349-2/480.webp"
+          "avifUrl": "/media/visuals/p1182321-edit/480.avif",
+          "webpUrl": "/media/visuals/p1182321-edit/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1193349-2/960.avif",
-          "webpUrl": "/media/visuals/p1193349-2/960.webp"
+          "avifUrl": "/media/visuals/p1182321-edit/960.avif",
+          "webpUrl": "/media/visuals/p1182321-edit/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1193349-2/1600.avif",
-          "webpUrl": "/media/visuals/p1193349-2/1600.webp"
+          "avifUrl": "/media/visuals/p1182321-edit/1600.avif",
+          "webpUrl": "/media/visuals/p1182321-edit/1600.webp"
         },
         {
-          "w": 2263,
-          "avifUrl": "/media/visuals/p1193349-2/2263.avif",
-          "webpUrl": "/media/visuals/p1193349-2/2263.webp"
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1182321-edit/2400.avif",
+          "webpUrl": "/media/visuals/p1182321-edit/2400.webp"
         }
       ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/160",
-        "iso": "ISO 3200",
-        "focalLength": "40mm"
-      },
-      "uploadedAt": "2026-02-27T05:00:52.000Z",
+      "exif": null,
+      "uploadedAt": "2026-02-26T06:09:06.000Z",
       "col": 0
     },
     {
-      "id": "p1092176",
-      "width": 2016,
-      "height": 3024,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAYQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAGltZGF0EgAKCDgRJ9YQENBpMlMcQCaaaYUAzwsdR/dnbuHqX7eXnIc42Mvkb6dqcDj+p7w3ttQP7GNA6bySVmWV2rhU/X0UZZNybpbK0yRfwgp0WQ8FBlJrgFBXXh6HHpe0Dl83Zg==",
+      "id": "dsc01183",
+      "width": 4128,
+      "height": 6192,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAOgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEJtZGF0EgAKCDgRJ9YQENBpMiwcQCaaaYUAu+lSrEuG9CJem7vdLe3JJPM7y4vF15zKr04zF5ZpBc4Ie9pXrQ==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1092176/480.avif",
-          "webpUrl": "/media/visuals/p1092176/480.webp"
+          "avifUrl": "/media/visuals/dsc01183/480.avif",
+          "webpUrl": "/media/visuals/dsc01183/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1092176/960.avif",
-          "webpUrl": "/media/visuals/p1092176/960.webp"
+          "avifUrl": "/media/visuals/dsc01183/960.avif",
+          "webpUrl": "/media/visuals/dsc01183/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1092176/1600.avif",
-          "webpUrl": "/media/visuals/p1092176/1600.webp"
+          "avifUrl": "/media/visuals/dsc01183/1600.avif",
+          "webpUrl": "/media/visuals/dsc01183/1600.webp"
         },
         {
-          "w": 2016,
-          "avifUrl": "/media/visuals/p1092176/2016.avif",
-          "webpUrl": "/media/visuals/p1092176/2016.webp"
+          "w": 2400,
+          "avifUrl": "/media/visuals/dsc01183/2400.avif",
+          "webpUrl": "/media/visuals/dsc01183/2400.webp"
         }
       ],
       "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/5.2",
-        "shutterSpeed": "1/320",
-        "iso": "ISO 640",
-        "focalLength": "26mm"
+        "camera": "SONY ILCE-6700",
+        "lens": "E 17-70mm F2.8 B070",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 8000",
+        "focalLength": "30mm"
       },
-      "uploadedAt": "2025-12-07T17:45:22.000Z",
+      "uploadedAt": "2025-11-24T07:47:04.000Z",
       "col": 1
     },
     {
@@ -3572,72 +3717,74 @@
       "col": 3
     },
     {
-      "id": "p1182321-edit",
-      "width": 4187,
-      "height": 5233,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAYRtZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAANGlsb2MAAAAAREAAAgACAAAAAAGoAAEAAAAAAAAAGgABAAAAAAHCAAEAAAAAAAAAUwAAADhpaW5mAAAAAAACAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAFWluZmUCAAAAAAIAAGF2MDEAAAAAw2lwcnAAAACdaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EAHAAAAAAUaXNwZQAAAAAAAAAUAAAAGQAAAA5waXhpAAAAAAEIAAAAOGF1eEMAAAAAdXJuOm1wZWc6bXBlZ0I6Y2ljcDpzeXN0ZW1zOmF1eGlsaWFyeTphbHBoYQAAAAAMYXYxQ4EgAgAAAAAQcGl4aQAAAAADCAgIAAAAHmlwbWEAAAAAAAAAAgABBAGGAwcAAgSCAwSFAAAAGmlyZWYAAAAAAAAADmF1eGwAAgABAAEAAAB1bWRhdBIACgUYESeGFTIPHECaYQC1EVKnQ6B+FCuoEgAKCDgRJ4YQENBpMkUcQCaaaYUAzwn2Bx+1d5dhuJyjRaItCFAaRiFxbPdO6uKGj0rFDFjvLc7ymb061IHeLf1/li+1rOlVZbJY73GngaXi+Ug=",
+      "id": "p1102281",
+      "width": 1280,
+      "height": 1920,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEltZGF0EgAKCDgRJ9YQENBpMjMcQCaaaYQAzwqPJv09pgcU9V0NSUfvOnbpd5aKwhfYnLH4W4rgqq/wKBsULkCPD4l+M0A=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1182321-edit/480.avif",
-          "webpUrl": "/media/visuals/p1182321-edit/480.webp"
+          "avifUrl": "/media/visuals/p1102281/480.avif",
+          "webpUrl": "/media/visuals/p1102281/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1182321-edit/960.avif",
-          "webpUrl": "/media/visuals/p1182321-edit/960.webp"
+          "avifUrl": "/media/visuals/p1102281/960.avif",
+          "webpUrl": "/media/visuals/p1102281/960.webp"
         },
         {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1182321-edit/1600.avif",
-          "webpUrl": "/media/visuals/p1182321-edit/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1182321-edit/2400.avif",
-          "webpUrl": "/media/visuals/p1182321-edit/2400.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2026-02-26T06:09:06.000Z",
-      "col": 0
-    },
-    {
-      "id": "dsc03195",
-      "width": 4128,
-      "height": 6192,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF1tZGF0EgAKCDgRJ9YQENBpMkccQCaaaYUAzwn2BlKYaV95CikGKAk5NEhqYP4KDe8FobYocgKTVt/mLxCXhdKOpCULWQlpDkM2K7iVMoGjFEz80772TwAoQA==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/dsc03195/480.avif",
-          "webpUrl": "/media/visuals/dsc03195/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/dsc03195/960.avif",
-          "webpUrl": "/media/visuals/dsc03195/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/dsc03195/1600.avif",
-          "webpUrl": "/media/visuals/dsc03195/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/dsc03195/2400.avif",
-          "webpUrl": "/media/visuals/dsc03195/2400.webp"
+          "w": 1280,
+          "avifUrl": "/media/visuals/p1102281/1280.avif",
+          "webpUrl": "/media/visuals/p1102281/1280.webp"
         }
       ],
       "exif": {
-        "camera": "SONY ILCE-6700",
-        "lens": "E 17-70mm F2.8 B070",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/25",
-        "iso": "ISO 160",
-        "focalLength": "17mm"
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/5.8",
+        "shutterSpeed": "1/320",
+        "iso": "ISO 640",
+        "focalLength": "33mm"
       },
-      "uploadedAt": "2025-11-24T07:58:30.000Z",
+      "uploadedAt": "2025-12-07T17:45:26.000Z",
+      "col": 0
+    },
+    {
+      "id": "p1046125",
+      "width": 4000,
+      "height": 6000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFdtZGF0EgAKCDgRJ9YQENBpMkEcQCaaaYUAz5y6lg6iKCFdPyjYLANb459Qml1KXjSKPZqvqjtaGwEVWp2zGELKWncvLedqoQFl1HAhgJliXnnY4A==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/p1046125/480.avif",
+          "webpUrl": "/media/visuals/p1046125/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/p1046125/960.avif",
+          "webpUrl": "/media/visuals/p1046125/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1046125/1600.avif",
+          "webpUrl": "/media/visuals/p1046125/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1046125/2400.avif",
+          "webpUrl": "/media/visuals/p1046125/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/50",
+        "iso": "ISO 2000",
+        "focalLength": "18mm"
+      },
+      "uploadedAt": "2025-11-09T00:20:42.000Z",
       "col": 1
     },
     {
@@ -3717,74 +3864,72 @@
       "col": 3
     },
     {
-      "id": "p1102281",
-      "width": 1280,
-      "height": 1920,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEltZGF0EgAKCDgRJ9YQENBpMjMcQCaaaYQAzwqPJv09pgcU9V0NSUfvOnbpd5aKwhfYnLH4W4rgqq/wKBsULkCPD4l+M0A=",
+      "id": "p1079767",
+      "width": 6000,
+      "height": 4000,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADptZGF0EgAKCDgQ54wgIaDSMiQcQCaaaYUA7Tdv4p7c6MtVV7WNSky64/5qoghLPS92SXeFxKg=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1102281/480.avif",
-          "webpUrl": "/media/visuals/p1102281/480.webp"
+          "avifUrl": "/media/visuals/p1079767/480.avif",
+          "webpUrl": "/media/visuals/p1079767/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1102281/960.avif",
-          "webpUrl": "/media/visuals/p1102281/960.webp"
+          "avifUrl": "/media/visuals/p1079767/960.avif",
+          "webpUrl": "/media/visuals/p1079767/960.webp"
         },
         {
-          "w": 1280,
-          "avifUrl": "/media/visuals/p1102281/1280.avif",
-          "webpUrl": "/media/visuals/p1102281/1280.webp"
+          "w": 1600,
+          "avifUrl": "/media/visuals/p1079767/1600.avif",
+          "webpUrl": "/media/visuals/p1079767/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1079767/2400.avif",
+          "webpUrl": "/media/visuals/p1079767/2400.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/5.8",
-        "shutterSpeed": "1/320",
-        "iso": "ISO 640",
-        "focalLength": "33mm"
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 800",
+        "focalLength": "28mm"
       },
-      "uploadedAt": "2025-12-07T17:45:26.000Z",
+      "uploadedAt": "2025-11-29T04:33:24.000Z",
       "col": 0
     },
     {
-      "id": "dsc02717",
-      "width": 1799,
-      "height": 2698,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAbQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAHVtZGF0EgAKCDgRJ9YQENBpMl8cQCaaaYUAzwn2BXrbYc4INOGJUpdcK/C7Ax6C7M5CeYP0M7EKLf2tQq7Y1ofQAG02fcA0Q6SBOOrZuRpP0z3W+YiUDoALe/hVjSJNzlFUbzJozUF5VeRSwg7/i/ys0A==",
+      "id": "p1022574",
+      "width": 2848,
+      "height": 4272,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF1tZGF0EgAKCDgRJ9YQENBpMkccQCaaaYUAzwuZL1dzWaPAh5xIcJZfbN2b5hVYfpJhgRVUKRiyhO1kyFL6AVT50wFqObRHqRcRzzhSPlHv05LFSO7FHWGYgA==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/dsc02717/480.avif",
-          "webpUrl": "/media/visuals/dsc02717/480.webp"
+          "avifUrl": "/media/visuals/p1022574/480.avif",
+          "webpUrl": "/media/visuals/p1022574/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/dsc02717/960.avif",
-          "webpUrl": "/media/visuals/dsc02717/960.webp"
+          "avifUrl": "/media/visuals/p1022574/960.avif",
+          "webpUrl": "/media/visuals/p1022574/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/dsc02717/1600.avif",
-          "webpUrl": "/media/visuals/dsc02717/1600.webp"
+          "avifUrl": "/media/visuals/p1022574/1600.avif",
+          "webpUrl": "/media/visuals/p1022574/1600.webp"
         },
         {
-          "w": 1799,
-          "avifUrl": "/media/visuals/dsc02717/1799.avif",
-          "webpUrl": "/media/visuals/dsc02717/1799.webp"
+          "w": 2400,
+          "avifUrl": "/media/visuals/p1022574/2400.avif",
+          "webpUrl": "/media/visuals/p1022574/2400.webp"
         }
       ],
-      "exif": {
-        "camera": "SONY ILCE-6700",
-        "lens": "E 17-70mm F2.8 B070",
-        "aperture": "f/2.8",
-        "shutterSpeed": "1/60",
-        "iso": "ISO 80",
-        "focalLength": "51mm"
-      },
-      "uploadedAt": "2025-11-24T07:53:30.000Z",
+      "exif": null,
+      "uploadedAt": "2025-10-19T19:12:58.000Z",
       "col": 1
     },
     {
@@ -3864,79 +4009,79 @@
       "col": 3
     },
     {
-      "id": "p1079767",
-      "width": 6000,
-      "height": 4000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADptZGF0EgAKCDgQ54wgIaDSMiQcQCaaaYUA7Tdv4p7c6MtVV7WNSky64/5qoghLPS92SXeFxKg=",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1079767/480.avif",
-          "webpUrl": "/media/visuals/p1079767/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1079767/960.avif",
-          "webpUrl": "/media/visuals/p1079767/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1079767/1600.avif",
-          "webpUrl": "/media/visuals/p1079767/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1079767/2400.avif",
-          "webpUrl": "/media/visuals/p1079767/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/160",
-        "iso": "ISO 800",
-        "focalLength": "28mm"
-      },
-      "uploadedAt": "2025-11-29T04:33:24.000Z",
-      "col": 0
-    },
-    {
-      "id": "dsc01183",
+      "id": "dsc03117",
       "width": 4128,
       "height": 6192,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAOgAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEJtZGF0EgAKCDgRJ9YQENBpMiwcQCaaaYUAu+lSrEuG9CJem7vdLe3JJPM7y4vF15zKr04zF5ZpBc4Ie9pXrQ==",
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFVtZGF0EgAKCDgRJ9YQENBpMj8cQCaaaYUAzwrJItcO0Y1N+7AXEYZS3fkpJm8i4t3eS5Cebvg0dnZ3NyC+/Dk5IDhMW3tS1oPFzvcdYk8Cvrc=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/dsc01183/480.avif",
-          "webpUrl": "/media/visuals/dsc01183/480.webp"
+          "avifUrl": "/media/visuals/dsc03117/480.avif",
+          "webpUrl": "/media/visuals/dsc03117/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/dsc01183/960.avif",
-          "webpUrl": "/media/visuals/dsc01183/960.webp"
+          "avifUrl": "/media/visuals/dsc03117/960.avif",
+          "webpUrl": "/media/visuals/dsc03117/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/dsc01183/1600.avif",
-          "webpUrl": "/media/visuals/dsc01183/1600.webp"
+          "avifUrl": "/media/visuals/dsc03117/1600.avif",
+          "webpUrl": "/media/visuals/dsc03117/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/dsc01183/2400.avif",
-          "webpUrl": "/media/visuals/dsc01183/2400.webp"
+          "avifUrl": "/media/visuals/dsc03117/2400.avif",
+          "webpUrl": "/media/visuals/dsc03117/2400.webp"
         }
       ],
       "exif": {
         "camera": "SONY ILCE-6700",
         "lens": "E 17-70mm F2.8 B070",
-        "aperture": "f/2.8",
-        "shutterSpeed": "1/160",
-        "iso": "ISO 8000",
-        "focalLength": "30mm"
+        "aperture": "f/6.3",
+        "shutterSpeed": "1/125",
+        "iso": "ISO 400",
+        "focalLength": "70mm"
       },
-      "uploadedAt": "2025-11-24T07:47:04.000Z",
+      "uploadedAt": "2025-11-24T07:57:44.000Z",
+      "col": 0
+    },
+    {
+      "id": "gab02368-3",
+      "width": 5433,
+      "height": 3622,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAD9tZGF0EgAKCDgQ54wgIaDSMikcQCaaaYUA7nvcxt6BkUeLEHZlXO+7q735cWweaLt3uEI9kpyLR5QksA==",
+      "variants": [
+        {
+          "w": 480,
+          "avifUrl": "/media/visuals/gab02368-3/480.avif",
+          "webpUrl": "/media/visuals/gab02368-3/480.webp"
+        },
+        {
+          "w": 960,
+          "avifUrl": "/media/visuals/gab02368-3/960.avif",
+          "webpUrl": "/media/visuals/gab02368-3/960.webp"
+        },
+        {
+          "w": 1600,
+          "avifUrl": "/media/visuals/gab02368-3/1600.avif",
+          "webpUrl": "/media/visuals/gab02368-3/1600.webp"
+        },
+        {
+          "w": 2400,
+          "avifUrl": "/media/visuals/gab02368-3/2400.avif",
+          "webpUrl": "/media/visuals/gab02368-3/2400.webp"
+        }
+      ],
+      "exif": {
+        "camera": "SONY ZV-E10",
+        "lens": "E 17-28mm F2.8-2.8",
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/2500",
+        "iso": "ISO 100",
+        "focalLength": "28mm"
+      },
+      "uploadedAt": "2023-05-31T05:37:48.000Z",
       "col": 1
     },
     {
@@ -4016,79 +4161,79 @@
       "col": 3
     },
     {
-      "id": "dsc03117",
+      "id": "dsc02596-edit",
       "width": 4128,
       "height": 6192,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFVtZGF0EgAKCDgRJ9YQENBpMj8cQCaaaYUAzwrJItcO0Y1N+7AXEYZS3fkpJm8i4t3eS5Cebvg0dnZ3NyC+/Dk5IDhMW3tS1oPFzvcdYk8Cvrc=",
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFttZGF0EgAKCDgRJ9YQENBpMkUcQCaaaYUAzwn2BkuZqXAoMJpDr7/ToeucreHcxU7njbORFhhAnfnlHG90in4KLF3TjIS0dceNKLpYKF/ZrCtxBuROxtY=",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/dsc03117/480.avif",
-          "webpUrl": "/media/visuals/dsc03117/480.webp"
+          "avifUrl": "/media/visuals/dsc02596-edit/480.avif",
+          "webpUrl": "/media/visuals/dsc02596-edit/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/dsc03117/960.avif",
-          "webpUrl": "/media/visuals/dsc03117/960.webp"
+          "avifUrl": "/media/visuals/dsc02596-edit/960.avif",
+          "webpUrl": "/media/visuals/dsc02596-edit/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/dsc03117/1600.avif",
-          "webpUrl": "/media/visuals/dsc03117/1600.webp"
+          "avifUrl": "/media/visuals/dsc02596-edit/1600.avif",
+          "webpUrl": "/media/visuals/dsc02596-edit/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/dsc03117/2400.avif",
-          "webpUrl": "/media/visuals/dsc03117/2400.webp"
+          "avifUrl": "/media/visuals/dsc02596-edit/2400.avif",
+          "webpUrl": "/media/visuals/dsc02596-edit/2400.webp"
         }
       ],
       "exif": {
         "camera": "SONY ILCE-6700",
         "lens": "E 17-70mm F2.8 B070",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/125",
-        "iso": "ISO 400",
-        "focalLength": "70mm"
+        "aperture": "f/2.8",
+        "shutterSpeed": "1/40",
+        "iso": "ISO 125",
+        "focalLength": "17mm"
       },
-      "uploadedAt": "2025-11-24T07:57:44.000Z",
+      "uploadedAt": "2025-11-24T07:52:22.000Z",
       "col": 0
     },
     {
-      "id": "p1046125",
-      "width": 4000,
-      "height": 6000,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAATwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFdtZGF0EgAKCDgRJ9YQENBpMkEcQCaaaYUAz5y6lg6iKCFdPyjYLANb459Qml1KXjSKPZqvqjtaGwEVWp2zGELKWncvLedqoQFl1HAhgJliXnnY4A==",
+      "id": "5",
+      "width": 2592,
+      "height": 3888,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADhtZGF0EgAKCDgRJ9YQENBpMiIcQCaaaYUAu7vEx3pt7OccnOnzBD598al23emAGpXah4cd",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1046125/480.avif",
-          "webpUrl": "/media/visuals/p1046125/480.webp"
+          "avifUrl": "/media/visuals/5/480.avif",
+          "webpUrl": "/media/visuals/5/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/p1046125/960.avif",
-          "webpUrl": "/media/visuals/p1046125/960.webp"
+          "avifUrl": "/media/visuals/5/960.avif",
+          "webpUrl": "/media/visuals/5/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/p1046125/1600.avif",
-          "webpUrl": "/media/visuals/p1046125/1600.webp"
+          "avifUrl": "/media/visuals/5/1600.avif",
+          "webpUrl": "/media/visuals/5/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/p1046125/2400.avif",
-          "webpUrl": "/media/visuals/p1046125/2400.webp"
+          "avifUrl": "/media/visuals/5/2400.avif",
+          "webpUrl": "/media/visuals/5/2400.webp"
         }
       ],
       "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/6.3",
-        "shutterSpeed": "1/50",
-        "iso": "ISO 2000",
-        "focalLength": "18mm"
+        "camera": "Canon Canon EOS DIGITAL REBEL XS",
+        "lens": "EF-S18-55mm f/3.5-5.6 IS",
+        "aperture": "f/4.5",
+        "shutterSpeed": "1/160",
+        "iso": "ISO 1600",
+        "focalLength": "30mm"
       },
-      "uploadedAt": "2025-11-09T00:20:42.000Z",
+      "uploadedAt": "2022-12-14T00:50:06.000Z",
       "col": 1
     },
     {
@@ -4168,73 +4313,42 @@
       "col": 3
     },
     {
-      "id": "dsc02596-edit",
-      "width": 4128,
-      "height": 6192,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFttZGF0EgAKCDgRJ9YQENBpMkUcQCaaaYUAzwn2BkuZqXAoMJpDr7/ToeucreHcxU7njbORFhhAnfnlHG90in4KLF3TjIS0dceNKLpYKF/ZrCtxBuROxtY=",
+      "id": "p1067578",
+      "width": 3597,
+      "height": 5395,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEhtZGF0EgAKCDgRJ9YQENBpMjIcQCaaaYUAzwn2B8TXN2lgFsynrA66VHV3d11H3UaA5c2qTxSDUfugpNciNFZ9lkFloA==",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/dsc02596-edit/480.avif",
-          "webpUrl": "/media/visuals/dsc02596-edit/480.webp"
+          "avifUrl": "/media/visuals/p1067578/480.avif",
+          "webpUrl": "/media/visuals/p1067578/480.webp"
         },
         {
           "w": 960,
-          "avifUrl": "/media/visuals/dsc02596-edit/960.avif",
-          "webpUrl": "/media/visuals/dsc02596-edit/960.webp"
+          "avifUrl": "/media/visuals/p1067578/960.avif",
+          "webpUrl": "/media/visuals/p1067578/960.webp"
         },
         {
           "w": 1600,
-          "avifUrl": "/media/visuals/dsc02596-edit/1600.avif",
-          "webpUrl": "/media/visuals/dsc02596-edit/1600.webp"
+          "avifUrl": "/media/visuals/p1067578/1600.avif",
+          "webpUrl": "/media/visuals/p1067578/1600.webp"
         },
         {
           "w": 2400,
-          "avifUrl": "/media/visuals/dsc02596-edit/2400.avif",
-          "webpUrl": "/media/visuals/dsc02596-edit/2400.webp"
+          "avifUrl": "/media/visuals/p1067578/2400.avif",
+          "webpUrl": "/media/visuals/p1067578/2400.webp"
         }
       ],
       "exif": {
-        "camera": "SONY ILCE-6700",
-        "lens": "E 17-70mm F2.8 B070",
-        "aperture": "f/2.8",
-        "shutterSpeed": "1/40",
-        "iso": "ISO 125",
-        "focalLength": "17mm"
+        "camera": "Panasonic DC-S9",
+        "lens": "LUMIX S 18-40/F4.5-6.3",
+        "aperture": "f/8",
+        "shutterSpeed": "1/320",
+        "iso": "ISO 51200",
+        "focalLength": "18mm"
       },
-      "uploadedAt": "2025-11-24T07:52:22.000Z",
+      "uploadedAt": "2025-11-09T00:23:18.000Z",
       "col": 0
-    },
-    {
-      "id": "p1022574",
-      "width": 2848,
-      "height": 4272,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAVQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAF1tZGF0EgAKCDgRJ9YQENBpMkccQCaaaYUAzwuZL1dzWaPAh5xIcJZfbN2b5hVYfpJhgRVUKRiyhO1kyFL6AVT50wFqObRHqRcRzzhSPlHv05LFSO7FHWGYgA==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1022574/480.avif",
-          "webpUrl": "/media/visuals/p1022574/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1022574/960.avif",
-          "webpUrl": "/media/visuals/p1022574/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1022574/1600.avif",
-          "webpUrl": "/media/visuals/p1022574/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1022574/2400.avif",
-          "webpUrl": "/media/visuals/p1022574/2400.webp"
-        }
-      ],
-      "exif": null,
-      "uploadedAt": "2025-10-19T19:12:58.000Z",
-      "col": 1
     },
     {
       "id": "p1011477-2",
@@ -4306,80 +4420,32 @@
       "col": 3
     },
     {
-      "id": "p1067578",
-      "width": 3597,
-      "height": 5395,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAQAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAEhtZGF0EgAKCDgRJ9YQENBpMjIcQCaaaYUAzwn2B8TXN2lgFsynrA66VHV3d11H3UaA5c2qTxSDUfugpNciNFZ9lkFloA==",
+      "id": "p1045400",
+      "width": 801,
+      "height": 1202,
+      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFltZGF0EgAKCDgRJ9YQENBpMkMcQCaaaYUAzwn2ByP0DhsxL24Y0kAb/KjLFjTJfcNNPuOs3f7fZ46cT8zgz4W/FI2wDSMFjW4qPfbjOsf2RFoXZgkY",
       "variants": [
         {
           "w": 480,
-          "avifUrl": "/media/visuals/p1067578/480.avif",
-          "webpUrl": "/media/visuals/p1067578/480.webp"
+          "avifUrl": "/media/visuals/p1045400/480.avif",
+          "webpUrl": "/media/visuals/p1045400/480.webp"
         },
         {
-          "w": 960,
-          "avifUrl": "/media/visuals/p1067578/960.avif",
-          "webpUrl": "/media/visuals/p1067578/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/p1067578/1600.avif",
-          "webpUrl": "/media/visuals/p1067578/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/p1067578/2400.avif",
-          "webpUrl": "/media/visuals/p1067578/2400.webp"
+          "w": 801,
+          "avifUrl": "/media/visuals/p1045400/801.avif",
+          "webpUrl": "/media/visuals/p1045400/801.webp"
         }
       ],
       "exif": {
         "camera": "Panasonic DC-S9",
         "lens": "LUMIX S 18-40/F4.5-6.3",
         "aperture": "f/8",
-        "shutterSpeed": "1/320",
-        "iso": "ISO 51200",
-        "focalLength": "18mm"
+        "shutterSpeed": "1/125",
+        "iso": "ISO 10000",
+        "focalLength": "40mm"
       },
-      "uploadedAt": "2025-11-09T00:23:18.000Z",
+      "uploadedAt": "2025-11-05T07:15:48.000Z",
       "col": 0
-    },
-    {
-      "id": "gab02368-3",
-      "width": 5433,
-      "height": 3622,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAANwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAADQAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAD9tZGF0EgAKCDgQ54wgIaDSMikcQCaaaYUA7nvcxt6BkUeLEHZlXO+7q735cWweaLt3uEI9kpyLR5QksA==",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/gab02368-3/480.avif",
-          "webpUrl": "/media/visuals/gab02368-3/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/gab02368-3/960.avif",
-          "webpUrl": "/media/visuals/gab02368-3/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/gab02368-3/1600.avif",
-          "webpUrl": "/media/visuals/gab02368-3/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/gab02368-3/2400.avif",
-          "webpUrl": "/media/visuals/gab02368-3/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "SONY ZV-E10",
-        "lens": "E 17-28mm F2.8-2.8",
-        "aperture": "f/2.8",
-        "shutterSpeed": "1/2500",
-        "iso": "ISO 100",
-        "focalLength": "28mm"
-      },
-      "uploadedAt": "2023-05-31T05:37:48.000Z",
-      "col": 1
     },
     {
       "id": "capture307494-edit",
@@ -4456,72 +4522,6 @@
       },
       "uploadedAt": "2022-12-14T00:26:22.000Z",
       "col": 3
-    },
-    {
-      "id": "p1045400",
-      "width": 801,
-      "height": 1202,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAUQAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAAFltZGF0EgAKCDgRJ9YQENBpMkMcQCaaaYUAzwn2ByP0DhsxL24Y0kAb/KjLFjTJfcNNPuOs3f7fZ46cT8zgz4W/FI2wDSMFjW4qPfbjOsf2RFoXZgkY",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/p1045400/480.avif",
-          "webpUrl": "/media/visuals/p1045400/480.webp"
-        },
-        {
-          "w": 801,
-          "avifUrl": "/media/visuals/p1045400/801.avif",
-          "webpUrl": "/media/visuals/p1045400/801.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Panasonic DC-S9",
-        "lens": "LUMIX S 18-40/F4.5-6.3",
-        "aperture": "f/8",
-        "shutterSpeed": "1/125",
-        "iso": "ISO 10000",
-        "focalLength": "40mm"
-      },
-      "uploadedAt": "2025-11-05T07:15:48.000Z",
-      "col": 0
-    },
-    {
-      "id": "5",
-      "width": 2592,
-      "height": 3888,
-      "lqip": "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZgAAAOptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAAA5waXRtAAAAAAABAAAAImlsb2MAAAAAREAAAQABAAAAAAEOAAEAAAAAAAAAMAAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAAamlwcnAAAABLaXBjbwAAABNjb2xybmNseAABAA0ABoAAAAAMYXYxQ4EgAgAAAAAUaXNwZQAAAAAAAAAUAAAAHgAAABBwaXhpAAAAAAMICAgAAAAXaXBtYQAAAAAAAAABAAEEAYIDBAAAADhtZGF0EgAKCDgRJ9YQENBpMiIcQCaaaYUAu7vEx3pt7OccnOnzBD598al23emAGpXah4cd",
-      "variants": [
-        {
-          "w": 480,
-          "avifUrl": "/media/visuals/5/480.avif",
-          "webpUrl": "/media/visuals/5/480.webp"
-        },
-        {
-          "w": 960,
-          "avifUrl": "/media/visuals/5/960.avif",
-          "webpUrl": "/media/visuals/5/960.webp"
-        },
-        {
-          "w": 1600,
-          "avifUrl": "/media/visuals/5/1600.avif",
-          "webpUrl": "/media/visuals/5/1600.webp"
-        },
-        {
-          "w": 2400,
-          "avifUrl": "/media/visuals/5/2400.avif",
-          "webpUrl": "/media/visuals/5/2400.webp"
-        }
-      ],
-      "exif": {
-        "camera": "Canon Canon EOS DIGITAL REBEL XS",
-        "lens": "EF-S18-55mm f/3.5-5.6 IS",
-        "aperture": "f/4.5",
-        "shutterSpeed": "1/160",
-        "iso": "ISO 1600",
-        "focalLength": "30mm"
-      },
-      "uploadedAt": "2022-12-14T00:50:06.000Z",
-      "col": 1
     },
     {
       "id": "p1000984",
