@@ -403,12 +403,13 @@ const authed = isAuthenticated(Astro.request);
     }
 
     .photo-grid {
-      columns: 3;
+      columns: 4;
       column-gap: 6px;
       margin-bottom: 28px;
     }
 
-    @media (max-width: 640px) { .photo-grid { columns: 2; } }
+    @media (max-width: 768px) { .photo-grid { columns: 3; } }
+    @media (max-width: 480px) { .photo-grid { columns: 2; } }
 
     .photo-item {
       break-inside: avoid;
