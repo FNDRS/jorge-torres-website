@@ -17,14 +17,22 @@ export const POST: APIRoute = async ({ request }) => {
   const manifest = JSON.parse(file.content) as { packs: ({ id: string; col?: number } & Record<string, unknown>)[] };
   const packMap = new Map(manifest.packs.map((p) => [p.id, p]));
 
-  // Rebuild packs: col0 items first, then col1, col2, col3 — each with col set
-  const reordered: typeof manifest.packs = [];
-  columns.forEach((colIds, colIdx) => {
-    colIds.forEach((id) => {
+  // Rebuild packs: interleave columns round-robin (col0[0], col1[0], col2[0], col3[0], col0[1], …)
+  // so the initial visible window contains items from every column — critical because the gallery
+  // slices by visibleCount first, and a columnar order would fill all initial slots with col:0.
+  const colPacks = columns.map((colIds, colIdx) =>
+    colIds.flatMap((id) => {
       const pack = packMap.get(id);
-      if (pack) reordered.push({ ...pack, col: colIdx });
-    });
-  });
+      return pack ? [{ ...pack, col: colIdx }] : [];
+    }),
+  );
+  const reordered: typeof manifest.packs = [];
+  const maxLen = Math.max(...colPacks.map((c) => c.length));
+  for (let row = 0; row < maxLen; row++) {
+    for (const col of colPacks) {
+      if (row < col.length) reordered.push(col[row]!);
+    }
+  }
 
   // Append any packs not present in the submitted columns (safety net)
   manifest.packs.forEach((p) => {
