@@ -77,9 +77,27 @@ function useResponsiveColumnCount(itemCount: number) {
  */
 function packIntoColumns(items: GalleryDisplayItem[], columnCount: number): GalleryDisplayItem[][] {
   const columns: GalleryDisplayItem[][] = Array.from({ length: columnCount }, () => []);
-  const heights = new Array(columnCount).fill(0);
+  const heights = new Array<number>(columnCount).fill(0);
 
+  const unassigned: GalleryDisplayItem[] = [];
+
+  // Phase 1: place items that have an explicit column stored by the admin
   for (const item of items) {
+    const col = item.kind === 'media' ? item.image?.col : undefined;
+    if (col !== undefined && col >= 0 && col < columnCount) {
+      const img = item.kind === 'media' ? item.image : undefined;
+      const w = img?.width;
+      const h = img?.height;
+      const ratio = w && h && w > 0 ? h / w : 1;
+      columns[col].push(item);
+      heights[col] += ratio;
+    } else {
+      unassigned.push(item);
+    }
+  }
+
+  // Phase 2: pack remaining items into the shortest column
+  for (const item of unassigned) {
     const w = item.kind === 'media' ? item.image?.width : undefined;
     const h = item.kind === 'media' ? item.image?.height : undefined;
     const ratio = w && h && w > 0 ? h / w : 1;

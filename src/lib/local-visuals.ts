@@ -19,6 +19,7 @@ export type GalleryImagePack = {
   lqip: string;
   variants: GalleryImageVariant[];
   exif?: GalleryImageExif | null;
+  col?: number; // explicit column (0-based) set by admin reorder; overrides packing algorithm
 };
 
 export type PublicGalleryImageMeta = {
@@ -27,6 +28,7 @@ export type PublicGalleryImageMeta = {
   lqip: string;
   variants: { w: number; avif: string; webp: string }[];
   exif?: GalleryImageExif | null;
+  col?: number;
 };
 
 export type PublicGalleryItem =
@@ -87,6 +89,7 @@ function packToPublicItem(p: GalleryImagePack): PublicGalleryItem {
       lqip: p.lqip,
       variants: p.variants.map((v) => ({ w: v.w, avif: v.avifUrl, webp: v.webpUrl })),
       exif: p.exif ?? null,
+      ...(p.col !== undefined ? { col: p.col } : {}),
     },
   };
 }

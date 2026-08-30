@@ -910,16 +910,19 @@ const authed = isAuthenticated(Astro.request);
     });
   }
 
-  // Save order button
+  // Save order button — sends explicit column assignments so the website renders exactly this layout
   document.getElementById('saveOrderBtn')?.addEventListener('click', async () => {
     const btn = document.getElementById('saveOrderBtn') as HTMLButtonElement;
     btn.disabled = true;
     btn.textContent = 'Guardando…';
     try {
+      const columns = [...document.querySelectorAll('.photo-col')].map(colEl =>
+        [...colEl.querySelectorAll<HTMLElement>('.photo-item[data-id]')].map(el => el.dataset.id!)
+      );
       const r = await fetch('/api/admin/reorder-photos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids: getOrder() }),
+        body: JSON.stringify({ columns }),
       });
       if (r.ok) {
         originalOrder = getOrder();
@@ -946,17 +949,30 @@ const authed = isAuthenticated(Astro.request);
       const res = await fetch('/api/admin/content');
       if (!res.ok) throw new Error(res.statusText);
       const data = await res.json() as {
-        photos: { id: string; url: string; lqip: string; width: number; height: number; uploadedAt: string }[];
+        photos: { id: string; url: string; lqip: string; width: number; height: number; col?: number; uploadedAt: string }[];
         videos: { videoId: string; embeddable: boolean }[];
       };
 
-      // Photos — same "shortest column" packing as the website
+      // Photos — same layout logic as the website
       type Photo = typeof data.photos[number];
 
       function packIntoColumns(photos: Photo[], n: number): Photo[][] {
         const cols: Photo[][] = Array.from({ length: n }, () => []);
         const heights = new Array<number>(n).fill(0);
+        const unassigned: Photo[] = [];
+
+        // Phase 1: respect stored column assignments
         for (const p of photos) {
+          if (p.col !== undefined && p.col >= 0 && p.col < n) {
+            const ratio = p.width && p.height ? p.height / p.width : 1;
+            cols[p.col].push(p);
+            heights[p.col] += ratio;
+          } else {
+            unassigned.push(p);
+          }
+        }
+        // Phase 2: pack unassigned into shortest column
+        for (const p of unassigned) {
           const ratio = p.width && p.height ? p.height / p.width : 1;
           let shortest = 0;
           for (let i = 1; i < n; i++) if (heights[i] < heights[shortest]) shortest = i;

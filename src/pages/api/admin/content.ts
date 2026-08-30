@@ -13,7 +13,7 @@ export const GET: APIRoute = async ({ request }) => {
   ]);
 
   const manifest = manifestFile
-    ? (JSON.parse(manifestFile.content) as { packs: { id: string; width: number; height: number; lqip: string; variants: { webpUrl: string }[]; uploadedAt: string }[] })
+    ? (JSON.parse(manifestFile.content) as { packs: { id: string; width: number; height: number; lqip: string; col?: number; variants: { webpUrl: string }[]; uploadedAt: string }[] })
     : { packs: [] };
 
   const photos = manifest.packs.map((p) => ({
@@ -22,6 +22,7 @@ export const GET: APIRoute = async ({ request }) => {
     lqip: p.lqip,
     width: p.width,
     height: p.height,
+    col: p.col,
     uploadedAt: p.uploadedAt,
   }));
 
