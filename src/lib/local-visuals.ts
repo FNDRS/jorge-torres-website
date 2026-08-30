@@ -30,7 +30,7 @@ export type PublicGalleryImageMeta = {
 };
 
 export type PublicGalleryItem =
-  | { kind: 'media'; url: string; packId?: string; image?: PublicGalleryImageMeta; title?: string; description?: string }
+  | { kind: 'media'; url: string; packId?: string; image?: PublicGalleryImageMeta; title?: string; description?: string; thumb?: string }
   | { kind: 'youtube'; videoId: string; title?: string; description?: string; embeddable?: boolean }
   | { kind: 'vimeo'; videoId: string };
 
@@ -92,9 +92,10 @@ function packToPublicItem(p: GalleryImagePack): PublicGalleryItem {
 }
 
 /** Local video files hosted directly in public/media/videos/ (no YouTube/Vimeo dependency). */
-const LOCAL_VIDEOS: { url: string; title: string; description: string; addedAt: string }[] = [
+const LOCAL_VIDEOS: { url: string; thumb?: string; title: string; description: string; addedAt: string }[] = [
   {
     url: '/media/videos/molino-harinero-sula.mp4',
+    thumb: '/media/videos/molino-harinero-sula-thumb.webp',
     title: 'Molino Harinero Sula Danlí',
     description: 'Productora: @greathumans.mov\nDirector y Foto Fija: @jorgeetorresx\nDirector de Fotografía: @javierescoto_\nCliente: Molino Harinero Sula',
     addedAt: '2026-08-29T21:00:00.000Z',
@@ -128,6 +129,7 @@ export async function resolveGalleryItems(): Promise<PublicGalleryItem[]> {
     url: v.url,
     title: v.title,
     description: v.description,
+    ...(v.thumb ? { thumb: v.thumb } : {}),
   }));
 
   // Videos (YouTube embeds + local) appear at the end; photos first

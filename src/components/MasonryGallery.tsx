@@ -526,8 +526,21 @@ function StreamVideoTile({
           aria-label={`Reproducir ${item.title}`}
           className={`touch-manipulation group relative block h-full min-h-0 w-full min-w-0 max-w-full overflow-hidden text-left ${PHOTO_ROUNDED}`}
         >
-          <div className={`h-full min-h-[12rem] w-full bg-zinc-900 ${PHOTO_ROUNDED}`} />
-          <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 transition group-hover:bg-black/45">
+          {item.thumb ? (
+            <img
+              src={item.thumb}
+              alt={item.title}
+              width={1280}
+              height={720}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              decoding="async"
+              loading="lazy"
+              className={`h-full min-h-0 w-full min-w-0 max-w-full object-cover opacity-95 transition duration-300 group-hover:opacity-100 ${PHOTO_ROUNDED}`}
+            />
+          ) : (
+            <div className={`h-full min-h-[12rem] w-full bg-zinc-900 ${PHOTO_ROUNDED}`} />
+          )}
+          <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/15 transition group-hover:bg-black/25">
             <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-neutral-900 shadow-[0_8px_32px_rgba(0,0,0,0.45)] ring-2 ring-white/50 transition duration-200 group-hover:scale-105">
               <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="currentColor" aria-hidden>
                 <path d="M8 5v14l11-7z" />
@@ -609,6 +622,7 @@ function VideoLightbox({ item, onClose }: { item: GalleryDisplayItem; onClose: (
           ) : (
             <video
               src={item.kind === 'media' ? item.url : undefined}
+              poster={item.kind === 'media' ? item.thumb : undefined}
               controls
               autoPlay
               playsInline
