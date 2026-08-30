@@ -513,6 +513,11 @@ const authed = isAuthenticated(Astro.request);
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .c-empty { font-size: 13px; color: var(--text3); padding: 12px 0; }
+
+    .photo-item[draggable="true"] { cursor: grab; }
+    .photo-item[draggable="true"]:active { cursor: grabbing; }
+    .photo-item.drag-over { outline: 2px solid var(--orange); outline-offset: 2px; }
+    .photo-item.drag-src { opacity: .35; }
   </style>
 </head>
 <body>
@@ -611,7 +616,10 @@ const authed = isAuthenticated(Astro.request);
       <div class="c-loading" id="cLoading"><div class="spin"></div> Cargando…</div>
 
       <div id="cLoaded" style="display:none">
-        <div class="sub-label">Fotos <span class="cnt-badge" id="photoCnt"></span></div>
+        <div class="sub-label" style="display:flex;align-items:center">
+          Fotos <span class="cnt-badge" id="photoCnt"></span>
+          <button class="btn btn-ghost btn-sm" id="saveOrderBtn" style="display:none;margin-left:auto;font-size:12px;padding:5px 12px">Guardar orden</button>
+        </div>
         <div class="photo-grid" id="photoGrid">
           <div class="c-empty" id="photoEmpty" style="display:none">Sin fotos</div>
         </div>
@@ -841,6 +849,72 @@ const authed = isAuthenticated(Astro.request);
   // ── Content loader ──
   const TRASH = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14H6L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4h6v2"></path></svg>`;
 
+  let originalOrder: string[] = [];
+
+  function getOrder(): string[] {
+    return [...document.querySelectorAll<HTMLElement>('.photo-item[data-id]')].map(el => el.dataset.id!);
+  }
+
+  function checkOrderChanged() {
+    const btn = document.getElementById('saveOrderBtn') as HTMLButtonElement;
+    if (!btn) return;
+    const changed = JSON.stringify(getOrder()) !== JSON.stringify(originalOrder);
+    btn.style.display = changed ? '' : 'none';
+  }
+
+  function makeDraggable(item: HTMLElement) {
+    item.draggable = true;
+    let dragSrc: HTMLElement | null = null;
+
+    item.addEventListener('dragstart', () => {
+      dragSrc = item;
+      setTimeout(() => item.classList.add('drag-src'), 0);
+    });
+    item.addEventListener('dragend', () => {
+      item.classList.remove('drag-src');
+      document.querySelectorAll('.photo-item').forEach(i => i.classList.remove('drag-over'));
+      checkOrderChanged();
+    });
+    item.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      if (dragSrc && item !== dragSrc) item.classList.add('drag-over');
+    });
+    item.addEventListener('dragleave', () => item.classList.remove('drag-over'));
+    item.addEventListener('drop', (e) => {
+      e.preventDefault();
+      item.classList.remove('drag-over');
+      if (!dragSrc || dragSrc === item) return;
+      const grid = item.parentNode as HTMLElement;
+      const items = [...grid.children] as HTMLElement[];
+      const si = items.indexOf(dragSrc);
+      const ti = items.indexOf(item);
+      if (si < ti) grid.insertBefore(dragSrc, item.nextSibling);
+      else grid.insertBefore(dragSrc, item);
+    });
+  }
+
+  // Save order button
+  document.getElementById('saveOrderBtn')?.addEventListener('click', async () => {
+    const btn = document.getElementById('saveOrderBtn') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Guardando…';
+    try {
+      const r = await fetch('/api/admin/reorder-photos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids: getOrder() }),
+      });
+      if (r.ok) {
+        originalOrder = getOrder();
+        btn.style.display = 'none';
+      } else {
+        alert('Error al guardar orden.');
+      }
+    } catch { alert('Error de red.'); }
+    btn.textContent = 'Guardar orden';
+    btn.disabled = false;
+  });
+
   async function loadContent() {
     const loading = document.getElementById('cLoading');
     const loaded = document.getElementById('cLoaded');
@@ -872,9 +946,11 @@ const authed = isAuthenticated(Astro.request);
         data.photos.forEach(({ id, url, lqip }) => {
           const item = document.createElement('div');
           item.className = 'photo-item';
+          item.dataset.id = id;
           item.innerHTML = `
             <img src="${url}" loading="lazy" decoding="async" style="background:url('${lqip}') center/cover" />
             <button class="photo-del" title="Eliminar foto">${TRASH}</button>`;
+          makeDraggable(item);
           item.querySelector('button')!.addEventListener('click', async () => {
             if (!confirm('¿Eliminar esta foto? No se puede deshacer.')) return;
             item.style.opacity = '0.4';
@@ -889,6 +965,8 @@ const authed = isAuthenticated(Astro.request);
           grid.appendChild(item);
         });
       }
+
+      originalOrder = getOrder();
 
       // Videos
       const list = document.getElementById('videoList')!;
