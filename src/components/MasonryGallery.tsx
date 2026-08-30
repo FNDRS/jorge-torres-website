@@ -761,7 +761,7 @@ function PhotoLightbox({
   items: GalleryDisplayItem[];
   index: number;
   onClose: () => void;
-  onNavigate: Dispatch<SetStateAction<number>>;
+  onNavigate: (idx: number) => void;
 }) {
   useBodyScrollLock(true);
   const total = items.length;
@@ -1236,7 +1236,7 @@ export default function MasonryGallery({ items }: Props) {
               items={photoItems}
               index={lightboxIndex}
               onClose={() => setLightboxIndex(null)}
-              onNavigate={setLightboxIndex}
+              onNavigate={(idx) => setLightboxIndex(idx)}
             />,
             document.body,
           )

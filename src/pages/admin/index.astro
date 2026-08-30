@@ -1,0 +1,672 @@
+---
+import { isAuthenticated } from '../../lib/admin-auth';
+export const prerender = false;
+
+const authed = isAuthenticated(Astro.request);
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Admin — Jorge Torres</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080808;
+      --card: #111111;
+      --card-b: rgba(255,255,255,0.07);
+      --zone: #0c0c0c;
+      --zone-b: rgba(255,255,255,0.13);
+      --orange: #f97316;
+      --orange-h: #ea6c10;
+      --text: rgba(255,255,255,0.92);
+      --text2: rgba(255,255,255,0.48);
+      --text3: rgba(255,255,255,0.22);
+      --input: #181818;
+      --r: 20px;
+      --rs: 10px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Login ── */
+    .login-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .login-card {
+      background: var(--card);
+      border: 1px solid var(--card-b);
+      border-radius: var(--r);
+      padding: 36px 32px;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .login-card h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .login-card .sub {
+      font-size: 13px;
+      color: var(--text2);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    /* ── Dashboard ── */
+    .dash {
+      flex: 1;
+      padding: 36px 24px 48px;
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .dash-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .dash-head h1 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .dash-head .hint {
+      font-size: 12px;
+      color: var(--text3);
+      margin-top: 2px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-b);
+      border-radius: var(--r);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text2);
+      margin-bottom: 24px;
+      line-height: 1.55;
+    }
+
+    /* ── Drop Zone ── */
+    .drop-zone {
+      background: var(--zone);
+      border: 1.5px dashed var(--zone-b);
+      border-radius: var(--rs);
+      padding: 44px 20px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: border-color .2s, background .2s;
+    }
+
+    .drop-zone.over {
+      border-color: var(--orange);
+      background: rgba(249,115,22,.04);
+    }
+
+    .drop-zone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .zone-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+
+    .zone-text {
+      font-size: 13.5px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    .zone-text strong { color: var(--text); }
+
+    .zone-meta {
+      font-size: 11.5px;
+      color: var(--text3);
+      margin-top: 5px;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: .02em;
+    }
+
+    /* ── File badge ── */
+    .file-badge {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 13px;
+      color: var(--text2);
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .file-badge.show { display: flex; }
+
+    .file-badge svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      color: var(--text3);
+    }
+
+    .file-badge span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Progress ── */
+    .progress-wrap {
+      margin-top: 22px;
+      display: none;
+    }
+
+    .progress-wrap.show { display: block; }
+
+    .progress-top {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .progress-pct {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .progress-sub {
+      font-size: 13px;
+      color: var(--text2);
+    }
+
+    .segs {
+      display: grid;
+      grid-template-columns: repeat(40, 1fr);
+      gap: 3px;
+    }
+
+    .seg {
+      height: 26px;
+      border-radius: 3px;
+      background: #1e1e1e;
+      transition: background .12s;
+    }
+
+    .seg.on { background: white; }
+
+    /* ── Status ── */
+    .status-msg {
+      margin-top: 14px;
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: var(--rs);
+      line-height: 1.5;
+      display: none;
+    }
+
+    .status-msg.show { display: block; }
+    .status-msg.ok { background: rgba(34,197,94,.1); color: #4ade80; }
+    .status-msg.err { background: rgba(239,68,68,.1); color: #f87171; }
+
+    /* ── Form fields ── */
+    .field { margin-bottom: 14px; }
+
+    .field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 7px;
+    }
+
+    .field input[type="text"],
+    .field input[type="password"] {
+      width: 100%;
+      background: var(--input);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--rs);
+      padding: 11px 14px;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color .2s;
+      font-family: inherit;
+    }
+
+    .field input:focus { border-color: rgba(255,255,255,.25); }
+
+    .field input::placeholder { color: var(--text3); }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--text2);
+      cursor: pointer;
+      margin-top: 16px;
+      user-select: none;
+    }
+
+    .check-row input[type="checkbox"] {
+      width: 15px;
+      height: 15px;
+      accent-color: var(--orange);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* ── Buttons ── */
+    .btn-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .btn-row.end { justify-content: flex-end; }
+    .btn-row.full .btn-primary { flex: 1; }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: var(--rs);
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .18s, opacity .18s;
+      white-space: nowrap;
+    }
+
+    .btn:disabled { opacity: .4; cursor: default; }
+
+    .btn-ghost {
+      background: rgba(255,255,255,.06);
+      color: var(--text2);
+    }
+
+    .btn-ghost:hover:not(:disabled) { background: rgba(255,255,255,.1); }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .btn-primary:hover:not(:disabled) { background: var(--orange-h); }
+
+    .btn-sm { padding: 7px 14px; font-size: 13px; }
+
+    /* ── Spacer ── */
+    .grow { flex: 1; }
+  </style>
+</head>
+<body>
+
+{authed ? (
+  <div class="dash">
+    <div class="dash-head">
+      <div>
+        <h1>Admin Panel</h1>
+        <div class="hint">jorgeetorres.com</div>
+      </div>
+      <form method="POST" action="/api/admin/logout">
+        <button type="submit" class="btn btn-ghost btn-sm">Cerrar sesión</button>
+      </form>
+    </div>
+
+    <div class="cards">
+
+      <!-- ── Photo Upload ── -->
+      <div class="card">
+        <div class="card-title">Subir Fotos</div>
+        <div class="card-desc">Se convierten a WebP automáticamente y se agregan a la galería.</div>
+
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="fileInput" accept="image/*" multiple />
+          <div class="zone-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 16 12 12 8 16"></polyline>
+              <line x1="12" y1="12" x2="12" y2="21"></line>
+              <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+            </svg>
+          </div>
+          <div class="zone-text">
+            <strong>Click para subir</strong> o arrastra aquí
+          </div>
+          <div class="zone-meta">JPG · PNG · WebP · HEIC &nbsp;·&nbsp; Máx 10 MB</div>
+        </div>
+
+        <div class="file-badge" id="fileBadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          <span id="fileBadgeTxt"></span>
+        </div>
+
+        <div class="progress-wrap" id="photoProgress">
+          <div class="progress-top">
+            <span class="progress-pct" id="photoPct">0%</span>
+            <span class="progress-sub" id="photoSub">Procesando…</span>
+          </div>
+          <div class="segs" id="photoSegs"></div>
+        </div>
+
+        <div class="status-msg" id="photoStatus"></div>
+
+        <div class="grow"></div>
+        <div class="btn-row end" style="margin-top:22px">
+          <button class="btn btn-ghost" id="photoClear" style="display:none">Limpiar</button>
+          <button class="btn btn-primary" id="photoSubmit" disabled>Subir Fotos</button>
+        </div>
+      </div>
+
+      <!-- ── YouTube Video ── -->
+      <div class="card">
+        <div class="card-title">Agregar Video de YouTube</div>
+        <div class="card-desc">Pega el link y el video aparecerá en la galería tras el siguiente deploy.</div>
+
+        <div class="field">
+          <label>URL del video</label>
+          <input type="text" id="ytUrl" placeholder="https://youtu.be/..." autocomplete="off" />
+        </div>
+
+        <label class="check-row">
+          <input type="checkbox" id="ytBlocked" />
+          El video tiene restricción de embed (copyright)
+        </label>
+
+        <div class="status-msg" id="ytStatus"></div>
+
+        <div class="grow"></div>
+        <div class="btn-row end">
+          <button class="btn btn-primary" id="ytSubmit">Agregar Video</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+) : (
+  <div class="login-wrap">
+    <div class="login-card">
+      <h1>Admin Panel</h1>
+      <p class="sub">Ingresa tu contraseña para acceder.</p>
+      <div class="field">
+        <label>Contraseña</label>
+        <input type="password" id="loginPwd" placeholder="••••••••••••" autocomplete="current-password" />
+      </div>
+      <div class="status-msg" id="loginStatus"></div>
+      <div class="btn-row full" style="margin-top:18px">
+        <button class="btn btn-primary" id="loginBtn">Entrar</button>
+      </div>
+    </div>
+  </div>
+)}
+
+<script>
+  // ── Segmented bar setup ──
+  const segsEl = document.getElementById('photoSegs');
+  if (segsEl) {
+    for (let i = 0; i < 40; i++) {
+      const s = document.createElement('div');
+      s.className = 'seg';
+      segsEl.appendChild(s);
+    }
+  }
+
+  function setPct(pct: number) {
+    const el = document.getElementById('photoPct');
+    if (el) el.textContent = pct + '%';
+    document.querySelectorAll('.seg').forEach((s, i) => {
+      s.classList.toggle('on', i < Math.round(pct / 100 * 40));
+    });
+  }
+
+  function photoMsg(txt: string, type: 'ok' | 'err') {
+    const el = document.getElementById('photoStatus') as HTMLElement;
+    el.textContent = txt;
+    el.className = 'status-msg show ' + type;
+  }
+
+  // ── Drop Zone ──
+  const dropZone = document.getElementById('dropZone') as HTMLElement;
+  const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+  const photoSubmit = document.getElementById('photoSubmit') as HTMLButtonElement;
+  const photoClear = document.getElementById('photoClear') as HTMLButtonElement;
+
+  let pending: File[] = [];
+
+  if (dropZone) {
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('over'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('over'));
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('over');
+      const files = Array.from((e as DragEvent).dataTransfer!.files).filter(f => f.type.startsWith('image/'));
+      if (files.length) selectFiles(files);
+    });
+  }
+
+  fileInput?.addEventListener('change', () => {
+    const files = Array.from(fileInput.files ?? []);
+    if (files.length) selectFiles(files);
+  });
+
+  function selectFiles(files: File[]) {
+    pending = files;
+    const badge = document.getElementById('fileBadge')!;
+    const txt = document.getElementById('fileBadgeTxt')!;
+    txt.textContent = files.length === 1 ? files[0]!.name : `${files.length} archivos seleccionados`;
+    badge.classList.add('show');
+    photoSubmit.disabled = false;
+    photoClear.style.display = '';
+    const s = document.getElementById('photoStatus') as HTMLElement;
+    s.className = 'status-msg';
+  }
+
+  photoClear?.addEventListener('click', () => {
+    pending = [];
+    fileInput.value = '';
+    document.getElementById('fileBadge')!.classList.remove('show');
+    (document.getElementById('photoProgress') as HTMLElement).classList.remove('show');
+    photoSubmit.disabled = true;
+    photoClear.style.display = 'none';
+    (document.getElementById('photoStatus') as HTMLElement).className = 'status-msg';
+    setPct(0);
+  });
+
+  photoSubmit?.addEventListener('click', async () => {
+    if (!pending.length) return;
+    photoSubmit.disabled = true;
+    photoClear.style.display = 'none';
+    (document.getElementById('photoStatus') as HTMLElement).className = 'status-msg';
+    (document.getElementById('photoProgress') as HTMLElement).classList.add('show');
+
+    const sub = document.getElementById('photoSub')!;
+    const total = pending.length;
+    let done = 0;
+
+    for (const file of pending) {
+      sub.textContent = `Subiendo ${file.name}…`;
+      setPct(Math.round((done / total) * 88));
+
+      const fd = new FormData();
+      fd.append('photo', file);
+
+      try {
+        const res = await fetch('/api/admin/upload-photo', { method: 'POST', body: fd });
+        if (!res.ok) {
+          photoMsg(`Error con ${file.name}: ${await res.text()}`, 'err');
+          photoSubmit.disabled = false;
+          return;
+        }
+      } catch (e: unknown) {
+        photoMsg(`Error de red: ${(e as Error).message}`, 'err');
+        photoSubmit.disabled = false;
+        return;
+      }
+
+      done++;
+      setPct(Math.round((done / total) * 88));
+    }
+
+    setPct(100);
+    sub.textContent = '¡Listo!';
+    photoMsg(
+      total === 1
+        ? '✓ Foto subida. Aparecerá en la galería al próximo deploy.'
+        : `✓ ${total} fotos subidas. Aparecerán en la galería al próximo deploy.`,
+      'ok'
+    );
+    pending = [];
+    fileInput.value = '';
+    document.getElementById('fileBadge')!.classList.remove('show');
+  });
+
+  // ── YouTube ──
+  const ytSubmit = document.getElementById('ytSubmit') as HTMLButtonElement;
+  ytSubmit?.addEventListener('click', async () => {
+    const url = (document.getElementById('ytUrl') as HTMLInputElement).value.trim();
+    const blocked = (document.getElementById('ytBlocked') as HTMLInputElement).checked;
+    const statusEl = document.getElementById('ytStatus') as HTMLElement;
+
+    if (!url) {
+      statusEl.textContent = 'Ingresa la URL del video.';
+      statusEl.className = 'status-msg show err';
+      return;
+    }
+
+    ytSubmit.disabled = true;
+    statusEl.className = 'status-msg';
+
+    try {
+      const res = await fetch('/api/admin/add-video', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, ...(blocked ? { embeddable: false } : {}) }),
+      });
+
+      if (res.ok) {
+        const d = await res.json() as { videoId: string };
+        statusEl.textContent = `✓ Video ${d.videoId} agregado. Se publicará al próximo deploy.`;
+        statusEl.className = 'status-msg show ok';
+        (document.getElementById('ytUrl') as HTMLInputElement).value = '';
+        (document.getElementById('ytBlocked') as HTMLInputElement).checked = false;
+      } else {
+        statusEl.textContent = `Error: ${await res.text()}`;
+        statusEl.className = 'status-msg show err';
+      }
+    } catch (e: unknown) {
+      statusEl.textContent = `Error de red: ${(e as Error).message}`;
+      statusEl.className = 'status-msg show err';
+    }
+
+    ytSubmit.disabled = false;
+  });
+
+  // ── Login ──
+  const loginBtn = document.getElementById('loginBtn') as HTMLButtonElement;
+  if (loginBtn) {
+    const loginPwd = document.getElementById('loginPwd') as HTMLInputElement;
+    const loginStatus = document.getElementById('loginStatus') as HTMLElement;
+
+    async function doLogin() {
+      const pwd = loginPwd.value;
+      if (!pwd) return;
+      loginBtn.disabled = true;
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: pwd }),
+        });
+        if (res.ok) {
+          window.location.reload();
+        } else {
+          loginStatus.textContent = 'Contraseña incorrecta.';
+          loginStatus.className = 'status-msg show err';
+          loginBtn.disabled = false;
+        }
+      } catch (e: unknown) {
+        loginStatus.textContent = `Error de red: ${(e as Error).message}`;
+        loginStatus.className = 'status-msg show err';
+        loginBtn.disabled = false;
+      }
+    }
+
+    loginBtn.addEventListener('click', doLogin);
+    loginPwd.addEventListener('keydown', (e) => { if (e.key === 'Enter') doLogin(); });
+    // Focus password field on load
+    loginPwd.focus();
+  }
+</script>
+
+</body>
+</html>
