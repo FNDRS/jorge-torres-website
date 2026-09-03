@@ -42,6 +42,7 @@ export type PublicGalleryItem =
  * blocks third-party embedding — those open directly on youtube.com instead of trying to play inline.
  */
 const EMBEDS: { provider: 'youtube' | 'vimeo'; videoId: string; addedAt: string; embeddable?: boolean }[] = [
+  { provider: 'youtube', videoId: 'rSzIgiSA89s', addedAt: '2026-09-03T19:33:07.232Z' },
   { provider: 'youtube', videoId: 'xhtXOz1Sst0', addedAt: '2026-06-25T06:51:24.403Z' },
   { provider: 'youtube', videoId: 'q3UMWIFAyQE', addedAt: '2026-06-25T06:48:36.597Z' },
   { provider: 'youtube', videoId: 'sZImzEHTLes', addedAt: '2026-06-25T06:48:00.450Z', embeddable: false },
